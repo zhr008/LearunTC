@@ -24,7 +24,7 @@ namespace Learun.Application.Web.Areas.LR_CodeDemo.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-             return View();
+            return View();
         }
         /// <summary>
         /// 表单页
@@ -33,7 +33,7 @@ namespace Learun.Application.Web.Areas.LR_CodeDemo.Controllers
         [HttpGet]
         public ActionResult Form()
         {
-             return View();
+            return View();
         }
         #endregion
 
@@ -70,7 +70,8 @@ namespace Learun.Application.Web.Areas.LR_CodeDemo.Controllers
         public ActionResult GetFormData(string keyValue)
         {
             var tc_IDCardData = iDCardIBLL.Gettc_IDCardEntity(keyValue);
-            var jsonData = new {
+            var jsonData = new
+            {
                 tc_IDCard = tc_IDCardData,
             };
             return Success(jsonData);
@@ -81,9 +82,9 @@ namespace Learun.Application.Web.Areas.LR_CodeDemo.Controllers
         /// <returns></returns>
         [HttpGet]
         [AjaxOnly]
-        public ActionResult GetTree()
+        public ActionResult GetTree(string PersonId, string ApplicantId)
         {
-            var data = iDCardIBLL.GetTree();
+            var data = iDCardIBLL.GetTree(PersonId, ApplicantId);
             return Success(data);
         }
         #endregion
@@ -113,9 +114,9 @@ namespace Learun.Application.Web.Areas.LR_CodeDemo.Controllers
         [AjaxOnly]
         public ActionResult SaveForm(string keyValue, string strtc_IDCardEntity)
         {
-           
+
             tc_IDCardEntity tc_IDCardEntity = strtc_IDCardEntity.ToObject<tc_IDCardEntity>();
-            iDCardIBLL.SaveEntity(keyValue,tc_IDCardEntity);
+            iDCardIBLL.SaveEntity(keyValue, tc_IDCardEntity);
             return Success("保存成功！");
         }
         #endregion
