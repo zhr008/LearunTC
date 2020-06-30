@@ -29,8 +29,7 @@ var bootstrap = function ($, learun) {
                         F_UserName = item.text;
                         F_IDCardNo = item.value;
                     }
-                    else
-                    {
+                    else {
                         page.search({ F_ApplicantId: item.id });
                         F_PersonId = "";
                         F_UserName = "";
@@ -59,7 +58,7 @@ var bootstrap = function ($, learun) {
                         return top[id].acceptClick(refreshGirdData);
                     }
                 });
-              
+
             });
             // 编辑
             $('#lr_edit').on('click', function () {
@@ -83,7 +82,7 @@ var bootstrap = function ($, learun) {
                 if (learun.checkrow(keyValue)) {
                     learun.layerConfirm('是否确认删除该项！', function (res) {
                         if (res) {
-                            learun.deleteForm(top.$.rootUrl + '/LR_CodeDemo/IDCard/DeleteForm', { keyValue: keyValue}, function () {
+                            learun.deleteForm(top.$.rootUrl + '/LR_CodeDemo/IDCard/DeleteForm', { keyValue: keyValue }, function () {
                                 refreshGirdData();
                             });
                         }
@@ -100,24 +99,26 @@ var bootstrap = function ($, learun) {
             $('#gridtable').lrAuthorizeJfGrid({
                 url: top.$.rootUrl + '/LR_CodeDemo/IDCard/GetPageList',
                 headData: [
-                    { label: "身份证号码", name: "F_IDCardNo", width: 100, align: "left"},
-                    { label: "姓名", name: "F_UserName", width: 100, align: "left"},
-                    { label: "身份证发证日", name: "F_IssueDate", width: 100, align: "left"},
-                    { label: "身份证失效日", name: "F_ExpirationDate", width: 100, align: "left"},
-                    { label: "身份证保管方式", name: "F_SafeguardType", width: 100, align: "left",
-                        formatterAsync: function (callback, value, row, op,$cell) {
-                             learun.clientdata.getAsync('dataItem', {
-                                 key: value,
-                                 code: 'SafeguardType',
-                                 callback: function (_data) {
-                                     callback(_data.text);
-                                 }
-                             });
-                        }},
-                    { label: "入库登记日", name: "F_WarehouseDate", width: 100, align: "left"},
-                    { label: "备注", name: "F_Description", width: 100, align: "left"},
+                    { label: "身份证号码", name: "F_IDCardNo", width: 100, align: "left" },
+                    { label: "姓名", name: "F_UserName", width: 100, align: "left" },
+                    { label: "身份证发证日", name: "F_IssueDate", width: 100, align: "left" },
+                    { label: "身份证失效日", name: "F_ExpirationDate", width: 100, align: "left" },
+                    {
+                        label: "身份证保管方式", name: "F_SafeguardType", width: 100, align: "left",
+                        formatterAsync: function (callback, value, row, op, $cell) {
+                            learun.clientdata.getAsync('dataItem', {
+                                key: value,
+                                code: 'SafeguardType',
+                                callback: function (_data) {
+                                    callback(_data.text);
+                                }
+                            });
+                        }
+                    },
+                    { label: "入库登记日", name: "F_WarehouseDate", width: 100, align: "left" },
+                    { label: "备注", name: "F_Description", width: 100, align: "left" },
                 ],
-                mainId:'F_PersonId',
+                mainId: 'F_PersonId',
                 isPage: true
             });
             page.search();
@@ -126,7 +127,7 @@ var bootstrap = function ($, learun) {
             param = param || {};
             debugger;
             param.F_PersonId = PersonId;
-            $('#gridtable').jfGridSet('reload',{ queryJson: JSON.stringify(param) });
+            $('#gridtable').jfGridSet('reload', { queryJson: JSON.stringify(param) });
         }
     };
     refreshGirdData = function () {

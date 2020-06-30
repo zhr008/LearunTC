@@ -19,7 +19,7 @@ var bootstrap = function ($, learun) {
             //page.initData();
         },
         bind: function () {
-            
+
         },
         initleft: function () {
             $('#lr_left_list li').on('click', function () {
@@ -35,10 +35,9 @@ var bootstrap = function ($, learun) {
 
                     keyValue
 
-                    switch (_type)
-                    {
+                    switch (_type) {
                         case '2':
-                            $("#lr_iframe_item2").attr("src", "/LR_CodeDemo/IDCard/Index?PersonId=" + keyValue + "&ApplicantId="+ApplicantId)
+                            $("#lr_iframe_item2").attr("src", "/LR_CodeDemo/IDCard/Index?PersonId=" + keyValue + "&ApplicantId=" + ApplicantId)
                             break;
                         case '3':
                             $("#lr_iframe_item3").attr("src", "/LR_CodeDemo/IDCard/Index")
@@ -56,14 +55,14 @@ var bootstrap = function ($, learun) {
                             $("#lr_iframe_item7").attr("src", "/LR_CodeDemo/IDCard/Index")
                             break;
                     }
-                   
+
                 }
             });
         },
         initData: function () {
             learun.httpAsyncGet(top.$.rootUrl + '/UserCenter/GetUserInfo', function (res) {
                 if (res.code == 200) {
-                    baseinfo  = res.data.baseinfo;
+                    baseinfo = res.data.baseinfo;
                     /*基础信息*/
                     $('#F_Account').val(baseinfo.account);
                     $('#F_EnCode').val(baseinfo.enCode);

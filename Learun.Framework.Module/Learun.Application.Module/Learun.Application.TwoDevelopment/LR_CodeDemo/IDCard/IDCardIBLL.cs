@@ -50,7 +50,7 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
         /// </summary>
         /// <param name="keyValue">主键</param>
         /// <param name="entity">实体</param>
-        void SaveEntity(string keyValue,tc_IDCardEntity tc_IDCardEntity);
+        void SaveEntity(string keyValue, tc_IDCardEntity tc_IDCardEntity);
         #endregion
 
     }

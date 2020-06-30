@@ -93,7 +93,7 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
         /// 获取左侧树形数据
         /// </summary>
         /// <returns></returns>
-         public List<TreeModel> GetTree(string PersonId, string ApplicantId)
+        public List<TreeModel> GetTree(string PersonId, string ApplicantId)
         {
             try
             {
@@ -111,7 +111,8 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
                         isexpand = true,
                         parentId = item["parentid"].ToString()
                     };
-                    treeList.Add(node);                }
+                    treeList.Add(node);
+                }
                 return treeList.ToTree();
             }
             catch (Exception ex)
@@ -160,11 +161,11 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
         /// <param name="keyValue">主键</param>
         /// <param name="entity">实体</param>
         /// <returns></returns>
-        public void SaveEntity(string keyValue,tc_IDCardEntity tc_IDCardEntity)
+        public void SaveEntity(string keyValue, tc_IDCardEntity tc_IDCardEntity)
         {
             try
             {
-                iDCardService.SaveEntity(keyValue,tc_IDCardEntity);
+                iDCardService.SaveEntity(keyValue, tc_IDCardEntity);
             }
             catch (Exception ex)
             {
