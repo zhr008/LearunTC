@@ -1,0 +1,48 @@
+﻿@{
+    ViewBag.Title = "采购订单报表";
+    Layout = "~/Views/Shared/_Index.cshtml";
+}
+<div class="lr-layout "  >
+    <div class="lr-layout-center">
+        <div class="lr-layout-wrap lr-layout-wrap-notitle ">
+            <div class="lr-layout-tool">
+                <div class="lr-layout-tool-left">
+                    <div class="lr-layout-tool-item">
+                        <div id="datesearch"></div>
+                    </div>
+                    <div class="lr-layout-tool-item">
+                        单据编号：<input id="txt_PurchaseNo" type="text" class="form-control" />
+                    </div>
+                    <div class="lr-layout-tool-item">
+                        主题：<input id="txt_Theme" type="text" class="form-control" />
+                    </div>
+                    <div class="lr-layout-tool-item">
+                        <a id="btn_Search" class="btn btn-primary btn-sm"><i class="fa fa-search"></i>&nbsp;<span class="lrlg">查询</span></a>
+                    </div>
+                </div>
+                <div class="lr-layout-tool-right">
+                    <div class=" btn-group btn-group-sm">
+                        <a id="lr_refresh" class="btn btn-default"><i class="fa fa-refresh"></i></a>
+                    </div>
+                    <div class=" btn-group btn-group-sm" learun-authorize="yes">
+                        <a id="lr_print" class="btn btn-default"><i class="fa fa-print"></i>&nbsp;打印</a>
+                    </div>
+                </div>
+            </div>
+            <div class="lr-layout-body" style="height:50%" id="gridtable"></div>
+            <div class="lr-layout-body" style="height:50%;padding:0 8px;border-top:1px solid #ccc;" id="echart">
+                <div style="float: left;  width: 33.3%; height: 100%;padding:16px 8px;">
+                    <div class="lr-rblock" id="line" style="border: 1px solid #ccc;"></div>
+                </div>
+                <div style="float: left; width: 33.3%; height: 100%;padding:16px 8px;">
+                    <div class="lr-rblock" id="bars" style="border: 1px solid #ccc;"></div>
+                </div>
+                <div style="float: left; width: 33.3%; height: 100%;padding:16px 8px;">
+                    <div class="lr-rblock" id="pie" style="border: 1px solid #ccc;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/Content/echarts/echarts.min.js"></script>
+@Html.AppendJsFile("/Areas/ERPDemo/Views/PurchaseOrder/Report.js")

@@ -1,0 +1,24 @@
+﻿@{
+    ViewBag.Title = "编辑节点按钮";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+<div class="lr-form-wrap" id="form">
+    <div class="col-xs-12 lr-form-item">
+        <div class="lr-form-item-title">名称<font face="宋体">*</font></div>
+        <input id="name" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+    </div>
+    <div class="col-xs-12 lr-form-item">
+        <div class="lr-form-item-title">编码<font face="宋体">*</font></div>
+        <input id="code" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+    </div>
+    <div class="col-xs-12 lr-form-item">
+        <div class="lr-form-item-title">上传附件<font face="宋体">*</font></div>
+        <div id="file" isvalid="yes" checkexpession="NotNull"></div>
+    </div>
+    <div class="col-xs-12 lr-form-item">
+        <div class="lr-form-item-title">下一节点审核人<font face="宋体">*</font></div>
+        <div id="next" isvalid="yes" checkexpession="NotNull"></div>
+    </div>
+</div>
+@Html.AppendJsFile("/Areas/LR_WorkFlowModule/Views/WfScheme/ButtonForm.js")
+

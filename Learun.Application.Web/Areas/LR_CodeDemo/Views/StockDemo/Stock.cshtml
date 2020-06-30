@@ -1,0 +1,10 @@
+﻿@{
+    ViewBag.Title = "库存";
+    Layout = "~/Views/Shared/_Index.cshtml";
+}
+<div class="lr-layout "  >
+    <div class="lr-layout-center">
+            <div class="lr-layout-body" id="gridtable"></div>
+    </div>
+</div>
+@Html.AppendJsFile("/Areas/LR_CodeDemo/Views/StockDemo/Stock.js")

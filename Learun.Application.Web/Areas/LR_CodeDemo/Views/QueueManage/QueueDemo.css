@@ -1,0 +1,105 @@
+﻿.lr-desktop-panel {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #F7FEFF;
+    padding: 10px;
+}
+
+.lr-desktop-panel-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding-left: 645px;
+}
+
+.lr-desktop-panel-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 350px;
+    height: 100%;
+    background-color: #fff;
+    padding-top: 51px;
+}
+
+    .lr-desktop-panel-left .title {
+        position: absolute;
+        height: 51px;
+        width: 100%;
+        top: 0;
+        left: 0;
+        padding: 16px 0 12px 20px;
+        font-size: 16px;
+        color: #333333;
+        border-bottom: 1px solid #e5e5e5;
+    }
+
+    .lr-desktop-panel-left .content {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+
+        .lr-desktop-panel-left .content > .lr-scroll-box {
+            position: relative;
+            width: 100%;
+            padding: 20px;
+            padding-bottom: 0;
+        }
+
+
+.lr-desktop-panel-mid {
+    position: absolute;
+    top: 0;
+    left: 360px;
+    width: 345px;
+    height: 100%;
+    background-color: #fff;
+    padding-top: 51px;
+}
+
+    .lr-desktop-panel-mid .title {
+        position: absolute;
+        height: 51px;
+        width: 100%;
+        top: 0;
+        left: 0;
+        padding: 16px 0 12px 20px;
+        font-size: 16px;
+        color: #333333;
+        border-bottom: 1px solid #e5e5e5;
+    }
+
+    .lr-desktop-panel-mid .content {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+
+.lr-desktop-panel-right {
+    position: absolute;
+    left: 715px;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    padding-top: 51px;
+}
+
+    .lr-desktop-panel-right .title {
+        position: absolute;
+        height: 51px;
+        width: 100%;
+        top: 0;
+        left: 0;
+        padding: 16px 0 12px 20px;
+        font-size: 16px;
+        color: #333333;
+        border-bottom: 1px solid #e5e5e5;
+    }
+
+    .lr-desktop-panel-right .content {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }

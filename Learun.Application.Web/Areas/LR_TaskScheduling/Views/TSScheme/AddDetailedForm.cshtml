@@ -1,0 +1,34 @@
+﻿
+@{
+    ViewBag.Title = "AddDetailedForm";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+@Html.AppendCssFile("/Areas/LR_TaskScheduling/Views/TSScheme/AddDetailedForm.css")
+<div class="content" id="form">
+    <div class="col-xs-12 lr-form-item">
+        <div class="lr-form-item-title">执行时间</div>
+        <input id="hour" type="text" class="txt-minutes" isvalid="yes" checkexpession="Num" />时
+        <input id="minute" type="text" class="txt-minutes"isvalid="yes" checkexpession="Num" />分
+    </div>
+    <div class="col-xs-12 lr-form-item">
+        <div class="lr-form-item-title">执行日</div>
+        <div id="type" isvalid="yes" checkexpession="NotNull">
+            <ul>
+                <li data-value="day">每日</li>
+                <li data-value="week">每周</li>
+                <li data-value="month">每月</li>
+            </ul>
+        </div>
+        <div id="carryDate" style="display:none;margin-top:5px;"></div>
+    </div>
+    <div class="col-xs-12 lr-form-item">
+        <div class="lr-form-item-title">执行月</div>
+        <div id="carryMounth" isvalid="yes" checkexpession="NotNull"></div>
+    </div>
+</div>
+@Html.AppendJsFile("/Areas/LR_TaskScheduling/Views/TSScheme/AddDetailedForm.js")
+
+
+
+
+

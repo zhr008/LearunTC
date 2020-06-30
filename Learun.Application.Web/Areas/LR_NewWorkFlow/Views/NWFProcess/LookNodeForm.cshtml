@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "流程节点信息";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+<div class="lr-rblock" style="padding:5px;">
+    <div class="lr-rblock" style="border:1px solid #ccc;padding-top:40px;">
+        <div style="position:absolute;top:0;left:0; width:100%;height:40px;line-height:39px;border-bottom:1px solid #ccc;padding-left:10px;">
+            当前审核人：<span id="currentUser" title="已经完成">已经完成</span>。
+        </div>
+        <div style="position:relative;width:100%;height:100%;">
+            <div id="gridtable"></div>
+        </div>
+    </div>
+</div>
+
+@Html.AppendJsFile("/Areas/LR_NewWorkFlow/Views/NWFProcess/LookNodeForm.js")
+

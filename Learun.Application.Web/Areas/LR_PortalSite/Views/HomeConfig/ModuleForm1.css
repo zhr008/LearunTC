@@ -1,0 +1,94 @@
+﻿.body {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    padding: 5px;
+}
+
+.bodycontent {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    border: 1px solid #ccc;
+    padding-top:77px;
+}
+.form {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-bottom: 1px solid #ccc;
+    height: 77px;
+    width: 100%;
+    padding:  0 15px 0 0;
+}
+    .form .lr-form-item-title {
+        width: 50px;
+    }
+
+    .form .lr-form-item {
+        padding-left: 50px;
+    }
+
+.gird {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.top, .bottom {
+    position: relative;
+    height: 40%;
+    width: 100%;
+    padding-top: 30px;
+}
+
+.bottom {
+    height: 60%;
+    padding-top: 70px;
+    border-top: 1px solid #ccc;
+}
+
+.title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    line-height: 29px;
+    background-color: #F5F5F5;
+    text-align: left;
+    padding-left: 10px;
+    font-weight: bold;
+    color: #676a6c;
+    border-bottom: 1px solid #ccc;
+}
+
+.content {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.search-bar {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    border-bottom: 1px solid #ddd;
+}
+
+.lr-layout-tool-item {
+    position: relative;
+    float: left;
+    padding-top: 5px;
+    padding-left: 5px;
+}
+
+.search-bar .btn {
+    position: relative;
+    display: inline-block;
+    height: 28px;
+    margin-bottom: 1px;
+    line-height: 14px;
+}

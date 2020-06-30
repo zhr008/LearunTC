@@ -1,0 +1,103 @@
+﻿.body {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    padding: 5px;
+}
+
+.bodycontent {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    border: 1px solid #ccc;
+    padding-left: 200px;
+}
+.left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width:200px;
+    height:100%;
+    border-right:1px solid #ccc;
+    overflow-y:auto;
+}
+.left-list {
+    position:relative;
+    width:100%;
+    padding:10px 10px 0 10px;
+}
+.left-list-item {
+    position: relative;
+    margin-bottom: 10px;
+    width: 100%;
+    height: 40px;
+    line-height: 38px;
+    border: 1px solid #E5E5E5;
+    padding-left: 10px;
+    font-size: 14px;
+    color: #333;
+    cursor: pointer;
+}
+    .left-list-item.active {
+        background: #D6E7FB;
+        border: 1px solid #2E81EA;
+        color: #2E81EA;
+    }
+
+.right {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+.top, .bottom {
+    position: relative;
+    height: 40%;
+    width: 100%;
+    padding-top: 30px;
+}
+.top {
+    height: 60%;
+    padding-top: 70px;
+    border-bottom: 1px solid #ccc;
+}
+.title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    line-height: 29px;
+    background-color: #F5F5F5;
+    text-align: left;
+    padding-left: 10px;
+    font-weight: bold;
+    color: #676a6c;
+    border-bottom: 1px solid #ccc;
+}
+.content {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.search-bar {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    border-bottom: 1px solid #ddd;
+}
+.lr-layout-tool-item {
+    position: relative;
+    float: left;
+    padding-top: 5px;
+    padding-left: 5px;
+}
+.search-bar .btn {
+    position: relative;
+    display: inline-block;
+    height: 28px;
+    margin-bottom: 1px;
+    line-height: 14px;
+}

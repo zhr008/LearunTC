@@ -1,0 +1,168 @@
+﻿@{
+    ViewBag.Title = "流程模板设计";
+    Layout = "~/Views/Shared/_WorkFlowNewForm.cshtml";
+}
+@Html.AppendCssFile("/Areas/LR_NewWorkFlow/Views/NWFScheme/Form.css")
+<div class="widget-body">
+    <div id="wizard" class="wizard" data-target="#wizard-steps">
+        <ul class="steps">
+            <li data-target="#step-1" class="active"><span class="step">1</span><span class="lrlg">基本配置</span><span class="chevron"></span></li>
+            <li data-target="#step-2"><span class="step">2</span><span class="lrlg">权限设置</span><span class="chevron"></span></li>
+            <li data-target="#step-3"><span class="step">3</span><span class="lrlg">模板设计</span><span class="chevron"></span></li>
+        </ul>
+    </div>
+    <div class="step-content" id="wizard-steps">
+        <div class="step-pane step-pane-base active" id="step-1">
+            <div class="lr-alert">
+                <div class="alert alert-danger">
+                    <i class="fa fa-warning alert-dismissible"></i>
+                    <span class="lrlg">请你填写模板信息，用于创建或修改模板</span>
+                </div>
+            </div>
+
+            <div class="panel panel-default lr-panel">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><span class="lrlg">模板基本信息配置</span></h3>
+                </div>
+                <div class="panel-body">
+                    <input id="F_SchemeId" type="hidden" />
+                    <div class="col-xs-12 lr-form-item" style="top:15px;">
+                        <div class="lr-form-item-title">模板编号<font face="宋体">*</font></div>
+                        <input id="F_Code" type="text" class="form-control" placeholder="请输入编号" isvalid="yes" checkexpession="NotNull" />
+                    </div>
+                    <div class="col-xs-12 lr-form-item" style="top:53px;">
+                        <div class="lr-form-item-title">模板名称<font face="宋体">*</font></div>
+                        <input id="F_Name" type="text" class="form-control" placeholder="请输入名称" isvalid="yes" checkexpession="NotNull" />
+                    </div>
+                    <div class="col-xs-12 lr-form-item" style="top:91px;">
+                        <div class="lr-form-item-title">模板分类<font face="宋体">*</font></div>
+                        <div id="F_Category" isvalid="yes" checkexpession="NotNull"></div>
+                    </div>
+                    <div class="col-xs-12 lr-form-item" style="top:129px;">
+                        <div class="lr-form-item-title">我的任务<font face="宋体">*</font></div>
+                        <div class="radio lr-radio" type="lr-radio" id="F_Mark">
+                            <label>
+                                <input name="F_Mark" type="radio" value="1" checked="checked" />
+                                <span class="lrlg">允许发起</span>
+</label>
+                            <label>
+                                <input name="F_Mark" type="radio" value="2" />
+                                <span class="lrlg">不允许发起</span>
+</label>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 lr-form-item" style="top:167px;">
+                        <div class="lr-form-item-title">移动端<font face="宋体">*</font></div>
+                        <div class="radio lr-radio" type="lr-radio" id="F_IsInApp">
+                            <label>
+                                <input name="F_IsInApp" type="radio" value="1" />
+                                <span class="lrlg">显示</span>
+</label>
+                            <label>
+                                <input name="F_IsInApp" type="radio" value="2" checked="checked" />
+                                <span class="lrlg">不显示</span>
+</label>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 lr-form-item" style="top:205px;">
+                        <div class="lr-form-item-title">撤销作废执行<font face="宋体">*</font></div>
+                        <div class="radio lr-radio" type="lr-radio" id="F_CloseDoType">
+                            <label>
+                                <input name="closeDoType" type="radio" value="sql" checked="checked" />
+                                <span class="lrlg">sql</span>
+</label>
+                            <label>
+                                <input name="closeDoType" type="radio" value="ioc" />
+                                <span class="lrlg">依赖注入方法</span>
+</label>
+                            <label>
+                                <input name="closeDoType" type="radio" value="interface" />
+                                <span class="lrlg">接口</span>
+</label>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 lr-form-item" style="top:243px;height:140px;">
+                        <div id="sql" class="operationDiv" style="position:relative;width:100%;height:100%;padding-top:52px;">
+                            <div style="position:absolute;height:49px;width:100%;padding:0px;top:0;left:0;">
+                                <div class="alert alert-danger" style="position:relative;text-align: left;margin:0;">
+                                    <i class="fa fa-question-circle alert-dismissible" style="position: relative; top: 1px; font-size: 15px; padding-right: 5px;"></i>
+                                    <span class="lrlg">注意：请配置SQL语句（{processId}流程进程主键{userId}用户Id{userAccount}用户账号{companyId}用户公司{departmentId}用户部门{code}1撤销2作废3删除草稿）！</span>
+</div>
+                            </div>
+                            <div class="lr-form-wrap" style="padding:0px;padding-top:40px;">
+                                <div style="position:absolute;left:0;top:5px;width:100%;height:28px;padding:0;"><div id="F_CloseDoDbId" style="position:relative;width:100%;height:100%;"></div></div>
+                                <textarea id="F_CloseDoSql" class="form-control" style="height: 100%" placeholder="请填写Sql语句"></textarea>
+                            </div>
+                        </div>
+                        <div id="ioc" class="operationDiv" style="position:relative;width:100%;height:100%;display:none;padding-top:54px;">
+                            <div style="position:absolute;height:54px;width:100%;padding:0px;top:0;left:0;">
+                                <div class="alert alert-danger" style="position:relative;text-align: left;margin:0;">
+                                    <i class="fa fa-question-circle alert-dismissible" style="position: relative; top: 1px; font-size: 15px; padding-right: 5px;"></i>
+                                    注意：必须要开发人员指导下进行配置注册的IOC方法名,需要继承接口IWorkFlowMethod(或咨询力软售后人员)！
+                                </div>
+                            </div>
+                            <div class="lr-form-wrap" style="padding:0px;">
+                                <textarea id="F_CloseDoIocName" class="form-control" placeholder="请填写方法名" style="height: 100%"></textarea>
+                            </div>
+                        </div>
+                        <div id="interface" class="operationDiv" style="position:relative;width:100%;height:100%;display:none;padding-top:74px;">
+                            <div style="position:absolute;height:54px;width:100%;padding:0px;top:0;left:0;">
+                                <div class="alert alert-danger" style="position:relative;text-align: left;margin:0;">
+                                    <i class="fa fa-question-circle alert-dismissible" style="position: relative; top: 1px; font-size: 15px; padding-right: 5px;"></i>
+                                    <span class="lrlg">注意：必须要开发人员指导下进行配置支持Post方法的接口,json数据格式。{processId:'流程发起实例主键',userId:'用户Id',userAccount:'用户账号',companyId:'用户公司',departmentId:'用户部门',code:'1撤销2作废'}(或咨询力软售后人员)！</span>
+</div>
+                            </div>
+                            <div class="lr-form-wrap" style="padding:0px;">
+                                <textarea id="F_CloseDoInterface" class="form-control" placeholder="请填写接口地址" style="height: 100%"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 lr-form-item" style="position:relative;width:100%;height:100%;">
+                        <div class="lr-form-item-title">备注</div>
+                        <textarea id="F_Description" class="form-control" style="height: 100%;"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="step-pane" id="step-2" style="padding:5px;padding-top:40px;">
+            <div style="position:absolute;height:40px;width:100%;left:0;top:0;">
+                <div class="col-xs-12 lr-form-item" style="padding:0px;padding-left:10px;padding-top: 8px;">
+                    <div class="radio">
+                        <label>
+                            <input name="authorizeType" id="authorizeType1" type="radio" value="1" checked="checked" />
+                            <span class="lrlg">所有成员</span>
+                        </label>
+                        <label>
+                            <input name="authorizeType" id="authorizeType2" type="radio" value="2" />
+                            <span class="lrlg">指定成员</span>
+                        </label>
+                    </div>
+                </div>
+
+            </div>
+            <div style="position:relative;width:100%;height:100%;border:1px solid #ddd;padding-bottom:30px;">
+                <div style="bottom:0;border-bottom:0px;border-top:1px solid #ddd;position: absolute;left: 0;width: 100%;height: 30px;line-height: 29px;background-color: #F5F5F5;border-bottom: 1px solid #ddd;text-align: right;padding-right: 10px;font-weight: bold;color: #676a6c;">
+                    <div class="lr-form-jfgrid-btns">
+                        <a id="lr_post_authorize" class="btn btn-success"><i class="fa fa-graduation-cap"></i>&nbsp; <span class="lrlg">添加岗位</span></a>
+                        <a id="lr_role_authorize" class="btn btn-info"><i class="fa fa-paw"></i>&nbsp; <span class="lrlg">添加角色</span></a>
+                        <a id="lr_user_authorize" class="btn btn-primary"><i class="fa fa-user"></i>&nbsp; <span class="lrlg">添加人员</span></a>
+
+                        <a id="lr_delete_authorize" class="btn btn-danger"><i class="fa fa-trash-o"></i>&nbsp; <span class="lrlg">移除</span></a>
+                    </div>
+                </div>
+                <div id="authorize_girdtable"></div>
+                <div id="shcemeAuthorizeBg" style="z-index:10;position:absolute;left:0;top:0;width:100%;height:100%;background:#000;filter:alpha(opacity=10); opacity: 0.1;"></div>
+            </div>
+        </div>
+        <div class="step-pane" id="step-3"></div>
+    </div>
+
+    <div class="lr-form-bottom-button" id="wizard-actions">
+        <a id="btn_prev" class="btn btn-default btn-prev" disabled><span class="lrlg">上一步</span></a>
+        <a id="btn_next" class="btn btn-default btn-next"><span class="lrlg">下一步</span></a>
+        <a id="btn_draft" class="btn btn-warning"><span class="lrlg">保存草稿</span></a>
+        <a id="btn_finish" class="btn btn-success" disabled><span class="lrlg">保存</span></a>
+    </div>
+</div>
+@Html.AppendJsFile("/Areas/LR_NewWorkFlow/Views/NWFScheme/Form.js")

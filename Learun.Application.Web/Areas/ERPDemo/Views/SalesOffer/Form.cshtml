@@ -1,0 +1,43 @@
+﻿@{
+    ViewBag.Title = "销售报价";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+    <div class="lr-form-wrap" id="form">
+        <div class="col-xs-3 lr-form-item" data-table="LR_ERP_SalesOffer">
+            <div class="lr-form-item-title">单据编号<font face="宋体">*</font></div>
+            <input id="F_PurchaseNo" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+        </div>
+        <div class="col-xs-3 lr-form-item" data-table="LR_ERP_SalesOffer">
+            <div class="lr-form-item-title">报价日期<font face="宋体">*</font></div>
+            <input id="F_ApplyDate" type="text" class="form-control lr-input-wdatepicker" onfocus="WdatePicker({ dateFmt:'yyyy-MM-dd HH:mm',onpicked: function () { $('#F_ApplyDate').trigger('change'); } })" isvalid="yes" checkexpession="NotNull" />
+        </div>
+        <div class="col-xs-3 lr-form-item" data-table="LR_ERP_SalesOffer">
+            <div class="lr-form-item-title">主题<font face="宋体">*</font></div>
+            <input id="F_Theme" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+        </div>
+        <div class="col-xs-3 lr-form-item" data-table="LR_ERP_SalesOffer">
+            <div class="lr-form-item-title">报价类别<font face="宋体">*</font></div>
+            <div id="F_PurchaseType" isvalid="yes" checkexpession="NotNull"></div>
+        </div>
+        <div class="col-xs-3 lr-form-item" data-table="LR_ERP_SalesOffer">
+            <div class="lr-form-item-title">报价人<font face="宋体">*</font></div>
+            <div id="F_Appler" isvalid="yes" checkexpession="NotNull"></div>
+        </div>
+        <div class="col-xs-3 lr-form-item" data-table="LR_ERP_SalesOffer">
+            <div class="lr-form-item-title">报价单位<font face="宋体">*</font></div>
+            <div id="F_Department" isvalid="yes" checkexpession="NotNull"></div>
+        </div>        
+        <div class="col-xs-12 lr-form-item lr-form-item-grid">
+            <div id="LR_ERP_SalesOfferDetail"></div>
+        </div>
+        <div class="col-xs-12 lr-form-item" data-table="LR_ERP_SalesOffer">
+            <div class="lr-form-item-title">备注</div>
+            <textarea id="F_Description" class="form-control" style="height:100px;"></textarea>
+        </div>
+        <div class="col-xs-12 lr-form-item" data-table="LR_ERP_SalesOffer">
+            <div class="lr-form-item-title">附件上传</div>
+            <div id="F_File"></div>
+        </div>
+
+    </div>
+@Html.AppendJsFile("/Areas/ERPDemo/Views/SalesOffer/Form.js")

@@ -1,0 +1,42 @@
+/*20*/
+.f-page-header {
+	height: 64px;
+	padding-top: 20px;
+}
+
+
+
+.f-page-backbtn {
+	top: 20px;
+}
+.f-page {
+	padding-top: 64px;
+}
+.f-popright-title {
+    height: 60px;
+}
+.f-popright-content{
+	padding-top: 60px;
+}
+.f-popright-btn-left{
+	top: 20px;
+}
+.f-popright-btn.ok{
+	top: 20px;
+}
+
+
+/*首页*/
+.lr-workspace-header {
+    padding-top:26px!important;
+}
+.lr-workspace-header .scanner ,.lr-workspace-header .message,.lr-app-search-header span,.lr-contacts-search-header span{
+    top: 30px!important;
+}
+
+.lr-form-header-btnlist,.lr-form-header-cancel, .lr-form-header-submit{
+	top: 20px!important;
+}
+.lr-app-search-header,.lr-contacts-search-header{
+	padding-top: 26px!important;
+}

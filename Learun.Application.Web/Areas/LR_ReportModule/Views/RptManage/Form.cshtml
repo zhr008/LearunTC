@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "报表文件管理";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+<div class="lr-form-wrap" id="form">
+    <div class="col-xs-6 lr-form-item"  data-table="LR_RPT_FileInfo" >
+        <div class="lr-form-item-title">报表编码<font face="宋体">*</font></div>
+        <input id="F_Code" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+    </div>
+    <div class="col-xs-6 lr-form-item"  data-table="LR_RPT_FileInfo" >
+        <div class="lr-form-item-title">报表名称<font face="宋体">*</font></div>
+        <input id="F_Name" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+    </div>
+    <div class="col-xs-6 lr-form-item"  data-table="LR_RPT_FileInfo" >
+        <div class="lr-form-item-title">报表类型</div>
+        <div id="F_Type"  ></div>
+    </div>
+    <div class="col-xs-6 lr-form-item"  data-table="LR_RPT_FileInfo" >
+        <div class="lr-form-item-title">排序<font face="宋体">*</font></div>
+        <input id="F_SortCode" type="text" class="form-control" isvalid="yes" checkexpession="Num" />
+    </div>
+    <div class="col-xs-12 lr-form-item"  data-table="LR_RPT_FileInfo" >
+        <div class="lr-form-item-title">报表文件</div>
+        <div id="F_File"></div>
+    </div>
+    <div class="col-xs-12 lr-form-item"  data-table="LR_RPT_FileInfo" >
+        <div class="lr-form-item-title">备注</div>
+        <textarea id="F_Description" class="form-control" style="height:200px;"  ></textarea>
+    </div>
+</div>
+@Html.AppendJsFile("/Areas/LR_ReportModule/Views/RptManage/Form.js")

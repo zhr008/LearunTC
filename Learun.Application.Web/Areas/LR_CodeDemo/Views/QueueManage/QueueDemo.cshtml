@@ -1,0 +1,65 @@
+﻿@{
+    ViewBag.Title = "排队购票";
+    Layout = "~/Views/Shared/_Index.cshtml";
+}
+@Html.AppendCssFile("/Areas/LR_CodeDemo/Views/QueueManage/QueueDemo.css")
+<div class="lr-desktop-panel">
+    <div class="lr-desktop-panel-content">
+        <div class="lr-desktop-panel-left">
+            <div class="title">购票信息</div>
+            <div class="content" id="lr_target_content">
+                <div class="lr-form-wrap" id="form">
+                    <div class="col-xs-12 lr-form-item">
+                        <div class="lr-form-item-title">购票人1</div>
+                        <input id="F_Name1" type="text" class="form-control" value="川普" isvalid="yes" checkexpession="NotNull" />
+                    </div>
+                    <div class="col-xs-12 lr-form-item">
+                        <div class="lr-form-item-title">购票人2</div>
+                        <input id="F_Name2" type="text" class="form-control" value="渝普" isvalid="yes" checkexpession="NotNull" />
+                    </div>
+                    <div class="col-xs-12 lr-form-item">
+                        <div class="lr-form-item-title">购票人3</div>
+                        <input id="F_Name3" type="text" class="form-control" value="滇普" isvalid="yes" checkexpession="NotNull" />
+                    </div>
+                    <div class="col-xs-12 lr-form-item">
+                        <div class="lr-form-item-title">购票人4</div>
+                        <input id="F_Name4" type="text" class="form-control" value="贵普" isvalid="yes" checkexpession="NotNull" />
+                    </div>
+                    <div class="col-xs-12 lr-form-item">
+                        <div class="lr-form-item-title">购票人5</div>
+                        <input id="F_Name5" type="text" class="form-control" value="鄂普" isvalid="yes" checkexpession="NotNull" />
+                    </div>
+                    <div class="col-xs-12 lr-form-item">
+                        <div class="lr-form-item-title">购票人6</div>
+                        <input id="F_Name6" type="text" class="form-control" value="湘普" isvalid="yes" checkexpession="NotNull" />
+                    </div>
+                    <div class="col-xs-12 lr-form-item">
+                        <div class="lr-form-item-title">购票人7</div>
+                        <input id="F_Name7" type="text" class="form-control" value="赣普" isvalid="yes" checkexpession="NotNull" />
+                    </div>
+                    <div class="col-xs-12 lr-form-item">
+                        <div class="lr-form-item-title">购票人8</div>
+                        <input id="F_Name8" type="text" class="form-control" value="浙普" isvalid="yes" checkexpession="NotNull" />
+                    </div>
+                    <div class="col-xs-12" style="text-align:center;">
+                        <a class="btn btn-primary" id="lr_save_btn"><i class="fa fa-save"></i>&nbsp;提&nbsp;交&nbsp;购&nbsp;票&nbsp;信&nbsp;息</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="lr-desktop-panel-mid" id="lr_desktop_list">
+            <div class="title">排队列表</div>
+            <div class="content" id="lr_target_content">
+                <div class="lr-layout-body" id="queuetable"></div>
+            </div>
+        </div>
+        <div class="lr-desktop-panel-right" id="lr_desktop_chart">
+            <div class="title">出票结果</div>
+            <div class="content" id="lr_target_content">
+                <div class="lr-layout-body" id="tickettable"></div>
+            </div>
+        </div>
+    </div>
+</div>
+@Html.AppendJsFile("/Areas/LR_CodeDemo/Views/QueueManage/QueueDemo.js")

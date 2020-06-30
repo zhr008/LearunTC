@@ -1,0 +1,129 @@
+﻿
+@{
+    ViewBag.Title = "热门功能";
+    Layout = "~/Views/Shared/_Index.cshtml";
+}
+@Html.AppendCssFile("/Views/Home/DesktopIndex.css")
+<div class="body">
+    <div class="container" >
+        <div class="title" ><span class="lrlg">热门功能</span></div>
+        <div class="row">
+            <div class="col-md-4 col-sm-6 item">
+                <div class="content" id="arReport">
+                    <div class="text"><span class="lrlg">报表应用</span></div>
+                    <div class="imgdiv">
+                        <img class="img" src="~/Content/images/learunfn/门户网站.png" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 item">
+                <div class="content" id="code" >
+                    <div class="text"><span class="lrlg">代码生成器</span></div>
+                    <div class="imgdiv">
+                        <img class="img" src="~/Content/images/learunfn/代码生成器.png" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 item">
+                <div class="content" id="displayBoard">
+                    <div class="text"><span class="lrlg">BI大屏</span></div>
+                    <div class="imgdiv">
+                        <img class="img" src="~/Content/images/learunfn/BI大屏.png" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 item">
+                <div class="content" id="workflow">
+                    <div class="text"><span class="lrlg">流程设计</span></div>
+                    <div class="imgdiv">
+                        <img class="img" src="~/Content/images/learunfn/流程设计.png" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 item">
+                <div class="content" id="formDesign">
+                    <div class="text"><span class="lrlg">自定义表单</span></div>
+                    <div class="imgdiv">
+                        <img class="img" src="~/Content/images/learunfn/自定义表单.png" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 item">
+                <div class="content" id="gantt">
+                    <div class="text"><span class="lrlg">甘特图</span></div>
+                    <div class="imgdiv">
+                        <img class="img" src="~/Content/images/learunfn/甘特图.png" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="margin-top:40px;">
+            <div class="col-md-3 col-sm-6 item2">
+                <div class="content" id="taskScheduling" >
+                    <div class="imgdiv">
+                        <img class="img" src="~/Content/images/learunfn/任务调度.png" />
+                    </div>
+                    <div class="text"><span class="lrlg">任务调度</span></div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 item2">
+                <div class="content" id="desktopShow">
+                    <div class="imgdiv" style="background-color:#6898E4;">
+                        <img class="img" src="~/Content/images/learunfn/数据字典.png" />
+                    </div>
+                    <div class="text"><span class="lrlg">首页展示</span></div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 item2">
+                <div class="content" id="dataSource"> 
+                    <div class="imgdiv" style="background-color:#3EB0E1;">
+                        <img class="img" src="~/Content/images/learunfn/数据源.png" />
+                    </div>
+                    <div class="text"><span class="lrlg">数据源</span></div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 item2">
+                <div class="content" id="lg" >
+                    <div class="imgdiv" style="background-color:#48D4D7;">
+                        <img class="img" src="~/Content/images/learunfn/多语言.png" />
+                    </div>
+                    <div class="text"><span class="lrlg">多语言</span></div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 item2">
+                <div class="content" id="excel">
+                    <div class="imgdiv" style="background-color:#3089DC;">
+                        <img class="img" src="~/Content/images/learunfn/Excel配置.png" />
+                    </div>
+                    <div class="text"><span class="lrlg">Excel配置</span></div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 item2">
+                <div class="content" id="codeSchema">
+                    <div class="imgdiv" style="background-color:#E3474D;">
+                        <img class="img" src="~/Content/images/learunfn/消息配置.png" />
+                    </div>
+                    <div class="text"><span class="lrlg">代码模板</span></div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 item2">
+                <div class="content" id="desktop">
+                    <div class="imgdiv" style="background-color:#3089DC;">
+                        <img class="img" src="~/Content/images/learunfn/首页配置.png" />
+                    </div>
+                    <div class="text"><span class="lrlg">首页配置</span></div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 item2">
+                <div class="content" id="imgDemo">
+                    <div class="imgdiv" style="background-color:#985CE2;">
+                        <img class="img" src="~/Content/images/learunfn/单据编码.png" />
+                    </div>
+                    <div class="text"><span class="lrlg">图形示例</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@Html.AppendJsFile("/Views/Home/DesktopIndex.js")
+

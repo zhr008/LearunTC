@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "采购申请";
+    Layout = "~/Views/Shared/_Index.cshtml";
+}
+    <div class="lr-layout">
+        <div class="lr-layout-center">
+            <div class="lr-layout-wrap lr-layout-wrap-notitle">
+                <div class="lr-layout-tool">
+                    <div class="lr-layout-tool-right">
+                        <div class=" btn-group btn-group-sm">
+                            <a id="lr_refresh" class="btn btn-default"><i class="fa fa-refresh"></i></a>
+                        </div>
+                        <div class=" btn-group btn-group-sm">
+                            <a id="lr_update" class="btn btn-default"><i class="fa fa-exchange"></i>&nbsp;更新到此版本</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="lr-layout-body" id="gridtable"></div>
+            </div>
+        </div>
+    </div>
+@Html.AppendJsFile("/Areas/ERPDemo/Views/PurchaseOrder/HistoryForm.js")

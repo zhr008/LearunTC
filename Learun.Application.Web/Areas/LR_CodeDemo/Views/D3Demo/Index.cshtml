@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.Title = "数据可视化";
+    Layout = "~/Views/Shared/_ReportTemplate.cshtml";
+}
+
+
+<script src="~/Content/d3/d3.js"></script>
+
+@Html.AppendCssFile("/Areas/LR_CodeDemo/Views/D3Demo/index.css")
+
+<div class="lr-layout ui-report">
+    <div class="lr-layout-center">
+        <div class="lr-layout-wrap lr-layout-wrap-notitle">
+            <div class="lr-layout-tool">
+                <div class="lr-layout-tool-left">
+                    <div class="lr-layout-tool-item">
+                        数据展示
+                    </div>
+                </div>
+            </div>
+            <div class="lr-layout-grid" style="overflow:auto;">
+                <div style="overflow: hidden; padding-bottom: 20px; text-align: center; margin-left: auto; margin-right: auto;">
+                    <div id="bars" style="float: left; margin-right: 20px; width: 850px; height: 550px;border: 1px solid #ccc;">
+                    </div>
+                    <div id="force" style="float: left; margin-right: 20px; width: 850px; height: 550px;border: 1px solid #ccc;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@Html.AppendJsFile("/Areas/LR_CodeDemo/Views/D3Demo/index.js")

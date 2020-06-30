@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "选择发起流程模板";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+@Html.AppendCssFile("/Areas/LR_NewWorkFlow/Views/NWFProcess/ReleaseForm.css")
+<div class="form-warp">
+    <div class="top" >
+        <div class="col-xs-12 lr-form-item">
+            <div class="lr-form-item-title">流程发起人</div>
+            <div id="createUser" ></div>
+        </div>
+    </div>
+    <div class="lr-rblock" style="padding-left:200px;" >
+        <div class="form-warp-left">
+            <div id="lr_left_tree" class="lr-left-tree"></div>
+        </div>
+        <div class="form-warp-main">
+            <div class="input-search">
+                <input id="txt_keyword" type="text" class="form-control" placeholder="请输入要查询关键字">
+                <span class="input-query" title="Search"><i class="fa fa-search"></i></span>
+            </div>
+            <div class="main-list" id="main_list"></div>
+        </div>
+    </div>
+
+    
+</div>
+@Html.AppendJsFile("/Areas/LR_NewWorkFlow/Views/NWFProcess/ReleaseForm.js")
+

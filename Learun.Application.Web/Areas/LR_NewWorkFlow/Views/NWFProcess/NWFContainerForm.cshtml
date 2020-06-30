@@ -1,0 +1,93 @@
+﻿
+@{
+    ViewBag.Title = "流程容器";
+    Layout = "~/Views/Shared/_WorkFlowNewForm.cshtml";
+}
+@Html.AppendCssFile("/Areas/LR_NewWorkFlow/Views/NWFProcess/NWFContainerForm.css")
+    <div class="lr-layout-panel">
+        @*<div class="lr-layout-panel-btn" style="display:none;" >
+            <a id="eye" class="btn btn-warning">查看父流程</a>
+            <a id="print" class="btn btn-primary">打印表单</a>
+
+            <a id="confirm" class="btn btn-info">确认阅读</a>
+            <a id="sign" class="btn btn-info">加签</a>
+            <a id="savedraft" class="btn btn-default">保存草稿</a>
+            <a id="release" class="btn btn-success">创建流程</a>
+        </div>*@
+
+
+        <div class="lr-rblock" style="padding-top:40px;">
+            <div class="flow-btn" style="position:absolute;top:4px;right:5px;" >
+                <a id="print" class="btn btn-primary">打印表单</a>
+                <a id="eye" class="btn btn-default">查看父流程</a>
+            </div>
+            <ul class="nav nav-tabs lr-nav-tabs" id="tablist">
+                <li class="active"><a data-value="forminfo">表单信息</a></li>
+                <li><a data-value="workflowshcemeinfo">流程信息</a></li>
+                <li><a data-value="auditinfo">流转记录</a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content" id="tab_content">
+                <div class="tab-pane active noauditinfo" id="forminfo">
+                    <div class="form-list" id="form_list_iframes">
+                    </div>
+                    <div class="form-list-tabs" id="form_list_tabs_warp">
+                        <ul class="nav nav-tabs" id="form_list_tabs"></ul>
+                    </div>
+                </div>
+                <div class="tab-pane" id="workflowshcemeinfo" style="padding-bottom:40px;">
+                    <div id="flow"></div>
+                    <div style="position:absolute;left:0px;bottom:0;width:100%;height:40px;border-top:1px solid #ddd;line-height:39px;text-align:right;padding-right:10px;font-size:16px;">
+                        <div style="display: inline-block;margin-left: 10px;"><i style="padding-right:5px;color:#5bc0de;" class="fa fa-square"></i><span>正在处理</span></div>
+                        <div style="display: inline-block;margin-left: 10px;"><i style="padding-right:5px;color:#5cb85c;" class="fa fa-square"></i><span>已处理</span></div>
+                        <div style="display: inline-block;margin-left: 10px;"><i style="padding-right:5px;color:#999;" class="fa fa-square"></i><span>未处理</span></div>
+                    </div>
+                </div>
+                <div class="tab-pane" id="auditinfo" style="overflow-y: auto;"></div>
+            </div>
+        </div>
+        <div class="lr-layout-panel-right" style="padding-top:40px;">
+            <div style="position:absolute;height:40px;border-bottom: 1px solid #eee;width:100%;top:0;left:0;font-weight:bold;color:#666;line-height:39px;padding-left:10px;">
+                审批信息
+            </div>
+            <div class="lr-rblock" style="overflow:auto;padding:10px 10px 0 10px;">
+                <div class="col-xs-12 lr-form-item flow-item" style="padding:0;" id="flow-title">
+                    <div class="lr-form-item-title" style="position:relative;width:100%;text-align:left;">流程标题</div>
+                    <input id="F_Title" type="text" class="form-control" />
+                </div>
+                <div class="col-xs-12 lr-form-item flow-item" style="padding:0;" id="flow-level">
+                    <div class="lr-form-item-title" style="position:relative;width:100%;text-align:left;">重要等级</div>
+                    <div class="radio lr-radio" type="lr-radio" id="F_Level">
+                        <label>
+                            <input name="processLevel" type="radio" value="0" checked="checked" />
+                            普通
+                        </label>
+                        <label>
+                            <input name="processLevel" type="radio" value="1" />
+                            重要
+                        </label>
+                        <label>
+                            <input name="processLevel" type="radio" value="2" />
+                            紧急
+                        </label>
+                    </div>
+                </div>
+                <div class="col-xs-12 lr-form-item flow-item" style="padding:0;" id="flow-des">
+                    <div class="lr-form-item-title" style="position:relative;width:100%;text-align:left;">审批意见</div>
+                    <textarea id="des" class="form-control" style="height: 120px;"></textarea>
+                </div>
+
+                <div class="col-xs-12 flow-btn">
+                    <a id="release" class="btn btn-success">创建流程</a>
+                    <a id="savedraft" class="btn btn-default">保存草稿</a>
+                    <a id="sign" class="btn btn-info">加签</a>
+                    <a id="confirm" class="btn btn-info">确认阅读</a>
+                </div>
+
+                <div class="col-xs-12 tab-flow-audit">
+                </div><!-- 审批信息 -->
+            </div>
+        </div>
+    </div>
+@Html.AppendJsFile("/Areas/LR_NewWorkFlow/Views/NWFProcess/NWFContainerForm.js")
+

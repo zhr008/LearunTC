@@ -1,0 +1,83 @@
+﻿.show-content {
+    margin-top: 9px;
+    position:relative;
+}
+.lr-input-wdatepicker {
+    width:215px;
+}
+.ip_item {
+    position:relative;
+    float:left;
+    width:60px;
+    height:28px;
+    margin-right:5px;
+}
+.text_item {
+    position: relative;
+    float: left;
+    height: 28px;
+    line-height: 28px;
+    margin-right: 5px;
+}
+
+/* 明细频率设置*/
+.add-more {
+    moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    color: #4898d5;
+}
+
+    .add-more:hover {
+        color: #2e8ded;
+    }
+
+.frequency-item {
+    position:relative;
+    width: 100%;
+    height: 30px;
+    line-height: 29px;
+    border-bottom: 1px solid #ccc;
+    margin-top: 5px;
+}
+.frequency-item .text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+    .frequency-item .num {
+        font-style: normal;
+        margin: 0px 5px;
+    }
+.edit-del {
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: #2F94EE;
+}
+    .edit-del .btn-edit, .edit-del .btn-delete {
+        display: inline-block;
+        margin: 0px 5px;
+        color: #2F94EE;
+        cursor: pointer;
+    }
+
+.btn-select-express {
+    height: 28px;
+    line-height: 26px;
+    padding: 0px 5px;
+    display:block;
+    font-size: 12px;
+    color: #333333;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    cursor:pointer;
+    
+    position:absolute;
+    top:0;
+    right:0;
+}

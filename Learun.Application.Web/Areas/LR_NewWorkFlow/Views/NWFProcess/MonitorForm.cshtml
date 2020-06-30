@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "流程表单查看";
+    Layout = "~/Views/Shared/_WorkFlowNewForm.cshtml";
+}
+@Html.AppendCssFile("/Areas/LR_NewWorkFlow/Views/NWFProcess/MonitorForm.css")
+<div class="lr-layout-panel">
+    <div class="lr-layout-panel-btn">
+        <a id="print" class="btn btn-primary">打印表单</a>
+    </div>
+    <div class="tab-pane" id="forminfo" style="padding-bottom:40px;">
+        <div class="form-list" id="form_list_iframes">
+        </div>
+        <div class="form-list-tabs" id="form_list_tabs_warp">
+            <ul class="nav nav-tabs" id="form_list_tabs"></ul>
+        </div>
+    </div>
+</div>
+@Html.AppendJsFile("/Areas/LR_NewWorkFlow/Views/NWFProcess/MonitorForm.js")
+

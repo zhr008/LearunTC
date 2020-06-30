@@ -1,0 +1,33 @@
+[{
+  "title": "页面元素",
+  "color": "blue",
+  "url": "element",
+  "list": [
+    { "icon": "cascades", "url": "layout", "name": "布局" },
+    { "icon": "repair", "url": "support", "name": "辅助类" },
+    { "icon": "paint", "url": "background", "name": "背景/底色" },
+    { "icon": "wenzi", "url": "text", "name": "文本" },
+    { "icon": "discover", "url": "icon", "name": "图标" },
+    { "icon": "link", "url": "button", "name": "按钮" },
+    { "icon": "tag", "url": "tag", "name": "标签/角标" },
+    { "icon": "friendfamous", "url": "avatar", "name": "头像" },
+    { "icon": "countdown", "url": "progress", "name": "进度条" },
+    { "icon": "copy", "url": "shadow", "name": "边框/阴影" },
+    { "icon": "loading2", "url": "loading", "name": "加载中动画" }
+  ]
+}, {
+  "title": "用户交互",
+  "color": "orange",
+  "url": "component",
+  "list": [
+    { "icon": "form", "url": "form", "name": "表单" },
+    { "icon": "news", "url": "card", "name": "卡片" },
+    { "icon": "list", "url": "list", "name": "列表/宫格" },
+    { "icon": "squarecheck", "url": "modal", "name": "弹出框" },
+    { "icon": "ticket", "url": "bar", "name": "操作条" },
+    { "icon": "time", "url": "timeline", "name": "时间轴" },
+    { "icon": "roundcheck", "url": "step", "name": "步骤条" },
+    { "icon": "vipcard", "url": "nav", "name": "导航栏/页签" },
+    { "icon": "comment", "url": "chat", "name": "聊天消息" }
+  ]
+}]

@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "签字或盖章";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+<script src="~/Content/jquery/plugin/jSignature.min.js"></script>
+<div class="lr-rblock" style="padding-bottom:40px;">
+    <div  class="lr-rblock" style="padding:20px;">
+        <div id="signature" style="border: 2px dotted black;background-color: lightgrey;"></div>
+    </div>
+    <div style="position:absolute;top:30px;right:30px;width:120px;height:120px;display:none;" id="stamp" >
+        <img style="width:120px;height:120px;" src="" />
+    </div>
+
+    <div class="lr-form-bottom-button" id="wizard-actions">
+        <a id="btn_stamp" class="btn btn-default">盖章</a>
+        <a id="btn_reset" class="btn btn-danger">重置</a>
+        <a id="btn_finish" class="btn btn-success">确认</a>
+    </div>
+</div>
+@Html.AppendJsFile("/Areas/LR_NewWorkFlow/Views/NWFProcess/SignForm.js")
+

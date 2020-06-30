@@ -1,0 +1,50 @@
+﻿@{
+    ViewBag.Title = "PC端代码生成器";
+    Layout = "~/Views/Shared/_Index.cshtml";
+}
+@Html.AppendCssFile("/Areas/LR_CodeGeneratorModule/Views/TemplatePC/Index.css")
+<div class="lr-layout">
+    <div class="lr-layout-center">
+        <div class="lr-layout-wrap">
+            <div class="lr-cover-box">
+                <div class="lr-cover-img">
+                    <img src="~/Content/images/codeGenerator/singletable.png" />
+                </div>
+                <div class="lr-cover-info">
+                    <h4><span class="lrlg">单表开发模板（A）</span></h4>
+                    <small><span class="lrlg">单表开发功能。</span></small>
+                </div>
+                <div class="lr-cover-button">
+                    <a class="btn btn-default"><i class="fa fa-eye"></i>&nbsp;<span class="lrlg">效果</span></a>
+                    <a class="btn btn-default"><i class="fa fa-bug"></i>&nbsp;<span class="lrlg">开发</span></a>
+                </div>
+            </div>
+            <div class="lr-cover-box">
+                <div class="lr-cover-img">
+                    <img src="~/Content/images/codeGenerator/multitable.png" />
+                </div>
+                <div class="lr-cover-info">
+                    <h4><span class="lrlg">多表开发模板（B）</span></h4>
+                    <small><span class="lrlg">多表开发功能。</span></small>
+                </div>
+                <div class="lr-cover-button">
+                    <a class="btn btn-default"><i class="fa fa-eye"></i>&nbsp;<span class="lrlg">效果</span></a>
+                    <a class="btn btn-default"><i class="fa fa-bug"></i>&nbsp;<span class="lrlg">开发</span></a>
+                </div>
+            </div>
+            <div class="lr-cover-box">
+                <div class="lr-cover-img">
+                    <img src="~/Content/images/codeGenerator/serviceCode.png" />
+                </div>
+                <div class="lr-cover-info">
+                    <h4><span class="lrlg">自定义开发模板（C）</span></h4>
+                    <small><span class="lrlg">生成必要的类和页面</span></small>
+                </div>
+                <div class="lr-cover-button">
+                    <a class="btn btn-default"><i class="fa fa-bug"></i>&nbsp;<span class="lrlg">开发</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@Html.AppendJsFile("/Areas/LR_CodeGeneratorModule/Views/TemplatePC/Index.js")

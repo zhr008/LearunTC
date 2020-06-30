@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "Form";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+
+<div class="lr-form-wrap" id="form">
+    <div class="col-xs-6 lr-form-item">
+        <div class="lr-form-item-title">文件编号<font face="宋体">*</font></div>
+        <input id="F_Code" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" readonly />
+    </div>
+    <div class="col-xs-6 lr-form-item">
+        <div class="lr-form-item-title">文件版本号<font face="宋体">*</font></div>
+        <input id="F_Ver" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+    </div>
+    <div class="col-xs-12 lr-form-item">
+        <div class="lr-form-item-title">文件名称<font face="宋体">*</font></div>
+        <input id="F_Name" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+    </div>
+    <div class="col-xs-12 lr-form-item">
+        <div class="lr-form-item-title">所在文件夹<font face="宋体">*</font></div>
+        <div id="F_Folder" isvalid="yes" checkexpession="NotNull" ></div>
+    </div>
+    <div class="col-xs-12 lr-form-item">
+        <div class="lr-form-item-title">文件关键字</div>
+        <input id="F_KeyWord" type="text" class="form-control" />
+    </div>
+    <div class="col-xs-12 lr-form-item">
+        <div class="lr-form-item-title">原始文件<font face="宋体">*</font></div>
+        <div id="F_FileId"></div>
+    </div>
+    <div class="col-xs-12 lr-form-item">
+        <div class="lr-form-item-title">预览文件<font face="宋体">*</font></div>
+        <div id="F_PFiled"></div>
+    </div>
+</div>
+@Html.AppendJsFile("/Areas/LR_SystemModule/Views/Files/Form.js")

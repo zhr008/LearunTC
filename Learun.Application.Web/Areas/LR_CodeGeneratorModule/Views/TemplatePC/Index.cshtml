@@ -1,0 +1,127 @@
+﻿@{
+    ViewBag.Title = "PC端代码生成器";
+    Layout = "~/Views/Shared/_Index.cshtml";
+}
+@Html.AppendCssFile("/Areas/LR_CodeGeneratorModule/Views/TemplatePC/Index.css")
+<div class="lr-layout">
+    <div class="lr-layout-center">
+        <div class="lr-layout-wrap">
+            <div class="lr-cover-box">
+                <div class="lr-cover-img">
+                    <img class="lr-cover-img1" src="~/Content/images/codeGenerator/multitable0.png" />
+                    <img class="lr-cover-img2" src="~/Content/images/codeGenerator/multitable1.png" />
+
+                    <h4><span class="lrlg">自定义开发模板</span></h4>
+                </div>
+                <div class="lr-cover-info">
+                    <small><span class="lrlg">通过设置生成单表或多表的增删改查功能。</span></small>
+                </div>
+                <div class="lr-cover-button">
+                    <a class="btn btn-default" id="lr_custmerCode"><span class="lrlg">配置</span></a>
+                </div>
+            </div>
+            <div class="lr-cover-box">
+                <div class="lr-cover-img">
+                    <img class="lr-cover-img1" src="~/Content/images/codeGenerator/singletable0.png" />
+                    <img class="lr-cover-img2" src="~/Content/images/codeGenerator/singletable1.png" />
+
+                    <h4><span class="lrlg">快速开发模板</span></h4>
+                </div>
+                <div class="lr-cover-info">
+                    <small><span class="lrlg">快速生成必要的类和页面。</span></small>
+                </div>
+                <div class="lr-cover-button">
+                    <a class="btn btn-default" id="lr_fastCode"><span class="lrlg">配置</span></a>
+                </div>
+            </div>
+            <div class="lr-cover-box">
+                <div class="lr-cover-img">
+                    <img class="lr-cover-img1" src="~/Content/images/codeGenerator/serviceCode0.png" />
+                    <img class="lr-cover-img2" src="~/Content/images/codeGenerator/serviceCode1.png" />
+
+                    <h4><span class="lrlg">实体生成模板</span></h4>
+                </div>
+                <div class="lr-cover-info">
+                    <small><span class="lrlg">根据数据库快速生成实体类和映射类。</span></small>
+                </div>
+                <div class="lr-cover-button">
+                    <a class="btn btn-default" id="lr_entityCode"><span class="lrlg">配置</span></a>
+                </div>
+            </div>
+            <div class="lr-cover-box">
+                <div class="lr-cover-img">
+                    <img class="lr-cover-img1" src="~/Content/images/codeGenerator/workflow0.png" />
+                    <img class="lr-cover-img2" src="~/Content/images/codeGenerator/workflow1.png" />
+
+                    <h4><span class="lrlg">流程系统表单模板</span></h4>
+                </div>
+                <div class="lr-cover-info">
+                    <small><span class="lrlg">通过设置生成流程的系统表单。</span></small>
+                </div>
+                <div class="lr-cover-button">
+                    <a class="btn btn-default" id="lr_workflowCode"><span class="lrlg">配置</span></a>
+                </div>
+            </div>
+
+            <div class="lr-cover-box">
+                <div class="lr-cover-img">
+                    <img class="lr-cover-img1" src="~/Content/images/codeGenerator/edit0.png" />
+                    <img class="lr-cover-img2" src="~/Content/images/codeGenerator/edit1.png" />
+
+                    <h4><span class="lrlg">EXCEl风格模板</span></h4>
+                </div>
+                <div class="lr-cover-info">
+                    <small><span class="lrlg">通过设置生成编辑列表页。</span></small>
+                </div>
+                <div class="lr-cover-button">
+                    <a class="btn btn-default" id="lr_gridEditCode"><span class="lrlg">配置</span></a>
+                </div>
+            </div>
+
+            <div class="lr-cover-box">
+                <div class="lr-cover-img">
+                    <img class="lr-cover-img1" src="~/Content/images/codeGenerator/report0.png" />
+                    <img class="lr-cover-img2" src="~/Content/images/codeGenerator/report1.png" />
+
+                    <h4><span class="lrlg">报表模板</span></h4>
+                </div>
+                <div class="lr-cover-info">
+                    <small><span class="lrlg">通过设置生成报表显示页。</span></small>
+                </div>
+                <div class="lr-cover-button">
+                    <a class="btn btn-default" id="lr_reportCode"><span class="lrlg">配置</span></a>
+                </div>
+            </div>
+
+            <div class="lr-cover-box">
+                <div class="lr-cover-img">
+                    <img class="lr-cover-img1" src="~/Content/images/codeGenerator/multitable0.png" />
+                    <img class="lr-cover-img2" src="~/Content/images/codeGenerator/multitable1.png" />
+
+                    <h4><span class="lrlg">移动开发模板</span></h4>
+                </div>
+                <div class="lr-cover-info">
+                    <small><span class="lrlg">通过设置生成单表或多表的增删改查功能（移动端）。</span></small>
+                </div>
+                <div class="lr-cover-button">
+                    <a class="btn btn-default" id="lr_appCustmerCode"><span class="lrlg">配置</span></a>
+                </div>
+            </div>
+            <div class="lr-cover-box">
+                <div class="lr-cover-img">
+                    <img class="lr-cover-img1" src="~/Content/images/codeGenerator/multitable0.png" />
+                    <img class="lr-cover-img2" src="~/Content/images/codeGenerator/multitable1.png" />
+
+                    <h4><span class="lrlg">小程序开发模板</span></h4>
+                </div>
+                <div class="lr-cover-info">
+                    <small><span class="lrlg">通过设置生成单表或多表的增删改查功能（小程序端）。</span></small>
+                </div>
+                <div class="lr-cover-button">
+                    <a class="btn btn-default" id="lr_wxCustmerCode"><span class="lrlg">配置</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@Html.AppendJsFile("/Areas/LR_CodeGeneratorModule/Views/TemplatePC/Index.js")

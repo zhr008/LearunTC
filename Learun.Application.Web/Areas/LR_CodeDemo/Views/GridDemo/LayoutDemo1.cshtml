@@ -1,0 +1,138 @@
+﻿
+@{
+    ViewBag.Title = "LayoutDemo1";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+<style>
+    .lr-form-wrap.lr-scroll-wrap>.lr-scroll-box {
+        padding: 0 30px 0 0;
+    }
+    h5 {
+        padding-left: 8px;
+        margin-bottom: 4px;
+        font-weight:bold;
+    }
+    .lr-form-item {
+        padding: 5px 0 5px 72px;
+    }
+    .lr-form-item-title {
+        width: 72px;
+    }
+
+    .selectdiv {
+        position:relative;
+        float:left;
+        width:149px;
+        border-top:1px solid #ccc;
+        padding-left:5px;
+    }
+        .selectdiv:first-child {
+            border-right:1px solid #ccc;
+            margin-left: -5px;
+        }
+        .selectdiv:last-child {
+            margin-right: -5px;
+        }
+</style>
+
+    <div class="lr-layout">
+        <div class="lr-layout-center">
+            <div class="lr-layout-wrap lr-layout-wrap-notitle">
+                <div class="lr-layout-tool">
+                    <div class="lr-layout-tool-left">
+                        <div class="lr-layout-tool-item">
+                            <input id="txt_Keyword" type="text" class="form-control" placeholder="请输入要查询关键字" />
+                        </div>
+                        <div class="lr-layout-tool-item">
+                            <a id="btn_Search" class="btn btn-primary btn-sm"><i class="fa fa-search"></i>&nbsp;<span class="lrlg">查询</span></a>
+                        </div>
+                    </div>
+                    <div class="lr-layout-tool-right">
+                        <div class=" btn-group btn-group-sm">
+                            <a id="lr_refresh" class="btn btn-default"><i class="fa fa-refresh"></i></a>
+                        </div>
+                        <div class=" btn-group btn-group-sm" >
+                            <a id="lr_add" class="btn btn-default"><i class="fa fa-plus"></i>&nbsp;<span class="lrlg">增样</span></a>
+                            <a id="lr_edit" class="btn btn-default"><i class="fa fa-pencil-square-o"></i>&nbsp;<span class="lrlg">编辑</span></a>
+                            <a id="lr_delete" class="btn btn-default"><i class="fa fa-trash-o"></i>&nbsp;<span class="lrlg">删除</span></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lr-layout-body" style="padding-bottom:300px;" >
+                    <div class="lr-form-wrap" id="form">
+                        <h5>送检信息</h5>
+                        <div class="col-xs-3 lr-form-item">
+                            <div class="lr-form-item-title">委托单位</div>
+                            <div id="id1"></div>
+                        </div>
+                        <div class="col-xs-2 lr-form-item">
+                            <div class="lr-form-item-title">联系人</div>
+                            <input id="user1" type="text" class="form-control" />
+                        </div>
+                        <div class="col-xs-3 lr-form-item">
+                            <div class="lr-form-item-title">付款单位</div>
+                            <div id="F_DepartmentId"></div>
+                        </div>
+                        <div class="col-xs-2 lr-form-item">
+                            <div class="lr-form-item-title">联系人</div>
+                            <input id="user2" type="text" class="form-control" />
+                        </div>
+                        <div class="col-xs-2 lr-form-item">
+                            <div class="lr-form-item-title">采样日期</div>
+                            <input id="dateTime" type="text" class="form-control lr-input-wdatepicker" onfocus="WdatePicker()" />
+                        </div>
+
+                        <div class="col-xs-3 lr-form-item">
+                            <div class="lr-form-item-title">送检单位</div>
+                            <inpu type="text" class="form-control" />
+                        </div>
+                        <div class="col-xs-2 lr-form-item">
+                            <div class="lr-form-item-title">联系人</div>
+                            <input id="user1" type="text" class="form-control" />
+                        </div>
+                        <div class="col-xs-3 lr-form-item">
+                            <div class="lr-form-item-title">生成单位</div>
+                            <div id="F_DepartmentId2"></div>
+                        </div>
+                        <div class="col-xs-2 lr-form-item">
+                            <div class="lr-form-item-title">联系人</div>
+                            <input type="text" class="form-control" />
+                        </div>
+                        <div class="col-xs-2 lr-form-item">
+                            <div class="lr-form-item-title">地址</div>
+                            <input type="text" class="form-control" />
+                        </div>
+                        <h5>报告信息</h5>
+                        <div class="col-xs-3 lr-form-item">
+                            <div class="lr-form-item-title">报告送至</div>
+                            <div id="id2"></div>
+                        </div>
+                        <div class="col-xs-3 lr-form-item">
+                            <div class="lr-form-item-title">签约人</div>
+                            <div id="id3"></div>
+                        </div>
+                    </div>
+
+                    <div style="position:absolute;bottom:0;left:0;border-top:1px solid #ccc;height:300px;width:100%;">
+                        <div class="lr-form-tabs" id="lr_form_tabs">
+                            <ul class="nav nav-tabs">
+                                <li class="active"><a data-value="tab1"><span class="lrlg">样品明细</span></a></li>
+                                <li><a data-value="tab2"><span class="lrlg">检测数据</span></a></li>
+                            </ul>
+                        </div>
+                        <div class="lr-tab-content tab-content">
+                            <div id="tab1" class="tab-pane active" style="padding:4px;"  >
+                                <div id="ypgridtable" style="border:1px solid #ccc;" ></div>
+                            </div>
+                            <div id="tab2" class="tab-pane">
+                                检测数据
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+@Html.AppendJsFile("/Areas/LR_CodeDemo/Views/GridDemo/LayoutDemo1.js")

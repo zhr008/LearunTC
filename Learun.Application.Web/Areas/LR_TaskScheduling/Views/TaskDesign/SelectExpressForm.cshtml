@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "SelectExpressForm";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+@Html.AppendCssFile("/Areas/LR_TaskScheduling/Views/TaskDesign/SelectExpressForm.css")
+<div class="expression">
+    <ul id="F_CronExpression" class="express-list">
+        <li data-value="0 0 12 * * ?">每天12点运行</li>
+        <li data-value="0 15 10 * * ? *">每天10:15运行</li>
+        <li data-value="0 15 10 * * ? 2018">在2018年的每天10：15运行</li>
+        <li data-value="0 * 14 * * ?">每天14点到15点之间每分钟运行一次，开始于14:00，结束于14:59</li>
+        <li data-value="0 0/5 14 * * ?">每天14点到15点每5分钟运行一次，开始于14:00，结束于14:55</li>
+        <li data-value="0 0/5 14,18 * * ?">每天14点到15点每5分钟运行一次，此外每天18点到19点每5钟也运行一次</li>
+        <li data-value="0 0-5 14 * * ?">每天14:00点到14:05，每分钟运行一次</li>
+        <li data-value="0 10,44 14 ? 3 WED">3月每周三的14:10分到14:44，每分钟运行一次</li>
+        <li class="active" data-value="0 15 10 ? * MON-FRI">每周一，二，三，四，五的10:15分运行</li>
+        <li data-value="0 15 10 15 * ?">每月15日10:15分运行</li>
+        <li data-value="0 15 10 L * ?">每月最后一天10:15分运行</li>
+        <li data-value="0 15 10 ? * 6L">每月最后一个星期五10:15分运行</li>
+        <li data-value="0 15 10 ? * 6L 2017-2019">在2018,2019,2010年每个月的最后一个星期五的10:15分运行</li>
+        <li data-value="0 15 10 ? * 6#3">每月第三个星期五的10:15分运行</li>
+    </ul>
+</div>
+@Html.AppendJsFile("/Areas/LR_TaskScheduling/Views/TaskDesign/SelectExpressForm.js")

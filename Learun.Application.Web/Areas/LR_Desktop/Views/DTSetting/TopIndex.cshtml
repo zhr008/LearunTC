@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "PcIndex";
+    Layout = "~/Views/Shared/_Index.cshtml";
+}
+<script src="~/Content/echarts/echarts.min.js"></script>
+@Html.AppendCssFile("/Areas/LR_Desktop/Views/DTSetting/TopIndex.css")
+<div class="lr-desktop-panel">
+    <div class="lr-desktop-panel-left">
+        <div class="col-xs-12">
+            <div class="lr-target">
+                <div class="title">
+                    统计指标
+                    <div id="lr-add-target" style="cursor:pointer;position:absolute;right:0;top:0;height:100%;width:80px;font-size:14px;color:#0188D2;text-align:center;"><i class="fa fa-plus"></i>&nbsp;添加</div>
+                </div>
+                <div class="content">
+                    <div id="lr_target_content">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="lr-desktop-chart-list" id="lr_desktop_chart">
+            <div class="col-xs-12" id="lr-add-chart">
+                <div class="lr-black-addbtn "  style="margin-top:5px;margin-right:10px;">
+                    <i class="fa fa-plus"></i>添加图表
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="lr-desktop-panel-right">
+        <div class="lr-desktop-panel-right-content" id="lr_desktop_list">
+            <div class="lr-black-addbtn" id="lr-add-list" style="margin-right:20px;">
+                <i class="fa fa-plus"></i>添加消息列表
+            </div>
+
+        </div>
+    </div>
+</div>
+@Html.AppendJsFile("/Areas/LR_Desktop/Views/DTSetting/TopIndex.js")

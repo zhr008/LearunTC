@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "条件字段添加";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+<div class="lr-form-wrap" id="form">
+    <div class="col-xs-12 lr-form-item">
+        <div class="lr-form-item-title">数据库<font face="宋体">*</font></div>
+        <div id="dbId" isvalid="yes" checkexpession="NotNull"></div>
+    </div>
+    <div class="col-xs-12 lr-form-item">
+        <div class="lr-form-item-title">数据库表<font face="宋体">*</font></div>
+        <div id="table" isvalid="yes" checkexpession="NotNull"></div>
+    </div>
+    <div class="col-xs-12 lr-form-item">
+        <div class="lr-form-item-title">关联字段<font face="宋体">*</font></div>
+        <div id="field1" isvalid="yes" checkexpession="NotNull"></div>
+    </div>
+    <div class="col-xs-12 lr-form-item">
+        <div class="lr-form-item-title">比较字段<font face="宋体">*</font></div>
+        <div id="field2" isvalid="yes" checkexpession="NotNull"></div>
+    </div>
+    <div class="col-xs-12 lr-form-item">
+        <div class="lr-form-item-title">比较类型<font face="宋体">*</font></div>
+        <div id="compareType" isvalid="yes" checkexpession="NotNull"></div>
+    </div>
+    <div class="col-xs-12 lr-form-item">
+        <div class="lr-form-item-title">数据值<font face="宋体">*</font></div>
+        <input id="value" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+    </div>
+</div>
+@Html.AppendJsFile("/Areas/LR_NewWorkFlow/Views/NWFScheme/ConditionFieldForm.js")

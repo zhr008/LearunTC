@@ -1,0 +1,10 @@
+﻿.lr-form-item-title {
+    width: 130px;
+}
+
+.lr-form-item {
+    padding: 5px 0 5px 130px;
+}
+.lr-form-wrap.lr-scroll-wrap > .lr-scroll-box {
+    padding: 15px 30px 15px 0;
+}

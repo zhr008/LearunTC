@@ -1,0 +1,82 @@
+﻿@{
+    ViewBag.Title = "销售订单";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+    <div class="lr-form-wrap" id="form">
+        <div class="col-xs-3 lr-form-item" data-table="LR_ERP_SalesOrder">
+            <div class="lr-form-item-title">单据编号<font face="宋体">*</font></div>
+            <input id="F_PurchaseNo" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+        </div>
+        <div class="col-xs-3 lr-form-item" data-table="LR_ERP_SalesOrder">
+            <div class="lr-form-item-title">报价日期</div>
+            <input id="F_ApplyDate" type="text" class="form-control lr-input-wdatepicker" onfocus="WdatePicker({ dateFmt:'yyyy-MM-dd',onpicked: function () { $('#F_ApplyDate').trigger('change'); } })" isvalid="yes" checkexpession="NotNull" />
+        </div>
+        <div class="col-xs-3 lr-form-item" data-table="LR_ERP_SalesOrder">
+            <div class="lr-form-item-title">主题<font face="宋体">*</font></div>
+            <input id="F_Theme" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+        </div>
+        <div class="col-xs-3 lr-form-item" data-table="LR_ERP_SalesOrder">
+            <div class="lr-form-item-title">报价类别<font face="宋体">*</font></div>
+            <div id="F_PurchaseType" isvalid="yes" checkexpession="NotNull"></div>
+        </div>
+        <div class="col-xs-3 lr-form-item" data-table="LR_ERP_SalesOrder">
+            <div class="lr-form-item-title">报价人<font face="宋体">*</font></div>
+            <div id="F_Appler" isvalid="yes" checkexpession="NotNull"></div>
+        </div>
+        <div class="col-xs-3 lr-form-item" data-table="LR_ERP_SalesOrder">
+            <div class="lr-form-item-title">报价单位<font face="宋体">*</font></div>
+            <div id="F_Department" isvalid="yes" checkexpession="NotNull"></div>
+        </div>
+        <div class="col-xs-3 lr-form-item" data-table="LR_ERP_SalesOrder">
+            <div class="lr-form-item-title">支付方式<font face="宋体">*</font></div>
+            <div id="F_PaymentType" isvalid="yes" checkexpession="NotNull"></div>
+        </div>
+        <div class="col-xs-3 lr-form-item" data-table="LR_ERP_SalesOrder">
+            <div class="lr-form-item-title">总价<font face="宋体">*</font></div>
+            <input id="F_Total" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+        </div>
+        <div class="col-xs-3 lr-form-item" data-table="LR_ERP_SalesOrder">
+            <div class="lr-form-item-title">出库日期<font face="宋体">*</font></div>
+            <input id="F_DeliveryDate" type="text" class="form-control lr-input-wdatepicker" onfocus="WdatePicker({ dateFmt:'yyyy-MM-dd',onpicked: function () { $('#F_DeliveryDate').trigger('change'); } })" isvalid="yes" checkexpession="NotNull" />
+        </div>
+        <div class="col-xs-3 lr-form-item" data-table="LR_ERP_SalesOrder">
+            <div class="lr-form-item-title">点收人<font face="宋体">*</font></div>
+            <input id="F_PurchaseWarehousinger" class="form-control" isvalid="yes" checkexpession="NotNull" />
+        </div>
+        <div class="col-xs-3 lr-form-item" data-table="LR_ERP_SalesOrder">
+            <div class="lr-form-item-title">点收日期<font face="宋体">*</font></div>
+            <input id="F_PurchaseWarehousingDate" type="text" class="form-control lr-input-wdatepicker" onfocus="WdatePicker({ dateFmt:'yyyy-MM-dd',onpicked: function () { $('#F_PurchaseWarehousingDate').trigger('change'); } })" isvalid="yes" checkexpession="NotNull" />
+        </div>
+        <div class="col-xs-3 lr-form-item" data-table="LR_ERP_SalesOrder">
+            <div class="lr-form-item-title">对方代表</div>
+            <input id="F_Your" type="text" class="form-control" />
+        </div>
+        <div class="col-xs-12 lr-form-item lr-form-item-grid">
+            <div id="LR_ERP_SalesOrderDetail"></div>
+        </div>
+        <div class="col-xs-3 lr-form-item" data-table="LR_ERP_SalesOrder">
+            <div class="lr-form-item-title">订单号</div>
+            <input id="F_Order" type="text" class="form-control" />
+        </div>
+        <div class="col-xs-3 lr-form-item" data-table="LR_ERP_SalesOrder">
+            <div class="lr-form-item-title">收货地址</div>
+            <input id="F_ToAddress" type="text" class="form-control" />
+        </div>
+        <div class="col-xs-3 lr-form-item" data-table="LR_ERP_SalesOrder">
+            <div class="lr-form-item-title">发货地址</div>
+            <input id="F_FromAddress" type="text" class="form-control" />
+        </div>
+        <div class="col-xs-12 lr-form-item" data-table="LR_ERP_SalesOrder">
+            <div class="lr-form-item-title">备注</div>
+            <textarea id="F_Description" class="form-control" style="height:100px;"></textarea>
+        </div>
+        <div class="col-xs-12 lr-form-item" data-table="LR_ERP_SalesOrder">
+            <div class="lr-form-item-title">附件上传</div>
+            <div id="F_File"></div>
+        </div>
+
+        <div class="col-xs-12 lr-form-item" data-table="LR_ERP_SalesOrder">
+            <input id="F_SOId" type="hidden" class="form-control" />
+        </div>
+    </div>
+@Html.AppendJsFile("/Areas/ERPDemo/Views/SalesOrder/ReceiptForm.js")

@@ -1,0 +1,14 @@
+﻿.lr-layout-body>div {
+    display:none;
+}
+.lr-layout-body .active {
+    display:block;
+}
+.path-item {
+    cursor: pointer;
+}
+
+    .path-item:hover {
+        color: #3286ed;
+       
+    }

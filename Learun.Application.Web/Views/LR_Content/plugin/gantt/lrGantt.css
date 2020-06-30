@@ -1,0 +1,519 @@
+﻿.lr-gantt {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 36px 0;
+}
+
+    .lr-gantt.lr-gantt-nopage {
+        padding-bottom: 0px;
+    }
+
+        .lr-gantt.lr-gantt-nopage .lr-gantt-footer {
+            display: none;
+        }
+
+.lr-gantt-title {
+    position: absolute;
+    width: 100%;
+    height: 36px;
+    border-bottom: 1px solid #ccc;
+    left: 0;
+    top: 0;
+    padding-left: 15px;
+}
+
+.lr-gantt-title-text {
+    position: relative;
+    height: 35px;
+    line-height: 35px;
+    float: left;
+}
+
+.lr-gantt-title .btn-group {
+    margin-top: 3.5px;
+    margin-left: 5px;
+}
+
+.lr-gantt-title .btn-group-sm > .btn {
+    padding: 3px 10px;
+}
+
+.lr-gantt-title .btn-default:hover, .lr-gantt-title .btn-default.active {
+    color: #fff;
+    background-color: #3286ed;
+    border-color: transparent;
+}
+
+.lr-gantt-footer {
+    position: absolute;
+    width: 100%;
+    height: 36px;
+    border-top: 1px solid #ccc;
+    left: 0;
+    bottom: 0;
+}
+
+.lr-gantt-body {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding-left: 200px;
+}
+.lr-gantt-showtext-active .lr-gantt-body {
+    padding-right: 200px;
+}
+
+    .lr-gantt-left {
+        position: absolute;
+        width: 200px;
+        height: 100%;
+        border-right: 1px solid #ccc;
+        top: 0;
+        left: 0;
+        padding-top: 49px;
+    }
+
+.lr-gantt-left-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-top: 1px solid #ccc;
+}
+
+.lr-gantt-right {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding-top: 50px;
+    overflow: hidden;
+}
+
+.lr-gantt-rightheader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    height: 50px;
+}
+
+.lr-gantt-rightheader-months, .lr-gantt-rightheader-days {
+    position: relative;
+    height: 25px;
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+}
+
+.lr-gantt-rightheader-month {
+    position: relative;
+    height: 24px;
+    line-height: 24px;
+    border-right: 1px solid #ccc;
+    text-align: center;
+    float: left;
+    overflow: hidden;
+}
+
+.lr-gantt-rightheader-day {
+    position: relative;
+    height: 24px;
+    line-height: 24px;
+    width: 28px;
+    border-right: 1px solid #ccc;
+    text-align: center;
+    float: left;
+}
+    .lr-gantt-rightheader-day.lr-gantt-weekend {
+        color: #ff5d48;
+    }
+
+
+.lr-gantt-grid-row {
+    width: 100%;
+}
+    .lr-gantt-grid-row:nth-of-type(even) .lr-gantt-grid-row-cell {
+        background-color: #f5f5f5;
+    }
+
+
+    .lr-gantt-grid-row-cell {
+        height: 25px;
+        width: 28px;
+        border-right: 1px solid #f0f0f0;
+        border-bottom: 1px solid #f0f0f0;
+        float: left;
+    }
+
+
+
+.lr-gantt-blocks {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.lr-gantt-block-container {
+    position: relative;
+    width: 100%;
+    height: 25px;
+}
+
+.lr-gantt-block {
+    position: absolute;
+    top: 2px;
+    left: 0;
+    height: 20px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    cursor: pointer;
+}
+
+.lr-gantt-block-text {
+    position: relative;
+    width: 100%;
+    height: 18px;
+    line-height: 18px;
+    padding-left: 5px;
+    font-size: 12px;
+    color: #fff;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+
+.lr-gantt-block-icon {
+    position: absolute;
+    top: 0;
+    right: -18px;
+    height: 18px;
+    line-height:18px;
+    width: 18px;
+    text-align: center;
+    color: #ff5d48;
+    font-size:14px;
+    cursor:pointer;
+}
+.lr-gantt-showtext {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 100%;
+    border-left:1px solid #ccc;
+    display:none;
+}
+    .lr-gantt-showtext.active {
+        display: block;
+    }
+.lr-gantt-showtext-title-remove {
+    position: absolute;
+    top: 0;
+    right: 4px;
+    z-index: 1;
+    cursor: pointer;
+    color: #333;
+    font-size:16px;
+}
+.lr-gantt-showtext-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 6px 6px 0 6px;
+}
+.lr-gantt-showtext .title {
+    height: 28px;
+    line-height: 28px;
+}
+.lr-gantt-showtext .text, .lr-gantt-showtext .textarea {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    color: #000;
+    border-radius: 0;
+    box-shadow: none;
+    font-size: 9pt;
+    height: 28px;
+    padding-top: 0;
+    padding-bottom: 1px;
+    padding-right: 0;
+    padding-left: 5px;
+    resize: none;
+    border-radius: 2px;
+}
+.lr-gantt-showtext .textarea {
+    height:200px;
+}
+    /*翻页条*/
+    .lr-gantt-page-bar {
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        -khtml-user-select: none;
+        user-select: none;
+        position: relative;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 35px;
+        background-color: #fff;
+        border-radius: 0px 0px 3px 3px;
+        z-index: 5;
+    }
+
+.lr-gantt-page-bar-info {
+    position: absolute;
+    top: 0;
+    left: 10px;
+    font-size: 12px;
+    height: 100%;
+    line-height: 34px;
+    color: #475059;
+}
+
+    .lr-gantt-page-bar-info > span {
+        position: relative;
+        top: -1px;
+        color: #475059;
+    }
+
+.lr-gantt-page-bar .paginations {
+    margin: 0px;
+    position: absolute;
+    right: 4px;
+    top: 4px;
+    height: 26px;
+    line-height: 26px;
+}
+
+.lr-gantt-page-bar .pagination input {
+    display: block;
+    top: 0;
+    left: 0;
+    height: 26px;
+    margin: 0;
+    top: 0;
+    border-radius: 4px;
+    width: 45px;
+    line-height: 1.5;
+    position: relative;
+    float: left;
+    text-align: center;
+}
+
+.lr-gantt-page-bar .pagination {
+    margin: 0px;
+}
+
+    .lr-gantt-page-bar .pagination > li > a, .pagination > li > span {
+        color: #475059;
+    }
+
+.lr-gantt-page-bar .pagination-sm > li > a {
+    padding: 3px 8px;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.lr-gantt-page-bar .pagination > li > span {
+    padding: 3px 0px;
+    font-size: 12px;
+    line-height: 1.5;
+    border: 0px;
+}
+
+.pagination > li > a.active,
+.pagination > li > a:focus {
+    color: #ffffff;
+    background-color: #3498DB;
+    border-color: #3498DB;
+}
+
+.pagination > li > span.active,
+.pagination > li > span:focus {
+    color: #475059;
+}
+
+.pagination > li > span:hover {
+    background-color: #fff;
+    color: #475059;
+}
+
+/*没数据的情况下显示图片*/
+.lr-gantt-nodata-img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 180px;
+    width: 380px;
+    margin: -90px 0px 0px -190px;
+    z-index: 1;
+    display: none;
+}
+
+
+/*调动左侧框大小的滑块*/
+.lr-gantt-move {
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    right: -4px;
+    width: 8px;
+    height: 100%;
+    cursor: col-resize;
+}
+
+/*左侧树形数据*/
+.lr-gantt-left ul,
+.lr-gantt-left li {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+.lr-gantt-tree-icon,
+.lr-gantt-tree-ec-icon,
+.lr-gantt-tree-node-cb,
+.lr-gantt-tree-node-icon {
+    border: 0 none;
+    height: 18px;
+    margin: 0;
+    padding: 0;
+    margin-top: 3px;
+    vertical-align: top;
+    width: 16px;
+    background-repeat: no-repeat;
+}
+
+.lr-gantt-tree-node-cb {
+    height: 16px;
+    padding: 2px;
+    margin-top: 4.5px;
+    margin-right: 5px;
+}
+
+ul.lr-gantt-tree-node-ct {
+    line-height: 0;
+    zoom: 1;
+}
+
+.lr-gantt-tree-node-expanded > .lr-gantt-tree-ec-icon {
+    background-image: url(/Content/images/learuntree/arrows.gif) !important;
+    background: transparent no-repeat -16px 0;
+}
+
+    .lr-gantt-tree-node-expanded > .lr-gantt-tree-ec-icon:hover {
+        background: transparent no-repeat -48px 0;
+    }
+
+.lr-gantt-tree-node-collapsed > .lr-gantt-tree-ec-icon {
+    background-image: url(/Content/images/learuntree/arrows.gif) !important;
+    background: transparent no-repeat 0px 0;
+}
+
+    .lr-gantt-tree-node-collapsed > .lr-gantt-tree-ec-icon:hover {
+        background: transparent no-repeat -32px 0;
+    }
+
+.lr-gantt-tree-node {
+    white-space: nowrap;
+    color: #000;
+}
+
+.lr-gantt-tree-node {
+    color: #000;
+}
+
+    .lr-gantt-tree-node i {
+        font-size: 13px;
+        width: 13px;
+        color: #666666;
+    }
+
+    .lr-gantt-tree-node a {
+        text-decoration: none;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        -khtml-user-select: none;
+        user-select: none;
+        -kthml-user-focus: normal;
+        -moz-user-focus: normal;
+        -moz-outline: 0 none;
+        outline: 0 none;
+    }
+
+        .lr-gantt-tree-node a span {
+            text-decoration: none;
+            padding: 1px 3px 1px 2px;
+        }
+
+        .lr-gantt-tree-node a:hover {
+            text-decoration: none;
+        }
+
+    .lr-gantt-tree-node .lr-gantt-tree-selected {
+        background-color: #2F94EE !important;
+        color: #fff;
+    }
+
+        .lr-gantt-tree-node .lr-gantt-tree-selected a span {
+            color: #fff;
+        }
+
+        .lr-gantt-tree-node .lr-gantt-tree-selected i {
+            color: #fff;
+        }
+
+.lr-gantt-tree-node-el {
+    position: relative;
+    line-height: 24px;
+    cursor: default;
+    cursor: pointer;
+    border-bottom: 1px solid #f0f0f0;
+    background-color: #fff;
+}
+
+.lr-gantt-tree-node:nth-of-type(even) > .lr-gantt-tree-node-el {
+    background-color: #f5f5f5;
+}
+.lr-gantt-tree-node:nth-of-type(odd) > .lr-gantt-tree-node-ct > .lr-gantt-tree-node:nth-of-type(odd) > .lr-gantt-tree-node-el {
+    background-color: #f5f5f5;
+}
+.lr-gantt-tree-node:nth-of-type(odd) > .lr-gantt-tree-node-ct > .lr-gantt-tree-node:nth-of-type(even) > .lr-gantt-tree-node-el {
+    background-color: #fff;
+}
+
+    .lr-gantt-tree-node-el:hover {
+        background-color: #eee;
+    }
+
+.lr-gantt-tree-loading {
+    position: absolute;
+    top: 3px;
+    right: 5px;
+    display: none;
+}
+
+    .lr-gantt-tree-loading > img {
+        height: 14px;
+        width: 14px;
+    }
+

@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "消息策略";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+<div class="lr-form-wrap" id="form">
+    <div class="col-xs-12 lr-form-item">
+        <div class="lr-form-item-title">策略名称<font face="宋体">*</font></div>
+        <input id="F_StrategyName" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+    </div>
+    <div class="col-xs-12 lr-form-item">
+        <div class="lr-form-item-title">策略编码<font face="宋体">*</font></div>
+        <input id="F_StrategyCode" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+    </div>
+    <div class="col-xs-12 lr-form-item">
+        <div class="lr-form-item-title">发送角色</div>
+        <div id="F_SendRole" type="text" ></div>
+    </div>
+    <div class="col-xs-12 lr-form-item">
+        <div class="lr-form-item-title">消息类型<font face="宋体">*</font></div>
+        <div id="F_MessageType" isvalid="yes" checkexpession="NotNull" ></div>
+    </div>
+    <div class="col-xs-12 lr-form-item">
+        <div class="lr-form-item-title">备注</div>
+        <textarea id="F_Description" type="text" class="form-control"  style="height:100px;" ></textarea>
+    </div>
+</div>
+@Html.AppendJsFile("/Areas/LR_Message/Views/LR_StrategyInfo/Form.js")

@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "PcIndex";
+    Layout = "~/Views/Shared/_Index.cshtml";
+}
+<script src="~/Content/echarts/echarts.min.js"></script>
+@Html.AppendCssFile("/Areas/LR_Desktop/Views/DTSetting/WindowsIndex.css")
+<div class="lr-desktop-panel">
+    <div class="lr-desktop-panel-content">
+        <div class="lr-desktop-panel-left">
+            <div class="title">统计指标</div>
+            <div class="content" id="lr_target_content">
+                <div class="lr-black-addbtn" id="lr-add-target">
+                    <i class="fa fa-plus"></i>添加统计指标
+                </div>
+            </div>
+        </div>
+        <div class="lr-desktop-panel-mid" id="lr_desktop_list">
+            <div class="lr-black-addbtn" id="lr-add-list" style="margin-left:20px;margin-right:20px;">
+                <i class="fa fa-plus"></i>添加消息列表
+            </div>
+        </div>
+        <div class="lr-desktop-panel-right" id="lr_desktop_chart">
+            <div class="lr-black-addbtn" id="lr-add-chart" style="margin-left:20px;margin-right:20px;">
+                <i class="fa fa-plus"></i>添加图表
+            </div>
+        </div>
+    </div>
+</div>
+@Html.AppendJsFile("/Areas/LR_Desktop/Views/DTSetting/WindowsIndex.js")
+

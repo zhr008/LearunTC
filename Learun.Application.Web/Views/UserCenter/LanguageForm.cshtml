@@ -1,0 +1,13 @@
+﻿@{
+    ViewBag.Title = "个人中心-语言设置";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+@Html.AppendCssFile("/Views/UserCenter/LanguageForm.css")
+<div class="lr-form-wrap" id="form">
+    <div class="lr-form-item">
+        <div class="lr-form-item-title">客户端语言</div>
+        <div id="Setting"></div>
+    </div>
+    <div class="lr-form-item"><a class="btn btn-primary" id="lr_save_btn"><i class="fa fa-save"></i>&nbsp;保&nbsp;存</a></div>
+</div>
+@Html.AppendJsFile("/Views/UserCenter/LanguageForm.js")

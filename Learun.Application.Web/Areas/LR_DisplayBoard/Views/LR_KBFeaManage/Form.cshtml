@@ -1,0 +1,38 @@
+﻿@{
+    ViewBag.Title = "看板发布";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+<div class="lr-form-wrap" id="form">
+    <input id="F_ModuleId" type="hidden" />
+    <div class="col-xs-6 lr-form-item">
+        <div class="lr-form-item-title">功能编号<font face="宋体">*</font></div>
+        <input id="F_EnCode" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+    </div>
+    <div class="col-xs-6 lr-form-item">
+        <div class="lr-form-item-title">功能名称<font face="宋体">*</font></div>
+        <input id="F_FullName" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+    </div>
+    <div class="col-xs-6 lr-form-item">
+        <div class="lr-form-item-title">上级功能<font face="宋体">*</font></div>
+        <div id="F_ParentId"></div>
+    </div>
+    <div class="col-xs-6 lr-form-item">
+        <div class="lr-form-item-title">序号<font face="宋体">*</font></div>
+        <input id="F_SortCode" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+    </div>
+    <div class="col-xs-12 lr-form-item">
+        <div class="lr-form-item-title">功能图标<font face="宋体">*</font></div>
+        <input id="F_Icon" type="text" class="form-control" placeholder="请选择图标" />
+        <span id="selectIcon" class="lr-input-button" title="选取图标">...</span>
+    </div>
+    <div class="col-xs-12 lr-form-item lr-form-btnitem">
+        <div class="lr-form-item-title">看板选择<font face="宋体">*</font></div>
+        <div id="F_KanBanId" isvalid="yes" checkexpession="NotNull"></div>
+        <a id="lr_preview" class="btn btn-default lr-form-item-btn">预览看板</a>
+    </div>
+    <div class="col-xs-12 lr-form-item">
+        <div class="lr-form-item-title">功能描述</div>
+        <textarea id="F_Description" type="text" class="form-control" style="height:235px;"></textarea>
+    </div>
+</div>
+@Html.AppendJsFile("/Areas/LR_DisplayBoard/Views/LR_KBFeaManage/Form.js")

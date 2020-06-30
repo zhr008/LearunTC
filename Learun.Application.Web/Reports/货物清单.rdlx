@@ -1,0 +1,1930 @@
+﻿<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition">
+	<dd:Name xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">货物清单.rdlx</dd:Name>
+	<Body>
+		<Height>27.5cm</Height>
+		<ReportItems>
+			<FixedPage Name="FixedPage1">
+				<Pages>
+					<Page>
+						<ReportItems>
+							<Textbox Name="TextBox17">
+								<CanGrow>true</CanGrow>
+								<DataElementName>TextBox1</DataElementName>
+								<Height>2.4cm</Height>
+								<Value />
+								<Style>
+									<BackgroundColor>#503b75</BackgroundColor>
+									<PaddingBottom>2pt</PaddingBottom>
+									<PaddingLeft>2pt</PaddingLeft>
+									<PaddingRight>2pt</PaddingRight>
+									<PaddingTop>2pt</PaddingTop>
+									<dd:ShrinkToFit xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">True</dd:ShrinkToFit>
+								</Style>
+								<Width>20cm</Width>
+								<dd:LayerName xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">背景层</dd:LayerName>
+							</Textbox>
+							<Table Name="Table1">
+								<DataSetName>DataSet1</DataSetName>
+								<Header>
+									<RepeatOnNewPage>true</RepeatOnNewPage>
+									<TableRows>
+										<TableRow>
+											<Height>1.514285cm</Height>
+											<TableCells>
+												<TableCell>
+													<ColSpan>9</ColSpan>
+													<ReportItems>
+														<Textbox Name="TextBox1">
+															<DataElementName>TextBox2</DataElementName>
+															<Value> 销 售 货 物 或 者 提 供 应 税 劳 务 清 单</Value>
+															<Style>
+																<BackgroundColor>SkyBlue</BackgroundColor>
+																<FontFamily>微软雅黑</FontFamily>
+																<FontSize>18pt</FontSize>
+																<FontStyle>Normal</FontStyle>
+																<FontWeight>700</FontWeight>
+																<PaddingBottom>2pt</PaddingBottom>
+																<PaddingLeft>2pt</PaddingLeft>
+																<PaddingRight>2pt</PaddingRight>
+																<PaddingTop>2pt</PaddingTop>
+																<TextAlign>Center</TextAlign>
+																<VerticalAlign>Middle</VerticalAlign>
+																<BorderColor>
+																	<Default>Gainsboro</Default>
+																</BorderColor>
+																<BorderStyle>
+																	<Default>Solid</Default>
+																</BorderStyle>
+															</Style>
+															<dd:LayerName xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">背景层</dd:LayerName>
+														</Textbox>
+													</ReportItems>
+												</TableCell>
+											</TableCells>
+										</TableRow>
+										<TableRow>
+											<Height>0.757143cm</Height>
+											<TableCells>
+												<TableCell>
+													<ColSpan>2</ColSpan>
+													<ReportItems>
+														<Textbox Name="TextBox10">
+															<Value>购买方名称:</Value>
+															<Style>
+																<BackgroundColor>#a0e8f7</BackgroundColor>
+																<FontFamily>微软雅黑</FontFamily>
+																<FontSize>10pt</FontSize>
+																<FontStyle>Normal</FontStyle>
+																<FontWeight>700</FontWeight>
+																<PaddingBottom>2pt</PaddingBottom>
+																<PaddingLeft>2pt</PaddingLeft>
+																<PaddingRight>2pt</PaddingRight>
+																<PaddingTop>2pt</PaddingTop>
+																<TextAlign>Center</TextAlign>
+																<VerticalAlign>Middle</VerticalAlign>
+																<BorderColor>
+																	<Default>Gainsboro</Default>
+																</BorderColor>
+																<BorderStyle>
+																	<Default>Solid</Default>
+																</BorderStyle>
+															</Style>
+															<dd:LayerName xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">背景层</dd:LayerName>
+														</Textbox>
+													</ReportItems>
+												</TableCell>
+												<TableCell>
+													<ColSpan>7</ColSpan>
+													<ReportItems>
+														<Textbox Name="TextBox11">
+															<Value>南关区东昇医药超市</Value>
+															<Style>
+																<BackgroundColor>#c0e5f9</BackgroundColor>
+																<FontFamily>微软雅黑</FontFamily>
+																<FontSize>10pt</FontSize>
+																<FontStyle>Normal</FontStyle>
+																<FontWeight>400</FontWeight>
+																<PaddingBottom>2pt</PaddingBottom>
+																<PaddingLeft>2pt</PaddingLeft>
+																<PaddingRight>2pt</PaddingRight>
+																<PaddingTop>2pt</PaddingTop>
+																<TextAlign>Left</TextAlign>
+																<VerticalAlign>Middle</VerticalAlign>
+																<BorderColor>
+																	<Default>Gainsboro</Default>
+																</BorderColor>
+																<BorderStyle>
+																	<Default>Solid</Default>
+																</BorderStyle>
+															</Style>
+															<dd:LayerName xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">背景层</dd:LayerName>
+														</Textbox>
+													</ReportItems>
+												</TableCell>
+											</TableCells>
+										</TableRow>
+										<TableRow>
+											<Height>0.757143cm</Height>
+											<TableCells>
+												<TableCell>
+													<ColSpan>2</ColSpan>
+													<ReportItems>
+														<Textbox Name="TextBox13">
+															<Value>销售方名称：</Value>
+															<Style>
+																<BackgroundColor>#aed8f2</BackgroundColor>
+																<FontFamily>微软雅黑</FontFamily>
+																<FontSize>10pt</FontSize>
+																<FontStyle>Normal</FontStyle>
+																<FontWeight>700</FontWeight>
+																<PaddingBottom>2pt</PaddingBottom>
+																<PaddingLeft>2pt</PaddingLeft>
+																<PaddingRight>2pt</PaddingRight>
+																<PaddingTop>2pt</PaddingTop>
+																<TextAlign>Center</TextAlign>
+																<VerticalAlign>Middle</VerticalAlign>
+																<BorderColor>
+																	<Default>Gainsboro</Default>
+																</BorderColor>
+																<BorderStyle>
+																	<Default>Solid</Default>
+																</BorderStyle>
+															</Style>
+															<dd:LayerName xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">背景层</dd:LayerName>
+														</Textbox>
+													</ReportItems>
+												</TableCell>
+												<TableCell>
+													<ColSpan>7</ColSpan>
+													<ReportItems>
+														<Textbox Name="TextBox15">
+															<Value>吉林新海发医药药材有限责任公司</Value>
+															<Style>
+																<BackgroundColor>#c0e5f9</BackgroundColor>
+																<FontFamily>微软雅黑</FontFamily>
+																<FontSize>10pt</FontSize>
+																<FontStyle>Normal</FontStyle>
+																<FontWeight>400</FontWeight>
+																<PaddingBottom>2pt</PaddingBottom>
+																<PaddingLeft>2pt</PaddingLeft>
+																<PaddingRight>2pt</PaddingRight>
+																<PaddingTop>2pt</PaddingTop>
+																<TextAlign>Left</TextAlign>
+																<VerticalAlign>Middle</VerticalAlign>
+																<BorderColor>
+																	<Default>Gainsboro</Default>
+																</BorderColor>
+																<BorderStyle>
+																	<Default>Solid</Default>
+																</BorderStyle>
+															</Style>
+															<dd:LayerName xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">背景层</dd:LayerName>
+														</Textbox>
+													</ReportItems>
+												</TableCell>
+											</TableCells>
+										</TableRow>
+										<TableRow>
+											<Height>0.757143cm</Height>
+											<TableCells>
+												<TableCell>
+													<ColSpan>2</ColSpan>
+													<ReportItems>
+														<Textbox Name="TextBox16">
+															<Value>所属增值税普通发票代码：</Value>
+															<Style>
+																<BackgroundColor>#a0e8f7</BackgroundColor>
+																<FontFamily>微软雅黑</FontFamily>
+																<FontSize>10pt</FontSize>
+																<FontStyle>Normal</FontStyle>
+																<FontWeight>700</FontWeight>
+																<PaddingBottom>2pt</PaddingBottom>
+																<PaddingLeft>2pt</PaddingLeft>
+																<PaddingRight>2pt</PaddingRight>
+																<PaddingTop>2pt</PaddingTop>
+																<TextAlign>Center</TextAlign>
+																<VerticalAlign>Middle</VerticalAlign>
+																<BorderColor>
+																	<Default>Gainsboro</Default>
+																</BorderColor>
+																<BorderStyle>
+																	<Default>Solid</Default>
+																</BorderStyle>
+															</Style>
+															<dd:LayerName xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">背景层</dd:LayerName>
+														</Textbox>
+													</ReportItems>
+												</TableCell>
+												<TableCell>
+													<ColSpan>2</ColSpan>
+													<ReportItems>
+														<Textbox Name="TextBox18">
+															<Value>2200164320</Value>
+															<Style>
+																<BackgroundColor>#ebefc9</BackgroundColor>
+																<FontFamily>微软雅黑</FontFamily>
+																<FontSize>10pt</FontSize>
+																<FontStyle>Normal</FontStyle>
+																<FontWeight>400</FontWeight>
+																<PaddingBottom>2pt</PaddingBottom>
+																<PaddingLeft>2pt</PaddingLeft>
+																<PaddingRight>2pt</PaddingRight>
+																<PaddingTop>2pt</PaddingTop>
+																<TextAlign>Left</TextAlign>
+																<VerticalAlign>Middle</VerticalAlign>
+																<BorderColor>
+																	<Default>Gainsboro</Default>
+																</BorderColor>
+																<BorderStyle>
+																	<Default>Solid</Default>
+																</BorderStyle>
+															</Style>
+															<dd:LayerName xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">背景层</dd:LayerName>
+														</Textbox>
+													</ReportItems>
+												</TableCell>
+												<TableCell>
+													<ReportItems>
+														<Textbox Name="TextBox3">
+															<Value>号码：</Value>
+															<Style>
+																<BackgroundColor>#aed8f2</BackgroundColor>
+																<FontFamily>微软雅黑</FontFamily>
+																<FontSize>10pt</FontSize>
+																<FontStyle>Normal</FontStyle>
+																<FontWeight>400</FontWeight>
+																<PaddingBottom>2pt</PaddingBottom>
+																<PaddingLeft>2pt</PaddingLeft>
+																<PaddingRight>2pt</PaddingRight>
+																<PaddingTop>2pt</PaddingTop>
+																<TextAlign>Right</TextAlign>
+																<VerticalAlign>Middle</VerticalAlign>
+																<BorderColor>
+																	<Default>Gainsboro</Default>
+																</BorderColor>
+																<BorderStyle>
+																	<Default>Solid</Default>
+																</BorderStyle>
+															</Style>
+															<dd:LayerName xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">背景层</dd:LayerName>
+														</Textbox>
+													</ReportItems>
+												</TableCell>
+												<TableCell>
+													<ColSpan>2</ColSpan>
+													<ReportItems>
+														<Textbox Name="TextBox12">
+															<Value>05382917</Value>
+															<Style>
+																<BackgroundColor>#ebefc9</BackgroundColor>
+																<FontFamily>微软雅黑</FontFamily>
+																<FontSize>10pt</FontSize>
+																<FontStyle>Normal</FontStyle>
+																<FontWeight>400</FontWeight>
+																<PaddingBottom>2pt</PaddingBottom>
+																<PaddingLeft>2pt</PaddingLeft>
+																<PaddingRight>2pt</PaddingRight>
+																<PaddingTop>2pt</PaddingTop>
+																<TextAlign>Left</TextAlign>
+																<VerticalAlign>Middle</VerticalAlign>
+																<BorderColor>
+																	<Default>Gainsboro</Default>
+																</BorderColor>
+																<BorderStyle>
+																	<Default>Solid</Default>
+																</BorderStyle>
+															</Style>
+															<dd:LayerName xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">背景层</dd:LayerName>
+														</Textbox>
+													</ReportItems>
+												</TableCell>
+												<TableCell>
+													<ColSpan>2</ColSpan>
+													<ReportItems>
+														<Textbox Name="TextBox53">
+															<Value>="第 " &amp; Globals!PageNumber &amp; " 页、共 " &amp; Globals!TotalPages &amp; " 页"</Value>
+															<Style>
+																<BackgroundColor>#a0e8f7</BackgroundColor>
+																<FontFamily>微软雅黑</FontFamily>
+																<FontSize>10pt</FontSize>
+																<FontStyle>Normal</FontStyle>
+																<FontWeight>400</FontWeight>
+																<PaddingBottom>2pt</PaddingBottom>
+																<PaddingLeft>2pt</PaddingLeft>
+																<PaddingRight>2pt</PaddingRight>
+																<PaddingTop>2pt</PaddingTop>
+																<TextAlign>Center</TextAlign>
+																<VerticalAlign>Middle</VerticalAlign>
+																<BorderColor>
+																	<Default>Gainsboro</Default>
+																</BorderColor>
+																<BorderStyle>
+																	<Default>Solid</Default>
+																</BorderStyle>
+															</Style>
+															<dd:LayerName xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">背景层</dd:LayerName>
+														</Textbox>
+													</ReportItems>
+												</TableCell>
+											</TableCells>
+										</TableRow>
+										<TableRow>
+											<Height>0.757143cm</Height>
+											<TableCells>
+												<TableCell>
+													<ReportItems>
+														<Textbox Name="TextBox19">
+															<Value>序号</Value>
+															<Style>
+																<BackgroundColor>#9ccbff</BackgroundColor>
+																<FontFamily>微软雅黑</FontFamily>
+																<FontSize>10pt</FontSize>
+																<FontStyle>Normal</FontStyle>
+																<FontWeight>700</FontWeight>
+																<PaddingBottom>2pt</PaddingBottom>
+																<PaddingLeft>2pt</PaddingLeft>
+																<PaddingRight>2pt</PaddingRight>
+																<PaddingTop>2pt</PaddingTop>
+																<TextAlign>Center</TextAlign>
+																<VerticalAlign>Middle</VerticalAlign>
+																<BorderColor>
+																	<Default>Gainsboro</Default>
+																</BorderColor>
+																<BorderStyle>
+																	<Default>Solid</Default>
+																</BorderStyle>
+															</Style>
+															<dd:LayerName xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">背景层</dd:LayerName>
+														</Textbox>
+													</ReportItems>
+												</TableCell>
+												<TableCell>
+													<ReportItems>
+														<Textbox Name="TextBox51">
+															<DataElementName>TextBox20</DataElementName>
+															<Value>货物（劳务）名称</Value>
+															<Style>
+																<BackgroundColor>#9ccbff</BackgroundColor>
+																<FontFamily>微软雅黑</FontFamily>
+																<FontSize>10pt</FontSize>
+																<FontStyle>Normal</FontStyle>
+																<FontWeight>700</FontWeight>
+																<PaddingBottom>2pt</PaddingBottom>
+																<PaddingLeft>2pt</PaddingLeft>
+																<PaddingRight>2pt</PaddingRight>
+																<PaddingTop>2pt</PaddingTop>
+																<TextAlign>Center</TextAlign>
+																<VerticalAlign>Middle</VerticalAlign>
+																<BorderColor>
+																	<Default>Gainsboro</Default>
+																</BorderColor>
+																<BorderStyle>
+																	<Default>Solid</Default>
+																</BorderStyle>
+															</Style>
+															<dd:LayerName xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">背景层</dd:LayerName>
+														</Textbox>
+													</ReportItems>
+												</TableCell>
+												<TableCell>
+													<ReportItems>
+														<Textbox Name="TextBox21">
+															<Value>规格型号</Value>
+															<Style>
+																<BackgroundColor>#9ccbff</BackgroundColor>
+																<FontFamily>微软雅黑</FontFamily>
+																<FontSize>10pt</FontSize>
+																<FontStyle>Normal</FontStyle>
+																<FontWeight>700</FontWeight>
+																<PaddingBottom>2pt</PaddingBottom>
+																<PaddingLeft>2pt</PaddingLeft>
+																<PaddingRight>2pt</PaddingRight>
+																<PaddingTop>2pt</PaddingTop>
+																<TextAlign>Center</TextAlign>
+																<VerticalAlign>Middle</VerticalAlign>
+																<BorderColor>
+																	<Default>Gainsboro</Default>
+																</BorderColor>
+																<BorderStyle>
+																	<Default>Solid</Default>
+																</BorderStyle>
+															</Style>
+															<dd:LayerName xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">背景层</dd:LayerName>
+														</Textbox>
+													</ReportItems>
+												</TableCell>
+												<TableCell>
+													<ReportItems>
+														<Textbox Name="TextBox26">
+															<Value>单位</Value>
+															<Style>
+																<BackgroundColor>#9ccbff</BackgroundColor>
+																<FontFamily>微软雅黑</FontFamily>
+																<FontSize>10pt</FontSize>
+																<FontStyle>Normal</FontStyle>
+																<FontWeight>700</FontWeight>
+																<PaddingBottom>2pt</PaddingBottom>
+																<PaddingLeft>2pt</PaddingLeft>
+																<PaddingRight>2pt</PaddingRight>
+																<PaddingTop>2pt</PaddingTop>
+																<TextAlign>Center</TextAlign>
+																<VerticalAlign>Middle</VerticalAlign>
+																<BorderColor>
+																	<Default>Gainsboro</Default>
+																</BorderColor>
+																<BorderStyle>
+																	<Default>Solid</Default>
+																</BorderStyle>
+															</Style>
+															<dd:LayerName xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">背景层</dd:LayerName>
+														</Textbox>
+													</ReportItems>
+												</TableCell>
+												<TableCell>
+													<ReportItems>
+														<Textbox Name="TextBox33">
+															<Value>数量</Value>
+															<Style>
+																<BackgroundColor>#9ccbff</BackgroundColor>
+																<FontFamily>微软雅黑</FontFamily>
+																<FontSize>10pt</FontSize>
+																<FontStyle>Normal</FontStyle>
+																<FontWeight>700</FontWeight>
+																<PaddingBottom>2pt</PaddingBottom>
+																<PaddingLeft>2pt</PaddingLeft>
+																<PaddingRight>2pt</PaddingRight>
+																<PaddingTop>2pt</PaddingTop>
+																<TextAlign>Center</TextAlign>
+																<VerticalAlign>Middle</VerticalAlign>
+																<BorderColor>
+																	<Default>Gainsboro</Default>
+																</BorderColor>
+																<BorderStyle>
+																	<Default>Solid</Default>
+																</BorderStyle>
+															</Style>
+															<dd:LayerName xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">背景层</dd:LayerName>
+														</Textbox>
+													</ReportItems>
+												</TableCell>
+												<TableCell>
+													<ReportItems>
+														<Textbox Name="TextBox40">
+															<Value>单价</Value>
+															<Style>
+																<BackgroundColor>#9ccbff</BackgroundColor>
+																<FontFamily>微软雅黑</FontFamily>
+																<FontSize>10pt</FontSize>
+																<FontStyle>Normal</FontStyle>
+																<FontWeight>700</FontWeight>
+																<PaddingBottom>2pt</PaddingBottom>
+																<PaddingLeft>2pt</PaddingLeft>
+																<PaddingRight>2pt</PaddingRight>
+																<PaddingTop>2pt</PaddingTop>
+																<TextAlign>Center</TextAlign>
+																<VerticalAlign>Middle</VerticalAlign>
+																<BorderColor>
+																	<Default>Gainsboro</Default>
+																</BorderColor>
+																<BorderStyle>
+																	<Default>Solid</Default>
+																</BorderStyle>
+															</Style>
+															<dd:LayerName xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">背景层</dd:LayerName>
+														</Textbox>
+													</ReportItems>
+												</TableCell>
+												<TableCell>
+													<ReportItems>
+														<Textbox Name="TextBox47">
+															<Value>金额</Value>
+															<Style>
+																<BackgroundColor>#9ccbff</BackgroundColor>
+																<FontFamily>微软雅黑</FontFamily>
+																<FontSize>10pt</FontSize>
+																<FontStyle>Normal</FontStyle>
+																<FontWeight>700</FontWeight>
+																<PaddingBottom>2pt</PaddingBottom>
+																<PaddingLeft>2pt</PaddingLeft>
+																<PaddingRight>2pt</PaddingRight>
+																<PaddingTop>2pt</PaddingTop>
+																<TextAlign>Center</TextAlign>
+																<VerticalAlign>Middle</VerticalAlign>
+																<BorderColor>
+																	<Default>Gainsboro</Default>
+																</BorderColor>
+																<BorderStyle>
+																	<Default>Solid</Default>
+																</BorderStyle>
+															</Style>
+															<dd:LayerName xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">背景层</dd:LayerName>
+														</Textbox>
+													</ReportItems>
+												</TableCell>
+												<TableCell>
+													<ReportItems>
+														<Textbox Name="TextBox54">
+															<Value>税率</Value>
+															<Style>
+																<BackgroundColor>#9ccbff</BackgroundColor>
+																<FontFamily>微软雅黑</FontFamily>
+																<FontSize>10pt</FontSize>
+																<FontStyle>Normal</FontStyle>
+																<FontWeight>700</FontWeight>
+																<PaddingBottom>2pt</PaddingBottom>
+																<PaddingLeft>2pt</PaddingLeft>
+																<PaddingRight>2pt</PaddingRight>
+																<PaddingTop>2pt</PaddingTop>
+																<TextAlign>Center</TextAlign>
+																<VerticalAlign>Middle</VerticalAlign>
+																<BorderColor>
+																	<Default>Gainsboro</Default>
+																</BorderColor>
+																<BorderStyle>
+																	<Default>Solid</Default>
+																</BorderStyle>
+															</Style>
+															<dd:LayerName xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">背景层</dd:LayerName>
+														</Textbox>
+													</ReportItems>
+												</TableCell>
+												<TableCell>
+													<ReportItems>
+														<Textbox Name="TextBox61">
+															<Value>税额</Value>
+															<Style>
+																<BackgroundColor>#9ccbff</BackgroundColor>
+																<FontFamily>微软雅黑</FontFamily>
+																<FontSize>10pt</FontSize>
+																<FontStyle>Normal</FontStyle>
+																<FontWeight>700</FontWeight>
+																<PaddingBottom>2pt</PaddingBottom>
+																<PaddingLeft>2pt</PaddingLeft>
+																<PaddingRight>2pt</PaddingRight>
+																<PaddingTop>2pt</PaddingTop>
+																<TextAlign>Center</TextAlign>
+																<VerticalAlign>Middle</VerticalAlign>
+																<BorderColor>
+																	<Default>Gainsboro</Default>
+																</BorderColor>
+																<BorderStyle>
+																	<Default>Solid</Default>
+																</BorderStyle>
+															</Style>
+															<dd:LayerName xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">背景层</dd:LayerName>
+														</Textbox>
+													</ReportItems>
+												</TableCell>
+											</TableCells>
+										</TableRow>
+									</TableRows>
+								</Header>
+								<Details>
+									<TableRows>
+										<TableRow>
+											<Height>0.757143cm</Height>
+											<TableCells>
+												<TableCell>
+													<ReportItems>
+														<Textbox Name="TextBox4">
+															<Value>=RowNumber()</Value>
+															<Style>
+																<BackgroundColor>=iif(RowNumber() Mod 2=0,"#dbeeff","#f6f6ff"）</BackgroundColor>
+																<FontFamily>微软雅黑</FontFamily>
+																<FontSize>10pt</FontSize>
+																<FontStyle>Normal</FontStyle>
+																<FontWeight>400</FontWeight>
+																<PaddingBottom>2pt</PaddingBottom>
+																<PaddingLeft>2pt</PaddingLeft>
+																<PaddingRight>2pt</PaddingRight>
+																<PaddingTop>2pt</PaddingTop>
+																<TextAlign>Center</TextAlign>
+																<VerticalAlign>Middle</VerticalAlign>
+																<BorderColor>
+																	<Default>Gainsboro</Default>
+																</BorderColor>
+																<BorderStyle>
+																	<Left>Solid</Left>
+																	<Right>None</Right>
+																</BorderStyle>
+															</Style>
+															<dd:LayerName xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">背景层</dd:LayerName>
+														</Textbox>
+													</ReportItems>
+												</TableCell>
+												<TableCell>
+													<ReportItems>
+														<Textbox Name="TextBox5">
+															<Value>=Fields!货物名称.Value</Value>
+															<Style>
+																<BackgroundColor>=iif(RowNumber() Mod 2=0,"#dbeeff","#f6f6ff"）</BackgroundColor>
+																<FontFamily>微软雅黑</FontFamily>
+																<FontSize>10pt</FontSize>
+																<FontStyle>Normal</FontStyle>
+																<FontWeight>400</FontWeight>
+																<PaddingBottom>2pt</PaddingBottom>
+																<PaddingLeft>2pt</PaddingLeft>
+																<PaddingRight>2pt</PaddingRight>
+																<PaddingTop>2pt</PaddingTop>
+																<TextAlign>Center</TextAlign>
+																<VerticalAlign>Middle</VerticalAlign>
+																<BorderColor>
+																	<Default>Gainsboro</Default>
+																</BorderColor>
+																<BorderStyle>
+																	<Left>Solid</Left>
+																	<Right>Solid</Right>
+																</BorderStyle>
+															</Style>
+															<dd:LayerName xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">背景层</dd:LayerName>
+														</Textbox>
+													</ReportItems>
+												</TableCell>
+												<TableCell>
+													<ReportItems>
+														<Textbox Name="TextBox6">
+															<Value>=Fields!规格型号.Value</Value>
+															<Style>
+																<BackgroundColor>=iif(RowNumber() Mod 2=0,"#dbeeff","#f6f6ff"）</BackgroundColor>
+																<FontFamily>微软雅黑</FontFamily>
+																<FontSize>10pt</FontSize>
+																<FontStyle>Normal</FontStyle>
+																<FontWeight>400</FontWeight>
+																<PaddingBottom>2pt</PaddingBottom>
+																<PaddingLeft>2pt</PaddingLeft>
+																<PaddingRight>2pt</PaddingRight>
+																<PaddingTop>2pt</PaddingTop>
+																<TextAlign>Center</TextAlign>
+																<VerticalAlign>Middle</VerticalAlign>
+																<BorderColor>
+																	<Default>Gainsboro</Default>
+																</BorderColor>
+																<BorderStyle>
+																	<Left>Solid</Left>
+																	<Right>Solid</Right>
+																</BorderStyle>
+															</Style>
+															<dd:LayerName xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">背景层</dd:LayerName>
+														</Textbox>
+													</ReportItems>
+												</TableCell>
+												<TableCell>
+													<ReportItems>
+														<Textbox Name="TextBox27">
+															<Value>=Fields!单位.Value</Value>
+															<Style>
+																<BackgroundColor>=iif(RowNumber() Mod 2=0,"#dbeeff","#f6f6ff"）</BackgroundColor>
+																<FontFamily>微软雅黑</FontFamily>
+																<FontSize>10pt</FontSize>
+																<FontStyle>Normal</FontStyle>
+																<FontWeight>400</FontWeight>
+																<PaddingBottom>2pt</PaddingBottom>
+																<PaddingLeft>2pt</PaddingLeft>
+																<PaddingRight>2pt</PaddingRight>
+																<PaddingTop>2pt</PaddingTop>
+																<TextAlign>Center</TextAlign>
+																<VerticalAlign>Middle</VerticalAlign>
+																<BorderColor>
+																	<Default>Gainsboro</Default>
+																</BorderColor>
+																<BorderStyle>
+																	<Left>Solid</Left>
+																	<Right>Solid</Right>
+																</BorderStyle>
+															</Style>
+															<dd:LayerName xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">背景层</dd:LayerName>
+														</Textbox>
+													</ReportItems>
+												</TableCell>
+												<TableCell>
+													<ReportItems>
+														<Textbox Name="TextBox34">
+															<Value>=Fields!数量.Value</Value>
+															<Style>
+																<BackgroundColor>=iif(RowNumber() Mod 2=0,"#dbeeff","#f6f6ff"）</BackgroundColor>
+																<FontFamily>微软雅黑</FontFamily>
+																<FontSize>10pt</FontSize>
+																<FontStyle>Normal</FontStyle>
+																<FontWeight>400</FontWeight>
+																<PaddingBottom>2pt</PaddingBottom>
+																<PaddingLeft>2pt</PaddingLeft>
+																<PaddingRight>2pt</PaddingRight>
+																<PaddingTop>2pt</PaddingTop>
+																<TextAlign>Right</TextAlign>
+																<VerticalAlign>Middle</VerticalAlign>
+																<BorderColor>
+																	<Default>Gainsboro</Default>
+																</BorderColor>
+																<BorderStyle>
+																	<Left>Solid</Left>
+																	<Right>Solid</Right>
+																</BorderStyle>
+															</Style>
+															<dd:LayerName xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">背景层</dd:LayerName>
+														</Textbox>
+													</ReportItems>
+												</TableCell>
+												<TableCell>
+													<ReportItems>
+														<Textbox Name="TextBox52">
+															<DataElementName>TextBox41</DataElementName>
+															<Value>=Fields!单价.Value</Value>
+															<Style>
+																<BackgroundColor>=iif(RowNumber() Mod 2=0,"#dbeeff","#f6f6ff"）</BackgroundColor>
+																<FontFamily>微软雅黑</FontFamily>
+																<FontSize>10pt</FontSize>
+																<FontStyle>Normal</FontStyle>
+																<FontWeight>400</FontWeight>
+																<PaddingBottom>2pt</PaddingBottom>
+																<PaddingLeft>2pt</PaddingLeft>
+																<PaddingRight>2pt</PaddingRight>
+																<PaddingTop>2pt</PaddingTop>
+																<TextAlign>Right</TextAlign>
+																<VerticalAlign>Middle</VerticalAlign>
+																<BorderColor>
+																	<Default>Gainsboro</Default>
+																</BorderColor>
+																<BorderStyle>
+																	<Left>Solid</Left>
+																	<Right>Solid</Right>
+																</BorderStyle>
+															</Style>
+															<dd:LayerName xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">背景层</dd:LayerName>
+														</Textbox>
+													</ReportItems>
+												</TableCell>
+												<TableCell>
+													<ReportItems>
+														<Textbox Name="TextBox48">
+															<Value>=Fields!金额.Value</Value>
+															<Style>
+																<BackgroundColor>=iif(RowNumber() Mod 2=0,"#dbeeff","#f6f6ff"）</BackgroundColor>
+																<FontFamily>微软雅黑</FontFamily>
+																<FontSize>10pt</FontSize>
+																<FontStyle>Normal</FontStyle>
+																<FontWeight>400</FontWeight>
+																<PaddingBottom>2pt</PaddingBottom>
+																<PaddingLeft>2pt</PaddingLeft>
+																<PaddingRight>2pt</PaddingRight>
+																<PaddingTop>2pt</PaddingTop>
+																<TextAlign>Right</TextAlign>
+																<VerticalAlign>Middle</VerticalAlign>
+																<BorderColor>
+																	<Default>Gainsboro</Default>
+																</BorderColor>
+																<BorderStyle>
+																	<Left>Solid</Left>
+																	<Right>Solid</Right>
+																</BorderStyle>
+															</Style>
+															<dd:LayerName xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">背景层</dd:LayerName>
+														</Textbox>
+													</ReportItems>
+												</TableCell>
+												<TableCell>
+													<ReportItems>
+														<Textbox Name="TextBox55">
+															<Value>=IIF( Fields.Item("数量").Value &gt;0,"17%","")</Value>
+															<Style>
+																<BackgroundColor>=iif(RowNumber() Mod 2=0,"#dbeeff","#f6f6ff"）</BackgroundColor>
+																<FontFamily>微软雅黑</FontFamily>
+																<FontSize>10pt</FontSize>
+																<FontStyle>Normal</FontStyle>
+																<FontWeight>400</FontWeight>
+																<PaddingBottom>2pt</PaddingBottom>
+																<PaddingLeft>2pt</PaddingLeft>
+																<PaddingRight>2pt</PaddingRight>
+																<PaddingTop>2pt</PaddingTop>
+																<TextAlign>Center</TextAlign>
+																<VerticalAlign>Middle</VerticalAlign>
+																<BorderColor>
+																	<Default>Gainsboro</Default>
+																</BorderColor>
+																<BorderStyle>
+																	<Left>Solid</Left>
+																	<Right>Solid</Right>
+																</BorderStyle>
+															</Style>
+															<dd:LayerName xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">背景层</dd:LayerName>
+														</Textbox>
+													</ReportItems>
+												</TableCell>
+												<TableCell>
+													<ReportItems>
+														<Textbox Name="TextBox62">
+															<Value>=Round( Fields.Item("金额").Value *0.17,4)</Value>
+															<Style>
+																<BackgroundColor>=iif(RowNumber() Mod 2=0,"#dbeeff","#f6f6ff"）</BackgroundColor>
+																<FontFamily>微软雅黑</FontFamily>
+																<FontSize>10pt</FontSize>
+																<FontStyle>Normal</FontStyle>
+																<FontWeight>400</FontWeight>
+																<PaddingBottom>2pt</PaddingBottom>
+																<PaddingLeft>2pt</PaddingLeft>
+																<PaddingRight>2pt</PaddingRight>
+																<PaddingTop>2pt</PaddingTop>
+																<TextAlign>Center</TextAlign>
+																<VerticalAlign>Middle</VerticalAlign>
+																<BorderColor>
+																	<Default>Gainsboro</Default>
+																</BorderColor>
+																<BorderStyle>
+																	<Left>Solid</Left>
+																	<Right>Solid</Right>
+																</BorderStyle>
+															</Style>
+															<dd:LayerName xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">背景层</dd:LayerName>
+														</Textbox>
+													</ReportItems>
+												</TableCell>
+											</TableCells>
+										</TableRow>
+									</TableRows>
+								</Details>
+								<Footer>
+									<RepeatOnNewPage>true</RepeatOnNewPage>
+									<TableRows>
+										<TableRow>
+											<Height>0.757143cm</Height>
+											<TableCells>
+												<TableCell>
+													<ReportItems>
+														<Textbox Name="TextBox7">
+															<Value />
+															<Style>
+																<BackgroundColor>#a0e8f7</BackgroundColor>
+																<PaddingBottom>2pt</PaddingBottom>
+																<PaddingLeft>2pt</PaddingLeft>
+																<PaddingRight>2pt</PaddingRight>
+																<PaddingTop>2pt</PaddingTop>
+																<TextAlign>Center</TextAlign>
+																<BorderColor>
+																	<Default>Gainsboro</Default>
+																</BorderColor>
+																<BorderStyle>
+																	<Default>None</Default>
+																	<Left>Solid</Left>
+																	<Right>Solid</Right>
+																</BorderStyle>
+															</Style>
+															<dd:LayerName xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">背景层</dd:LayerName>
+														</Textbox>
+													</ReportItems>
+												</TableCell>
+												<TableCell>
+													<ReportItems>
+														<Textbox Name="TextBox8">
+															<Value />
+															<Style>
+																<BackgroundColor>#a0e8f7</BackgroundColor>
+																<PaddingBottom>2pt</PaddingBottom>
+																<PaddingLeft>2pt</PaddingLeft>
+																<PaddingRight>2pt</PaddingRight>
+																<PaddingTop>2pt</PaddingTop>
+																<TextAlign>Center</TextAlign>
+																<BorderColor>
+																	<Default>Gainsboro</Default>
+																</BorderColor>
+																<BorderStyle>
+																	<Default>None</Default>
+																	<Right>Solid</Right>
+																</BorderStyle>
+															</Style>
+															<dd:LayerName xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">背景层</dd:LayerName>
+														</Textbox>
+													</ReportItems>
+												</TableCell>
+												<TableCell>
+													<ReportItems>
+														<Textbox Name="TextBox9">
+															<Value />
+															<Style>
+																<BackgroundColor>#a0e8f7</BackgroundColor>
+																<PaddingBottom>2pt</PaddingBottom>
+																<PaddingLeft>2pt</PaddingLeft>
+																<PaddingRight>2pt</PaddingRight>
+																<PaddingTop>2pt</PaddingTop>
+																<TextAlign>Center</TextAlign>
+																<BorderColor>
+																	<Default>Gainsboro</Default>
+																</BorderColor>
+																<BorderStyle>
+																	<Default>None</Default>
+																	<Right>Solid</Right>
+																</BorderStyle>
+															</Style>
+															<dd:LayerName xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">背景层</dd:LayerName>
+														</Textbox>
+													</ReportItems>
+												</TableCell>
+												<TableCell>
+													<ReportItems>
+														<Textbox Name="TextBox28">
+															<Value />
+															<Style>
+																<BackgroundColor>#a0e8f7</BackgroundColor>
+																<PaddingBottom>2pt</PaddingBottom>
+																<PaddingLeft>2pt</PaddingLeft>
+																<PaddingRight>2pt</PaddingRight>
+																<PaddingTop>2pt</PaddingTop>
+																<TextAlign>Center</TextAlign>
+																<BorderColor>
+																	<Default>Gainsboro</Default>
+																</BorderColor>
+																<BorderStyle>
+																	<Default>None</Default>
+																	<Right>Solid</Right>
+																</BorderStyle>
+															</Style>
+															<dd:LayerName xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">背景层</dd:LayerName>
+														</Textbox>
+													</ReportItems>
+												</TableCell>
+												<TableCell>
+													<ReportItems>
+														<Textbox Name="TextBox35">
+															<Value />
+															<Style>
+																<BackgroundColor>#a0e8f7</BackgroundColor>
+																<PaddingBottom>2pt</PaddingBottom>
+																<PaddingLeft>2pt</PaddingLeft>
+																<PaddingRight>2pt</PaddingRight>
+																<PaddingTop>2pt</PaddingTop>
+																<TextAlign>Center</TextAlign>
+																<BorderColor>
+																	<Default>Gainsboro</Default>
+																</BorderColor>
+																<BorderStyle>
+																	<Default>None</Default>
+																	<Right>Solid</Right>
+																</BorderStyle>
+															</Style>
+															<dd:LayerName xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">背景层</dd:LayerName>
+														</Textbox>
+													</ReportItems>
+												</TableCell>
+												<TableCell>
+													<ReportItems>
+														<Textbox Name="TextBox42">
+															<Value />
+															<Style>
+																<BackgroundColor>#a0e8f7</BackgroundColor>
+																<PaddingBottom>2pt</PaddingBottom>
+																<PaddingLeft>2pt</PaddingLeft>
+																<PaddingRight>2pt</PaddingRight>
+																<PaddingTop>2pt</PaddingTop>
+																<TextAlign>Center</TextAlign>
+																<BorderColor>
+																	<Default>Gainsboro</Default>
+																</BorderColor>
+																<BorderStyle>
+																	<Default>None</Default>
+																	<Right>Solid</Right>
+																</BorderStyle>
+															</Style>
+															<dd:LayerName xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">背景层</dd:LayerName>
+														</Textbox>
+													</ReportItems>
+												</TableCell>
+												<TableCell>
+													<ReportItems>
+														<Textbox Name="TextBox49">
+															<Value />
+															<Style>
+																<BackgroundColor>#a0e8f7</BackgroundColor>
+																<PaddingBottom>2pt</PaddingBottom>
+																<PaddingLeft>2pt</PaddingLeft>
+																<PaddingRight>2pt</PaddingRight>
+																<PaddingTop>2pt</PaddingTop>
+																<TextAlign>Center</TextAlign>
+																<BorderColor>
+																	<Default>Gainsboro</Default>
+																</BorderColor>
+																<BorderStyle>
+																	<Default>None</Default>
+																	<Bottom>None</Bottom>
+																	<Left>Solid</Left>
+																	<Right>None</Right>
+																	<Top>None</Top>
+																</BorderStyle>
+															</Style>
+															<dd:LayerName xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">背景层</dd:LayerName>
+														</Textbox>
+													</ReportItems>
+												</TableCell>
+												<TableCell>
+													<ReportItems>
+														<Textbox Name="TextBox56">
+															<Value />
+															<Style>
+																<BackgroundColor>#a0e8f7</BackgroundColor>
+																<PaddingBottom>2pt</PaddingBottom>
+																<PaddingLeft>2pt</PaddingLeft>
+																<PaddingRight>2pt</PaddingRight>
+																<PaddingTop>2pt</PaddingTop>
+																<TextAlign>Center</TextAlign>
+																<BorderColor>
+																	<Default>Gainsboro</Default>
+																</BorderColor>
+																<BorderStyle>
+																	<Default>None</Default>
+																	<Bottom>None</Bottom>
+																	<Left>Solid</Left>
+																	<Right>None</Right>
+																	<Top>None</Top>
+																</BorderStyle>
+															</Style>
+															<dd:LayerName xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">背景层</dd:LayerName>
+														</Textbox>
+													</ReportItems>
+												</TableCell>
+												<TableCell>
+													<ReportItems>
+														<Textbox Name="TextBox63">
+															<Value />
+															<Style>
+																<BackgroundColor>#a0e8f7</BackgroundColor>
+																<PaddingBottom>2pt</PaddingBottom>
+																<PaddingLeft>2pt</PaddingLeft>
+																<PaddingRight>2pt</PaddingRight>
+																<PaddingTop>2pt</PaddingTop>
+																<TextAlign>Center</TextAlign>
+																<BorderColor>
+																	<Default>Gainsboro</Default>
+																</BorderColor>
+																<BorderStyle>
+																	<Default>None</Default>
+																	<Bottom>None</Bottom>
+																	<Left>Solid</Left>
+																	<Right>Solid</Right>
+																	<Top>None</Top>
+																</BorderStyle>
+															</Style>
+															<dd:LayerName xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">背景层</dd:LayerName>
+														</Textbox>
+													</ReportItems>
+												</TableCell>
+											</TableCells>
+										</TableRow>
+										<TableRow>
+											<Height>0.757143cm</Height>
+											<TableCells>
+												<TableCell>
+													<ReportItems>
+														<Textbox Name="TextBox2">
+															<DataElementName>TextBox14</DataElementName>
+															<Value>小计</Value>
+															<Style>
+																<BackgroundColor>#aed8f2</BackgroundColor>
+																<FontFamily>微软雅黑</FontFamily>
+																<FontSize>10pt</FontSize>
+																<FontStyle>Normal</FontStyle>
+																<FontWeight>400</FontWeight>
+																<PaddingBottom>2pt</PaddingBottom>
+																<PaddingLeft>2pt</PaddingLeft>
+																<PaddingRight>2pt</PaddingRight>
+																<PaddingTop>2pt</PaddingTop>
+																<TextAlign>Center</TextAlign>
+																<VerticalAlign>Middle</VerticalAlign>
+																<BorderColor>
+																	<Default>Gainsboro</Default>
+																</BorderColor>
+																<BorderStyle>
+																	<Default>Solid</Default>
+																</BorderStyle>
+															</Style>
+															<dd:LayerName xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">背景层</dd:LayerName>
+														</Textbox>
+													</ReportItems>
+												</TableCell>
+												<TableCell>
+													<ReportItems>
+														<Textbox Name="TextBox14">
+															<DataElementName>TextBox17</DataElementName>
+															<Value />
+															<Style>
+																<BackgroundColor>#aed8f2</BackgroundColor>
+																<FontFamily>微软雅黑</FontFamily>
+																<FontSize>10pt</FontSize>
+																<FontStyle>Normal</FontStyle>
+																<FontWeight>400</FontWeight>
+																<PaddingBottom>2pt</PaddingBottom>
+																<PaddingLeft>2pt</PaddingLeft>
+																<PaddingRight>2pt</PaddingRight>
+																<PaddingTop>2pt</PaddingTop>
+																<TextAlign>Center</TextAlign>
+																<VerticalAlign>Middle</VerticalAlign>
+																<BorderColor>
+																	<Default>Gainsboro</Default>
+																</BorderColor>
+																<BorderStyle>
+																	<Default>Solid</Default>
+																</BorderStyle>
+															</Style>
+															<dd:LayerName xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">背景层</dd:LayerName>
+														</Textbox>
+													</ReportItems>
+												</TableCell>
+												<TableCell>
+													<ReportItems>
+														<Textbox Name="TextBox57">
+															<DataElementName>TextBox22</DataElementName>
+															<Value />
+															<Style>
+																<BackgroundColor>#aed8f2</BackgroundColor>
+																<FontFamily>微软雅黑</FontFamily>
+																<FontSize>10pt</FontSize>
+																<FontStyle>Normal</FontStyle>
+																<FontWeight>400</FontWeight>
+																<PaddingBottom>2pt</PaddingBottom>
+																<PaddingLeft>2pt</PaddingLeft>
+																<PaddingRight>2pt</PaddingRight>
+																<PaddingTop>2pt</PaddingTop>
+																<TextAlign>Center</TextAlign>
+																<VerticalAlign>Middle</VerticalAlign>
+																<BorderColor>
+																	<Default>Gainsboro</Default>
+																</BorderColor>
+																<BorderStyle>
+																	<Default>Solid</Default>
+																</BorderStyle>
+															</Style>
+															<dd:LayerName xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">背景层</dd:LayerName>
+														</Textbox>
+													</ReportItems>
+												</TableCell>
+												<TableCell>
+													<ReportItems>
+														<Textbox Name="TextBox22">
+															<DataElementName>TextBox23</DataElementName>
+															<Value />
+															<Style>
+																<BackgroundColor>#aed8f2</BackgroundColor>
+																<FontFamily>微软雅黑</FontFamily>
+																<FontSize>10pt</FontSize>
+																<FontStyle>Normal</FontStyle>
+																<FontWeight>400</FontWeight>
+																<PaddingBottom>2pt</PaddingBottom>
+																<PaddingLeft>2pt</PaddingLeft>
+																<PaddingRight>2pt</PaddingRight>
+																<PaddingTop>2pt</PaddingTop>
+																<TextAlign>Center</TextAlign>
+																<VerticalAlign>Middle</VerticalAlign>
+																<BorderColor>
+																	<Default>Gainsboro</Default>
+																</BorderColor>
+																<BorderStyle>
+																	<Default>Solid</Default>
+																</BorderStyle>
+															</Style>
+															<dd:LayerName xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">背景层</dd:LayerName>
+														</Textbox>
+													</ReportItems>
+												</TableCell>
+												<TableCell>
+													<ReportItems>
+														<Textbox Name="TextBox58">
+															<DataElementName>TextBox24</DataElementName>
+															<Value />
+															<Style>
+																<BackgroundColor>#aed8f2</BackgroundColor>
+																<FontFamily>微软雅黑</FontFamily>
+																<FontSize>10pt</FontSize>
+																<FontStyle>Normal</FontStyle>
+																<FontWeight>400</FontWeight>
+																<PaddingBottom>2pt</PaddingBottom>
+																<PaddingLeft>2pt</PaddingLeft>
+																<PaddingRight>2pt</PaddingRight>
+																<PaddingTop>2pt</PaddingTop>
+																<TextAlign>Center</TextAlign>
+																<VerticalAlign>Middle</VerticalAlign>
+																<BorderColor>
+																	<Default>Gainsboro</Default>
+																</BorderColor>
+																<BorderStyle>
+																	<Default>Solid</Default>
+																</BorderStyle>
+															</Style>
+															<dd:LayerName xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">背景层</dd:LayerName>
+														</Textbox>
+													</ReportItems>
+												</TableCell>
+												<TableCell>
+													<ReportItems>
+														<Textbox Name="TextBox24">
+															<DataElementName>TextBox25</DataElementName>
+															<Value />
+															<Style>
+																<BackgroundColor>#aed8f2</BackgroundColor>
+																<FontFamily>微软雅黑</FontFamily>
+																<FontSize>10pt</FontSize>
+																<FontStyle>Normal</FontStyle>
+																<FontWeight>400</FontWeight>
+																<PaddingBottom>2pt</PaddingBottom>
+																<PaddingLeft>2pt</PaddingLeft>
+																<PaddingRight>2pt</PaddingRight>
+																<PaddingTop>2pt</PaddingTop>
+																<TextAlign>Center</TextAlign>
+																<VerticalAlign>Middle</VerticalAlign>
+																<BorderColor>
+																	<Default>Gainsboro</Default>
+																</BorderColor>
+																<BorderStyle>
+																	<Default>Solid</Default>
+																</BorderStyle>
+															</Style>
+															<dd:LayerName xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">背景层</dd:LayerName>
+														</Textbox>
+													</ReportItems>
+												</TableCell>
+												<TableCell>
+													<ReportItems>
+														<Textbox Name="TextBox25">
+															<DataElementName>TextBox29</DataElementName>
+															<Value>=ReportItems!TextBox66.Value</Value>
+															<Style>
+																<BackgroundColor>#aed8f2</BackgroundColor>
+																<FontFamily>微软雅黑</FontFamily>
+																<FontSize>10pt</FontSize>
+																<FontStyle>Normal</FontStyle>
+																<FontWeight>400</FontWeight>
+																<PaddingBottom>2pt</PaddingBottom>
+																<PaddingLeft>2pt</PaddingLeft>
+																<PaddingRight>2pt</PaddingRight>
+																<PaddingTop>2pt</PaddingTop>
+																<VerticalAlign>Middle</VerticalAlign>
+																<BorderColor>
+																	<Default>Gainsboro</Default>
+																</BorderColor>
+																<BorderStyle>
+																	<Default>Solid</Default>
+																</BorderStyle>
+															</Style>
+															<dd:LayerName xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">背景层</dd:LayerName>
+														</Textbox>
+													</ReportItems>
+												</TableCell>
+												<TableCell>
+													<ReportItems>
+														<Textbox Name="TextBox29">
+															<DataElementName>TextBox30</DataElementName>
+															<Value />
+															<Style>
+																<BackgroundColor>#aed8f2</BackgroundColor>
+																<FontFamily>微软雅黑</FontFamily>
+																<FontSize>10pt</FontSize>
+																<FontStyle>Normal</FontStyle>
+																<FontWeight>400</FontWeight>
+																<PaddingBottom>2pt</PaddingBottom>
+																<PaddingLeft>2pt</PaddingLeft>
+																<PaddingRight>2pt</PaddingRight>
+																<PaddingTop>2pt</PaddingTop>
+																<VerticalAlign>Middle</VerticalAlign>
+																<BorderColor>
+																	<Default>Gainsboro</Default>
+																</BorderColor>
+																<BorderStyle>
+																	<Default>Solid</Default>
+																</BorderStyle>
+															</Style>
+															<dd:LayerName xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">背景层</dd:LayerName>
+														</Textbox>
+													</ReportItems>
+												</TableCell>
+												<TableCell>
+													<ReportItems>
+														<Textbox Name="TextBox30">
+															<DataElementName>TextBox31</DataElementName>
+															<Value>=ReportItems!TextBox67.Value</Value>
+															<Style>
+																<BackgroundColor>#aed8f2</BackgroundColor>
+																<FontFamily>微软雅黑</FontFamily>
+																<FontSize>10pt</FontSize>
+																<FontStyle>Normal</FontStyle>
+																<FontWeight>400</FontWeight>
+																<PaddingBottom>2pt</PaddingBottom>
+																<PaddingLeft>2pt</PaddingLeft>
+																<PaddingRight>2pt</PaddingRight>
+																<PaddingTop>2pt</PaddingTop>
+																<VerticalAlign>Middle</VerticalAlign>
+																<BorderColor>
+																	<Default>Gainsboro</Default>
+																</BorderColor>
+																<BorderStyle>
+																	<Default>Solid</Default>
+																</BorderStyle>
+															</Style>
+															<dd:LayerName xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">背景层</dd:LayerName>
+														</Textbox>
+													</ReportItems>
+												</TableCell>
+											</TableCells>
+										</TableRow>
+										<TableRow>
+											<Height>0.757143cm</Height>
+											<TableCells>
+												<TableCell>
+													<ReportItems>
+														<Textbox Name="TextBox31">
+															<DataElementName>TextBox32</DataElementName>
+															<Value>总计</Value>
+															<Style>
+																<BackgroundColor>#ebefc9</BackgroundColor>
+																<FontFamily>微软雅黑</FontFamily>
+																<FontSize>10pt</FontSize>
+																<FontStyle>Normal</FontStyle>
+																<FontWeight>400</FontWeight>
+																<PaddingBottom>2pt</PaddingBottom>
+																<PaddingLeft>2pt</PaddingLeft>
+																<PaddingRight>2pt</PaddingRight>
+																<PaddingTop>2pt</PaddingTop>
+																<TextAlign>Center</TextAlign>
+																<VerticalAlign>Middle</VerticalAlign>
+																<BorderColor>
+																	<Default>Gainsboro</Default>
+																</BorderColor>
+																<BorderStyle>
+																	<Default>Solid</Default>
+																</BorderStyle>
+															</Style>
+															<dd:LayerName xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">背景层</dd:LayerName>
+														</Textbox>
+													</ReportItems>
+												</TableCell>
+												<TableCell>
+													<ReportItems>
+														<Textbox Name="TextBox32">
+															<DataElementName>TextBox36</DataElementName>
+															<Value />
+															<Style>
+																<BackgroundColor>#ebefc9</BackgroundColor>
+																<FontFamily>微软雅黑</FontFamily>
+																<FontSize>10pt</FontSize>
+																<FontStyle>Normal</FontStyle>
+																<FontWeight>400</FontWeight>
+																<PaddingBottom>2pt</PaddingBottom>
+																<PaddingLeft>2pt</PaddingLeft>
+																<PaddingRight>2pt</PaddingRight>
+																<PaddingTop>2pt</PaddingTop>
+																<TextAlign>Center</TextAlign>
+																<VerticalAlign>Middle</VerticalAlign>
+																<BorderColor>
+																	<Default>Gainsboro</Default>
+																</BorderColor>
+																<BorderStyle>
+																	<Default>Solid</Default>
+																</BorderStyle>
+															</Style>
+															<dd:LayerName xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">背景层</dd:LayerName>
+														</Textbox>
+													</ReportItems>
+												</TableCell>
+												<TableCell>
+													<ReportItems>
+														<Textbox Name="TextBox36">
+															<DataElementName>TextBox37</DataElementName>
+															<Value />
+															<Style>
+																<BackgroundColor>#ebefc9</BackgroundColor>
+																<FontFamily>微软雅黑</FontFamily>
+																<FontSize>10pt</FontSize>
+																<FontStyle>Normal</FontStyle>
+																<FontWeight>400</FontWeight>
+																<PaddingBottom>2pt</PaddingBottom>
+																<PaddingLeft>2pt</PaddingLeft>
+																<PaddingRight>2pt</PaddingRight>
+																<PaddingTop>2pt</PaddingTop>
+																<TextAlign>Center</TextAlign>
+																<VerticalAlign>Middle</VerticalAlign>
+																<BorderColor>
+																	<Default>Gainsboro</Default>
+																</BorderColor>
+																<BorderStyle>
+																	<Default>Solid</Default>
+																</BorderStyle>
+															</Style>
+															<dd:LayerName xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">背景层</dd:LayerName>
+														</Textbox>
+													</ReportItems>
+												</TableCell>
+												<TableCell>
+													<ReportItems>
+														<Textbox Name="TextBox37">
+															<DataElementName>TextBox38</DataElementName>
+															<Value />
+															<Style>
+																<BackgroundColor>#ebefc9</BackgroundColor>
+																<FontFamily>微软雅黑</FontFamily>
+																<FontSize>10pt</FontSize>
+																<FontStyle>Normal</FontStyle>
+																<FontWeight>400</FontWeight>
+																<PaddingBottom>2pt</PaddingBottom>
+																<PaddingLeft>2pt</PaddingLeft>
+																<PaddingRight>2pt</PaddingRight>
+																<PaddingTop>2pt</PaddingTop>
+																<TextAlign>Center</TextAlign>
+																<VerticalAlign>Middle</VerticalAlign>
+																<BorderColor>
+																	<Default>Gainsboro</Default>
+																</BorderColor>
+																<BorderStyle>
+																	<Default>Solid</Default>
+																</BorderStyle>
+															</Style>
+															<dd:LayerName xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">背景层</dd:LayerName>
+														</Textbox>
+													</ReportItems>
+												</TableCell>
+												<TableCell>
+													<ReportItems>
+														<Textbox Name="TextBox38">
+															<DataElementName>TextBox39</DataElementName>
+															<Value />
+															<Style>
+																<BackgroundColor>#ebefc9</BackgroundColor>
+																<FontFamily>微软雅黑</FontFamily>
+																<FontSize>10pt</FontSize>
+																<FontStyle>Normal</FontStyle>
+																<FontWeight>400</FontWeight>
+																<PaddingBottom>2pt</PaddingBottom>
+																<PaddingLeft>2pt</PaddingLeft>
+																<PaddingRight>2pt</PaddingRight>
+																<PaddingTop>2pt</PaddingTop>
+																<TextAlign>Center</TextAlign>
+																<VerticalAlign>Middle</VerticalAlign>
+																<BorderColor>
+																	<Default>Gainsboro</Default>
+																</BorderColor>
+																<BorderStyle>
+																	<Default>Solid</Default>
+																</BorderStyle>
+															</Style>
+															<dd:LayerName xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">背景层</dd:LayerName>
+														</Textbox>
+													</ReportItems>
+												</TableCell>
+												<TableCell>
+													<ReportItems>
+														<Textbox Name="TextBox39">
+															<DataElementName>TextBox43</DataElementName>
+															<Value />
+															<Style>
+																<BackgroundColor>#ebefc9</BackgroundColor>
+																<FontFamily>微软雅黑</FontFamily>
+																<FontSize>10pt</FontSize>
+																<FontStyle>Normal</FontStyle>
+																<FontWeight>400</FontWeight>
+																<PaddingBottom>2pt</PaddingBottom>
+																<PaddingLeft>2pt</PaddingLeft>
+																<PaddingRight>2pt</PaddingRight>
+																<PaddingTop>2pt</PaddingTop>
+																<TextAlign>Center</TextAlign>
+																<VerticalAlign>Middle</VerticalAlign>
+																<BorderColor>
+																	<Default>Gainsboro</Default>
+																</BorderColor>
+																<BorderStyle>
+																	<Default>Solid</Default>
+																</BorderStyle>
+															</Style>
+															<dd:LayerName xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">背景层</dd:LayerName>
+														</Textbox>
+													</ReportItems>
+												</TableCell>
+												<TableCell>
+													<ReportItems>
+														<Textbox Name="TextBox43">
+															<DataElementName>TextBox44</DataElementName>
+															<Value>=CumulativeTotal( Fields.Item("金    额").Value , Sum)</Value>
+															<Style>
+																<BackgroundColor>#ebefc9</BackgroundColor>
+																<FontFamily>微软雅黑</FontFamily>
+																<FontSize>10pt</FontSize>
+																<FontStyle>Normal</FontStyle>
+																<FontWeight>400</FontWeight>
+																<PaddingBottom>2pt</PaddingBottom>
+																<PaddingLeft>2pt</PaddingLeft>
+																<PaddingRight>2pt</PaddingRight>
+																<PaddingTop>2pt</PaddingTop>
+																<VerticalAlign>Middle</VerticalAlign>
+																<BorderColor>
+																	<Default>Gainsboro</Default>
+																</BorderColor>
+																<BorderStyle>
+																	<Default>Solid</Default>
+																</BorderStyle>
+															</Style>
+															<dd:LayerName xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">背景层</dd:LayerName>
+														</Textbox>
+													</ReportItems>
+												</TableCell>
+												<TableCell>
+													<ReportItems>
+														<Textbox Name="TextBox44">
+															<DataElementName>TextBox45</DataElementName>
+															<Value />
+															<Style>
+																<BackgroundColor>#ebefc9</BackgroundColor>
+																<FontFamily>微软雅黑</FontFamily>
+																<FontSize>10pt</FontSize>
+																<FontStyle>Normal</FontStyle>
+																<FontWeight>400</FontWeight>
+																<PaddingBottom>2pt</PaddingBottom>
+																<PaddingLeft>2pt</PaddingLeft>
+																<PaddingRight>2pt</PaddingRight>
+																<PaddingTop>2pt</PaddingTop>
+																<VerticalAlign>Middle</VerticalAlign>
+																<BorderColor>
+																	<Default>Gainsboro</Default>
+																</BorderColor>
+																<BorderStyle>
+																	<Default>Solid</Default>
+																</BorderStyle>
+															</Style>
+															<dd:LayerName xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">背景层</dd:LayerName>
+														</Textbox>
+													</ReportItems>
+												</TableCell>
+												<TableCell>
+													<ReportItems>
+														<Textbox Name="TextBox59">
+															<DataElementName>TextBox46</DataElementName>
+															<Value>=CumulativeTotal(Round( Fields.Item("金    额").Value *0.17,4),Sum)</Value>
+															<Style>
+																<BackgroundColor>#ebefc9</BackgroundColor>
+																<FontFamily>微软雅黑</FontFamily>
+																<FontSize>10pt</FontSize>
+																<FontStyle>Normal</FontStyle>
+																<FontWeight>400</FontWeight>
+																<PaddingBottom>2pt</PaddingBottom>
+																<PaddingLeft>2pt</PaddingLeft>
+																<PaddingRight>2pt</PaddingRight>
+																<PaddingTop>2pt</PaddingTop>
+																<VerticalAlign>Middle</VerticalAlign>
+																<BorderColor>
+																	<Default>Gainsboro</Default>
+																</BorderColor>
+																<BorderStyle>
+																	<Default>Solid</Default>
+																</BorderStyle>
+															</Style>
+															<dd:LayerName xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">背景层</dd:LayerName>
+														</Textbox>
+													</ReportItems>
+												</TableCell>
+											</TableCells>
+										</TableRow>
+										<TableRow>
+											<Height>1.514285cm</Height>
+											<TableCells>
+												<TableCell>
+													<ReportItems>
+														<Textbox Name="TextBox46">
+															<DataElementName>TextBox50</DataElementName>
+															<Value>备注</Value>
+															<Style>
+																<BackgroundColor>#c4cbb7</BackgroundColor>
+																<FontFamily>微软雅黑</FontFamily>
+																<FontSize>10pt</FontSize>
+																<FontStyle>Normal</FontStyle>
+																<FontWeight>400</FontWeight>
+																<PaddingBottom>2pt</PaddingBottom>
+																<PaddingLeft>2pt</PaddingLeft>
+																<PaddingRight>2pt</PaddingRight>
+																<PaddingTop>2pt</PaddingTop>
+																<TextAlign>Center</TextAlign>
+																<VerticalAlign>Middle</VerticalAlign>
+																<BorderColor>
+																	<Default>Gainsboro</Default>
+																</BorderColor>
+																<BorderStyle>
+																	<Default>Solid</Default>
+																</BorderStyle>
+															</Style>
+															<dd:LayerName xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">背景层</dd:LayerName>
+														</Textbox>
+													</ReportItems>
+												</TableCell>
+												<TableCell>
+													<ColSpan>8</ColSpan>
+													<ReportItems>
+														<Textbox Name="TextBox50">
+															<DataElementName>TextBox51</DataElementName>
+															<Value />
+															<Style>
+																<BackgroundColor>#c4cbb7</BackgroundColor>
+																<FontFamily>微软雅黑</FontFamily>
+																<FontSize>10pt</FontSize>
+																<FontStyle>Normal</FontStyle>
+																<FontWeight>400</FontWeight>
+																<PaddingBottom>2pt</PaddingBottom>
+																<PaddingLeft>2pt</PaddingLeft>
+																<PaddingRight>2pt</PaddingRight>
+																<PaddingTop>2pt</PaddingTop>
+																<VerticalAlign>Middle</VerticalAlign>
+																<BorderColor>
+																	<Default>Gainsboro</Default>
+																</BorderColor>
+																<BorderStyle>
+																	<Default>Solid</Default>
+																</BorderStyle>
+															</Style>
+															<dd:LayerName xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">背景层</dd:LayerName>
+														</Textbox>
+													</ReportItems>
+												</TableCell>
+											</TableCells>
+										</TableRow>
+										<TableRow>
+											<Height>1.514285cm</Height>
+											<TableCells>
+												<TableCell>
+													<ColSpan>6</ColSpan>
+													<ReportItems>
+														<Textbox Name="TextBox65">
+															<Value>销售方（章）：</Value>
+															<Style>
+																<FontFamily>微软雅黑</FontFamily>
+																<FontSize>10pt</FontSize>
+																<FontStyle>Normal</FontStyle>
+																<FontWeight>400</FontWeight>
+																<PaddingBottom>2pt</PaddingBottom>
+																<PaddingLeft>2pt</PaddingLeft>
+																<PaddingRight>2pt</PaddingRight>
+																<PaddingTop>2pt</PaddingTop>
+															</Style>
+															<dd:LayerName xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">背景层</dd:LayerName>
+														</Textbox>
+													</ReportItems>
+												</TableCell>
+												<TableCell>
+													<ReportItems>
+														<Textbox Name="TextBox71">
+															<Value>填开日期：</Value>
+															<Style>
+																<FontFamily>微软雅黑</FontFamily>
+																<FontSize>10pt</FontSize>
+																<FontStyle>Normal</FontStyle>
+																<FontWeight>400</FontWeight>
+																<PaddingBottom>2pt</PaddingBottom>
+																<PaddingLeft>2pt</PaddingLeft>
+																<PaddingRight>2pt</PaddingRight>
+																<PaddingTop>2pt</PaddingTop>
+															</Style>
+															<dd:LayerName xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">背景层</dd:LayerName>
+														</Textbox>
+													</ReportItems>
+												</TableCell>
+												<TableCell>
+													<ColSpan>2</ColSpan>
+													<ReportItems>
+														<Textbox Name="TextBox72">
+															<Value>=Now</Value>
+															<Style>
+																<FontFamily>微软雅黑</FontFamily>
+																<FontSize>10pt</FontSize>
+																<FontStyle>Normal</FontStyle>
+																<FontWeight>400</FontWeight>
+																<Format>d</Format>
+																<PaddingBottom>2pt</PaddingBottom>
+																<PaddingLeft>2pt</PaddingLeft>
+																<PaddingRight>2pt</PaddingRight>
+																<PaddingTop>2pt</PaddingTop>
+															</Style>
+															<dd:LayerName xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">背景层</dd:LayerName>
+														</Textbox>
+													</ReportItems>
+												</TableCell>
+											</TableCells>
+										</TableRow>
+									</TableRows>
+								</Footer>
+								<Height>10.6cm</Height>
+								<Left>0.5cm</Left>
+								<dd:FixedHeight xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">23.78687cm</dd:FixedHeight>
+								<dd:FixedWidth xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">0cm</dd:FixedWidth>
+								<dd:RepeatToFill xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">true</dd:RepeatToFill>
+								<TableColumns>
+									<TableColumn>
+										<Width>2.549104cm</Width>
+									</TableColumn>
+									<TableColumn>
+										<Width>3.672998cm</Width>
+									</TableColumn>
+									<TableColumn>
+										<Width>2.2cm</Width>
+									</TableColumn>
+									<TableColumn>
+										<Width>1.726742cm</Width>
+									</TableColumn>
+									<TableColumn>
+										<Width>1.726742cm</Width>
+									</TableColumn>
+									<TableColumn>
+										<Width>1.726742cm</Width>
+									</TableColumn>
+									<TableColumn>
+										<Width>2.072091cm</Width>
+									</TableColumn>
+									<TableColumn>
+										<Width>1.726742cm</Width>
+									</TableColumn>
+									<TableColumn>
+										<Width>1.726742cm</Width>
+									</TableColumn>
+								</TableColumns>
+								<Top>2.8cm</Top>
+								<Width>19.1279cm</Width>
+								<ZIndex>1</ZIndex>
+								<dd:LayerName xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">背景层</dd:LayerName>
+							</Table>
+							<Textbox Name="TextBox41">
+								<DataElementName>TextBox52</DataElementName>
+								<Height>0.75cm</Height>
+								<Left>0.1875in</Left>
+								<Value />
+								<Style>
+									<Color>=Theme.Colors!Light1</Color>
+									<FontFamily>Microsoft YaHei</FontFamily>
+									<PaddingBottom>2pt</PaddingBottom>
+									<PaddingLeft>5pt</PaddingLeft>
+									<PaddingRight>2pt</PaddingRight>
+									<PaddingTop>2pt</PaddingTop>
+									<TextAlign>Left</TextAlign>
+									<VerticalAlign>Middle</VerticalAlign>
+									<BorderStyle>
+										<Default>None</Default>
+									</BorderStyle>
+								</Style>
+								<Top>26.64354cm</Top>
+								<Visibility>
+									<Hidden>=Parameters!ForPrint.Value</Hidden>
+								</Visibility>
+								<Width>18.9442cm</Width>
+								<ZIndex>1</ZIndex>
+								<dd:LayerName xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">背景层</dd:LayerName>
+							</Textbox>
+							<Shape Name="Shape1">
+								<Height>2cm</Height>
+								<Left>0.1578085in</Left>
+								<Style>
+									<BackgroundColor>WhiteSmoke</BackgroundColor>
+									<BorderStyle>
+										<Default>None</Default>
+									</BorderStyle>
+								</Style>
+								<Top>0.08333334in</Top>
+								<Width>0.1cm</Width>
+								<ZIndex>5</ZIndex>
+								<dd:ShapeStyle xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">Rectangle</dd:ShapeStyle>
+								<dd:LayerName xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">背景层</dd:LayerName>
+							</Shape>
+							<Textbox Name="TextBox20">
+								<CanGrow>true</CanGrow>
+								<DataElementName>TextBox58</DataElementName>
+								<Height>0.75cm</Height>
+								<Left>0.856875cm</Left>
+								<Value>货物清单</Value>
+								<Style>
+									<Color>WhiteSmoke</Color>
+									<FontFamily>微软雅黑</FontFamily>
+									<FontSize>16pt</FontSize>
+									<PaddingBottom>0pt</PaddingBottom>
+									<PaddingLeft>0pt</PaddingLeft>
+									<PaddingRight>0pt</PaddingRight>
+									<PaddingTop>0pt</PaddingTop>
+								</Style>
+								<Top>0.1852083cm</Top>
+								<Width>4cm</Width>
+								<ZIndex>6</ZIndex>
+								<dd:LayerName xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">背景层</dd:LayerName>
+							</Textbox>
+							<Textbox Name="TextBox45">
+								<CanGrow>true</CanGrow>
+								<DataElementName>TextBox59</DataElementName>
+								<Height>1cm</Height>
+								<Left>0.856875cm</Left>
+								<Value>该模板通过页面报表进行货物清单列表的设计。</Value>
+								<Style>
+									<Color>WhiteSmoke</Color>
+									<FontFamily>微软雅黑</FontFamily>
+									<FontSize>10pt</FontSize>
+									<PaddingBottom>0pt</PaddingBottom>
+									<PaddingLeft>0pt</PaddingLeft>
+									<PaddingRight>0pt</PaddingRight>
+									<PaddingTop>0pt</PaddingTop>
+								</Style>
+								<Top>1.190625cm</Top>
+								<Width>10.6cm</Width>
+								<ZIndex>6</ZIndex>
+								<dd:LayerName xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">背景层</dd:LayerName>
+							</Textbox>
+						</ReportItems>
+						<Style>
+							<BackgroundColor>#f2f2f2</BackgroundColor>
+							<BorderStyle>
+								<Default>None</Default>
+							</BorderStyle>
+						</Style>
+					</Page>
+				</Pages>
+				<Grouping Name="FixedPage1_Group">
+					<GroupExpressions>
+						<GroupExpression>=Fields!订单ID.Value</GroupExpression>
+					</GroupExpressions>
+					<dd:NewSection xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">true</dd:NewSection>
+				</Grouping>
+			</FixedPage>
+		</ReportItems>
+	</Body>
+	<PageHeight>27.5cm</PageHeight>
+	<PageWidth>20.02646cm</PageWidth>
+	<Width>20.02646cm</Width>
+	<ReportParameters>
+		<ReportParameter Name="ForPrint">
+			<DataType>Boolean</DataType>
+			<Prompt>ForPrint</Prompt>
+			<Hidden>true</Hidden>
+			<DefaultValue>
+				<Values>
+					<Value>False</Value>
+				</Values>
+			</DefaultValue>
+		</ReportParameter>
+	</ReportParameters>
+	<EmbeddedImages>
+		<EmbeddedImage Name="newlogo">
+			<ImageData>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</ImageData>
+			<MIMEType>image/png</MIMEType>
+		</EmbeddedImage>
+		<EmbeddedImage Name="AR-logo">
+			<ImageData>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</ImageData>
+			<MIMEType>image/png</MIMEType>
+		</EmbeddedImage>
+		<EmbeddedImage Name="Pay">
+			<ImageData>R0lGODlhuwMkAHD/ACH/C1hNUCBEYXRhWE1QPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS4wLWMwNjAgNjEuMTM0Nzc3LCAyMDEwLzAyLzEyLTE3OjMyOjAwICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IFdpbmRvd3MiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NThFNTVCRUJGQzc1MTFFMTgzQzlDRTlERjZFNTU1NTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NThFNTVCRUNGQzc1MTFFMTgzQzlDRTlERjZFNTU1NTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo1OEU1NUJFOUZDNzUxMUUxODNDOUNFOURGNkU1NTU1NCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo1OEU1NUJFQUZDNzUxMUUxODNDOUNFOURGNkU1NTU1NCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PgH//v38+/r5+Pf29fTz8vHw7+7t7Ovq6ejn5uXk4+Lh4N/e3dzb2tnY19bV1NPS0dDPzs3My8rJyMfGxcTDwsHAv769vLu6ubi3trW0s7KxsK+urayrqqmop6alpKOi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</ImageData>
+			<MIMEType>image/gif</MIMEType>
+		</EmbeddedImage>
+		<EmbeddedImage Name="Logo">
+			<ImageData>iVBORw0KGgoAAAANSUhEUgAAAoYAAAB0CAYAAAAYT/NCAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAMyxJREFUeNrsnQfYHFXVx8+bBoRAIBB6LwGUgPQiSACD9N5DQkCaUhQVRLoUsaCAgIC00CJFOqJSYgDpkSK9hRZqQEikhyTf/L45a5bJnd0pd3Zn9j3/57kPZPbdO7N3bvmf3jV9+nQxGAwGg8FgMBh62BAYDAaDwWAwGIwYGgwGg8FgMBiMGBoMBoPBYDAYjBgaDAaDwWAwGIwYGgwGg8FgMBiMGBoMBoPBYDAYjBgaDAaDwWAwGIwYGgwGg8FgMBiMGBoMBoPBYDAYjBgaDAaDwWAwGIwYGgwGg8FgMBiMGBoMBoPBYDAYjBgaDAaDwWAwGIwYGgwGg8FgMBi8oJcNgcFgMBgMHYmBQdsmaOsFbaWgLRa0AUHrqvubT4P2btCeDtpjQbs1aPcGbboNX/dE1/Tp9u4NBoPBYOggzBu0k4K2d9B6Z/j+M0H7WdButKE0YmgwGAwGg6G6WEVCrd8CHvo6O2g/CNpUG1YjhgaDwWAwGKqFRYP2iIQaQ1/4RdCO8tDPakGbI+HfQkSfCtp/7JUaMTQYDAaDwZANfw7aDjGf4Us4LmivB+39oE0L2uxBmz9oKwZtyZjv8XdoIf+d47nmC9pbki7glWdcKmiT7bW2FhZ8YjAYDAZDvnMUcjVA/7+/Xkfr9d+gTZIwuOPjgp9j8aBtH0MI8Rc8P2ifNPj+qkE7M2jrRq5D5g4O2r45nm1rSZ8FZR4lq4/bFDNiaDBUHf2CtlbQVlCJl81tbgnNKLMGbYr+3STdtN/W9qaETt9P6L8NBkN5QBAHkb1rBG11Xd9E+S6UkPSgqXs+aE8G7Z9BGxu09zw+35by1WjjGg4K2kUJvo8JehN9viUin22V89l2yvi9KTbtWg8zJRsMHtaREkE2v4308MibI3SiHh63aRtvw2wwtBzzKOHaVklTX499Y6K9P2h/CtqVEppO8+C8oO0XufaBhClr0gSPHB60XzmuE8zyTobnQpP5cgxpbQaE6ldsGrYWpjE0GLJjEZXGh6vWwCfYzLfTBvDvuUwlf3PINhiKBSTw+0oKexZ0D4THb2o7NWhXBO2XQXsxY3/zOa49Jukjih+JuT5/RmK4r4MUfhG0I+ueDW3sr23alQOmMTQY0uNrQTsmaDu2QbjC9PxHlejfsldhMHgFJtMTgvaNNt1/mhJEfALfSPndW4K2ReQaeQi3TdkPpvKHHNdXa0Aa4zCXhNaOuSPX0ZLuHvm7D2LI7kSblq2FaQwNhnQS+c9VAu7ZpmeYTcK8YpiMTlEp+3N7NQZDLiwXtHOCtmGK76BVmSChmZT2jgpuk/SzWSQMRBmgwuRKMiMwJQ5oEbFAEFlMihiCQZJq/FwEauEMY7FgzPUs/pA/dJBCUeE2CczHsA0wjaHBkAwjg3Z6go291SDX1x4SmowMBkPKM1DJyylK5JqBUnFj9L/4B6ZNpUIw2ubaNkpwT+6zm4SBK81wSNDOiFxDA0mATBrtI+4qezlI4cCUvxVXG8rsRXMXonVczSF0u8zUkMoPbZoaMWwlkOSWkNDBdWE99NHI4GDcR0I/CCSW/2h7TdsL+pmh88HGdIG400CUBWgMDwjaKHtdBkNizBm0SyWsJdwI7PekerlK939fmFcJ2AFKGOOAiZXAtjub9MdZNl5m9uf7m/7GJGfWxkH7u8xsEYEsfjfl77te3GZstKHXOZ79ZcffokE17ZURw8KA1EIh8bW04UcxT8a+UO3jIEyy0AckTDvwpE2njsPyQbspaMtW5HlPDNqx9toMhqbAXErZuEa+hAR8oUm8WkLNW1GomY9Zv4s2OHMOUCG1ESCB33FcfzRox+nnLvPsUtr/oeJ2MePMfCjFb9pL3ClyHgzaOg6yF0cMu2yqGjH0jYVUUiK5Jmr7PgXe6y0lETcE7Xax2pJVx9pB+4uEWuUqgaCUI+z1GQyxwDp0V9CWjvkcH8HDgnZhwYQwCnKckirmGIn3/z9C3KlkahisCou4sw7rQq3U3GcSWsmWksa+iJcrcU0KqqTcp78nCkjhA47rX5eZlSuMfU+brkYMfUlfmwbtexL6cfRowzOQnPiSoJ0rloOpilhLyf0cFX1+Ntmn7TUaDDMBInS3hIEgLtwjYbTshDY+I1pMIpO/FvM5Ecu/bPD9PcWfWwm+yxtIcl/KZZR0u9J3nSVhBZW43/yog6DPZVO2PSSqU4CEhCocHws0PVu28feRCPSnQXspaNeqBGWoBlaWMKH0HBVfCwaDYebz7k8NSCEJojdqMymskTFcna6O+RzzdiN/P5QSu0hYji8PMDtvmIIULq3fcZHC5/VMNFQAnaAxRNU8UkL/iUVL/Jw44h6hC8RQTuB3NE78J6tuNVaRzotS7q3re0EVvAZq66dtdgkDx+qjPPGl+rjuvzjfk9KD6EfKD74iYTBBOwPJMLdRoxYtL0FwRGfOrfsapj60JkSE/lvf6XMlfT+YPldQckDDNDmX/r5atRAIxjT9PbjeECmLrzamzU9b8IxHS+jH50IZXTDwr/uthH5/UTCOawbtXw2+TzQy6bV2k2QR1zVg0j1JiWlSgoCVhTyK8zo+g6DimtPIijEkaP+IXHtH17rBiGEqrKpS3uoVed4vg/Y7XayftEA6ZrESAba1btTH6P0N7oNtrIRVCKqOKhPDvvr8mJaWV8K0jM7fIiwAU+vICc719+t/PyvwN0L8dtW1uV7KQ/tlFTIvlPa7C/BeiJbdQH/H7Bn7maYCM2lgiIi9U4m8T6yu79blu3d6DPkqC06TMKVOFAR4jErwfcznW+o7Wl4JYz+ddwgeRD2P13l/exOy6SKvPwnaySq8RYFQRmTyrU36cRHD1/VZDUYME0vZv5Awb1MVnVPZ3EdIWAvXJ3rqAiO1ynYyc6LSKSqBWUm1mYGEfFSH/JakxJADIa8PD33kCdCZV+csbX0lgu1e05+qkHCTak18rRfWHlopkpPPlrMvNm5SfqAFe7bFAtSwoO0vYSBBEUDDRO3gP3gScHoq6VnV8dktKjiX+SCEfGGi3SQjMSxyn8FvcN0GhJ+gldEJ+hoqoQtPFJMLfDcIhfibjlSCnBf9VVib3eMz4o5GNZu3jRg2BhLPNUFbseKHN4sGs8YJki/ybRbdMLZVMjh3k7/fR7UNhhkg2eqD0jkRcEmJ4YeSP2F3FgdxTKY764GMianMvs5o+W/QA/CuHP1ApH4j/n1XiTLFAvFrKTYTQpcKs1gdlm7h+EPMj9QDMivY8853XEcjtbK4S7GVDcdL6C5VBmI4WN/Jzg3W7qdKCq9N2Cfn1/VtGlvM9T/x0M/eBZ2tuAw83MoBqVrwyTYq+VWdFNbG/jiVWOdM+V3MADupVD1RNRt7JyCFot8zfPU9nCeWFqFoYCLGYZ40FpitfqmahrLvQWjIqIk9VrUL38rwuyE350oxAU0IhlhPbpbiAqaWVlI8qsWkUJR8PK7EOgtmVeHbhe9WhBSmAWuKqOrZPPeL8DdS1wH+rrs2WLv4726cghS2G8M87f+7F/Bsk3S8W77pVQWEuZ8unRVJDTbTw5IUO42i4TDXbamH1FBx54hKgo21LzMnh0ALspoNQ2HAfIp/FBkD+lf8t6yvBIm8bvikNasdCym8XeJNbb73EVKtbCB+zGI1bK2/t51R+rMrscbv9CBJpxmFzLhq/16v78bnWYr2Gw0kdZcX0zFDiEer+5GELkRP6H5f1GE/KGgXS6ix4/fdqvPiuZTjNr+Epvc19cxYNyF5ulmVFGnrKvdt8x7Fb7wtRx8ELG5UwLNdo/PHiKED+OWc0sGH59dVEiNj/UuRCYuKHZ/BDT29r15KMC81zvL/aV1OaNO9P9HN82N9jjmVOHVKqhk0DEeqQDdrh82bPXQ9ojWJ8xPmEL2hRaSwBkgJqbo2ET/BbQcG7UwpT/UJhAs0YZhQk/hAdYk7qARf6x97eJ4uJQP7696dxvLzuhJurBWvFjBWsymp31r/DVF8Vu9FRDjBVZOVuPbS9TpQz5xlJL0VC6XGj5TIZAGE+ectmEOMy2GOOb17TmK4m6PPiSrQJHEVY8yHOa5f3o6FVgVi+JMOJ4U1LK2SZK2YO+TtmwVtyjsZMfx/kAi2VSmOeLdEXGKOfEbcBeMBZRrxoyWP2RA9eKqWUxEt7O8ke8nJKoAoaaJo8aO6yvE5UZpD2/Bc39TDaETOfigQcFZJ1+wLOr7NAHkf5Lh+mbjLr6UBGiaihQdn/D77DomqD9e9GN/NNwomRKuI/5y6BEXgo3eO5Iskf0JbK7Cavr96bKdzPmvaJBepo3xh0hKlR8YID/e0Y5GV3SyLZP6bbkRU5tPNBv+r9QqU1NEo9BfDIQX3jwngDAlrLXNgo50c24AUgveDdq+EbhNoi+dXIj+mAuNJhDE+s5d0OCmsgfQcRFzu6iBnh7fxuYbHHFRJsVVJSWENaJZWTzgOLuRJ2YXJE1PtHTlIYT3QLKMBxdT7falObeB79bkpp3eq+E8vVCRcShE0pFtm7G+FGMKdRtu3h+Ma1W+mtWOAykwM8W1oZfQspgmS3WIawk/iRgl9NCjTM1k6C5grt+7mpJAggiKDmDDpofnDv+7FHP0gwf5ZJdxVxa9flE/g//WIhKkVuhN66EGzXt2/zyrBAX9mRnK+iP6eMp8NPRMQV6xh2zmuQ+ieynhfTK1o/kcW8JvwozxbwhREZbQQfKrC6aFKBpnvo6Q1icl9g6CYjxzXswaPuIQwskIkzTO6ipLLPMTSK8pqSh6gh2HR/lbP6X1IqEq6kkZ+OSyG9ZVQUYO56n5TBLFc1o2J4YiC+kXCw/3hdPGffwshBW0vPqfkeJu/JGNJIvXbJL1fUh58ousXv6mJKrxxbRYlDmgvCTpYXMKas0XuJWgOyRCwkr6fb5TgnZChgNyc38tAcqtQn5Y5R8De32I+J8eiyypyZQ5SOCahMPm+zk3++6HOxwX18G9WyQMrAebDoTqvfYCo7gckDI5ZXhonVCdwCYvGK7q2aON07/myQ/b+j/XcjxL8zXXdpIlU74ohlFek6GN4DLF8ql0DVFZiiORUpO8X2kDU32kSTI/XdoluOPtKqA1auKKLgwOsX4zk1OngIN+hgH6n6iZxdcHPj1bhbiX2m7Z5LJlDt7dAy/GBks+xekC/kIJ491LSxsa/k8TXys0D9oFfSLnqorNH4bP8WgphacMKreODGhBDl38npQ+z5Mpj/jTLnQuBwsJ1izROOL6cCuXkVlwi5m9W1jnOu3jPwzhB8g6ICA39de1+osLsJ0oKP5fugUscxLCPvpvzU/SDALJk5Br70uiE30do2C0nsfSOMpoLsPPvWlDflPpZV6WyPFVHJimxxHfsOGlvrdWsmFWy+1RUHd8qSCtyYAtIYQ0cGFvoPGwnehZICj/TDRKft/l1XyCw4nlJp41F04GZ+yQ9dDdQDYpvEJ26ZonmOe/msIR/S3DCiQU8A2mx3iiIcCAUDWzwWRT3SLY0XcfqnHGB37aLhFrpU6V5FRo0iScrQTxI4rVTK6oCowhN9wdKFp9UZQf//243IoXgLv3dUaQ1J7vMyJD6NxN+HxehqBZ5Wgpi2S2IIYvgzIL6ZtNDlX6/xz7xryCggCinpyq4OLprsusitGw4pJ/X4t8xTQ/+wzvs/bCpUuoNq8EeqoWZ4rH/u1VA/Im0ybm7hSBAoF+CvyPwYRFP9yTl1n5K5ufRfhFEiRD+lcd3CfEdGnOOuDS3YzPcAwL305jP0GCvpMJgWrcRlAlYxkhVdkfM36xbAsGvU8H7cgWhIAAktQL2jjlD02j78hLLbkEM8YdZwnOfkLftVeorykcCyQuV8l8rtjg2T3hodBp8m8vQGvywjb+HyP0jOuC94JNFfjn8edGqvFfgvTgYfqsagk4mhwQ17JjgHDjI0/1wb0DbhTnu3chnL+g83VT8WVlcmjy0d708EcOfi1trR+JoNNl5CwW8peNxdsznB0u1zPtVgosY4jO4W8Lvo+2LaqyxclyX8PtEuLtcmi5v98CUycewTwGaD0jhltKaVB8UfsdE/WfdMKoApHgSs17bjTYDTGa+gwMQOtoduY4mBg3bgRWV3n8vYT3YD1t8b3IQLietSa7bLkB+RzX4fCtPAjmlOdFQNquwMUaFmaM83HNlxzXX+ob8j0vZN65COzuuYy7e1SO5nSozKrq4UmidpmPbChD4eYH4URpNSCFwoDnzZcHCenNjgr9Ds417wfqO9XJqwnUVBRlNklYe2kYFt6zEslsQQ/w0FvLc517S2vxvX+hGgv9CmXyNGmGVbkYMOUh81kV+RUJH5jIAreUKFXsf+FyNlGJ8/pLiF3rQt3LsSHJOtCgaJ6JEKaGG1aEIDf4GegDF5Zob7uEeaHu/K8nLrhG1f5jk96FbPiFZHK+Hbhrwe7pirv+3oPU7r4Nw8HvmbtG8JLPAdp76ejUFMVxDiZIPzJeQGIJLHcSwlj7mmSYKBtfzptH2udbdDQXNrVQokyn5AM/9/V7cFQmKBpvPDuK3XmmRz3qTdC/4zl14tqSrQVokcJXAbPhyRd4FAsnqbSaFtXE7uQX3wbcOH2rKX2HuxGSFhpcIVbIE4JNHJPG7nu8L+dq4wQHnw+cWs3wa0z9/68Pfu7/+hnos7vi7LD7gw2Lm7H0FzY/pSjofd3y2WAX32iltui8C1rIJ/xb/0E8Tvvt6bC4zp+dCyEvqTgZ5HZqTWHY8MWTS+6wpior4Z238PajQDy3pYmXz+ac+H2X4HupmxHAFz2M5umS/74OKCCVE82M6Kku6pGsLHrc3dI87RL5aD70epAzBjIeG6F+e779ezHUI6ew5+8ZScn6G7/kiWPNF/u0KHng2ZZ8ElSwSQ4CLFtZ3lM5II5amGkpvz/dOmqcWF6AbHNddtY/rsXsMyUxKhrGQRi225K28rQwvrizEcFvP/R0lforI58EoCZNUlgFoRKjTS3APofGozjHlvCndDz4l7we66RjmAb5eRKyeIP4TgDcCWjPMjlvo/dkjBkYO5DsKujcJg4dIch836s9uJqEpzhfWirk+xEPfFAjIEij0iqffNmsCYph2nW4U87z3t2CuUinp6A5Z60kxu+d7D5fk1YdGOa4t1WDNoKXe3HE9bwm8NMSyUJTFx3ATj309I63LJdcIHHonSvv89zjoSP6KIyvpPj4QA/CZOH2MDWfqgwJJvujkrfjpoZ0jPRWppHAfWMIhCKPZr/cPJY1NEYnPd5f0ZRHRHuzrUYMQl3j7mx76zpqN4Q1Pv222iLJjgRhynpdI39LCtXKWrpVVS7BumYs7N/kbAph+FLmWNyCP9F9JKtVQVSZqucGdAN/asQm+f4fOxahAMUzcbi7bOIQRhIakGnDM3K4YhNJUIisLMVzHY1/nt1gT0Qg364bUqtJlLETSKBAZjYawO1Y1aYaBHvu6z4YzFb5fICnkACUDAZo2HNmTBBitHyGG/y7gua7IIUBQUQZt3MYenmMOJUxvRwiVj0ot92b83seexrg+qGTOmHf/Vso+V2zzesdv+TB9/+3GJwkI1hIF3HecJE8x9AMHmR+R8PsIrGj7ovkqMfficvWlQ9CLYnQK3uHSFiI4PliWjboMpmQm1ACP/ZUpwha18A0F34NowIv0UMTXZjeJLxJu8Bvd96QNZ2KcKP4TgC+j/eKzh08eKWfWluRR54Mi/x7v+fk4KI7P2cfZHp9nOce/8yoHpuZYB77yR36cQNkxOcPciuLfLV4zCBSN3BvKtMe7ounT+Oz2dVxLk3f4Qse1HWP6dWFUjBLh25Fr8zmuiSQ3I2PeHpbj+92GGC7rsS8SqL4m5UIRfktIv2fpBEUbSSTbX6R7lTTKCl+l8D4r4VwrK9BgH+exP6Jo/6brHV+spTztPW95/t1jJL0JOYpbPRKAhZoQxSwgAj5rPr++nn7Xe00ISlqSQcqYWWN+a6sRF0QJ6fpnidZ4rxjBKCnypi0iA0k0rgAtedLUOwQnuQIxhznIZlTwfFQap7apB4Lr0o7rV0jJX2ar4TMY4PESHoqPF7BR/Fo6v5RXUejy1M/bJSWs9ZtyGaKTIUZ7ix/3DkyqpJVZy9OzRaNZpyiB8LUv+rAWIOwR8DDUQ19RN4rlPRHDrJjXw/1JEVKfbiQuuvWjnM81WdoT0Ig5dY0I4WWOPi35q64UjTT5+FzvLY2rwWQVQKPRyHumIF24lUR9/yCWs9XNMVdVlLxBJw94ECA7jhjO67GvF0q4OHybp043UlgK+NyUkUCJYF+8pCQ4K6bpRpo3YSvCIxpy3xWFsJhQy/f9yGHU31P/vqwFD3sihlGXHR8FBfJE5fsIrHgu8m8f0a0ubWE7haxxUk2kye/qem9pI3QvchBDhEmCSpIEOv1JwiozfSLPRbDJlboPrefY465M+HyQ311yEsuWoAym5Nk89jW5pIvD53NNEUPVpOEkc+SsDhyj0zwcaqRYelqKKzM5R+Tfn3nql0jOZz315YsYRBPy+giKez/Hd4d4uP+jCc+ANEqQfjFCjiH53GrHmJFV4CUHxxmW8Ptk7rjZcb0WbLKr47MxKYSj76ggWg+0v1eV7WX26LDJOb0bPFeXGPKgrMmfr+6wccZf7/gc30drh2noD+I/x1krBK9nPD7ThIL2ex/EMKvQu4oUExE9LQXZi4MF7vnhEmnmhsuVJm3UOufsKMf1PVP04fo+mQ4GxBDDNL6BrhJ4ZA95rwovs8rPMEcJF0yX+DNN1SQMQ/tJ+pyen4tAlk6qQnN8jgN2SQn9bnZow3P72kNe8vhMr5f4t2YVtHxUpoIE3paQjMySol9XMM1sYmg1sghplzr2eMpPrp7w+wS1RUtSom0+1iHIYF24LsV5sbXj+mVlHPh2E0MGa3OP/S1dwjH26Tc20faK3PAlnfUt4Nn+0SFj/HqM5J0EgyXM57V8Qc+G2f55CU1GpIIpyoF/gse+3i3oGfu1aX7spM3Heomu57gAkTT+lK45QaBSHzEURex8WQVei9lHk5bIQ/Hi0gL+wHHtRkmuFd1eZvZdxR3pJiOGMySvbZQpc4Cs5rHvwSUc45U89mXl18pzyBZBDB/okDH+nWRLYfJ1CX12Bnp+HojmMUH7lpKh5VR6PyiysRME5Eu779Ov2Jev1oclmBv4WV3iqa8/Oq6hxXFVeVowRb9vx8zfJW37jIVr3eStlZw1Abprfu0myesxJxVq80Yjk2/40+5MDJk02OevkVDrdYMOlG9z3NdTbgCtwLc99vW87T+54asMF/5Zvv09n+qA8f1UsmkLiRzEjOMrSwFk6uKgrSBh7rCTgnaPNA4u8Zkh4TPP41pEYN1cLZwXjO2pEuZl9GGWxVQfZ8Zzlb9bNEP/Uawihjjk3Qtd2tis/r6uAg/Mv6TWSRKZN0szR9DV3xP2h7baVXv7irK+zCLT1RB9s62EeYCGSuvU8Ggjzy0R8d7GY3+P2v6TG76SGPfRBf+Gx2cjtdF0qXaAEZvyhxnG8vqgLeLpGUj8S/m9J1J+bz6P4+A7gMGHqS1KLidJfg1pNNkvwSBEkb+r5Jjn/oaEEcizeBwPfBS/bCD8RV0RVsiw10a/g8b5yhavJ+ozR1OksL5IhbS/pEsJ02qkKbjg0wKDppHAtZGR6wSh3JiwD4Tb0xp8fnUK4jrMsadj/RtT1hfnW2PIQYl55k7dGC4I2hbSWt+M/Uo0vphNfCbwvt94XW741Lqu4PnZpkpx/mStQpboahK2r+Hp/scqCXkiw3eXKumYziLJy/w1QjTFko8I7Gj6Dcz0+wTtyKCdIGH92e94JoVoHa9p8LkrWfDKKe/hcuvYUlrrfrWtnp/9Iw2/dapdrVvyvSCvmTRPLW2XOXkLx3yNw2hpHOiZxow8LKb/0qZA8jHJCfj4iS4kHK7PlFBt2q7AFtT9m5VkfI/y2BdO1feJIS+e8NjXqgU8X5WJIQfBbSm/882gHeLh3tNUI3CiZNeiLFfScfXlmB/1Ufah1YwetEWn3kAbuHeTv3nacW0JSee6dIvjGuboDVr0znnW3zf5m8VKNEeLyAiSR3C5K2ivRK6hoNolxT7815jPqPaTVEmzYoxQUrqk1j6IIb58OHM/ptLZbyQsU1UWExgaiN5tfobt9dDzBfyvvhBDXjzpsa9vFfB8Va53PTbl87P/nOdp3yBq8NKcfQwu6bgu6qmfqNDhIxglav5/qcBxwBROovN3mvzdvz2s15dj+jmsRe/8jATvvXeJ5mhejbbv34JLjktrmDenIRgtydOeuYJO8CUvY/neXMTwDD1cT5D06vlWAZZ+dBvvjxT9B899jjZO5wX/cUiSeYjhLJ6f7+MKj+2dKf9+uAqZeYHfkI/KMWuXdFx9aTKjGsPXPPQ5KPLvpwtct5tIMj/rOKvARinveYHjGtaoorWGuEON7Gb7ct8C9kKXoLhmivX0F3GnLkqq7YurunJZ2V9GFmJ4YEUm2tG6kbRDcsJBeX6PfSIh3yQGX7jLUz+YT75jw/k/pEm3g5bwCA/3xGx8qId+8I9epqTj6sOXFX+pqMbQR+JsUrjUm7ofK+D3P6oH+oMJ/56IUVeEf9oMERALV+ob0uQUlQNykxgh5+JuuJ/k9YElmO8ex/WkWkOsH3+KXPuXJC91ieIgqlFH01h6JU8WYliVlCn8NhyU12rhPTnszhe/KWpENwqrkewPYz32dYAN5/8I2iMp/p7i9j6SWOML9rKHfrYq8dj62MOed+wh4z0JwvW5aH1GWuI6c5L+/pc8rPHBKeccUdu/clwfpEStp+f3TG5NUrlFzaq3VkAx4CLKaTR+XybsMy1GOa4NT8F9ouboNClmhsUoJV4v+bvMRAyvrdBhhQPvbVKML1gUfXSz2Mtzv5PEj5nMMAM+K4xsKqHrQncHJCNNFOJunu57i6d+dizpuJLzz4fp0mXi9ZX+ql4QJh1UXj/eKXqgQ8COySgUx63xPVL2c7q4tY/Ml8vFT8YNCCaBitfLzDke0X7uV4H13yvmPSaFi0Q2C2jZTgWAaIPM1bTsf3bsS2jxNkz4XA/LjLrnBLglTVeEi9HOjutXVOBdZiKGV0u1ADkk59P3pLjgGJyE8a/as4C+T5FyVCzoJLwqoUnAB5hTv7Yh/d/mmfQg3M7TfR/x0Mey4l/L7wtoMn3keHMRQ3zxfAS0Rd/lJTne5RF6cO+l6zQrSD78WQwxTHPufa77umucdlUismyO56SGL+bOkxzPNVUFqDe6wf7xvuPaoCb77jEqNEXbiLo5SMDSDY7vj0jxbKP0v3dK8jy4W8nMUfDMpWs6lRiymTxXsUmHap5gkFtzLmLXAbefjsl6BTz3CyqxGvzjTx77wiF9eDcfzxdT/C0mvbk93ddHreMfl3hcD/LUj0s7OEX8aA3RmNebu8+RMFMFWjv8o6MRnBA2zP+Ync9Q8oNwjUka062PlE2k4rnZcZ0cgDuk7Ashcp+Yz9aRUKN4ZhMiUw+0SZiNCW54WPtwgXveXuE9oUfO/aNRsBBm2kaVaAY5iF09mANJTdVohqdJ/hJ4zMdJnUoMJYaBVwGb6iI+J8UijiOaw3RTJd1G/wKelc10X6l2+pIy4xpJnnIgCc4Rv3W/q4Y0Wo01Pd43b3m1QQ0O/XaDQIT1Pe0ld8d89jdPz1pPrjELHq4H+wJ6zsylwkBPfWckE8fP9IcSmucmpLzfSGnuInRVzPUsKWeIJP1+g/PgIFWYPKZkF4UBVa+GSJiomuclxya58SgLSyR9XIk2CPuekq20ZLvgyh2aJm+ky/1ghM6fKNhn02T9QNMXjcgnYGr7hN9/U9/XdQn/foC4cylfXpWXmZUYXiPVBYuYgIFndbNkseOQ3MzM3E83aiTD1/QlF5n37LfiL3rWMDN4h7d67G92PWTX7KbjmYYY+kwknccCAEm5UPwHEfhAfxU6fQAzcpxm1ZeP5k7SOEgGTQkuMT6qPaBt+2OC84vf5sp5SJWdLMFGCH8kSG6UGJwUbofou0OBgtYU30H8z49W5cQcTUgIhPrSiq3//8bsiUnh2ovnUlK3qZIttMoU0xgr6RJqQ1pdvn1pXL+GS/KE8PgWRn1PP5D4hNmlQ9ZayajWx0t5S0glQZdK4zWJ/EOV+PhdVBn5TMngQD18lmrhAUKt1yONuxUOamFu4bG/eXXTwk/qrAyHIJLwShUdy4kp/nZxj/elTFnWiM2TpRgXEBfwm0uqFeur2oklPN37H0328gnip071JTqHi8zFiVB/dkKlxucqyJ8UI3jjh5jWxxIfe5ITnyuhNtAXpqqQ8lOppk+5y0S6QIrvs2/iv7dg5PrXEhAqvkfU/QZN5mZUU7yhks0kUcJp5rTLjHyV+CtQsZCSZUzp8+k5w/77rM7p3Enm85Stq7LWUGKkEyRe/F2oQ3mgShSbKzFsFSl8RUL/B0tPUzyQRp/w3CdmMkxJmJSGSTI/Fg7lUyXMAzh3RccyzWHmMwfccMlWGeSn2loFNB2XOw6+KNCmYinYyOO9G7n+TFdC4gPLqWamiL0SDSr5385JeW6dq4J+FOzpWX1Ln9P3gyny4Zy/i4jZi1Ug3F+qG2j4tuNaGsURxPj4DPedovtss3HDhSwaqNYl/n3Dyevpqnjmw4y8tAqME3TNHqRzEA3lwSowvajkMFemjDzEsMi0NTBrVMs/k+6V2Jk6o5ir3xVDq3BUQf0O1s0ASe42JX6YmEaq4MGhhJ/MOAnN2vy7V4XHMc2BNqvH+9IXWpykkbv9dFP9ZRvGiANsvGov+P819fBcWQXSq/UAW93jPd+R5nk7LxQ/Jl6AX931Hsl/l2pgnpZsKY7eVzLpAkQka73z6fo7eYff0Pn0oCSr0020NcFvI1RQ2FuKqxjTKrhcSdJWNTo/JYGC8JM2KGn6MZd5foTncdjdcY1Aq/ty9otlBE31dvp7d9O501vPjQV1LG5SDjFOcqQEy3MQcePXxV8dz4+V6f5ZSeGkuo2BQ/VH3YAUIoW+YFytpSBSbIxnDU2UuAzV1slIQywme743pez+qaQ7rk7uHEowEAQWbuM4zaqH0YgW3e/qBGSFfRwL0C6e7on/HoF5+0v2hNc9lGQeIfn9dnEZIP3NgMh1/MCuVHL4UY7+H5cZtW+JOF5SCf9sOu8+0zn/jmp0skSmzlLy9e8KHllcCUvSFC/TdQ0jPB3eRIBkXqExS5Mma7RyiXres5zOr4c8jcMeMffNE+jI2YSm8HMlf9dG5gWKtLf1Om2IrufLlVekjmzPQwyn683zELZJejDzo3Hc/zTmPmhTcG49rkMPVTRGm3WA1FhVMIfxteppQ5EZaTSG7xVwf/xtMN+P1UPjbSUXi+rBz2bZtxu+lz8m/Lvj9dDxtQYoL4irBmbxc3WfT+KntbRqOiDOvlKLfaAE0zUWy+rBvZ0k0/Y1A4f3s5K8bFoS8E4OLfk8e1bHLzp/KBk6KkU/U/Wcx0d7exX6FtN+31PB78Y6Ip4GWG/+KjMHHo30RAzR9Lsq6+SpjYzmvabpxB+egFm0hBfo2NZK736pwtiPdQ/cRtfeRRJmXkhTfCC36SoLMeTlXK+NjWNKio1rvC7usktPacCE3DaFVGXwDzYZ8qdZwE/rDpEigHVhQ0le1aDTcZskr0LCO8HEvbfnZ6glHYYwPaINQRh3GTRpaNQI2iLIYF0pLqCRgxSN6MaOzyAKRBHvK35TWPkCQROuiO8yJb7GrDvO8Zy7SLa0OxP1nZzn+TkvdRDDXZR4500N5yqBx5jkyfuM1h0Lx8kyI+VULYk3ZA8T9Rcq4BBtTyT+gnodF4qD9bkuaCUxxKciiTmZv0EreK0+8NQcL5WNDnPzkh0izR8ilquwDDhBwkivVW0oCsf9NgQtwW9S/v3hqpWYv4BnQZhfR+KTOReNmpkSrfI8js/x+0UrtY/40Rz6wjZKClwKhTtKNt/udBBDtFporJ4vyTOiuUaDXB/kN0Dn/XU5+mXuuHz68gadoMVHefbbumvf0P+eXDc30CxitZlTuRG+yucqMdwqLTHs4WGxXR/z2XOqhYHF4mtAItN7PCw6JE6ctS+u8Ib9rr7w/Y0Ulga8B3Kx/ceGonA8IFbmsWj8LQNxeF8Pkk4F0ZyUsYvzh4U4onGZqyTPiyn1Gsc5jdnw+1I+7aarXG5XDLFt5z7vqnec1+f32w6BKk1tZRf6KNG+T8lslBg+UHdtHiWnzImaJhnXNDSvqX10e3gYaHLBvab/j0nuWAkjMrG149cxroAJjL8hJg8c+l+UauF8HZtrxVA24KpgqYKKxxSpUBWACgLhO6vvN0Tk7A4eG8jy9xp8jtUAX6112viMkKmj9F30dnxOjeB/lXBsH495rh21FTleabTcruhkNIbz5ngGV9AJrhzv5OhzPv1t0byEK+t/H1MOt04dn7gsInTDzQa2gxi+IqFfyNzKZCn782QLFzkh8T8WdxHuMgFHUPIb7Rdh/4ZyYaxqFapODv9b8uc7zQh4YSCh8zM5vo915x8V+J1ZFQ648PyswedLSBjlTj7SVmsPCdoZo+/QdT6TjuQ3JX4np8ZcJwhirQLuh1YNZcvaKb6Dpi2a/QO3ut0zPgMVXrZzXM8r/PaOuYZiaYISWSrloFEksfx1DqGnp2QIKOvh6eVMlfaZhnC8/J0uZhZ72XIAYj7HGX6I5M9lZGgNrlMJt6pmfqL9y54eZ7wevGXCO1J9E/e9KpznwZd60P2rxL/z5pz7KXkHf9CAXHI24v+NRQrL15wF/x40XqdL6Bs2pIHQupuUywcyCszJ4xzXCTJCg7alx3uRiQB/5e86PmvmEnSJ41pWc/K2MnP5PyLwb8j5+whIxRw9qO7aICWxj9XNG7CDtk8ic5iI7tRBSj2kc/CRLnYGYq82k7CPVIph4n5LmieYNZQPSOYbS/WSjT+hkvmDFXhWTGJPluRZ3lAyPanCcxbtwS6eiMMknf9lDBS6XGY45efB75UAN8phiO/WKRKmPxolYQnFLk+/g/OXCFP85V9Voton5m/JRbeNuKu4NMOGSiSStLz1fCEye8e8mzmV0F+q53RWYEq9UgUXV7Ag0bq7J5hDUaEArdvXMjyPy4x8g+QvDUnUPm4NaENrZu7B+l/S9hDHMVr/7SoHSPqcASosdltiWMPnuoAx25K88liJT3rrE5jurtFJQi3D/epYvaG62hc2i3sqMu+JrF5D8qVHaCU+Uw1Cu9NuPKzj9kSB93in4N9AjrdNPY/lJCUVF5RkvnDgUyuZMma+6s7eqAfoI03+jmTVe+pegLBI5ZJ9lJgkrfKCGXBFVVyM0neF0mCkNE7Bdo6uk6yJ4edUMpWkLe9JON2nwee8PywG10mykpa9dR/+ma7Vx1QA6oqZI4zVA036hIjf5bi+Z8rfOr+4rTOXeZqfEL9eKjRIHXGt7VW40aEdPVhmTtN1WB0JToWu6dPLmLapEJDb59sq8a2tA5wnXQ8b8UM6Ae/TDeMLMXQiamalE8VvnV8fmKKbBwLQaym/i9m0v6fnmFuym2GXUU3FMi0eOzRrZE44vk7D8YqEWRTyonb414Cfz7lNDsysoOTWZgULBJAX/ELbFbH7Fwnr179aUP+99SBFi52lZOMEbWgfP9a1MKsSyoFKIBaXdP5enDFU97gq5XvynbGDMV8iw/d+qHMmCd7X+7xdtxbZmwjAGJTwrGYdbJ9CIcMavShy7QX5qum2GSBspzuEwIXFj+YeE/Uzyl9I/UNQGYEyaA5r1ha05yiliEAmF+iLulbOUo5CcEqqkpfdiRi6NgKkIzLtL6YDP0BfRO3wn6xajU90kb6ikg7/fdP4UrcDi/0klXLbXSXlNZUEz9EDKQvKQgxr379AN/ZWAH8n8vZFKygURQxrYMPGJ7qPp9+BiRErRStcHubXZ9+9hfP8LiXuY1t0P7RXJ7R5jU9VwnKUHvZpCXxZiGGNtJzfAoGCtVbTnqVZo1FiiI9kmtKQEK81Itcgij4r1ayn67wmsOAD3Fe+aq7/nd7zA30mSCQaf1LVpM4h2Z2JocGQFUuppMgmPGcL74sw8lclhHenlQJLTgxrIBkrWrwVCjpwb9GNO45oFE0MAdaK83TDzwo0LGi30EK2ehMfrKTFZwm9euAWca2O0d1tWuNL6kE7wuMaaYYvdG0T2Zs1qrxsxBAsIqH/PwJFl+dnI3qeEnpZ3H3YA6K+efhx3pTw+7iquao4QRTHef6dGyhpRYP6sMycm7CnKgn21X+/pEJ2Jjc6I4YGQ3ZgJtpaQgf2TQs4QNiQH9UNDInRdy1tIhx9lZe8XCVZH8B0j7mEaENMpHm0a9N1kyYR/yXSXNPfCmJYA9GMaC3T5MyboBqYM6T9gTIL6RziwM9bMQgf7TEq+Fwl5YkO76trHBI8tABBkPmJhgd3EPwWJ+bsb0XxnzMQa9lZHvpB2KOoAyXa8uQMZN5fp0JR1hrHEN3xEaKKtnEBSR7UdIIKZ/V4tiChFvTT/fARmTm3YQ3rS6id/bvkcG0zYmgw+EFP1aQQEUw+T2pX1lwUXH6Jn+rCZdN9Sw98zMOUj8Sx+HGx6iC1zXCIhL4zK0noh4gGIpoeYqqO5Zu6aT6pG+i9ks681EpiWMNgJYk4jxMAMCByWCEQEB18m2pIypiuBD+69fQ9Dap7T1EiNUVmuOXgC/WYHu4PSvnzWvZSTQ2/kYAVNL+4I/VO0cdk1eLwu/+pZHhiN1vTPVSQWF9mBLwspKSsd4Q0T9Q1/byu5/t0LeQVQo9RYlcPiOb3knIn3WeipXmPlnJVejFiaDCUdZ3JDG0iZPATGxKvY/q5Em0faAcxdBGQfkoipnXAu5pdD3yf76lM8xDfy4Xlqz7qvXSds97RhhJU8YYJe4nny+fizwLhemfPy8zBbutJ8tQu68b8LW5GL1f9BfSyOWgwFI7pdiDYmKbAlx322z7u8Hn4tjZDNebLOg5SiECYJvfxcMe1ezuBFIIeNgcNBoPBYDB0E4x0XBstyYO40H7v7Lh+WacMkBFDg8FgMBgM3QGkfHGlo0mTBHpz+aofMMBl4BojhgaDwWAwGAzVAUFe0YAoMj+kSQ80zHGNaPr/dMogGTE0GAwGg8HQHTDCcS2NtpCAt61y9mHE0GAwGAwGg6HNqJWVqwdR/1em6GMHmblkInkVbzZiaDAYDAaDwVAdDHNwHvJIpilvu4fjGr6FnxsxNBgMBoPBYKgORjqujU7xfepoD3Fcv6LTBsryGBoMBoPBYOhkUGnl647rlPo7LWEflA+N1nqmUtXdnTZYRgwNBoPBYDB0MvaMud43Z79oC6d12mCZKdlgMBgMBkOngoTUuxfU9+WdOGBGDA0Gg8FgMHQqSEg9bwH9Ph60pzpxwMyUbDAYDDMw3YbAYOgorB+0Vwvo9+xOHbCu6dNtHzQYDAaDwWAwmCnZYDAYDAaDwWDE0GAwGAwGg8FgxNBgMBgMBoPBYMTQYDAYDAaDwWDE0GAwGAwGg8FgxNBgMBgMBoPBYMTQYDAYDAaDwZAI/yfAAH4ZRXlJ/vl0AAAAAElFTkSuQmCC</ImageData>
+			<MIMEType>image/png</MIMEType>
+		</EmbeddedImage>
+		<EmbeddedImage Name="图片9">
+			<ImageData>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</ImageData>
+			<MIMEType>image/png</MIMEType>
+		</EmbeddedImage>
+		<EmbeddedImage Name="图片10">
+			<ImageData>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</ImageData>
+			<MIMEType>image/png</MIMEType>
+		</EmbeddedImage>
+	</EmbeddedImages>
+	<DataSources>
+		<DataSource Name="DataSource1">
+			<ConnectionProperties>
+				<ConnectString>DRIVER=SQLITE3 ODBC DRIVER;DATABASE=C:\fileRptData\ArsDemo.db</ConnectString>
+				<DataProvider>ODBC</DataProvider>
+			</ConnectionProperties>
+		</DataSource>
+	</DataSources>
+	<DataSets>
+		<DataSet Name="DataSet1">
+			<Fields>
+				<Field Name="货物名称">
+					<DataField>货物名称</DataField>
+				</Field>
+				<Field Name="规格型号">
+					<DataField>规格型号</DataField>
+				</Field>
+				<Field Name="单位">
+					<DataField>单位</DataField>
+				</Field>
+				<Field Name="数量">
+					<DataField>数量</DataField>
+				</Field>
+				<Field Name="单价">
+					<DataField>单价</DataField>
+				</Field>
+				<Field Name="金额">
+					<DataField>金额</DataField>
+				</Field>
+			</Fields>
+			<Query>
+				<CommandText>select * from  税务清单 </CommandText>
+				<DataSourceName>DataSource1</DataSourceName>
+			</Query>
+		</DataSet>
+	</DataSets>
+	<dd:DefaultLayer xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">
+		<dd:DesignerVisible>false</dd:DesignerVisible>
+	</dd:DefaultLayer>
+	<dd:Layers xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">
+		<dd:Layer>
+			<dd:Name>背景层</dd:Name>
+			<dd:TargetDevice>Screen, Export</dd:TargetDevice>
+			<dd:DesignerLock>true</dd:DesignerLock>
+		</dd:Layer>
+	</dd:Layers>
+	<dd:ReportThemes xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">
+		<ThemeUri>..\Theme\Style1.rdlx-theme</ThemeUri>
+	</dd:ReportThemes>
+</Report>

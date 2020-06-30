@@ -1,0 +1,128 @@
+﻿@{
+    ViewBag.Title = "供应商登记";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+<div class="lr-form-tabs" id="lr_form_tabs">
+    <ul class="nav nav-tabs">
+        <li><a data-value="tab1">基础信息</a></li>
+        <li><a data-value="tab2">联系信息</a></li>
+        <li><a data-value="tab3">银行账号</a></li>
+    </ul>
+</div>
+<div class="tab-content lr-tab-content" id="lr_tab_content">
+    <div class="lr-form-wrap tab-pane" id="tab1">
+        <div class="col-xs-6 lr-form-item" data-table="tc_Applicant">
+            <div class="lr-form-item-title">公司名称<font face="宋体">*</font></div>
+            <input id="F_CompanyName" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+        </div>
+        <div class="col-xs-6 lr-form-item" data-table="tc_Applicant">
+            <div class="lr-form-item-title">工商注册号码<font face="宋体">*</font></div>
+            <input id="F_RegistrationNo" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+        </div>
+
+
+
+        <div class="col-xs-12 lr-form-item" data-table="tc_Applicant">
+            <div class="lr-form-item-title">公司地点</div>
+            <div id="area" class="col-xs-6 lr-form-area">
+                <div id="F_ProvinceId" placeholder="省" class="col-xs-4"></div>
+                <div id="F_CityId" placeholder="市" class="col-xs-4"></div>
+                <div id="F_CountyId" placeholder="县/区" class="col-xs-4"></div>
+            </div>
+            <div class="col-xs-6">
+                <input id="F_Address" type="text" placeholder="请输入详细地址" class="form-control" />
+            </div>
+        </div>
+
+
+        @*<div class="col-xs-4 lr-form-item" data-table="tc_Applicant">
+            <div class="lr-form-item-title">省<font face="宋体">*</font></div>
+            <input id="F_ProvinceCode" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+        </div>
+        <div class="col-xs-4 lr-form-item" data-table="tc_Applicant">
+            <div class="lr-form-item-title">市<font face="宋体">*</font></div>
+            <input id="F_CityCode" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+        </div>
+        <div class="col-xs-4 lr-form-item" data-table="tc_Applicant">
+            <div class="lr-form-item-title">区<font face="宋体">*</font></div>
+            <input id="F_AreaCode" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+        </div>
+        <div class="col-xs-12 lr-form-item" data-table="tc_Applicant">
+            <div class="lr-form-item-title">详细地址<font face="宋体">*</font></div>
+            <input id="F_Address" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+        </div>*@
+        <div class="col-xs-6 lr-form-item" data-table="tc_Applicant">
+            <div class="lr-form-item-title">注册资金(万元)<font face="宋体">*</font></div>
+            <input id="F_RegisteredCapital" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+        </div>
+        <div class="col-xs-6 lr-form-item" data-table="tc_Applicant">
+            <div class="lr-form-item-title">法定代表人<font face="宋体">*</font></div>
+            <input id="F_Representative" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+        </div>
+        <div class="col-xs-6 lr-form-item" data-table="tc_Applicant">
+            <div class="lr-form-item-title">成立日期<font face="宋体">*</font></div>
+            <input id="F_EstablishDate" type="text" class="form-control lr-input-wdatepicker" onfocus="WdatePicker({ dateFmt:'yyyy-MM-dd',onpicked: function () { $('#F_EstablishDate').trigger('change'); } })" isvalid="yes" checkexpession="NotNull" />
+        </div>
+        <div class="col-xs-6 lr-form-item" data-table="tc_Applicant">
+            <div class="lr-form-item-title">工商更新日期<font face="宋体">*</font></div>
+            <input id="F_BusinessUpdateDate" type="text" class="form-control lr-input-wdatepicker" onfocus="WdatePicker({ dateFmt:'yyyy-MM-dd',onpicked: function () { $('#F_BusinessUpdateDate').trigger('change'); } })" isvalid="yes" checkexpession="NotNull" />
+        </div>
+        <div class="col-xs-6 lr-form-item" data-table="tc_Applicant">
+            <div class="lr-form-item-title">现有资质证书<font face="宋体">*</font></div>
+            <input id="F_QualificationCert" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+        </div>
+        <div class="col-xs-6 lr-form-item" data-table="tc_Applicant">
+            <div class="lr-form-item-title">经营状态<font face="宋体">*</font></div>
+            <div id="F_ManageType" isvalid="yes" checkexpession="NotNull"></div>
+        </div>
+        <div class="col-xs-6 lr-form-item" data-table="tc_Applicant">
+            <div class="lr-form-item-title">类型<font face="宋体">*</font></div>
+            <div id="F_ApplicantType" isvalid="yes" checkexpession="NotNull"></div>
+        </div>
+    </div>
+<div class="lr-form-wrap tab-pane" id="tab2">
+    <div class="col-xs-6 lr-form-item"  data-table="tc_Applicant" >
+        <div class="lr-form-item-title">负责人姓名<font face="宋体">*</font></div>
+        <input id="F_LeaderUserName" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+    </div>
+    <div class="col-xs-6 lr-form-item"  data-table="tc_Applicant" >
+        <div class="lr-form-item-title">负责人手机<font face="宋体">*</font></div>
+        <input id="F_LeaderMobile" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+    </div>
+    <div class="col-xs-12 lr-form-item"  data-table="tc_Applicant" >
+        <div class="lr-form-item-title">负责人其他联系方式</div>
+        <input id="F_LeaderOtherContact" type="text" class="form-control"  />
+    </div>
+    <div class="col-xs-6 lr-form-item"  data-table="tc_Applicant" >
+        <div class="lr-form-item-title">办事人姓名<font face="宋体">*</font></div>
+        <input id="F_ClerkUserName" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+    </div>
+    <div class="col-xs-6 lr-form-item"  data-table="tc_Applicant" >
+        <div class="lr-form-item-title">办事人手机<font face="宋体">*</font></div>
+        <input id="F_ClerkMobile" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+    </div>
+    <div class="col-xs-12 lr-form-item"  data-table="tc_Applicant" >
+        <div class="lr-form-item-title">办事人其他联系方式</div>
+        <input id="F_ClerkOtherContact" type="text" class="form-control"  />
+    </div>
+    <div class="col-xs-6 lr-form-item"  data-table="tc_Applicant" >
+        <div class="lr-form-item-title">办事人职务</div>
+        <input id="F_ClerkJob" type="text" class="form-control"  />
+    </div>
+</div>
+<div class="lr-form-wrap tab-pane" id="tab3">
+    <div class="col-xs-6 lr-form-item"  data-table="tc_Applicant" >
+        <div class="lr-form-item-title">单位开户行<font face="宋体">*</font></div>
+        <input id="F_BankName" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+    </div>
+    <div class="col-xs-6 lr-form-item"  data-table="tc_Applicant" >
+        <div class="lr-form-item-title">单位银行账户<font face="宋体">*</font></div>
+        <input id="F_BankAccount" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+    </div>
+    <div class="col-xs-12 lr-form-item"  data-table="tc_Applicant" >
+        <div class="lr-form-item-title">备注</div>
+        <textarea id="F_Description" class="form-control" style="height:100px;"  ></textarea>
+    </div>
+</div>
+</div>
+@Html.AppendJsFile("/Areas/LR_CodeDemo/Views/Applicant/Form.js")

@@ -1,0 +1,11 @@
+.lr-amap-page {
+    position:relative;
+    width:100%;
+    height:100%;
+}
+.lr-amap-contarner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+	bottom:0;
+}

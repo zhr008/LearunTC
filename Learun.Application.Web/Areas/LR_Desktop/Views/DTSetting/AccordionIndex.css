@@ -1,0 +1,415 @@
+﻿.lr-desktop-panel {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding-left: 310px;
+}
+
+.lr-desktop-panel-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 310px;
+    height: 100%;
+    background: #F8F8F8;
+    border-left: 1px solid #E5E5E5;
+}
+
+.lr-desktop-list {
+    position: relative;
+    width: 100%;
+    min-height: 200px;
+}
+
+    .lr-desktop-list .title {
+        position: relative;
+        padding: 25px 0 15px 8px;
+        font-size: 14px;
+        color: #333333;
+        border-bottom: 1px solid #e5e5e5;
+        margin: 0 20px;
+    }
+
+        .lr-desktop-list .title .menu {
+            float: right;
+            display: flex;
+            margin-top: 7px;
+            width: 26px;
+            background: transparent;
+            justify-content: space-between;
+            cursor: pointer;
+        }
+
+    .lr-desktop-list .menu .point {
+        display: inline-block;
+        width: 4px;
+        height: 4px;
+        border: 1px solid #979797;
+        border-radius: 50%;
+    }
+
+    .lr-desktop-list .content {
+        padding: 20px 20px 0 20px;
+    }
+
+    .lr-desktop-list .lr-list-line {
+        position: relative;
+        background: #fff;
+        border-radius: 5px;
+        width: 100%;
+        height: 60px;
+        margin-bottom: 10px;
+        cursor: pointer;
+        padding: 5px 0 0 26px;
+    }
+
+
+
+        .lr-desktop-list .lr-list-line .point {
+            position: absolute;
+            top: 11px;
+            left: 10px;
+            width: 6px;
+            height: 6px;
+            background: #fff;
+            border-radius: 50%;
+            border: 1px solid;
+            vertical-align: middle;
+        }
+
+        .lr-desktop-list .lr-list-line:nth-of-type(3n+1) .point {
+            border-color: #1D6DC5;
+        }
+
+        .lr-desktop-list .lr-list-line:nth-of-type(3n+2) .point {
+            border-color: #3DC979;
+        }
+
+        .lr-desktop-list .lr-list-line:nth-of-type(3n) .point {
+            border-color: #DD5C77;
+        }
+
+        .lr-desktop-list .lr-list-line .text {
+            position: relative;
+            width: 100%;
+            font-size: 12px;
+            color: #333333;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        .lr-desktop-list .lr-list-line .date {
+            position: absolute;
+            right: 10px;
+            bottom: 5px;
+            font-size: 12px;
+            color: #666666;
+            text-align: right;
+        }
+
+.lr-desktop-panel-right {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #FCFCFC;
+    padding-bottom: 300px;
+}
+
+.lr-desktop-chat {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 10px 30px 0 30px;
+}
+
+.lr-desktop-target {
+    position: absolute;
+    width: 100%;
+    height: 300px;
+    left: 0;
+    bottom: 0;
+    padding: 62px 30px 0 30px;
+}
+
+    .lr-desktop-target .title {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 62px;
+        padding: 25px 0 17px 30px;
+        font-size: 14px;
+        color: #373737;
+    }
+
+    .lr-desktop-target .content {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+
+    .lr-desktop-target .lr-scroll-box {
+        width: 1250px;
+    }
+
+.lr-item-20 {
+    position: relative;
+    float: left;
+    min-width: 250px;
+    padding-right: 20px;
+}
+
+
+.task-stat {
+    position: relative;
+    height: 190px;
+    width: 100%;
+    border: 1px solid #E5E5E5;
+    border-radius: 5px;
+    overflow: hidden;
+    color: #373737;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+    .task-stat .visual {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 21px 21px 0 0;
+    }
+
+        .task-stat .visual > i {
+            font-size: 57px;
+            line-height: 57px;
+            color: #D8D8D8;
+        }
+
+    .task-stat .number {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        font-family: PingFangSC-Medium;
+        font-size: 36px;
+        color: #333333;
+    }
+
+    .task-stat .desc {
+        position: absolute;
+        top: 95px;
+        left: 20px;
+        font-family: PingFangSC-Regular;
+        font-size: 14px;
+        color: #373737;
+    }
+
+    .task-stat:hover {
+        border: 1px solid #1D6DC5;
+        background-color: #fdfdfd;
+    }
+
+        .task-stat:hover .visual > i {
+            color: #1D6DC5;
+        }
+
+
+.lr-desktop-chat-panel {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-bottom: 1px solid #E5E5E5;
+    padding-top: 51px;
+    padding-bottom: 20px;
+}
+
+.lr-desktop-chat-panel-title {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 51px;
+    width: 100%;
+}
+
+    .lr-desktop-chat-panel-title:after {
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background: #E5E5E5
+    }
+
+    .lr-desktop-chat-panel-title .title-item {
+        position: relative;
+        float: left;
+        height: 100%;
+        line-height: 50px;
+        border-bottom: 1px solid #E5E5E5;
+        padding: 0 10px;
+        z-index: 1;
+        cursor: pointer;
+    }
+
+        .lr-desktop-chat-panel-title .title-item:first-child {
+            padding-left: 0;
+        }
+
+        .lr-desktop-chat-panel-title .title-item.active {
+            color: #1D6DC5;
+            border-bottom: 1px solid #1D6DC5;
+        }
+
+
+.lr-desktop-chat-panel-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+    .lr-desktop-chat-panel-content .content-item {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        min-height: 300px;
+        display: none;
+    }
+        .lr-desktop-chat-panel-content .content-item.active {
+            display: block;
+        }
+
+        .lr-desktop-chat-panel-content .content-item .chartc {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            min-height: 300px;
+        }
+
+
+       
+
+
+
+
+.targetItem:hover .tool {
+    display: block;
+}
+
+.targetItem .tool {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    background-color: #1d1d1d;
+    color: #fff;
+    display: none;
+    cursor: pointer;
+}
+
+
+    .targetItem .tool div {
+        float: left;
+        width: 50%;
+        height: 100%;
+        position: relative;
+    }
+
+        .targetItem .tool div:first-child:after {
+            position: absolute;
+            right: 0;
+            bottom: 5px;
+            top: 5px;
+            width: 1px;
+            content: '';
+            -webkit-transform: scaleX(.5);
+            transform: scaleX(.5);
+            background-color: #fff;
+        }
+
+.lr-black-addbtn {
+    height: 40px;
+    line-height: 40px;
+    color: #0188D2;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid #0188D2;
+    margin: 0 20px;
+    margin-top: 5px;
+}
+
+
+.listItem .tool {
+    position: absolute;
+    top: 25px;
+    right: 0;
+    width: 106px;
+    height: 20px;
+}
+
+    .listItem .tool div {
+        float: left;
+        width: 50%;
+        height: 100%;
+        position: relative;
+        text-align: center;
+        color: #0188D2;
+        cursor: pointer;
+    }
+
+        .listItem .tool div:first-child:after {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            top: 0;
+            width: 1px;
+            content: '';
+            -webkit-transform: scaleX(.5);
+            transform: scaleX(.5);
+            background-color: #0188D2;
+        }
+
+
+
+
+.chartItem:hover .tool {
+    display: block;
+}
+
+.chartItem .tool {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 120px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    background-color: #1d1d1d;
+    color: #fff;
+    display: none;
+    cursor: pointer;
+}
+
+
+.chartItem .tool div {
+    float: left;
+    width: 50%;
+    height: 100%;
+    position: relative;
+}
+
+.chartItem .tool div:first-child:after {
+    position: absolute;
+    right: 0;
+    bottom: 5px;
+    top: 5px;
+    width: 1px;
+    content: '';
+    -webkit-transform: scaleX(.5);
+    transform: scaleX(.5);
+    background-color: #fff;
+}

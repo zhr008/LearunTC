@@ -1,0 +1,375 @@
+﻿/*banner图*/
+.lr-site-banner {
+    position: relative;
+    width: 100%;
+    height: 480px;
+    background-color: #fff;
+}
+.lr-site-banner-default {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+    .lr-site-banner-default .img {
+        width: 100%;
+        height: 100%;
+    }
+    .lr-site-banner-default .title {
+        position: absolute;
+        top: 40px;
+        left: 50%;
+        margin-left: -100px;
+        font-size: 20px;
+        color: #333;
+    }
+.lr-site-banner-swiper-container {
+    display: none;
+}
+    .lr-site-banner-swiper-container .swiper-slide {
+        text-align: center;
+    }
+
+    .lr-site-banner-swiper-container .img,
+    .lr-site-banner-default .img {
+        height: 480px;
+        width:100%;
+    }
+
+.swiper-container-horizontal > .swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction {
+    bottom: 20px;
+}
+/*中间模块显示**/
+.lr-site-modules {
+    position: relative;
+    height: auto;
+    width: 100%;
+    max-width: 1010px;
+    background-color: #fcfcfc;
+    margin: auto;
+}
+    .lr-site-modules:before, .lr-site-modules:after {
+        display: table;
+        content: " ";
+    }
+    .lr-site-modules:after {
+        clear: both;
+    }
+.lr-site-module {
+    position: relative;
+    padding: 10px;
+    float: left;
+}
+.lr-site-box {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 2px 4px 0 #F3F3F3;
+}
+/*风格1模块*/
+.lr-site-module.module1 {
+    height: 67px;
+    width: 100%;
+}
+    .lr-site-module.module1 .lr-site-box {
+        box-shadow: 0 2px 4px 0 #DADADA;
+        padding-left: 139px;
+        padding-right: 50px;
+    }
+        .lr-site-module.module1 .lr-site-box .title {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            line-height: 47px;
+            width: 129px;
+            background: #3285ED;
+            color: #fff;
+            text-align: center;
+            font-size: 16px;
+        }
+        .lr-site-module.module1 .lr-site-box .fa {
+            margin-right: 6px;
+            font-size: 18px;
+        }
+        .lr-site-module.module1 .lr-site-box .arrow {
+            position: absolute;
+            right: -7px;
+            top: 50%;
+            margin-top: -4px;
+            width: 0;
+            height: 0;
+            border: 4px solid transparent;
+            border-left: 4px solid #3285ED;
+        }
+        .lr-site-module.module1 .lr-site-box .content {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            line-height: 47px;
+            font-size: 16px;
+            color: #333333;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+        .lr-site-module.module1 .lr-site-box .content {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+.module1 .lr-text-item {
+    display: block;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #333333;
+    line-height: 47px;
+    font-size: 16px;
+}
+    .module1 .lr-text-item:hover {
+        color: #166EDB;
+    }
+    .lr-site-more {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 50px;
+        height: 47px;
+        line-height: 47px;
+        font-size: 16px;
+        color: #333333;
+        cursor: pointer;
+    }
+/*风格2模块*/
+.lr-site-title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 50px;
+    line-height: 49px;
+    width: 100%;
+    border-bottom: 1px solid #e5e5e5;
+    font-size: 16px;
+    color: #333;
+    padding-left: 18px;
+}
+    .lr-site-title:before {
+        content: '';
+        position: absolute;
+        width: 8px;
+        height: 30px;
+        background: #2E81EA;
+        left: 0;
+        top: 10px;
+    }
+    .lr-site-title .lr-site-more {
+        height: 49px;
+        line-height: 49px;
+    }
+
+.module2 .lr-site-box,
+.module3 .lr-site-box,
+.module4 .lr-site-box,
+.module5 .lr-site-box {
+    padding-top: 50px;
+}
+.module2, .module3, .module5 {
+    height: 330px;
+}
+.lr-site-body {
+    position:relative;
+    height:100%;
+    width:100%;
+}
+.module2 .lr-site-body {
+    padding-left: 340px;
+}
+.lr-site-module-pic {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 340px;
+    padding: 10px;
+}
+.lr-site-module-swiper-container, .lr-site-module-swiper-container .img{
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+    .lr-site-module-swiper-container .swiper-pagination-bullet {
+        height:10px;
+        width:10px;
+        background-color:#e4e4e4;
+        opacity:1;
+        border-radius:0;
+    }
+    .lr-site-module-swiper-container .swiper-pagination-bullet-active {
+        background-color: #2E81EA;
+    }
+    .lr-site-module-swiper-container .swiper-pagination {
+        bottom: 8px;
+        right: 8px;
+        width: auto !important;
+        text-align:right;
+    }
+
+.lr-site-module-list {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    padding:10px 10px 0;
+}
+.lr-site-module-item {
+    position: relative;
+    height: 40px;
+    line-height:39px;
+    width: 100%;
+    border-bottom: 1px dashed #E5E5E5;
+    font-size: 14px;
+    color: #333;
+    padding-right:85px;
+    cursor:pointer;
+}
+    .lr-site-module-item:hover {
+        color: #166EDB;
+    }
+.lr-site-module-item .date{
+    position: absolute;
+    height: 39px;
+    width: 80px;
+    top:0;
+    right:0;
+}
+    .lr-site-module-item .text {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+    /*模块3*/
+.lr-site-tabs {
+    position: absolute;
+    height: 50px;
+    line-height:49px;
+    width: 100%;
+    border-bottom: 1px solid #1A71DE;
+    top: 0;
+    left: 0;
+}
+.lr-site-tab {
+    position: relative;
+    text-align: center;
+    float: left;
+    width: 33.33%;
+    font-size: 16px;
+    color: #333;
+    cursor: pointer;
+}
+    .lr-site-tab.active, .lr-site-tab:hover {
+        color: #fff;
+        background-color: #3285ED;
+    }
+.lr-site-tab-content {
+    position:relative;
+    width:100%;
+    height:100%;
+    display:none;
+    padding-top:10px;
+}
+.lr-site-tab-content.active {
+    display: block;
+}
+.lr-site-tab-content-item {
+    position: relative;
+    height: 40px;
+    line-height: 39px;
+    width: 100%;
+    border-bottom: 1px dashed #E5E5E5;
+    font-size: 14px;
+    color: #333;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding: 0 10px;
+    cursor: pointer;
+}
+    .lr-site-tab-content-item:hover {
+        color: #166EDB;
+    }
+
+/*模块4*/
+.module4 {
+    height:251px;
+}
+.lr-site-img-item {
+    position:relative;
+    height:100%;
+    width:25%;
+    float:left;
+    padding:10px;
+}
+.lr-site-img-item-content, .lr-site-img-item-content .img {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+}
+.lr-site-img-item-content:hover {
+    transform: translateY(-10px);
+}
+    .lr-site-img-item-content .text {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 30px;
+        line-height: 30px;
+        width: 100%;
+        font-size: 12px;
+        background: #282b2a;
+        background: rgba(0,0,0,0.60);
+        color: #FFF;
+        padding-left:10px;
+    }
+    /*模块5*/
+.module5 .lr-site-body {
+    padding-top:150px;
+    cursor:pointer;
+}
+.lr-site-article-pic {
+    position: absolute;
+    height: 150px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding:10px;
+}
+    .lr-site-article-pic .img {
+        height:100%;
+        width:100%;
+    }
+.module5 .text-content {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    padding: 0 10px 10px 10px;
+    overflow: hidden;
+}
+.module5 .text {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    font-size: 14px;
+    color: #333333;
+    overflow: hidden;
+}
+    .module5 .text:hover {
+        color: #166EDB;
+    }
+

@@ -1,0 +1,125 @@
+﻿.lr-site-body-right {
+    position: relative;
+    width: 100%;
+    padding-top: 50px;
+    background: #FFFFFF;
+    box-shadow: 0 2px 4px 0 rgba(226,226,226,0.44);
+}
+
+    .lr-site-body-right .lr-site-body-cotent {
+        position: relative;
+        width: 100%;
+        min-height: 500px;
+        border: 1px dashed #fff;
+        cursor: pointer;
+        overflow-x: hidden;
+    }
+
+
+
+.lr-site-body-page {
+    text-align: center;
+    position: relative;
+    width: 100%;
+}
+
+.laypage_main a, .laypage_main input, .laypage_main span {
+    line-height: 24px !important;
+}
+
+.laypage_main button {
+    line-height: 26px !important;
+}
+
+
+
+.lr-site-body-right .lr-site-body-cotent {
+    padding-top: 10px;
+}
+
+
+.lr-site-body-list {
+    position: relative;
+    width: 100%;
+    padding: 20px;
+}
+
+.lr-site-body-list-item {
+    position: relative;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    background-color: #fff;
+    padding: 0 90px 0 20px;
+    font-size: 16px;
+    color: #333333;
+    cursor: pointer;
+}
+
+    .lr-site-body-list-item:nth-child(odd) {
+        background-color: #FAFAFA;
+    }
+
+    .lr-site-body-list-item .text {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+    .lr-site-body-list-item .date {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 90px;
+        height: 100%;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+#lr_body_cotent {
+    min-height: 640px;
+}
+
+
+
+/*图片列表*/
+.lr-site-img-item {
+    position: relative;
+    padding: 10px;
+}
+
+.lr-site-img-content2 {
+    padding-bottom: 80px;
+    cursor: pointer;
+    position: relative;
+    width: 100%;
+    border: 1px solid #E5E5E5;
+}
+
+    .lr-site-img-content2 .img {
+        width: 100%;
+        height: 160px;
+    }
+
+.lr-site-img-item .text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+    font-size: 16px;
+    color: #333333;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.row {
+    padding: 10px;
+}

@@ -1,0 +1,11 @@
+﻿.content {
+    padding: 10px 45px 0px 0px;
+}
+
+.txt-minutes {
+    width: 50px;
+    height: 28px;
+    margin-right: 5px;
+    border: 1px solid #E5E5E5;
+    border-radius: 3px;
+}

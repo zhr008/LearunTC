@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewBag.Title = "配置模块3";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+@Html.AppendCssFile("/Areas/LR_PortalSite/Views/HomeConfig/ModuleForm3.css")
+<div class="body">
+    <div class="bodycontent">
+        <div class="form lr-form-wrap" id="form1">
+            <div class="col-xs-12 lr-form-item">
+                <div class="lr-form-item-title">比例<font face="宋体">*</font></div>
+                <div id="prop"></div>
+            </div>
+        </div>
+        <div class="gird">
+            <div class="left">
+                <div class="title">
+                    tab标签项
+                </div>
+                <div class="left-list" id="left_list">
+                    <div class="left-list-item active2" id="add_item" style="text-align:center;">添加</div>
+                </div>
+            </div>
+            <div class="right">
+                <div class="top">
+                    <div class="title">
+                        已选择文章
+                    </div>
+                    <div class="content" id="selected_grid">
+                    </div>
+                </div>
+                <div class="bottom">
+                    <div class="title">
+                        选择文章
+                    </div>
+                    <div class="search-bar">
+                        <div class="lr-layout-tool-item" style="width: 200px;">
+                            <div id="F_Category" style="border-radius: 4px;"></div>
+                        </div>
+                        <div class="lr-layout-tool-item" style="width: 200px;">
+                            <input id="txt_Keyword" type="text" class="form-control" placeholder="请输入要查询关键字" />
+                        </div>
+                        <div class="lr-layout-tool-item">
+                            <a id="btn_Search" class="btn btn-primary btn-sm"><i class="fa fa-search"></i>&nbsp;<span class="lrlg">查询</span></a>
+                        </div>
+                    </div>
+                    <div class="content" id="select_grid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@Html.AppendJsFile("/Areas/LR_PortalSite/Views/HomeConfig/ModuleForm3.js")
+

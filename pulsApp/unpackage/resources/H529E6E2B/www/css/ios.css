@@ -1,0 +1,46 @@
+/*移动端适配*/
+.f-page-header {
+	height: calc(44px + env(safe-area-inset-top));
+	padding-top: env(safe-area-inset-top);
+}
+
+.f-page-backbtn {
+	top: env(safe-area-inset-top);
+}
+.f-page {
+	padding-top: calc(44px + env(safe-area-inset-top));
+}
+.f-popright-title {
+    height: calc(40px + env(safe-area-inset-top));
+}
+.f-popright-content{
+	padding-top: calc(40px + env(safe-area-inset-top));
+}
+.f-popright-btn-left{
+	top: env(safe-area-inset-top);
+}
+.f-popright-btn.ok{
+	top: env(safe-area-inset-top);
+}
+.lr-page-have-tab {
+    padding-bottom: calc(50px + env(safe-area-inset-bottom))!important;
+}
+
+.lr-tabbar{
+	height:calc(50px + env(safe-area-inset-bottom));
+}
+
+/*首页*/
+.lr-workspace-header {
+    padding-top:calc(6px + env(safe-area-inset-top))!important;
+}
+.lr-workspace-header .scanner ,.lr-workspace-header .message,.lr-app-search-header span,.lr-contacts-search-header span{
+    top: calc(10px + env(safe-area-inset-top))!important;
+}
+
+.lr-form-header-btnlist,.lr-form-header-cancel, .lr-form-header-submit{
+	top: env(safe-area-inset-top)!important;
+}
+.lr-app-search-header,.lr-contacts-search-header{
+	padding-top: calc(6px + env(safe-area-inset-top));!important;
+}
