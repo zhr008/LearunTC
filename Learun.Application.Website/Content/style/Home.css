@@ -1,0 +1,287 @@
+﻿body {
+    background-color: #fff !important;
+    overflow-y: auto;
+}
+
+.lr-site-content {
+    position: relative;
+    margin: auto;
+    height: 100%;
+    max-width: 990px;
+    width: 100%;
+}
+/**头部*/
+.lr-site-head {
+    position: relative;
+    width: 100%;
+    height: 40px;
+    background-color: #3285ED;
+}
+
+    .lr-site-head .lr-site-content {
+        line-height: 40px;
+        font-size: 12px;
+        color: #D0E1F7;
+        cursor: pointer;
+    }
+/*菜单导航*/
+.lr-site-nav {
+    position: relative;
+    width: 100%;
+    height: 100px;
+    background-color: #fff;
+}
+
+.lr-site-logo-container {
+    position: absolute;
+    width: 340px;
+    height: 100px;
+    line-height: 100px;
+    top: 0;
+    left: 0;
+}
+
+.lr-site-nav .lr-site-content {
+    padding-left: 340px;
+}
+
+.lr-site-nav-ul {
+    position: relative;
+    width: 100%;
+    height: 100px;
+    overflow: hidden;
+}
+
+.lr-site-nav-li {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    float: left;
+}
+
+.lr-site-nav-item {
+    display: block;
+    position: relative;
+    height: 100%;
+    width: 100px;
+    font-size: 14px;
+    color: #333;
+    line-height: 100px;
+    text-align: center;
+    cursor: pointer;
+}
+
+    .lr-site-nav-item .text {
+        position: relative;
+    }
+
+        .lr-site-nav-item .text:after {
+            content: '';
+            position: absolute;
+            left: 8px;
+            right: 8px;
+            height: 2px;
+            background: #166EDB;
+            bottom: -4px;
+            display: none;
+        }
+
+.lr-site-nav-li.active .lr-site-nav-item,
+.lr-site-nav-li:hover .lr-site-nav-item,
+.lr-site-nav-li.hover .lr-site-nav-item {
+    color: #166EDB;
+}
+
+.lr-site-nav-li:not(.active):hover .text:after,
+.lr-site-nav-li:not(.active).hover .text:after {
+    display: block;
+}
+
+.lr-site-nav-li.active {
+    background: rgba(50,133,237,0.2);
+    font-size: 14px;
+    color: #166EDB;
+    position: relative;
+}
+
+    .lr-site-nav-li.active:after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        background: #166EDB;
+        bottom: 0;
+        left: 0;
+        display: block;
+    }
+/*子菜单*/
+.lr-site-sub-nav-ul {
+    position: absolute;
+    top: 140px;
+    left: 0px;
+    height: 60px;
+    width: 100%;
+    background-color: #384453;
+    background-color: rgba(7, 22, 41, 0.8);
+    z-index: 1;
+    display:none;
+}
+
+.lr-site-sub-nav-menu {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    font-size: 16px;
+    line-height: 60px;
+    height: 60px;
+    color: #D6E7FB;
+}
+
+.lr-site-sub-nav-li {
+    display: block;
+    position: relative;
+    height: 60px;
+    padding: 0 38px;
+    cursor: pointer;
+}
+
+    .lr-site-sub-nav-li:after {
+        content: '';
+        position: absolute;
+        right: 0;
+        width: 1px;
+        background: #D6E7FB;
+        top: 24px;
+        bottom: 22px;
+        display: block;
+    }
+
+    .lr-site-sub-nav-li:last-of-type:after {
+        display: none;
+    }
+
+.lr-site-sub-nav-item, .lr-site-sub-nav-item:hover {
+    color: #D6E7FB!important;
+}
+
+.lr-site-three-nav-menu {
+    background: #3A5776;
+    position: absolute;
+    top: 60px;
+    left: 50%;
+    margin-left: -52px;
+    display: none;
+}
+
+.lr-site-sub-nav-li:hover .lr-site-three-nav-menu {
+    display: block;
+}
+
+.lr-site-three-nav-li {
+    position: relative;
+    height: 30px;
+    width: 104px;
+    line-height: 29px;
+    text-align: center;
+    border-bottom: 1px solid #304B69;
+}
+
+.lr-site-three-nav-item {
+    font-size: 14px;
+    color: #FFFFFF !important;
+}
+
+
+
+/*底部*/
+.lr-site-footer {
+    position: relative;
+    width: 100%;
+    height: 220px;
+    background-color: #fff;
+}
+
+    .lr-site-footer .lr-site-logo-container {
+        height: 220px;
+        line-height: 220px;
+    }
+
+    .lr-site-footer .lr-site-content {
+        padding: 0 120px 0 340px;
+    }
+
+    .lr-site-footer .lr-site-footer-nav {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        padding-top: 86px;
+    }
+
+.lr-site-footer-nav-menu {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    font-size: 14px;
+    line-height: 14px;
+    height: 14px;
+}
+
+.lr-site-footer-nav-li {
+    border-right: 1px solid #060505;
+    padding: 0 8px;
+}
+
+    .lr-site-footer-nav-li:first-of-type {
+        padding-left: 0;
+    }
+
+    .lr-site-footer-nav-li:last-of-type {
+        padding-right: 0;
+        border-right: 0;
+    }
+
+.lr-site-footer-nav-item {
+    display: block;
+    color: #060505;
+    cursor: pointer;
+}
+
+.lr-site-contactInfo {
+    position: relative;
+    font-size: 12px;
+    height: 14px;
+    line-height: 14px;
+    margin-top: 20px;
+}
+
+.lr-site-footer .lr-site-footer-wechat {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 120px;
+    height: 100%;
+    padding-top: 36px;
+}
+
+.lr-site-footer-wechat .img {
+    height: 120px;
+    width: 120px;
+}
+
+.lr-site-footer-wechat .text {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.lr-site-bottom {
+    position: relative;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    background: #908F8D;
+    text-align: center;
+    font-size: 14px;
+    color: #FFF;
+}

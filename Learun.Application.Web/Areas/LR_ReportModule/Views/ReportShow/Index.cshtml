@@ -1,0 +1,72 @@
+﻿
+@{
+    ViewBag.Title = "收支报表";
+    Layout = "~/Views/Shared/_ReportTemplate.cshtml";
+}
+
+
+
+    <div class="lr-layout lr-layout-left-center" id="lr_layout">
+        <div class="lr-layout-left">
+            <div class="lr-layout-wrap">
+                <div class="lr-layout-title lrlg ">表单分类</div>
+                <div class="lr-layout-body lr-tree lr-scroll-wrap" id="lr_left_tree">
+
+                </div>
+                <div class="lr-layout-move lr-layout-move-right " path="0"></div>
+            </div>
+
+        </div>
+
+
+
+        <div class="lr-layout-center">
+            <div class="lr-layout-wrap lr-layout-wrap-notitle">
+                <div class="lr-layout-tool">
+                    <div class="lr-layout-tool-left">
+                        <div class="lr-layout-tool-item" id="lr-select-where">
+
+                            横坐标：<select id="Xselect">
+                            </select>
+
+                            纵坐标：<select id="Yselect">
+                            </select>
+                            @*切换数据：<select class="sel" id="select">
+            <option value="" selected>请选择</option>
+            <option value="F_Amount">数据1</option>
+            <option value="F_SuccessRate">数据2</option>
+            <option value="F_Profit">数据3</option>
+        </select>*@
+                        </div>
+                        @*<div class="lr-layout-tool-item">
+                    <a id="btn_Search" class="btn btn-primary btn-sm"><i class="fa fa-search"></i>&nbsp;<span class="lrlg">查询</span></a>
+                </div>*@
+                    </div>
+                </div>
+                <div>
+                    <div >
+                        <div id="line" style="float: left; margin-right: 20px;  margin-left: 20px; margin-top:20px; width: 550px; height: 350px;border: 1px solid #ccc;">
+                        </div>
+
+                    </div>
+                    <div>
+                        <div id="bars" style="float: left; margin-right: 20px; margin-left: 20px; margin-top:20px;width: 550px; height: 350px;border: 1px solid #ccc;">
+                        </div>
+
+                    </div>
+                    <div>
+                        <div id="pie" style="float: left; margin-right: 20px; margin-left: 20px;margin-top:20px; width: 550px; height: 350px;border: 1px solid #ccc;">
+
+                        </div>
+                        <div id="gauge" style="float: left; margin-right: 20px; margin-left: 20px;margin-top:20px; width: 550px; height: 350px;border: 1px solid #ccc;">
+
+                        </div>
+                    </div>
+
+                </div>
+             
+            </div>
+            </div>
+    </div>
+<script src="~/Content/echarts/echarts.min.js"></script>
+@Html.AppendJsFile("/Areas/LR_ReportModule/Views/ReportShow/Index.js")

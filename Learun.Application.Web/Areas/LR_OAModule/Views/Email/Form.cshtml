@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "写邮件";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+<div class="lr-form-wrap" id="form">
+    <div class="col-xs-12 lr-form-item">
+        <div class="lr-form-item-title">收件人<font face="宋体">*</font></div>
+        <div id="addresssIds" isvalid="yes" checkexpession="NotNull"></div>
+    </div>
+    <div class="col-xs-12 lr-form-item">
+        <div class="lr-form-item-title">抄送人</div>
+        <div id="copysendIds"></div>
+    </div>
+    <div class="col-xs-12 lr-form-item">
+        <div class="lr-form-item-title">密送人</div>
+        <div id="bccsendIds"></div>
+    </div>
+    <div class="col-xs-12 lr-form-item">
+        <div class="lr-form-item-title">主题<font face="宋体">*</font></div>
+        <input id="F_Theme" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+    </div>
+    <div class="col-xs-12 lr-form-item">
+        <div class="lr-form-item-title">附件</div>
+        <div id="F_Files"></div>
+    </div>
+    <div class="col-xs-12 lr-form-item">
+        <div class="lr-form-item-title">邮件内容</div>
+        <div id="F_EmailContent" type="text/plain" style="height:270px;" />
+    </div>
+</div>
+<div class="lr-form-bottom-button" id="wizard-actions">
+    <a id="btn_draft" class="btn btn-warning"><span class="lrlg">保存草稿</span></a>
+    <a id="btn_send" class="btn btn-success"><span class="lrlg">发送</span></a>
+</div>
+@Html.AppendJsFile("/Areas/LR_OAModule/Views/Email/Form.js")

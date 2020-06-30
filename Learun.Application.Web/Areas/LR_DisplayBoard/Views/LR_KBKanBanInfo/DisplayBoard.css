@@ -1,0 +1,227 @@
+﻿.box {
+    position: absolute;
+    padding: 10px;
+}
+
+.box-module {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 2px 1px rgba(0,0,0,0.09);
+    overflow: hidden;
+    padding-top: 45px;
+}
+
+.box-module-edit {
+    border: 1px solid #fff;
+}
+
+    .box-module-edit:hover {
+        border: 1px dashed #ccc;
+    }
+
+.box-module .del,
+.box-module .edit,
+.box-module .add,
+.box-module .edited,
+.box-module .deleted {
+    display: inline-block;
+    padding: 5px;
+    text-align: center;
+    color: #fff;
+    font-size: 12px;
+    cursor: pointer;
+}
+.box-module .edited,
+.box-module .deleted {
+    padding:2px 5px;
+}
+.box-module .edit-del, .box-module .edited-del {
+    background: #666;
+    position: absolute;
+    left: 15px;
+    top: 0px;
+    display: none;
+    border-radius: 0 0 2px 2px;
+    padding: 0 10px;
+    color: #515151;
+    z-index:1;
+}
+.box-module .edited-del {
+    right:10px;
+    left:auto;
+}
+.box-module-edit .informationContentItem:hover {
+    border:1px dashed #ccc;
+}
+.box-module-edit .informationContentItem:hover .edited-del {
+    display: block;
+}
+
+.box-module-edit:hover .edit-del {
+    display: block;
+}
+
+
+    .box-module .title {
+        display: block;
+        position: absolute;
+        top: 15px;
+        left: 0;
+        height: 30px;
+        line-height: 30px;
+        background: #3398DC;
+        font-size: 16px;
+        color: #FFFFFF;
+        margin: 0;
+        padding-left: 15px;
+    }
+
+    .box-module .title .arrow {
+        position: absolute;
+        right: -35px;
+        top: 50%;
+        margin-top: -15px;
+        width: 0;
+        height: 0;
+        border: 15px solid transparent;
+        border-left: 20px solid #3398DC;
+    }
+
+.box-module-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding-top: 15px;
+}
+
+.box-module .information {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+}
+
+.box-module .informationContent, .box-module .informationContentList, .box-module-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.box-module .informationImg {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.box-module .informationContentItem {
+    position: relative;
+    width: 20%;
+    height: 100%;
+    min-width: 100px;
+    text-align: center;
+    color: #fff;
+    padding-top: 21px;
+    cursor: pointer;
+    float: left;
+}
+
+    .box-module .informationContentItem .title2 {
+        font-size: 16px;
+        margin-bottom: 5px;
+        line-height: 22px;
+        height: 22px;
+    }
+    .box-module .informationContentItem .sub-title {
+        font-size: 12px;
+    }
+
+    .box-module .informationContentItem .value {
+        font-size: 36px;
+        margin-bottom: 5px;
+        line-height:50px;
+        height:50px;
+    }
+    .box-module .informationContentItem .sub-value {
+        margin-left:10px;
+    }
+
+
+.box-module .edit-add {
+    position: absolute;
+    right: 15px;
+    top: 0;
+    border-radius: 0 0 2px 2px;
+    display: none;
+    background: #666;
+    z-index: 1;
+}
+.box-module-edit .edit-add {
+    display: block;
+}
+
+.box-module-content-text {
+    position:absolute;
+    top:50%;
+    left:0%;
+    margin-top:-15px;
+    height:30px;
+    line-height:30px;
+    width:100%;
+    text-align:center;
+    font-size:18px;
+    color:#ccc;
+}
+
+
+.table-head {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    overflow: auto;
+    background: #F8F8F8;
+}
+.table-body-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow:hidden;
+}
+
+    .table-body {
+        position: relative;
+        width: 100%;
+    }
+.table-body-row {
+    position: relative;
+    width: 100%;
+    height: 30px;
+    line-height:30px;
+}
+    .table-body-row:nth-child(even) {
+        background: #F8F8F8;
+    }
+.table-head-item, .table-body-item {
+    position: relative;
+    float: left;
+    height: 30px;
+    width: 30px;
+    padding: 0 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.box-module-more {
+    font-size: 12px;
+    color: #8F8D8E;
+    cursor: pointer;
+    position: absolute;
+    right: 5px;
+    top: 15px;
+    line-height: 30px;
+    z-index: 9999;
+}

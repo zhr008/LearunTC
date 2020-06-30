@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta name=”renderer” content=”webkit|ie-comp|ie-stand” />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <link rel="icon" href="~/favicon.ico">
+
+    <title>@ViewBag.Title|力软信息|快速开发平台|Learun敏捷开发框架</title>    
+
+    <link href="~/Content/jqGrid/css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="~/Content/jqGrid/css/font-awesome.css?v=4.4.0" rel="stylesheet">
+
+    <!-- jqgrid-->
+    <link href="~/Content/jqGrid/css/ui.jqgrid.css?0820" rel="stylesheet">
+
+    <link href="~/Content/jqGrid/css/animate.css" rel="stylesheet">
+    <link href="~/Content/jqGrid/css/style.css?v=4.1.0" rel="stylesheet">
+    <!-- 全局js -->
+    <script src="~/Content/jqGrid/js/jquery.min.js?v=2.1.4"></script>
+    <script src="~/Content/jqGrid/js/bootstrap.min.js?v=3.3.6"></script>
+
+    <!-- Peity -->
+    <script src="~/Content/jqGrid/js/jquery.peity.min.js"></script>
+
+    <!-- jqGrid -->
+    <script src="~/Content/jqGrid/js/grid.locale-cn.js?0820"></script>
+    <script src="~/Content/jqGrid/js/jquery.jqGrid.min.js?0820"></script>
+
+    <!-- 自定义js -->
+    <script src="~/Content/jqGrid/js/content.js?v=1.0.0"></script>
+
+    @*<link rel="stylesheet" href="~/Content/jqGrid/css/ui.jqgrid.css" />
+        <link rel="stylesheet" href="~/Content/jqGrid/css/css/flick/jquery-ui-1.8.16.custom.css" />
+        <script type="text/javascript" src="~/Content/jqGrid/js/jquery-1.7.1.js"></script>
+        <script type="text/javascript" src="~/Content/jqGrid/js/jquery.jqGrid.src.js"></script>
+        <script type="text/javascript" src="~/Content/jqGrid/js/i18n/grid.locale-cn.js"></script>*@
+
+    @*<link rel="stylesheet" href="~/Views/LR_Content/plugin/date/lr-datepicker.css" />
+        <script type="text/javascript" src="~/Views/LR_Content/plugin/date/lr-datepicker.js"></script>*@
+
+    @*<script type="text/javascript" src="/Areas/LR_CodeDemo/Views/GridDemo/jqGridIndex.js"></script>*@
+    <script>
+        function request(d) { for (var c = location.search.slice(1).split("&"), a = 0; a < c.length; a++) { var b = c[a].split("="); if (b[0] == d) if ("undefined" == unescape(b[1])) break; else return unescape(b[1]) } return "" };
+    </script>
+
+</head>
+<body class="@Learun.Util.Net.Browser @Learun.Util.WebHelper.GetUITheme()">
+    @RenderBody()
+</body>
+</html>

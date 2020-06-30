@@ -1,0 +1,76 @@
+﻿.body {
+    position:relative;
+    height:100%;
+    width:100%;
+    padding:10px 10px 0 10px;
+}
+.item {
+    position: relative;
+    height: 100px;
+    width: 100%;
+    margin-bottom:10px;
+    border:1px solid #ccc;
+}
+.item:hover {
+    border: 1px dashed #333;
+}
+
+.edit-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 25px;
+    line-height: 25px;
+    background-color: #333;
+    text-align: center;
+    color: #fff;
+    padding-left:10px;
+    cursor:pointer;
+    display:none;
+}
+.edit-btn span {
+    margin-right:10px;
+}
+
+.item:hover .edit-btn {
+    display: block;
+}
+
+
+.file {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    text-align: center;
+}
+
+    .file input {
+        position: absolute;
+        font-size: 200px;
+        right: 0;
+        top: 0;
+        opacity: 0;
+        cursor: pointer !important;
+    }
+
+    .file img {
+        max-width: 100%;
+        height: 100px;
+        cursor: pointer;
+    }
+
+
+.pictureBtn {
+    position: relative;
+    height: 38px;
+    width: 100%;
+    line-height: 38px;
+    font-size: 16px;
+    border: 1px solid #2E81EA;
+    color: #2E81EA;
+    text-align: center;
+    cursor: pointer;
+    border-radius:3px;
+}

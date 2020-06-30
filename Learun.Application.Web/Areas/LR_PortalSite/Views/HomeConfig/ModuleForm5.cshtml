@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "ModuleForm5";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+<div class="lr-form-wrap" id="form">
+    <div class="col-xs-12 lr-form-item">
+        <div class="lr-form-item-title">名称<font face="宋体">*</font></div>
+        <input id="F_Name" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+    </div>
+    <div class="col-xs-12 lr-form-item">
+        <div class="lr-form-item-title">文章分类<font face="宋体">*</font></div>
+        <div id="F_Category" isvalid="yes" checkexpession="NotNull"></div>
+    </div>
+    <div class="col-xs-12 lr-form-item">
+        <div class="lr-form-item-title">文章<font face="宋体">*</font></div>
+        <div id="F_Article" isvalid="yes" checkexpession="NotNull"></div>
+    </div>
+    <div class="col-xs-12 lr-form-item">
+        <div class="lr-form-item-title">比例<font face="宋体">*</font></div>
+        <div id="prop"></div>
+    </div>
+</div>
+@Html.AppendJsFile("/Areas/LR_PortalSite/Views/HomeConfig/ModuleForm5.js")
+

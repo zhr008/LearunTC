@@ -1,0 +1,99 @@
+{
+  "pages": [
+    { "path": "pages/login", "style": { "navigationStyle": "custom" } },
+
+    { "path": "pages/home", "style": { "navigationBarTitleText": "首页 · 力软框架" } },
+    { "path": "pages/home/more", "style": { "navigationBarTitleText": "更多应用" } },
+    { "path": "pages/home/notice", "style": { "navigationBarTitleText": "新闻与通知" } },
+
+    { "path": "pages/msg", "style": { "navigationBarTitleText": "消息" } },
+    { "path": "pages/msg/chat", "style": { "navigationBarTitleText": "对话列表" } },
+
+    { "path": "pages/contact", "style": { "navigationBarTitleText": "通讯录" } },
+
+    { "path": "pages/my", "style": { "navigationBarTitleText": "我的" } },
+    { "path": "pages/my/info", "style": { "navigationBarTitleText": "我的信息" } },
+    { "path": "pages/my/contact", "style": { "navigationBarTitleText": "我的联系方式" } },
+    { "path": "pages/my/qrcode", "style": { "navigationBarTitleText": "我的二维码" } },
+    { "path": "pages/my/password", "style": { "navigationBarTitleText": "更改密码" } },
+    { "path": "pages/my/learun", "style": { "navigationBarTitleText": "关于力软" } },
+    { "path": "pages/my/framework", "style": { "navigationBarTitleText": "力软敏捷框架" } },
+
+    { "path": "pages/common/select-user", "style": { "navigationBarTitleText": "选择用户" } },
+    { "path": "pages/common/select-department", "style": { "navigationBarTitleText": "选择部门" } },
+    { "path": "pages/common/select-company", "style": { "navigationBarTitleText": "选择(分)公司" } },
+    { "path": "pages/common/select-layer", "style": { "navigationBarTitleText": "选择一个选项" } },
+
+    { "path": "pages/customapp/list", "style": { "navigationBarTitleText": "自定义应用" } },
+    { "path": "pages/customapp/single", "style": { "navigationBarTitleText": "自定义应用详情页" } },
+
+    { "path": "pages/crm/invoice/list", "style": { "navigationBarTitleText": "开票管理" } },
+    { "path": "pages/crm/invoice/single", "style": { "navigationBarTitleText": "票据详情" } },
+    { "path": "pages/crm/order/list", "style": { "navigationBarTitleText": "订单管理" } },
+    { "path": "pages/crm/order/single", "style": { "navigationBarTitleText": "订单详情" } },
+
+    { "path": "pages/nworkflow/myflow/list", "style": { "navigationBarTitleText": "我的任务" } },
+    { "path": "pages/nworkflow/myflow/single", "style": { "navigationBarTitleText": "任务详情" } },
+    { "path": "pages/nworkflow/myflow/sign", "style": { "navigationBarTitleText": "流程加签与审核" } },
+    { "path": "pages/nworkflow/releasetask/list", "style": { "navigationBarTitleText": "流程发起" } },
+    { "path": "pages/nworkflow/releasetask/single", "style": { "navigationBarTitleText": "流程信息录入" } },
+
+    { "path": "pages/demo/list", "style": { "navigationBarTitleText": "组件演示" } },
+    { "path": "pages/demo/component/form", "style": { "navigationBarTitleText": "表单 · Form" } },
+    { "path": "pages/demo/component/card", "style": { "navigationBarTitleText": "卡片 · Card" } },
+    { "path": "pages/demo/component/list", "style": { "navigationBarTitleText": "列表/宫格 · List" } },
+    { "path": "pages/demo/component/modal", "style": { "navigationBarTitleText": "弹出框 · Modal" } },
+    { "path": "pages/demo/component/bar", "style": { "navigationBarTitleText": "操作条 · Bar" } },
+    { "path": "pages/demo/component/timeline", "style": { "navigationBarTitleText": "时间轴 · Timeline" } },
+    { "path": "pages/demo/component/step", "style": { "navigationBarTitleText": "步骤条 · Step" } },
+    { "path": "pages/demo/component/nav", "style": { "navigationBarTitleText": "导航栏/页签 · Nav" } },
+    { "path": "pages/demo/component/chat", "style": { "navigationBarTitleText": "聊天消息 · Chat" } },
+    { "path": "pages/demo/element/layout", "style": { "navigationBarTitleText": "布局 · Layout" } },
+    { "path": "pages/demo/element/support", "style": { "navigationBarTitleText": "辅助类 · Support" } },
+    { "path": "pages/demo/element/button", "style": { "navigationBarTitleText": "按钮 · Button" } },
+    { "path": "pages/demo/element/avatar", "style": { "navigationBarTitleText": "头像 · Avatar" } },
+    { "path": "pages/demo/element/icon", "style": { "navigationBarTitleText": "图标 · Icon" } },
+    { "path": "pages/demo/element/background", "style": { "navigationBarTitleText": "背景/底色 · Background" } },
+    { "path": "pages/demo/element/loading", "style": { "navigationBarTitleText": "加载中动画 · Loading" } },
+    { "path": "pages/demo/element/progress", "style": { "navigationBarTitleText": "进度条 · Progress" } },
+    { "path": "pages/demo/element/shadow", "style": { "navigationBarTitleText": "边框/阴影 · Shadow" } },
+    { "path": "pages/demo/element/tag", "style": { "navigationBarTitleText": "标签/角标 · Tag" } },
+    { "path": "pages/demo/element/text", "style": { "navigationBarTitleText": "文本 · Text" } }
+  ],
+
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "力软敏捷开发框架",
+    "navigationBarBackgroundColor": "#F7F7F7"
+  },
+
+  "tabBar": {
+    "color": "#8c8c8c",
+    "selectedColor": "#3398DC",
+    "borderStyle": "black",
+    "backgroundColor": "#f5f5f5",
+    "list": [{
+        "pagePath": "pages/home",
+        "iconPath": "static/img-bar/tab-home.png",
+        "selectedIconPath": "static/img-bar/tab-home-active.png",
+        "text": "首页"
+      }, {
+        "pagePath": "pages/msg",
+        "iconPath": "static/img-bar/tab-msg.png",
+        "selectedIconPath": "static/img-bar/tab-msg-active.png",
+        "text": "消息"
+      },
+      {
+        "pagePath": "pages/contact",
+        "iconPath": "static/img-bar/tab-contact.png",
+        "selectedIconPath": "static/img-bar/tab-contact-active.png",
+        "text": "通讯录"
+      }, {
+        "pagePath": "pages/my",
+        "iconPath": "static/img-bar/tab-my.png",
+        "selectedIconPath": "static/img-bar/tab-my-active.png",
+        "text": "我的"
+      }
+    ]
+  }
+}

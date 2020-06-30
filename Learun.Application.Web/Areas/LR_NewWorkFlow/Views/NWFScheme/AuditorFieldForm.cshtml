@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "添加某表单执行人";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+<div class="lr-form-wrap" id="form">
+    <div class="col-xs-12 lr-form-item">
+        <div class="lr-form-item-title">数据库<font face="宋体">*</font></div>
+        <div id="DbId" isvalid="yes" checkexpession="NotNull"></div>
+    </div>
+    <div class="col-xs-12 lr-form-item">
+        <div class="lr-form-item-title">数据库表<font face="宋体">*</font></div>
+        <div id="ReFormId" isvalid="yes" checkexpession="NotNull"></div>
+    </div>
+    <div class="col-xs-12 lr-form-item">
+        <div class="lr-form-item-title">关联字段<font face="宋体">*</font></div>
+        <div id="ReFieldId" isvalid="yes" checkexpession="NotNull"></div>
+    </div>
+    <div class="col-xs-12 lr-form-item">
+        <div class="lr-form-item-title">审核人字段<font face="宋体">*</font></div>
+        <div id="AuditorFieldId" isvalid="yes" checkexpession="NotNull"></div>
+    </div>
+</div>
+
+@Html.AppendJsFile("/Areas/LR_NewWorkFlow/Views/NWFScheme/AuditorFieldForm.js")
+
+

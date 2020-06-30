@@ -1,0 +1,54 @@
+﻿@{
+    ViewBag.Title = "子页面配置";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+
+@Html.AppendCssFile("/Areas/LR_PortalSite/Views/Page/Form.css")
+<div class="body">
+    <div class="container">
+        <div class="container-top">
+            <input id="F_Img" type="hidden" />
+            <div class="col-xs-12 lr-form-item">
+                <div class="lr-form-item-title">标题<font face="宋体">*</font></div>
+                <input id="F_Title" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+            </div>
+        </div>
+        <div class="lr-site-body-container2">
+            <div class="container-banner">
+                <div class="file">
+                    <input type="file" name="uploadFile" id="uploadFile">
+                </div>
+            </div>
+            <div class="lr-site-body-container">
+                <div class="lr-site-body-left">
+                    <div class="lr-site-title left-title ">
+                        <span>请点击修改名称</span>
+                        <div class="edit-btn">
+                            设置
+                        </div>
+                    </div>
+                    <div class="lr-site-body-cotent">
+                        <div class="lr-site-title-item active2" id="add_item"  style="text-align:center;" >添加</div>
+                    </div>
+                </div>
+                <div class="lr-site-body-right ">
+                    <div class="lr-site-title right-title">
+                        <span>未选择分类项</span>
+                    </div>
+                    <div class="lr-site-body-cotent" id="lr_body_cotent_setting">
+                        <div id="lr_body_cotent">
+                        </div>
+                        <div class="lr-site-body-page" id="lr_page"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<div class="top-btn-tool">
+    <a id="save" class="btn btn-success">保存页面</a>
+</div>
+<script src="~/Content/laypage/laypage.min.js"></script>
+@Html.AppendJsFile("/Views/LR_Content/script/lr-fileupload.js","/Areas/LR_PortalSite/Views/Page/Form.js")

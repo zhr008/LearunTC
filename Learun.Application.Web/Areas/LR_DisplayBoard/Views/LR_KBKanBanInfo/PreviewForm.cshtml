@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "看板预览界面";
+    Layout = "~/Views/Shared/_CustmerIndexPreview.cshtml";
+}
+<script src="~/Content/echarts/echarts.min.js"></script>
+
+@Html.AppendCssFile("/Areas/LR_DisplayBoard/Views/LR_KBKanBanInfo/DisplayBoard.css", "/Areas/LR_DisplayBoard/Views/LR_KBKanBanInfo/PreviewForm.css")
+<div class="lr-layout">
+    <div class="top">
+        <div class="top-title">概括动态</div>
+        <div class="top-title-date">更新日期:<span class="top-title-time"></span></div>
+        <a id="refresh" class="btn">刷新</a>
+    </div>
+    <div class="container">
+        <div class="content">
+        </div>
+    </div>
+</div>
+@Html.AppendJsFile("/Areas/LR_DisplayBoard/Views/LR_KBKanBanInfo/DisplayBoard.js", "/Areas/LR_DisplayBoard/Views/LR_KBKanBanInfo/PreviewForm.js")
+

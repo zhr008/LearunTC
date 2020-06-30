@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "复杂表格";
+    Layout = "~/Views/Shared/_jqGrid.cshtml";
+}
+
+<div class="wrapper wrapper-content  animated fadeInRight">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox ">
+                <div class="ibox-content">
+                    <hr>
+                    <h4>基本示例</h4>
+
+                    <div class="jqGrid_wrapper">
+                        <table id="table_list_1"></table>
+                        <div id="pager_list_1"></div>
+                    </div>
+                    <p>&nbsp;</p>
+                    <h4 class="m-t">高级用法</h4>
+                    <div class="jqGrid_wrapper">
+                        <table id="table_list_2"></table>
+                        <div id="pager_list_2"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@Html.AppendJsFile("/Areas/LR_CodeDemo/Views/GridDemo/jqGridIndex.js")

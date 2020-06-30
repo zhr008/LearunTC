@@ -1,0 +1,27 @@
+﻿.express-list {
+    padding: 20px;
+}
+
+    .express-list li {
+        height: 30px;
+        line-height: 30px;
+        border-bottom: 1px solid #ccc;
+        padding-left: 10px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        cursor: pointer;
+    }
+
+        .express-list li.active {
+            background: #2F94EE !important;
+            color: #fff;
+        }
+
+        .express-list li:last-child {
+            border-bottom: none;
+        }
+
+        .express-list li:nth-child(2n) {
+            background: #fafafa;
+        }

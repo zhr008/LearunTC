@@ -1,0 +1,29 @@
+﻿.lr-site-body {
+    position: relative;
+    background-color: #f1f1f1;
+    padding: 40px 0;
+    width: 100%;
+}
+.lr-site-body-container {
+    position: relative;
+    min-height: 800px;
+    padding: 60px;
+    padding-top:30px;
+    width: 100%;
+    max-width: 990px;
+    background-color: #fff;
+    margin: auto;
+    border-radius: 5px;
+    overflow:hidden;
+}
+    .lr-site-body-container .title {
+        margin-bottom: 14px;
+    }
+        .lr-site-body-container .title .list {
+            border-bottom: 1px solid #f1f1f1;
+        }
+        .lr-site-body-container .title p {
+            font-size: 24px;
+            color: #333;
+            margin-bottom:14px;
+        }

@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "LayoutFromDemo4";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+
+<div class="lr-form-wrap" id="form">
+    <div class="col-xs-12 lr-form-item">
+        <div class="lr-form-item-title">选择预处理</div>
+        <input id="id1" type="text" class="form-control" />
+    </div>
+    <div class="col-xs-12 lr-form-item">
+        <div class="lr-form-item-title">预处理次数</div>
+        <input id="id2" type="text" class="form-control" />
+    </div>
+</div>
+
+@Html.AppendJsFile("/Areas/LR_CodeDemo/Views/GridDemo/LayoutFromDemo4.js")

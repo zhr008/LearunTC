@@ -1,0 +1,68 @@
+﻿@{
+    ViewBag.Title = "邮件管理";
+    Layout = "~/Views/Shared/_Index.cshtml";
+}
+<div id="lr_layout" class="lr-layout lr-layout-left-center">
+    <div class="lr-layout-left">
+        <div class="lr-layout-wrap lr-layout-wrap-notitle" style="padding-top:10px;">
+            <div class="lr-layout-body">
+                <ul class="lr-left-list" id="lr_left_list">
+                    <li data-value="1" class="active lrlg">收件箱</li>
+                    <li data-value="2" class="lrlg">草稿箱</li>
+                    <li data-value="3" class="lrlg">已发送</li>
+                    <li data-value="4" class="lrlg">已删除</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="lr-layout-center">
+        <div class="lr-layout-wrap lr-layout-wrap-notitle">
+            <div class="lr-layout-tool">
+                <div class="lr-layout-tool-left">
+                    <div class="lr-layout-tool-item">
+                        <input id="txt_Keyword" type="text" class="form-control" placeholder="请输入要查询关键字" />
+                    </div>
+                    <div class="lr-layout-tool-item">
+                        <a id="btn_Search" class="btn btn-primary btn-sm"><i class="fa fa-search"></i>&nbsp;<span class="lrlg">查询</span></a>
+                    </div>
+                </div>
+                <div class="lr-layout-tool-right">
+                    <div class=" btn-group btn-group-sm">
+                        <a id="lr_refresh" class="btn btn-default"><i class="fa fa-refresh"></i></a>
+                    </div>
+                    <div class=" btn-group btn-group-sm">
+                        <a id="lr_add" class="btn btn-default"><i class="fa fa-edit"></i>&nbsp;<span class="lrlg">写邮件</span></a>
+                        <a id="lr_delete" class="btn btn-default"><i class="fa fa-trash-o"></i>&nbsp;<span class="lrlg">删除</span></a>
+                        <a id="lr_clear" class="btn btn-default"><i class="fa fa-remove"></i>&nbsp;<span class="lrlg">彻底删除</span></a>
+                        <a id="lr_deleteDraft" class="btn btn-default"><i class="fa fa-remove"></i>&nbsp;<span class="lrlg">删除草稿</span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="lr-layout-body gridtable active">
+                <div id="grid1"></div>
+            </div>
+            <div class="lr-layout-body gridtable">
+                <div id="grid2"></div>
+            </div>
+            <div class="lr-layout-body gridtable">
+                <div id="grid3"></div>
+            </div>
+            <div class="lr-layout-body gridtable">
+                <div id="grid4"></div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+@Html.AppendJsFile("/Areas/LR_OAModule/Views/Email/Index.js")
+
+<style>
+    .gridtable {
+        display:none;
+    }
+    .gridtable.active {
+        display:block;
+    }
+</style>
+

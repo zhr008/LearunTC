@@ -1,0 +1,184 @@
+﻿@{
+    ViewBag.Title = "任务计划模板";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+
+@Html.AppendCssFile("/Areas/LR_TaskScheduling/Views/TSScheme/Form.css")
+<div class="widget-body">
+    <div id="wizard" class="wizard" data-target="#wizard-steps">
+        <ul class="steps">
+            <li data-target="#step-1" class="active"><span class="step">1</span>基础信息<span class="chevron"></span></li>
+            <li data-target="#step-2"><span class="step">2</span>任务配置<span class="chevron"></span></li>
+        </ul>
+    </div>
+
+    <div class="step-content" id="wizard-steps">
+        <div class="step-pane lr-form-wrap active" id="step-1">
+            <div id="form">
+                <div class="col-xs-12 lr-form-item">
+                    <div class="lr-form-item-title">任务名称<font face="宋体">*</font></div>
+                    <input id="F_Name" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+                </div>
+                <div class="col-xs-12 lr-form-item">
+                    <div class="lr-form-item-title">开始时间</div>
+                    <div class="lr-radio radio" type="lr-radio"  id="startType">
+                        <label>
+                            <input type="radio" name="startType" value="1" checked />
+                            配置结束立即执行
+                        </label>
+                        <label>
+                            <input type="radio" name="startType" value="2" />
+                            设置开始时间
+                        </label>
+                    </div>
+                    <div class="show-content" id="start_time_set" style="display:none;">
+                        <input id="startTime" type="text" class="form-control lr-input-wdatepicker" onfocus="WdatePicker({ dateFmt: 'yyyy-MM-dd HH:mm:ss'})">
+                    </div>
+                </div>
+                <div class="col-xs-12 lr-form-item">
+                    <div class="lr-form-item-title">执行频率</div>
+                    <div id="executeType" class="lr-radio radio" type="lr-radio">
+                        <label>
+                            <input type="radio" name="executeType" value="1" checked />
+                            只执行一次
+                        </label>
+                        <label>
+                            <input type="radio" name="executeType" value="2" />
+                            简单重复执行
+                        </label>
+                        <label>
+                            <input type="radio" name="executeType" value="3" />
+                            明细频率设置
+                        </label>
+                        <label>
+                            <input type="radio" name="executeType" value="4" />
+                            表达式设置
+                        </label>
+                    </div>
+                    <div>
+                        <div id="execute-repeat" class="show-content" style="display:none;">
+                            <div class="text_item">每隔</div>
+                            <div class="ip_item"><input class="form-control" id="simpleValue" type="text" /></div>
+                            <div class="ip_item"><div id="simpleType"></div></div>
+                            <div class="text_item">执行一次</div>
+                        </div>
+                        <div id="lr_frequency_set" class="show-content" style="display:none;">
+                            <div>
+                                <a class="add-more" id="lr_frequency_add">添加明细频率</a>
+                            </div>
+                            <div id="frequencyList">
+                            </div>
+                        </div>
+                        <div id="express_set" class="show-content" style="display:none;padding-right:100px">
+                            <input type="text" id="cornValue" class="form-control" />
+                            <a class="btn-select-express">添加预置表达式</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 lr-form-item">
+                    <div class="lr-form-item-title">结束时间</div>
+                    <div id="endType"  class="lr-radio radio" type="lr-radio">
+                        <label>
+                            <input type="radio" name="endType" value="1" checked />
+                            无期限
+                        </label>
+                        <label>
+                            <input type="radio" name="endType" value="2" />
+                            设定结束时间
+                        </label>
+                    </div>
+                    <div id="end_time_set" class="show-content" style="display:none">
+                        <input id="endTime" type="text" class="form-control lr-input-wdatepicker" onfocus="WdatePicker({ dateFmt: 'yyyy-MM-dd HH:mm:ss'})">
+                    </div>
+                </div>
+                <div class="col-xs-12 lr-form-item">
+                    <div class="lr-form-item-title">任务重启</div>
+                    <div class="checkbox">
+                        <label>
+                            <input id="isRestart" type="checkbox" />
+                            任务中断按以下频率重新启动
+                        </label>
+                    </div>
+               
+                    <div id="isShowRestartModule" style="display:none;">
+                        <div class="show-content">
+                            <div class="text_item">重启频率:&nbsp;&nbsp;每隔</div>
+                            <div class="ip_item"><input id="restartMinute" type="text" class="form-control" /></div>
+                            <div class="text_item">分钟,执行一次;重启次数</div>
+                            <div class="ip_item"><input id="restartNum" type="text" class="form-control" /></div>
+                            <div class="text_item">次</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="step-pane  step-gird-pane lr-form-wrap" id="step-2">
+            <div class="col-xs-12 lr-form-item ">
+                <div class="lr-form-item-title">任务类型</div>
+                <div id="methodType" class="lr-radio radio" type="lr-radio">
+                    <label>
+                        <input name="methodType" value="1" type="radio" checked>
+                        SQL语句
+                    </label>
+                    <label>
+                        <input name="methodType" value="2" type="radio">
+                        存储过程
+                    </label>
+                    <label>
+                        <input name="methodType" value="3" type="radio">
+                         接口
+                    </label>
+                    <label>
+                        <input name="methodType" value="4" type="radio">
+                        Ioc依赖注入
+                    </label>
+                </div>
+            </div>
+            <div class="col-xs-12 lr-form-item">
+                <div class="lr-form-item-title">数据库</div>
+                <div id="dbId"></div>
+            </div>
+            <div class="col-xs-12 lr-form-item">
+                <div class="lr-form-item-title">SQL语句</div>
+                <textarea id="strSql" type="text" class="form-control" style="height:100px;"></textarea>
+            </div>
+            <div class="col-xs-12 lr-form-item" style="display:none">
+                <div class="lr-form-item-title">存储过程</div>
+                <textarea id="procName" type="text" class="form-control" style="height:100px;"></textarea>
+            </div>
+            <div class="col-xs-12 lr-form-item" style="display:none">
+                <div class="lr-form-item-title">IOC方法名</div>
+                <textarea id="iocName" type="text" class="form-control" style="height:100px;"></textarea>
+            </div>
+            <div  class="col-xs-12 lr-form-item" style="display:none">
+                <div class="lr-form-item-title">接口类型</div>
+                <div id="urlType" class="lr-radio radio" type="lr-radio">
+                    <label>
+                        <input name="urlType" value="1" type="radio" checked>
+                        Get
+                    </label>
+                    <label>
+                        <input name="urlType" value="2" type="radio">
+                        Post
+                    </label>
+                </div>
+            </div>
+            <div id="inter" class="col-xs-12 lr-form-item" style="display:none">
+                <div class="lr-form-item-title">接口路径</div>
+                <textarea id="url" type="text" class="form-control" style="height:100px;"></textarea>
+            </div>
+            <div class="col-xs-12 lr-form-item">
+                <div class="lr-form-item-title">功能描述</div>
+                <textarea id="F_Description" type="text" class="form-control" style="height:260px;"></textarea>
+            </div>
+        </div>
+    </div>
+
+    <div class="lr-form-bottom-button" id="wizard-actions">
+        <a id="btn_prev" class="btn btn-default btn-prev" disabled>上一步</a>
+        <a id="btn_next" class="btn btn-default btn-next">下一步</a>
+        <a id="btn_finish" class="btn btn-success" disabled>完成</a>
+    </div>
+</div>
+@Html.AppendJsFile("/Areas/LR_TaskScheduling/Views/TSScheme/Form.js")

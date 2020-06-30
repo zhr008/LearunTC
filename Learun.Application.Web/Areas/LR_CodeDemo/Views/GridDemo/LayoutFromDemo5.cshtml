@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewBag.Title = "LayoutFromDemo5";
+    Layout = "~/Views/Shared/_Index.cshtml";
+}
+
+<div class="lr-layout">
+    <div class="lr-layout-center">
+        <div class="lr-layout-wrap lr-layout-wrap-notitle">
+            <div class="lr-layout-tool">
+                <div class="lr-layout-tool-left">
+                    <div class="lr-layout-tool-item">
+                        <input id="txt_Keyword" type="text" class="form-control" placeholder="请输入要查询关键字" />
+                    </div>
+                    <div class="lr-layout-tool-item">
+                        <a id="btn_Search" class="btn btn-primary btn-sm"><i class="fa fa-search"></i>&nbsp;<span class="lrlg">查询</span></a>
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="lr-layout-body" style="padding-left:200px;">
+                <div class="left">
+                    <div id="gridtable1"></div>
+                </div>
+                <div class="lr-rblock">
+                    <div id="gridtable" ></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .left {
+        position:absolute;
+        top:0;
+        left:0;
+        height:100%;
+        width:200px;
+        border-right:1px solid #ccc;
+    }
+</style>
+
+@Html.AppendJsFile("/Areas/LR_CodeDemo/Views/GridDemo/LayoutFromDemo5.js")

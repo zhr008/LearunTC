@@ -1,0 +1,15 @@
+﻿@{
+    ViewBag.Title = "指定审核人";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+<style>
+    .lr-form-item {
+        padding: 5px 0 5px 200px;
+    }
+    .lr-form-item-title {
+        width: 200px;
+    }
+</style>
+<div class="lr-form-wrap" id="form">
+</div>
+@Html.AppendJsFile("/Areas/LR_NewWorkFlow/Views/NWFProcess/AppointForm.js")

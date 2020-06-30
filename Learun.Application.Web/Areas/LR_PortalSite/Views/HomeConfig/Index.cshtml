@@ -1,0 +1,94 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Index.cshtml";
+}
+
+<link href="~/Content/jquery/plugin/swiper/swiper-4.3.3.min.css" rel="stylesheet" />
+<script src="~/Content/jquery/plugin/swiper/swiper-4.3.3.min.js"></script>
+@Html.AppendCssFile("/Areas/LR_PortalSite/Views/HomeConfig/Index.css")
+<div class="lr-site-head">
+    <div class="lr-site-content" id="lr_site_top_text" ><div class="edit-btn" >设置</div><span></span></div>
+</div>
+<div class="lr-site-nav">
+    <div class="lr-site-content">
+        <div class="lr-site-logo-container">
+            <div class="file" id="top_logo">
+                <input type="file" name="uploadFile" id="uploadFile1">
+            </div>
+            <div class="edit-btn">设置</div>
+        </div>
+        <div class="lr-site-nav-container" id="top_menu" >
+            <ul class="lr-site-nav-ul">
+                <li class="lr-site-nav-li active homePage">
+                    <a href="javascript:void(0);" class="lr-site-nav-item"><span class="text">首页</span></a>
+                </li>
+            </ul>
+            <div class="edit-btn">设置</div>
+        </div>
+       
+    </div>
+</div>
+<div class="lr-site-banner" id="banner_site" >
+    <div class="lr-site-banner-swiper-container swiper-container">
+        <div class="swiper-wrapper">
+            @*<div class="swiper-wrapper">
+                    <img src="~/Content/images/plhome/banna0.jpg" />
+                </div>
+                <div class="swiper-slide">
+                    1
+                </div>
+                <div class="swiper-slide">
+                    2
+                </div>*@
+        </div>
+        <!-- 如果需要分页器 -->
+        <div class="swiper-pagination"></div>
+    </div>
+    <div class="lr-site-banner-default">
+        <div class="title">此处可替换背景轮播图</div>
+        <img class="img" src="~/Content/images/plhome/banner_df.jpg" />
+    </div>
+    <div class="edit-btn">设置</div>
+</div>
+<div class="lr-site-modules">
+    <div class="lr-site-module-add" ><div class="module-add-btn" id="moduleAddBtn" >新增模块</div></div>
+</div>
+<div class="lr-site-footer">
+    <div class="lr-site-content">
+        <div class="lr-site-logo-container">
+            <div class="file" id="bottom_logo">
+                <input type="file" name="uploadFile2" id="uploadFile2">
+            </div>
+            <div class="edit-btn">设置</div>
+        </div>
+        <div class="lr-site-footer-nav">
+            <div class="lr-site-footer-nav-container" id="bottom_menu">
+                <ul class="lr-site-footer-nav-menu">
+                </ul>
+                <div class="edit-btn">设置</div>
+            </div>
+           
+            <div class="lr-site-contactInfo" id="lr_site_footer_text" ><span>地址：江苏省苏州市工业园区汀兰巷192号B9-302；服务电话：0512-67227790</span><div class="edit-btn">设置</div></div>
+        </div>
+        <div class="lr-site-footer-wechat">
+            <div class="imgwechat">
+                <div class="file" id="wechat_img">
+                    <input type="file" name="uploadFile3" id="uploadFile3">
+                </div>
+                <div class="edit-btn">设置</div>
+            </div>
+           
+            <div class="text" id="wechat_text">
+                <span>官方微信</span>
+                <div class="edit-btn">设置</div>
+            </div>
+           
+        </div>
+    </div>
+</div>
+<div class="lr-site-bottom" id="lr_site_bottom_text">
+    <span></span>
+    <div class="edit-btn">设置</div>
+</div>
+@Html.AppendJsFile("/Views/LR_Content/script/lr-fileupload.js", "/Areas/LR_PortalSite/Views/HomeConfig/Index.js")

@@ -1,0 +1,17 @@
+﻿.content {
+    padding: 10px 45px 0px 0px;
+}
+.txt-minutes {
+    width: 50px;
+    height: 28px;
+    margin-right: 5px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    outline: none !important;
+    padding-left: 5px;
+}
+
+    .txt-minutes:focus {
+        border-color: #039cfd;
+        box-shadow: none;
+    }

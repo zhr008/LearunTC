@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta name=”renderer” content=”webkit|ie-comp|ie-stand” />
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="~/favicon.ico">
+
+    <title>力软门户网站</title>
+
+    <link href="~/Content/font/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/swiper/swiper-4.3.3.min.css" rel="stylesheet" />
+    <link href="~/Content/style/lr-common.css" rel="stylesheet" />
+    <link href="~/Content/style/Home.css" rel="stylesheet" />
+    <link href="~/Content/style/DetailIndex.css" rel="stylesheet" />
+
+    <script src="~/Content/jquery/jquery-1.10.2.min.js"></script>
+    <script src="~/Content/laypage/laypage.js"></script>
+    <script src="~/Content/bootstrap/bootstrap.min.js"></script>
+    <script src="~/Content/swiper/swiper-4.3.3.min.js"></script>
+    <!--[if lt IE 9]>
+      <script src="~/Content/bootstrap/html5shiv.min.js"></script>
+      <script src="~/Content/bootstrap/respond.min.js"></script>
+    <![endif]-->
+    <script>
+        function request(d) { for (var c = location.search.slice(1).split("&"), a = 0; a < c.length; a++) { var b = c[a].split("="); if (b[0] == d) if ("undefined" == unescape(b[1])) break; else return unescape(b[1]) } return "" };
+    </script>
+    <script>
+        $.rootUrl = '@Url.Content("~")'.substr(0, '@Url.Content("~")'.length - 1);
+
+        // get 请求方法
+        var httpGet = function (url, callback) {
+            $.ajax({
+                url: url,
+                type: "GET",
+                dataType: "json",
+                async: true,
+                cache: false,
+                success: function (data) {
+                    callback(data);
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    callback(null);
+                },
+                beforeSend: function () {
+
+                },
+                complete: function () {
+
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <div class="lr-site-head">
+        <div class="lr-site-content" id="lr_site_top_text"></div>
+    </div>
+    <div class="lr-site-nav">
+        <div class="lr-site-content">
+            <div class="lr-site-logo-container">
+                <img src="~/Home/GetImg?type=4" />
+            </div>
+            <ul class="lr-site-nav-ul">
+                <li class="lr-site-nav-li homePage">
+                    <a href="javascript:void(0);" class="lr-site-nav-item"><span class="text">首页</span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="lr-site-body">
+        <div class="lr-site-body-container">
+            <div class="title">
+                <p id="title"></p>
+                <div class="list"></div>
+            </div>
+        </div>
+    </div>
+    <div class="lr-site-footer">
+        <div class="lr-site-content">
+            <div class="lr-site-logo-container">
+                <img src="~/Home/GetImg?type=10" />
+            </div>
+            <div class="lr-site-footer-nav">
+                <ul class="lr-site-footer-nav-menu"></ul>
+                <div class="lr-site-contactInfo"></div>
+            </div>
+            <div class="lr-site-footer-wechat">
+                <img class="img" src="~/Home/GetImg?type=5" />
+                <p class="text"></p>
+            </div>
+        </div>
+    </div>
+    <div class="lr-site-bottom">
+    </div>
+
+    <script src="~/Content/scripts/DetailIndex.js"></script>
+</body>
+</html>

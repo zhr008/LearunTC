@@ -1,0 +1,100 @@
+﻿/*
+ * 版 本 Learun-ADMS V7.0.6 力软敏捷开发框架(http://www.learun.cn)
+ * Copyright (c) 2013-2020 上海力软信息技术有限公司
+ * 创建人：力软-前端开发组
+ * 日 期：2017.03.16
+ * 描 述：前端通用样式表
+ */
+*,
+*:before,
+*:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    -webkit-box-shadow: inset 1px 1px 0 rgba(0, 0, 0, .1);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    -webkit-box-shadow: inset 1px 1px 0 rgba(0, 0, 0, .1);
+}
+
+::-webkit-scrollbar {
+    width: 16px;
+    height: 16px;
+}
+
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-thumb {
+    border-radius: 999px;
+    border: 5px solid transparent;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: 1px 1px 5px rgba(144, 146, 152, 0.3) inset;
+}
+
+::-webkit-scrollbar-thumb {
+    min-height: 20px;
+    background-clip: content-box;
+    box-shadow: 0 0 0 5px rgba(144, 146, 152, 0.3) inset;
+}
+
+::-webkit-scrollbar-corner {
+    background: transparent;
+}
+html {
+    width: 100%;
+    height: 100%;
+}
+body {
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    height: 100%;
+    font-family: PingFangSC-Regular,Microsoft YaHei,SimSun,Arial,Helvetica,Verdana,sans-serif !important;
+    color: #333;
+    font-size: 12px;
+    background-color: initial;
+    overflow: hidden;
+}
+ul,li {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+a {
+    color: #000000;
+    text-decoration: none;
+}
+a:hover {
+    color: #000000;
+    text-decoration: none;
+}
+a:focus {
+    outline: none;
+    -moz-outline: none;
+    color: #000000;
+    text-decoration: none;
+}
+.form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
+    background-color: #fff;
+    opacity: 1;
+}
+
+
+.row {
+    margin:0;
+}

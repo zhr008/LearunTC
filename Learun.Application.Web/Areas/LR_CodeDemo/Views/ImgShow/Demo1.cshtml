@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "图片展示";
+    Layout = "~/Views/Shared/_Index.cshtml";
+}
+<div style="position:relative;height:800px;width:1440px;border:1px solid #ccc;">
+    <img src="~/Content/images/imgshow/有货架图1.jpg" />
+    <div data-value="1" class="node" style="top:360px;left:310px;width:160px;height:100px;transform: skewY(25deg)"></div>
+    <div data-value="2" class="node" style="top:290px;left:430px;width:160px;height:110px;transform: skewY(25deg)"></div>
+    <div data-value="3" class="node" style="top:120px;left:800px;width:160px;height:120px;transform: skewY(25deg)"></div>
+    <div data-value="4" class="node" style="top:500px;left:630px;width:160px;height:100px;transform: skewY(25deg)"></div>
+    <div data-value="5" class="node" style="top:440px;left:755px;width:160px;height:100px;transform: skewY(25deg)"></div>
+    <div data-value="6" class="node" style="top:260px;left:1100px;width:160px;height:100px;transform: skewY(25deg)"></div>
+</div>
+
+@Html.AppendJsFile("/Areas/LR_CodeDemo/Views/ImgShow/Demo1.js")
+<style>
+    body {
+        padding: 5px;
+        overflow: auto;
+    }
+
+    img {
+        position: relative;
+        height: 100%;
+        width: 100%;
+    }
+
+    .node {
+        position: absolute;
+        top: 0;
+        left: 0;
+        font-size: 20px;
+        color: #00ff21;
+    }
+</style>

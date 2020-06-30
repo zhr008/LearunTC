@@ -1,0 +1,213 @@
+﻿.lr-form-wrap {
+    padding-top: 129px;
+    padding-right:0;
+}
+.lr-form-item {
+    position: absolute;
+    left: 0;
+    height: 38px;
+    width: 100%;
+    padding-right: 30px;
+}
+
+.lr-form-item-text {
+    position: absolute;
+    top: 7px;
+    right: 30px;
+    padding: 4px 8px;
+    color: #000;
+}
+
+/*【弹出层样式开始】*/
+.model {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.3);
+    display: none;
+    z-index: 100;
+}
+
+    .model .lr-box {
+        background: #fff;
+        padding: 10px;
+        width: 785px;
+        overflow: hidden;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-left: -392px;
+        margin-top: -296px;
+    }
+
+    .model .blank-space {
+        display: inline-block;
+        background: #fff;
+        width: 192px;
+        height: 118px;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        border-radius: 2px;
+    }
+
+    .model .lr-cover-box {
+        position: relative;
+        float: left;
+        height: 250px;
+        width: 235px;
+        border: 1px solid #cccccc;
+        margin: 10px;
+        padding: 9px;
+        border-radius: 2px;
+        cursor: pointer;
+    }
+
+    .model .lr-cover-img {
+        height: 140px;
+        background-color: #efefef;
+        width: 100%;
+        text-align: center;
+        padding-top: 40px;
+        margin-bottom: 10px;
+    }
+
+        .model .lr-cover-img img {
+            width: 195px;
+            height: 120px;
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            border-radius: 2px;
+        }
+
+        .model .lr-cover-img .lr-cover-img2 {
+            display: none;
+        }
+
+    .model .lr-cover-info {
+        position: relative;
+        padding: 26px 0 0 15px;
+        width: 100%;
+        overflow: hidden;
+        text-align: center;
+        color: #787878;
+        font-size: 15px;
+    }
+
+    .model .lr-cover-box:hover {
+        border: 1px solid #156edb;
+        -moz-box-shadow: 0px 0px 5px #cccccc; /* 老的 Firefox */
+        box-shadow: 5px 5px 10px #cccccc;
+    }
+
+        .model .lr-cover-box:hover .lr-cover-img1 {
+            display: none;
+        }
+
+        .model .lr-cover-box:hover .lr-cover-img2 {
+            display: block;
+        }
+
+        .model .lr-cover-box:hover .lr-cover-img {
+            background: -webkit-linear-gradient(left,rgba(36,142,217,0.8), #156edb); /* Safari 5.1 - 6.0 */
+            background: -o-linear-gradient(right,rgba(36,142,217,0.8), #156edb); /* Opera 11.1 - 12.0 */
+            background: -moz-linear-gradient(right,rgba(36,142,217,0.8), #156edb); /* Firefox 3.6 - 15 */
+            background: linear-gradient(right,rgba(36,142,217,0.8), #156edb); /* 标准的语法 */
+        }
+
+        .model .lr-cover-box:hover .lr-cover-info {
+            color: #156edb;
+        }
+/*【弹出层样式结束】*/
+.container-left {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 0;
+    width: 118px;
+    padding: 8px 0 8px 8px;
+}
+    .container-left .content {
+        border: 1px solid #ccc;
+        border-radius: 3px;
+    }
+.container-right {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 8px;
+    overflow-y:auto;
+}
+.content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    overflow: hidden;
+}
+/*【左侧模版开始】*/
+.container-left .lr-cover-box {
+    display: block;
+    border: 1px solid #ccc;
+    margin: 6px 6px 0 6px;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+    .container-left .lr-cover-box:hover,
+    .container-left .lr-cover-box.active {
+        border: 1px solid #156edb;
+        -moz-box-shadow: 2px 2px 5px #cccccc; /* 老的 Firefox */
+        box-shadow: 2px 2px 10px #cccccc;
+    }
+
+    .container-left .lr-cover-box:hover,
+    .container-left .lr-cover-box.active {
+        background: -webkit-linear-gradient(left,rgba(36,142,217,0.8), #156edb); /* Safari 5.1 - 6.0 */
+        background: -o-linear-gradient(right,rgba(36,142,217,0.8), #156edb); /* Opera 11.1 - 12.0 */
+        background: -moz-linear-gradient(right,rgba(36,142,217,0.8), #156edb); /* Firefox 3.6 - 15 */
+        background: linear-gradient(right,rgba(36,142,217,0.8), #156edb); /* 标准的语法 */
+    }
+
+        .container-left .lr-cover-box:hover .lr-cover-info, .container-left .lr-cover-box.active .lr-cover-info{
+            color: #fff;
+        }
+
+        .container-left .lr-cover-box:hover .lr-cover-img1, .container-left .lr-cover-box.active .lr-cover-img1 {
+            display: none;
+        }
+
+        .container-left .lr-cover-box:hover .lr-cover-img2, .container-left .lr-cover-box.active .lr-cover-img2 {
+            display: block;
+        }
+
+.container-left .lr-cover-img {
+    height: 70px;
+    border-radius: 2px;
+    margin: 3px;
+}
+
+    .container-left .lr-cover-img img {
+        width: 100%;
+        height: 70px;
+        border-radius: 2px;
+    }
+
+    .container-left .lr-cover-img .lr-cover-img2 {
+        display: none;
+    }
+
+.container-left .lr-cover-info {
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+    margin: 5px 0px;
+    color: #787878;
+    font-size: 10px;
+}
+/*【左侧模版结束】*/

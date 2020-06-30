@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "SetCategoryForm";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+<div class="lr-form-wrap" id="form">
+    <div class="col-xs-12 lr-form-item">
+        <div class="lr-form-item-title">分类名称<font face="宋体">*</font></div>
+        <input id="F_Name" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+    </div>
+    <div class="col-xs-12 lr-form-item">
+        <div class="lr-form-item-title">关联文章分类<font face="宋体">*</font></div>
+        <div id="F_Category" isvalid="yes" checkexpession="NotNull"></div>
+    </div>
+    <div class="col-xs-12 lr-form-item">
+        <div class="lr-form-item-title">关联文章<font face="宋体">*</font></div>
+        <div id="F_Article" isvalid="yes" checkexpession="NotNull"></div>
+    </div>
+</div>
+@Html.AppendJsFile("/Areas/LR_PortalSite/Views/Page/SetCategoryForm.js")
+

@@ -1,0 +1,21 @@
+﻿.fileEx {
+    width: 100%;
+    height: 120px;
+    position: relative;
+    overflow: hidden;
+}
+
+    .fileEx input {
+        position: absolute;
+        font-size: 120px;
+        right: 0;
+        top: 0;
+        opacity: 0;
+        cursor: pointer !important;
+    }
+
+    .fileEx img {
+        width: 120px;
+        height: 120px;
+        cursor: pointer;
+    }
