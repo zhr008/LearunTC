@@ -39,7 +39,6 @@
         .lr-layout-wrap-item.active {
             display: block;
         }
-
 </style>
 @Html.AppendCssFile("/Areas/LR_CodeDemo/Views/Personnels/Index.css")
 <div id="lr_layout" class="lr-layout lr-layout-left-center">
@@ -49,10 +48,11 @@
                 <ul class="lr-left-list" id="lr_left_list">
                     <li class="active" data-value="1">基本信息</li>
                     <li data-value="2">身份证信息</li>
-                    @*<li data-value="3">我的头像</li>
-                        <li data-value="4">修改密码</li>
-                        <li data-value="5">我的日志</li>
-                        <li data-value="6">语言设置</li>*@
+                    <li data-value="3">个人资格证</li>
+                    <li data-value="4">毕业证</li>
+                    <li data-value="5">培训记录</li>
+                    <li data-value="6">从业经历</li>
+                    <li data-value="7">合同结算</li>
                 </ul>
             </div>
         </div>
@@ -107,41 +107,51 @@
                     <div>身份证信息</div>
                 </div>
                 <div class="content">
-
-                    @*src="~/LR_CodeDemo/IDCard/Index?keyValue=11111111"*@
-
-                    <iframe class="lr-layout-iframe" style="height:-webkit-fill-available;width:-webkit-fill-available" frameborder="0"></iframe>
+                    <iframe class="lr-layout-iframe" id="lr_iframe_item2" style="height:-webkit-fill-available;width:-webkit-fill-available" frameborder="0"></iframe>
                 </div>
             </div>
 
+            <div class="lr-layout-wrap-item" id="lr_layout_item3">
+                <div class="title">
+                    <div>个人资格证</div>
+                </div>
+                <div class="content">
+                    <iframe class="lr-layout-iframe" id="lr_iframe_item3" style="height:-webkit-fill-available;width:-webkit-fill-available" frameborder="0"></iframe>
+                </div>
+            </div>
 
-            @*<div class="lr-layout-wrap-item" id="lr_layout_item3">
-            <div class="title">
-                <div>我的头像</div>
+            <div class="lr-layout-wrap-item" id="lr_layout_item4">
+                <div class="title">
+                    <div>毕业证</div>
+                </div>
+                <div class="content">
+                    <iframe class="lr-layout-iframe" id="lr_iframe_item4" style="height:-webkit-fill-available;width:-webkit-fill-available" frameborder="0"></iframe>
+                </div>
             </div>
-            <div class="content" style="padding-top:20px;">
-                <iframe class="lr-layout-iframe" frameborder="0" src="~/UserCenter/HeadForm"></iframe>
+            <div class="lr-layout-wrap-item" id="lr_layout_item5">
+                <div class="title">
+                    <div>培训记录</div>
+                </div>
+                <div class="content">
+                    <iframe class="lr-layout-iframe" id="lr_iframe_item5" style="height:-webkit-fill-available;width:-webkit-fill-available" frameborder="0"></iframe>
+                </div>
             </div>
-        </div>
-        <div class="lr-layout-wrap-item" id="lr_layout_item4">
-            <div class="title">
-                <div>修改密码</div>
+            <div class="lr-layout-wrap-item" id="lr_layout_item6">
+                <div class="title">
+                    <div>从业经历</div>
+                </div>
+                <div class="content">
+                    <iframe class="lr-layout-iframe" id="lr_iframe_item6" style="height:-webkit-fill-available;width:-webkit-fill-available" frameborder="0"></iframe>
+                </div>
             </div>
-            <div class="content" style="padding-top:20px;">
-                <iframe class="lr-layout-iframe" frameborder="0" src="~/UserCenter/PassWordForm"></iframe>
+            <div class="lr-layout-wrap-item" id="lr_layout_item7">
+                <div class="title">
+                    <div>合同结算</div>
+                </div>
+                <div class="content">
+                    <iframe class="lr-layout-iframe" id="lr_iframe_item7" style="height:-webkit-fill-available;width:-webkit-fill-available" frameborder="0"></iframe>
+                </div>
             </div>
-        </div>
-        <div class="lr-layout-wrap-item" id="lr_layout_item5" style="padding:0;">
-            <iframe class="lr-layout-iframe" frameborder="0" src="~/UserCenter/LogIndex"></iframe>
-        </div>
-        <div class="lr-layout-wrap-item" id="lr_layout_item6">
-            <div class="title">
-                <div>语言设置</div>
-            </div>
-            <div class="content" style="padding-top:20px;">
-                <iframe class="lr-layout-iframe" frameborder="0" src="~/UserCenter/LanguageForm"></iframe>
-            </div>
-        </div>*@
 
         </div>
     </div>

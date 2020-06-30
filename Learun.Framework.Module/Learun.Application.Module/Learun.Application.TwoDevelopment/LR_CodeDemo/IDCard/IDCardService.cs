@@ -57,25 +57,26 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
                 }
                 if (!queryParam["F_SafeguardType"].IsEmpty())
                 {
-                    dp.Add("F_SafeguardType",queryParam["F_SafeguardType"].ToString(), DbType.String);
+                    dp.Add("F_SafeguardType", queryParam["F_SafeguardType"].ToString(), DbType.String);
                     strSql.Append(" AND t1.F_SafeguardType = @F_SafeguardType ");
+                }
+                if (!queryParam["F_PersonId"].IsEmpty())
+                {
+                    dp.Add("F_PersonId", queryParam["F_PersonId"].ToString(), DbType.String);
+                    strSql.Append(" AND t1.F_PersonId = @F_PersonId ");
                 }
                 if (!queryParam["F_IssueDate"].IsEmpty())
                 {
-                    dp.Add("F_IssueDate",queryParam["F_IssueDate"].ToString(), DbType.String);
+                    dp.Add("F_IssueDate", queryParam["F_IssueDate"].ToString(), DbType.String);
                     strSql.Append(" AND t1.F_IssueDate = @F_IssueDate ");
                 }
                 if (!queryParam["F_ExpirationDate"].IsEmpty())
                 {
-                    dp.Add("F_ExpirationDate",queryParam["F_ExpirationDate"].ToString(), DbType.String);
+                    dp.Add("F_ExpirationDate", queryParam["F_ExpirationDate"].ToString(), DbType.String);
                     strSql.Append(" AND t1.F_ExpirationDate = @F_ExpirationDate ");
                 }
-                if (!queryParam["F_IDCardNo"].IsEmpty())
-                {
-                    dp.Add("F_IDCardNo",queryParam["F_IDCardNo"].ToString(), DbType.String);
-                    strSql.Append(" AND t.F_IDCardNo = @F_IDCardNo ");
-                }
-                return this.BaseRepository().FindList<tc_IDCardEntity>(strSql.ToString(),dp, pagination);
+
+                return this.BaseRepository().FindList<tc_IDCardEntity>(strSql.ToString(), dp, pagination);
             }
             catch (Exception ex)
             {
@@ -99,7 +100,7 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
         {
             try
             {
-                return this.BaseRepository().FindEntity<tc_IDCardEntity>(t=>t.F_PersonId == keyValue);
+                return this.BaseRepository().FindEntity<tc_IDCardEntity>(t => t.F_PersonId == keyValue);
             }
             catch (Exception ex)
             {
@@ -142,13 +143,25 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
         /// 获取树形数据
         /// </summary>
         /// <returns></returns>
-        public DataTable GetSqlTree()
+        public DataTable GetSqlTree(string PersonId, string ApplicantId)
         {
             try
             {
-                return this.BaseRepository().FindTable(@" select a.F_PersonId id ,a.F_UserName text ,a.F_IDCardNo value ,a.F_ApplicantId  parentid   from  tc_Personnels a
-union 
-select b.F_ApplicantId ,b.F_CompanyName text ,'' value ,''  parentid   from  tc_Applicant b ");
+
+                StringBuilder str = new StringBuilder();
+                str.Append(@"select a.F_PersonId id ,a.F_UserName text ,a.F_IDCardNo value ,a.F_ApplicantId  parentid   from  tc_Personnels a  where 1=1 ");
+                if (!string.IsNullOrEmpty(PersonId))
+                {
+                    str.AppendFormat(@" and a.F_PersonId='{0}' ", PersonId);
+                }
+                str.Append(" union ");
+                str.Append(@"   select b.F_ApplicantId ,b.F_CompanyName text ,'' value ,''  parentid   from  tc_Applicant b  where 1=1 ");
+                if (!string.IsNullOrEmpty(ApplicantId))
+                {
+                    str.AppendFormat(@" and b.F_ApplicantId='{0}' ", ApplicantId);
+                }
+
+                return this.BaseRepository().FindTable(str.ToString());
             }
             catch (Exception ex)
             {
@@ -176,7 +189,7 @@ select b.F_ApplicantId ,b.F_CompanyName text ,'' value ,''  parentid   from  tc_
             var db = this.BaseRepository().BeginTrans();
             try
             {
-                db.Delete<tc_IDCardEntity>(t=>t.F_IDCardId == keyValue);
+                db.Delete<tc_IDCardEntity>(t => t.F_IDCardId == keyValue);
                 db.Commit();
             }
             catch (Exception ex)
@@ -198,7 +211,7 @@ select b.F_ApplicantId ,b.F_CompanyName text ,'' value ,''  parentid   from  tc_
         /// </summary>
         /// <param name="keyValue">主键</param>
         /// <param name="entity">实体</param>
-        public void SaveEntity(string keyValue,tc_IDCardEntity tc_IDCardEntity)
+        public void SaveEntity(string keyValue, tc_IDCardEntity tc_IDCardEntity)
         {
             var db = this.BaseRepository().BeginTrans();
             try
@@ -211,7 +224,7 @@ select b.F_ApplicantId ,b.F_CompanyName text ,'' value ,''  parentid   from  tc_
                 }
                 else
                 {
-                  
+
                     tc_IDCardEntity.Create();
                     tc_IDCardEntity.F_PersonId = tc_IDCardEntity.F_PersonId;
                     db.Insert(tc_IDCardEntity);

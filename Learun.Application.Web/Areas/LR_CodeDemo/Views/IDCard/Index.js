@@ -4,7 +4,13 @@
  */
 var refreshGirdData;
 var id = "";
-var keyValue = request('keyValue');
+var PersonId = request('PersonId');
+var ApplicantId = request('ApplicantId');
+
+
+var F_PersonId = ""
+var F_UserName = ""
+var F_IDCardNo = ""
 var bootstrap = function ($, learun) {
     "use strict";
     var page = {
@@ -15,9 +21,21 @@ var bootstrap = function ($, learun) {
         bind: function () {
             // 初始化左侧树形数据
             $('#dataTree').lrtree({
-                url: top.$.rootUrl + '/LR_CodeDemo/IDCard/GetTree',
+                url: top.$.rootUrl + '/LR_CodeDemo/IDCard/GetTree?PersonId=' + PersonId + "&ApplicantId=" + ApplicantId,
                 nodeClick: function (item) {
-                    page.search({ F_IDCardNo: item.value });
+                    if (!!item.value) {
+                        page.search({ F_IDCardNo: item.value });
+                        F_PersonId = item.id;
+                        F_UserName = item.text;
+                        F_IDCardNo = item.value;
+                    }
+                    else
+                    {
+                        page.search({ F_ApplicantId: item.id });
+                        F_PersonId = "";
+                        F_UserName = "";
+                        F_IDCardNo = "";
+                    }
                 }
             });
             $('#multiple_condition_query').lrMultipleQuery(function (queryJson) {
@@ -30,7 +48,7 @@ var bootstrap = function ($, learun) {
             });
             // 新增
             $('#lr_add').on('click', function () {
-                debugger;
+
                 learun.layerForm({
                     id: 'form',
                     title: '新增',
@@ -106,6 +124,8 @@ var bootstrap = function ($, learun) {
         },
         search: function (param) {
             param = param || {};
+            debugger;
+            param.F_PersonId = PersonId;
             $('#gridtable').jfGridSet('reload',{ queryJson: JSON.stringify(param) });
         }
     };

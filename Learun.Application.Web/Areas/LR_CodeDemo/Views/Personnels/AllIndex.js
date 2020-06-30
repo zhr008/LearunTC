@@ -32,6 +32,31 @@ var bootstrap = function ($, learun) {
                     var _type = $this.attr('data-value');
                     $('.lr-layout-wrap-item').removeClass('active');
                     $('#lr_layout_item' + _type).addClass('active');
+
+                    keyValue
+
+                    switch (_type)
+                    {
+                        case '2':
+                            $("#lr_iframe_item2").attr("src", "/LR_CodeDemo/IDCard/Index?PersonId=" + keyValue + "&ApplicantId="+ApplicantId)
+                            break;
+                        case '3':
+                            $("#lr_iframe_item3").attr("src", "/LR_CodeDemo/IDCard/Index")
+                            break;
+                        case '4':
+                            $("#lr_iframe_item4").attr("src", "/LR_CodeDemo/IDCard/Index")
+                            break;
+                        case '5':
+                            $("#lr_iframe_item5").attr("src", "/LR_CodeDemo/IDCard/Index")
+                            break;
+                        case '6':
+                            $("#lr_iframe_item6").attr("src", "/LR_CodeDemo/IDCard/Index")
+                            break;
+                        case '7':
+                            $("#lr_iframe_item7").attr("src", "/LR_CodeDemo/IDCard/Index")
+                            break;
+                    }
+                   
                 }
             });
         },
