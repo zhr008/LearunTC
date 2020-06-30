@@ -5,6 +5,9 @@
 var acceptClick;
 debugger;
 var keyValue = request('keyValue');
+
+
+console.log(keyValue);
 var bootstrap = function ($, learun) {
     "use strict";
     var page = {

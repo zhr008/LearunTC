@@ -4,8 +4,7 @@
  */
 var refreshGirdData;
 var id = "";
-
-
+var keyValue = request('keyValue');
 var bootstrap = function ($, learun) {
     "use strict";
     var page = {

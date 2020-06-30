@@ -31,18 +31,22 @@ var bootstrap = function ($, learun) {
             });
             //新增其他信息
             $('#lr_addall').on('click', function () {
-                learun.layerForm({
-                    id: 'AllIndex',
-                    title: '新增',
-                    url: top.$.rootUrl + '/LR_CodeDemo/Personnels/AllIndex',
-                    width: 1200,
-                    height: 700,
-                    btn: null,
-                      maxmin: true,
-                    //callBack: function (id) {
-                    //    return top[id].acceptClick(refreshGirdData);
-                    //}
-                });
+                var keyValue = $('#gridtable').jfGridValue('F_PersonId');
+                var ApplicantId = $('#gridtable').jfGridValue('F_ApplicantId');
+                if (learun.checkrow(keyValue)) {
+                    learun.layerForm({
+                        id: 'AllIndex',
+                        title: '新增',
+                        url: top.$.rootUrl + '/LR_CodeDemo/Personnels/AllIndex?keyValue=' + keyValue + "&ApplicantId=" + ApplicantId,
+                        width: 1200,
+                        height: 700,
+                        btn: null,
+                        maxmin: true,
+                        //callBack: function (id) {
+                        //    return top[id].acceptClick(refreshGirdData);
+                        //}
+                    });
+                }
             });
             // 新增
             $('#lr_add').on('click', function () {

@@ -6,6 +6,9 @@
  * 描 述：个人中心	
  */
 var baseinfo;
+
+var keyValue = request('keyValue');
+var ApplicantId = request('ApplicantId');
 var bootstrap = function ($, learun) {
     "use strict";
 
