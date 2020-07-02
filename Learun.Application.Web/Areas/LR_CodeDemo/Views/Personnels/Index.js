@@ -31,13 +31,14 @@ var bootstrap = function ($, learun) {
             });
             //新增其他信息
             $('#lr_addall').on('click', function () {
-                var keyValue = $('#gridtable').jfGridValue('F_PersonId');
-                var ApplicantId = $('#gridtable').jfGridValue('F_ApplicantId');
-                if (learun.checkrow(keyValue)) {
+                var F_PersonId = $('#gridtable').jfGridValue('F_PersonId');
+                var F_UserName = $('#gridtable').jfGridValue('F_UserName');
+                var F_IDCardNo = $('#gridtable').jfGridValue('F_IDCardNo');
+                if (learun.checkrow(F_PersonId)) {
                     learun.layerForm({
                         id: 'AllIndex',
                         title: '新增',
-                        url: top.$.rootUrl + '/LR_CodeDemo/Personnels/AllIndex?keyValue=' + keyValue + "&ApplicantId=" + ApplicantId,
+                        url: top.$.rootUrl + '/LR_CodeDemo/Personnels/AllIndex?F_PersonId=' + F_PersonId + "&F_IDCardNo=" + F_IDCardNo + "&F_UserName=" + F_UserName,
                         width: 1200,
                         height: 700,
                         btn: null,

@@ -7,8 +7,9 @@
  */
 var baseinfo;
 
-var keyValue = request('keyValue');
-var ApplicantId = request('ApplicantId');
+var F_PersonId = request('F_PersonId');
+var F_IDCardNo = request('F_IDCardNo');
+var F_UserName = request('F_UserName');
 var bootstrap = function ($, learun) {
     "use strict";
 
@@ -33,11 +34,11 @@ var bootstrap = function ($, learun) {
                     $('.lr-layout-wrap-item').removeClass('active');
                     $('#lr_layout_item' + _type).addClass('active');
 
-                    keyValue
+                 
 
                     switch (_type) {
                         case '2':
-                            $("#lr_iframe_item2").attr("src", "/LR_CodeDemo/IDCard/Index?PersonId=" + keyValue + "&ApplicantId=" + ApplicantId)
+                            $("#lr_iframe_item2").attr("src", "/LR_CodeDemo/IDCard/Index?F_PersonId=" + F_PersonId + "&F_IDCardNo=" + F_IDCardNo + "&F_UserName=" + F_UserName)
                             break;
                         case '3':
                             $("#lr_iframe_item3").attr("src", "/LR_CodeDemo/IDCard/Index")

@@ -1,16 +1,9 @@
 ﻿/* * 创建人：超级管理员
- * 日  期：2020-06-29 21:15
- * 描  述：身份证管理
+ * 日  期：2020-07-02 23:56
+ * 描  述：个人资格证
  */
 var acceptClick;
-debugger;
 var keyValue = request('keyValue');
-
-var F_PersonId = request('F_PersonId');
-var F_UserName = request('F_UserName');
-var F_IDCardNo = request('F_IDCardNo');
-
-console.log(keyValue);
 var bootstrap = function ($, learun) {
     "use strict";
     var page = {
@@ -20,11 +13,16 @@ var bootstrap = function ($, learun) {
             page.initData();
         },
         bind: function () {
-            $('#F_SafeguardType').lrDataItemSelect({ code: 'SafeguardType' });
+            $('#F_CertType').lrDataItemSelect({ code: 'CertType' });
+            $('#F_MajorType').lrDataItemSelect({ code: 'MajorType' });
+            $('#F_CertStyle').lrDataItemSelect({ code: 'CertStyle' });
+            $('#F_CertStatus').lrDataItemSelect({ code: 'CertStatus' });
+            $('#F_PracticeStyle').lrDataItemSelect({ code: 'PracticeStyle' });
+            $('#F_PracticeSealStyle').lrDataItemSelect({ code: 'PracticeSealStyle' });
         },
         initData: function () {
             if (!!keyValue) {
-                $.lrSetForm(top.$.rootUrl + '/LR_CodeDemo/IDCard/GetFormData?keyValue=' + keyValue, function (data) {
+                $.lrSetForm(top.$.rootUrl + '/LR_CodeDemo/Credentials/GetFormData?keyValue=' + keyValue, function (data) {
                     for (var id in data) {
                         if (!!data[id].length && data[id].length > 0) {
                             $('#' + id ).jfGridSet('refreshdata', data[id]);
@@ -35,10 +33,6 @@ var bootstrap = function ($, learun) {
                     }
                 });
             }
-            debugger;
-            $("#F_PersonId").val(F_PersonId);
-            $("#F_UserName").val(decodeURIComponent(escape(F_UserName)));
-            $("#F_IDCardNo").val(F_IDCardNo)
         }
     };
     // 保存数据
@@ -46,10 +40,10 @@ var bootstrap = function ($, learun) {
         if (!$('body').lrValidform()) {
             return false;
         }
-        var postData = {};
-        postData.strtc_IDCardEntity = JSON.stringify($('[data-table="tc_IDCard"]').lrGetFormData());
-        postData.strEntity = JSON.stringify($('[data-table="tc_Personnels"]').lrGetFormData());
-        $.lrSaveForm(top.$.rootUrl + '/LR_CodeDemo/IDCard/SaveForm?keyValue=' + keyValue, postData, function (res) {
+        var postData = {
+            strEntity: JSON.stringify($('body').lrGetFormData())
+        };
+        $.lrSaveForm(top.$.rootUrl + '/LR_CodeDemo/Credentials/SaveForm?keyValue=' + keyValue, postData, function (res) {
             // 保存成功后才回调
             if (!!callBack) {
                 callBack();

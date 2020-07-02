@@ -133,6 +133,14 @@
     <Compile Include="LR_CodeDemo\IDCard\IDCardService.cs" />
     <Compile Include="LR_CodeDemo\IDCard\IDCardBLL.cs" />
     <Compile Include="LR_CodeDemo\IDCard\IDCardIBLL.cs" />
+    <Compile Include="LR_CodeDemo\GradCert\tc_GradCertEntity.cs" />
+    <Compile Include="LR_CodeDemo\GradCert\GradCertService.cs" />
+    <Compile Include="LR_CodeDemo\GradCert\GradCertIBLL.cs" />
+    <Compile Include="LR_CodeDemo\GradCert\GradCertBLL.cs" />
+    <Compile Include="LR_CodeDemo\Credentials\tc_CredentialsEntity.cs" />
+    <Compile Include="LR_CodeDemo\Credentials\CredentialsService.cs" />
+    <Compile Include="LR_CodeDemo\Credentials\CredentialsBLL.cs" />
+    <Compile Include="LR_CodeDemo\Credentials\CredentialsIBLL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\Learun.Application.Organization\Learun.Application.Organization.csproj">

@@ -3,14 +3,10 @@
  * 描  述：身份证管理
  */
 var refreshGirdData;
-var id = "";
-var PersonId = request('PersonId');
-var ApplicantId = request('ApplicantId');
 
-
-var F_PersonId = ""
-var F_UserName = ""
-var F_IDCardNo = ""
+var F_PersonId = request('F_PersonId');
+var F_IDCardNo = request('F_IDCardNo');
+var F_UserName = request('F_UserName');
 var bootstrap = function ($, learun) {
     "use strict";
     var page = {
@@ -19,24 +15,6 @@ var bootstrap = function ($, learun) {
             page.bind();
         },
         bind: function () {
-            // 初始化左侧树形数据
-            $('#dataTree').lrtree({
-                url: top.$.rootUrl + '/LR_CodeDemo/IDCard/GetTree?PersonId=' + PersonId + "&ApplicantId=" + ApplicantId,
-                nodeClick: function (item) {
-                    if (!!item.value) {
-                        page.search({ F_IDCardNo: item.value });
-                        F_PersonId = item.id;
-                        F_UserName = item.text;
-                        F_IDCardNo = item.value;
-                    }
-                    else {
-                        page.search({ F_ApplicantId: item.id });
-                        F_PersonId = "";
-                        F_UserName = "";
-                        F_IDCardNo = "";
-                    }
-                }
-            });
             $('#multiple_condition_query').lrMultipleQuery(function (queryJson) {
                 page.search(queryJson);
             }, 220, 400);
@@ -47,11 +25,11 @@ var bootstrap = function ($, learun) {
             });
             // 新增
             $('#lr_add').on('click', function () {
-
+                debugger;
                 learun.layerForm({
                     id: 'form',
                     title: '新增',
-                    url: top.$.rootUrl + '/LR_CodeDemo/IDCard/Form',
+                    url: top.$.rootUrl + '/LR_CodeDemo/IDCard/Form?F_PersonId=' + F_PersonId + "&F_UserName=" + F_UserName + "&F_IDCardNo=" + F_IDCardNo,
                     width: 600,
                     height: 400,
                     callBack: function (id) {
@@ -125,8 +103,6 @@ var bootstrap = function ($, learun) {
         },
         search: function (param) {
             param = param || {};
-            debugger;
-            param.F_PersonId = PersonId;
             $('#gridtable').jfGridSet('reload', { queryJson: JSON.stringify(param) });
         }
     };

@@ -183,6 +183,8 @@
     <Compile Include="LR_CodeDemo\tc_ApplicantMap.cs" />
     <Compile Include="LR_CodeDemo\tc_PersonnelsMap.cs" />
     <Compile Include="LR_CodeDemo\tc_IDCardMap.cs" />
+    <Compile Include="LR_CodeDemo\tc_GradCertMap.cs" />
+    <Compile Include="LR_CodeDemo\tc_CredentialsMap.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\Learun.Application.Organization\Learun.Application.Organization.csproj">
