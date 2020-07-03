@@ -23,7 +23,7 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
         /// <param name="pagination">查询参数</param>
         /// <param name="queryJson">查询参数</param>
         /// <returns></returns>
-        public IEnumerable<tc_CredentialsEntity> GetPageList(Pagination pagination, string queryJson)
+        public IEnumerable<CredentialsInfo> GetPageList(Pagination pagination, string queryJson)
         {
             try
             {
@@ -42,13 +42,27 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
                 t.F_PracticeStyle,
                 t.F_PracticeSealStyle,
                 t.F_CheckInTime,
-                t.F_Description
+                t.F_Description,
+                t.F_UserName,
+                t.F_IDCardNo,
+                p.F_ApplicantId
                 ");
                 strSql.Append("  FROM tc_Credentials t ");
+                strSql.Append("  LEFT JOIN tc_Personnels p ON t.F_PersonId =p.F_PersonId ");
                 strSql.Append("  WHERE 1=1 ");
                 var queryParam = queryJson.ToJObject();
                 // 虚拟参数
                 var dp = new DynamicParameters(new { });
+                if (!queryParam["F_PersonId"].IsEmpty())
+                {
+                    dp.Add("F_PersonId", queryParam["F_PersonId"].ToString(), DbType.String);
+                    strSql.Append(" AND t.F_PersonId = @F_PersonId ");
+                }
+                if (!queryParam["F_ApplicantId"].IsEmpty())
+                {
+                    dp.Add("F_ApplicantId", queryParam["F_ApplicantId"].ToString(), DbType.String);
+                    strSql.Append(" AND p.F_ApplicantId = @F_ApplicantId ");
+                }
                 if (!queryParam["F_CertType"].IsEmpty())
                 {
                     dp.Add("F_CertType",queryParam["F_CertType"].ToString(), DbType.String);
@@ -99,7 +113,7 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
                     dp.Add("F_PracticeSealStyle",queryParam["F_PracticeSealStyle"].ToString(), DbType.String);
                     strSql.Append(" AND t.F_PracticeSealStyle = @F_PracticeSealStyle ");
                 }
-                return this.BaseRepository().FindList<tc_CredentialsEntity>(strSql.ToString(),dp, pagination);
+                return this.BaseRepository().FindList<CredentialsInfo>(strSql.ToString(),dp, pagination);
             }
             catch (Exception ex)
             {

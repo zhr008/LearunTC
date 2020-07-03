@@ -18,7 +18,7 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
         /// </summary>
         /// <param name="queryJson">查询参数</param>
         /// <returns></returns>
-        IEnumerable<tc_CredentialsEntity> GetPageList(Pagination pagination, string queryJson);
+        IEnumerable<CredentialsInfo> GetPageList(Pagination pagination, string queryJson);
         /// <summary>
         /// 获取tc_Credentials表实体数据
         /// </summary>

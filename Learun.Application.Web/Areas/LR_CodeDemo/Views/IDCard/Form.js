@@ -35,10 +35,9 @@ var bootstrap = function ($, learun) {
                     }
                 });
             }
-            debugger;
             $("#F_PersonId").val(F_PersonId);
             $("#F_UserName").val(decodeURIComponent(escape(F_UserName)));
-            $("#F_IDCardNo").val(F_IDCardNo)
+            $("#F_IDCardNo").val(F_IDCardNo);
         }
     };
     // 保存数据

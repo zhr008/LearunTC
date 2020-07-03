@@ -4,6 +4,11 @@
  */
 var acceptClick;
 var keyValue = request('keyValue');
+
+
+var F_PersonId = request('F_PersonId');
+var F_UserName = request('F_UserName');
+var F_IDCardNo = request('F_IDCardNo');
 var bootstrap = function ($, learun) {
     "use strict";
     var page = {
@@ -25,14 +30,20 @@ var bootstrap = function ($, learun) {
                 $.lrSetForm(top.$.rootUrl + '/LR_CodeDemo/Credentials/GetFormData?keyValue=' + keyValue, function (data) {
                     for (var id in data) {
                         if (!!data[id].length && data[id].length > 0) {
-                            $('#' + id ).jfGridSet('refreshdata', data[id]);
+                            $('#' + id).jfGridSet('refreshdata', data[id]);
                         }
                         else {
                             $('[data-table="' + id + '"]').lrSetFormData(data[id]);
                         }
                     }
                 });
-            }
+
+            } 
+                $("#F_PersonId").val(F_PersonId);
+                $("#F_UserName").val(decodeURIComponent(escape(F_UserName)));
+                $("#F_IDCardNo").val(F_IDCardNo);
+            
+           
         }
     };
     // 保存数据

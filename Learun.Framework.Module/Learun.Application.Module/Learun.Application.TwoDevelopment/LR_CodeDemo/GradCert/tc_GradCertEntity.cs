@@ -142,5 +142,12 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
         }
         #endregion
     }
+
+    [NotMapped]
+    public class GradCertInfo : tc_GradCertEntity
+    {
+        [NotMapped]
+        public string F_ApplicantId { get; set; }
+    }
 }
 

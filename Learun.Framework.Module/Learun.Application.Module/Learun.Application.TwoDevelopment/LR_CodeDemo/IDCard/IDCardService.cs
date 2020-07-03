@@ -23,7 +23,7 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
         /// <param name="pagination">查询参数</param>
         /// <param name="queryJson">查询参数</param>
         /// <returns></returns>
-        public IEnumerable<IDCardEntityEntity> GetPageList(Pagination pagination, string queryJson)
+        public IEnumerable<IDCardEntityInfo> GetPageList(Pagination pagination, string queryJson)
         {
             try
             {
@@ -83,7 +83,7 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
                     strSql.Append(" AND t1.F_ExpirationDate = @F_ExpirationDate ");
                 }
 
-                return this.BaseRepository().FindList<IDCardEntityEntity>(strSql.ToString(), dp, pagination);
+                return this.BaseRepository().FindList<IDCardEntityInfo>(strSql.ToString(), dp, pagination);
             }
             catch (Exception ex)
             {

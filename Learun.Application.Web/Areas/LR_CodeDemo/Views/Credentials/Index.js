@@ -3,6 +3,15 @@
  * 描  述：个人资格证
  */
 var refreshGirdData;
+
+var F_PersonId = request('F_PersonId');
+var F_IDCardNo = request('F_IDCardNo');
+var F_UserName = request('F_UserName');
+var F_ApplicantId = request('F_ApplicantId');
+var ParentDisable = request('ParentDisable');
+
+
+
 var bootstrap = function ($, learun) {
     "use strict";
     var page = {
@@ -11,6 +20,33 @@ var bootstrap = function ($, learun) {
             page.bind();
         },
         bind: function () {
+
+            // 初始化左侧树形数据
+            $('#dataTree').lrtree({
+                url: top.$.rootUrl + '/LR_CodeDemo/IDCard/GetTree?PersonId=' + F_PersonId + "&ApplicantId=" + F_ApplicantId,
+                nodeClick: function (item) {
+                    if (!!item.value) {
+                        F_PersonId = item.id;
+                        F_UserName = item.text;
+                        F_IDCardNo = item.value;
+                        F_ApplicantId = item.parentid
+                        page.search();
+                    }
+                    else {
+
+                        F_PersonId = "";
+                        F_UserName = "";
+                        F_IDCardNo = "";
+                        F_ApplicantId = item.id
+                        debugger
+                        if (ParentDisable != "true") {
+                            page.search();
+                        }
+                    }
+
+                }
+            });
+
             $('#multiple_condition_query').lrMultipleQuery(function (queryJson) {
                 page.search(queryJson);
             }, 220, 400);
@@ -26,16 +62,21 @@ var bootstrap = function ($, learun) {
             });
             // 新增
             $('#lr_add').on('click', function () {
-                learun.layerForm({
-                    id: 'form',
-                    title: '新增',
-                    url: top.$.rootUrl + '/LR_CodeDemo/Credentials/Form',
-                    width: 800,
-                    height: 500,
-                    callBack: function (id) {
-                        return top[id].acceptClick(refreshGirdData);
-                    }
-                });
+                if (!!F_PersonId) {
+                    learun.layerForm({
+                        id: 'form',
+                        title: '新增',
+                        url: top.$.rootUrl + '/LR_CodeDemo/Credentials/Form?F_PersonId=' + F_PersonId + "&F_UserName=" + F_UserName + "&F_IDCardNo=" + F_IDCardNo,
+                        width: 800,
+                        height: 500,
+                        callBack: function (id) {
+                            return top[id].acceptClick(refreshGirdData);
+                        }
+                    });
+                }
+                else {
+                    learun.alert.warning('请选择树形列表人员!');
+                }
             });
             // 编辑
             $('#lr_edit').on('click', function () {
@@ -76,6 +117,8 @@ var bootstrap = function ($, learun) {
             $('#gridtable').lrAuthorizeJfGrid({
                 url: top.$.rootUrl + '/LR_CodeDemo/Credentials/GetPageList',
                 headData: [
+                    { label: "姓名", name: "F_UserName", width: 100, align: "left" },
+                    { label: "身份证号码", name: "F_IDCardNo", width: 100, align: "left" },
                     { label: "证书类型", name: "F_CertType", width: 100, align: "left",
                         formatterAsync: function (callback, value, row, op,$cell) {
                              learun.clientdata.getAsync('dataItem', {
@@ -150,6 +193,8 @@ var bootstrap = function ($, learun) {
         },
         search: function (param) {
             param = param || {};
+            param.F_PersonId = F_PersonId;
+            param.F_ApplicantId = F_ApplicantId;
             $('#gridtable').jfGridSet('reload',{ queryJson: JSON.stringify(param) });
         }
     };

@@ -143,8 +143,10 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
 
       
     }
-    public class IDCardEntityEntity : tc_IDCardEntity
+    [NotMapped]
+    public class IDCardEntityInfo : tc_IDCardEntity
     {
+        [NotMapped]
         public string F_ApplicantId { get; set; }
 
     }

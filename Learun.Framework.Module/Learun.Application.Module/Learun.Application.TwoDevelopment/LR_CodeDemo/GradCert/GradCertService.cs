@@ -86,15 +86,42 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
         /// <param name="pagination">分页参数</param>
         /// <param name="queryJson">条件参数</param>
         /// <returns></returns>
-        public IEnumerable<tc_GradCertEntity> GetPageList(Pagination pagination, string queryJson)
+        public IEnumerable<GradCertInfo> GetPageList(Pagination pagination, string queryJson)
         {
             try
             {
                 var strSql = new StringBuilder();
                 strSql.Append("SELECT ");
                 strSql.Append(fieldSql);
+           
                 strSql.Append(" FROM tc_GradCert t ");
-                return this.BaseRepository().FindList<tc_GradCertEntity>(strSql.ToString(), pagination);
+                strSql.Append("  LEFT JOIN tc_Personnels p ON t.F_PersonId =p.F_PersonId ");
+                strSql.Append("  WHERE 1=1 ");
+                var queryParam = queryJson.ToJObject();
+                // 虚拟参数
+                var dp = new DynamicParameters(new { });
+                if (!queryParam["F_IDCardNo"].IsEmpty())
+                {
+                    dp.Add("F_IDCardNo", "%" + queryParam["F_IDCardNo"].ToString() + "%", DbType.String);
+                    strSql.Append(" AND t.F_IDCardNo Like @F_IDCardNo ");
+                }
+                if (!queryParam["F_UserName"].IsEmpty())
+                {
+                    dp.Add("F_UserName", "%" + queryParam["F_UserName"].ToString() + "%", DbType.String);
+                    strSql.Append(" AND t.F_UserName Like @F_UserName ");
+                }
+                if (!queryParam["F_PersonId"].IsEmpty())
+                {
+                    dp.Add("F_PersonId", queryParam["F_PersonId"].ToString(), DbType.String);
+                    strSql.Append(" AND t.F_PersonId = @F_PersonId ");
+                }
+
+                if (!queryParam["F_ApplicantId"].IsEmpty())
+                {
+                    dp.Add("F_ApplicantId", queryParam["F_ApplicantId"].ToString(), DbType.String);
+                    strSql.Append(" AND p.F_ApplicantId = @F_ApplicantId ");
+                }
+                return this.BaseRepository().FindList<GradCertInfo>(strSql.ToString(), pagination);
             }
             catch (Exception ex)
             {

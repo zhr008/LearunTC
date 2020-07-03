@@ -111,8 +111,8 @@ var bootstrap = function ($, learun) {
             $('#gridtable').lrAuthorizeJfGrid({
                 url: top.$.rootUrl + '/LR_CodeDemo/IDCard/GetPageList',
                 headData: [
-                    { label: "身份证号码", name: "F_IDCardNo", width: 100, align: "left" },
                     { label: "姓名", name: "F_UserName", width: 100, align: "left" },
+                    { label: "身份证号码", name: "F_IDCardNo", width: 100, align: "left" },
                     { label: "身份证发证日", name: "F_IssueDate", width: 100, align: "left" },
                     { label: "身份证失效日", name: "F_ExpirationDate", width: 100, align: "left" },
                     {

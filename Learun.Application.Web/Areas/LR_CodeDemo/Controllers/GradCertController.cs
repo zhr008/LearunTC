@@ -23,7 +23,7 @@ namespace Learun.Application.Web.Areas.LR_CodeDemo.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-             return View();
+            return View();
         }
         /// <summary>
         /// 表单页
@@ -32,7 +32,7 @@ namespace Learun.Application.Web.Areas.LR_CodeDemo.Controllers
         [HttpGet]
         public ActionResult Form()
         {
-             return View();
+            return View();
         }
         #endregion
 
@@ -45,7 +45,7 @@ namespace Learun.Application.Web.Areas.LR_CodeDemo.Controllers
         /// <returns></returns>
         [HttpGet]
         [AjaxOnly]
-        public ActionResult GetList( string queryJson )
+        public ActionResult GetList(string queryJson)
         {
             var data = gradCertIBLL.GetList(queryJson);
             return Success(data);
@@ -80,8 +80,12 @@ namespace Learun.Application.Web.Areas.LR_CodeDemo.Controllers
         [AjaxOnly]
         public ActionResult GetFormData(string keyValue)
         {
-            var data = gradCertIBLL.GetEntity(keyValue);
-            return Success(data);
+            var tc_GradeCertData = gradCertIBLL.GetEntity(keyValue);
+            var jsonData = new
+            {
+                tc_GradeCert = tc_GradeCertData,
+            };
+            return Success(jsonData);
         }
         #endregion
 
@@ -108,7 +112,7 @@ namespace Learun.Application.Web.Areas.LR_CodeDemo.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [AjaxOnly]
-        public ActionResult SaveForm(string keyValue,tc_GradCertEntity entity)
+        public ActionResult SaveForm(string keyValue, tc_GradCertEntity entity)
         {
             gradCertIBLL.SaveEntity(keyValue, entity);
             return Success("保存成功！");

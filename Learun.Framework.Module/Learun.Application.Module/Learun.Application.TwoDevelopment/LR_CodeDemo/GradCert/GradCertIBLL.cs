@@ -25,7 +25,7 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
         /// <param name="pagination">分页参数</param>
         /// <param name="queryJson">查询参数</param>
         /// <returns></returns>
-        IEnumerable<tc_GradCertEntity> GetPageList(Pagination pagination, string queryJson);
+        IEnumerable<GradCertInfo> GetPageList(Pagination pagination, string queryJson);
         /// <summary>
         /// 获取实体数据
         /// </summary>

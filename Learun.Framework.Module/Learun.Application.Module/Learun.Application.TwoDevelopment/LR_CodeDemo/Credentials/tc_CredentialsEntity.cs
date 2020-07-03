@@ -167,5 +167,12 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
         #region 扩展字段
         #endregion
     }
+
+    [NotMapped]
+    public class CredentialsInfo : tc_CredentialsEntity
+    {
+        [NotMapped]
+        public string F_ApplicantId { get; set; }
+    }
 }
 
