@@ -34,11 +34,12 @@ var bootstrap = function ($, learun) {
                 var F_PersonId = $('#gridtable').jfGridValue('F_PersonId');
                 var F_UserName = $('#gridtable').jfGridValue('F_UserName');
                 var F_IDCardNo = $('#gridtable').jfGridValue('F_IDCardNo');
+                var F_ApplicantId = $('#gridtable').jfGridValue('F_ApplicantId');
                 if (learun.checkrow(F_PersonId)) {
                     learun.layerForm({
                         id: 'AllIndex',
                         title: '新增',
-                        url: top.$.rootUrl + '/LR_CodeDemo/Personnels/AllIndex?F_PersonId=' + F_PersonId + "&F_IDCardNo=" + F_IDCardNo + "&F_UserName=" + F_UserName,
+                        url: top.$.rootUrl + '/LR_CodeDemo/Personnels/AllIndex?F_PersonId=' + F_PersonId + "&F_IDCardNo=" + F_IDCardNo + "&F_UserName=" + F_UserName + "&F_ApplicantId=" + F_ApplicantId,
                         width: 1200,
                         height: 700,
                         btn: null,

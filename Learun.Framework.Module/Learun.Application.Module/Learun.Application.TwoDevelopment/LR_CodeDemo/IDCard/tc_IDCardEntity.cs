@@ -140,6 +140,13 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
         }
 
         #endregion
+
+      
+    }
+    public class IDCardEntityEntity : tc_IDCardEntity
+    {
+        public string F_ApplicantId { get; set; }
+
     }
 }
 

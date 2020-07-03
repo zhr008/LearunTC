@@ -18,7 +18,7 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
         /// </summary>
         /// <param name="queryJson">查询参数</param>
         /// <returns></returns>
-        IEnumerable<tc_IDCardEntity> GetPageList(Pagination pagination, string queryJson);
+        IEnumerable<IDCardEntityEntity> GetPageList(Pagination pagination, string queryJson);
         /// <summary>
         /// 获取tc_IDCard表实体数据
         /// </summary>

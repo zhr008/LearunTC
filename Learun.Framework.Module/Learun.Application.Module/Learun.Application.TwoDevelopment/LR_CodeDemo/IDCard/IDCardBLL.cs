@@ -22,7 +22,7 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
         /// <param name="pagination">分页参数</param>
         /// <param name="queryJson">查询参数</param>
         /// <returns></returns>
-        public IEnumerable<tc_IDCardEntity> GetPageList(Pagination pagination, string queryJson)
+        public IEnumerable<IDCardEntityEntity> GetPageList(Pagination pagination, string queryJson)
         {
             try
             {

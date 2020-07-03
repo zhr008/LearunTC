@@ -23,7 +23,7 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
         /// <param name="pagination">查询参数</param>
         /// <param name="queryJson">查询参数</param>
         /// <returns></returns>
-        public IEnumerable<tc_IDCardEntity> GetPageList(Pagination pagination, string queryJson)
+        public IEnumerable<IDCardEntityEntity> GetPageList(Pagination pagination, string queryJson)
         {
             try
             {
@@ -38,9 +38,11 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
                 t1.F_ExpirationDate,
                 t1.F_SafeguardType,
                 t1.F_WarehouseDate,
-                t1.F_Description
+                t1.F_Description,
+                t2.F_ApplicantId
                 ");
                 strSql.Append("  FROM tc_IDCard t1 ");
+                strSql.Append("  LEFT JOIN tc_Personnels t2 ON t1.F_PersonId =t2.F_PersonId ");
                 strSql.Append("  WHERE 1=1 ");
                 var queryParam = queryJson.ToJObject();
                 // 虚拟参数
@@ -65,6 +67,11 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
                     dp.Add("F_PersonId", queryParam["F_PersonId"].ToString(), DbType.String);
                     strSql.Append(" AND t1.F_PersonId = @F_PersonId ");
                 }
+                if (!queryParam["F_ApplicantId"].IsEmpty())
+                {
+                    dp.Add("F_ApplicantId", queryParam["F_ApplicantId"].ToString(), DbType.String);
+                    strSql.Append(" AND t2.F_ApplicantId = @F_ApplicantId ");
+                }
                 if (!queryParam["F_IssueDate"].IsEmpty())
                 {
                     dp.Add("F_IssueDate", queryParam["F_IssueDate"].ToString(), DbType.String);
@@ -76,7 +83,7 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
                     strSql.Append(" AND t1.F_ExpirationDate = @F_ExpirationDate ");
                 }
 
-                return this.BaseRepository().FindList<tc_IDCardEntity>(strSql.ToString(), dp, pagination);
+                return this.BaseRepository().FindList<IDCardEntityEntity>(strSql.ToString(), dp, pagination);
             }
             catch (Exception ex)
             {

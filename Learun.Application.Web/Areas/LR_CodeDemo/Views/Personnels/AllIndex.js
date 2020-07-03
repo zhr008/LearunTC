@@ -10,6 +10,7 @@ var baseinfo;
 var F_PersonId = request('F_PersonId');
 var F_IDCardNo = request('F_IDCardNo');
 var F_UserName = request('F_UserName');
+var F_ApplicantId = request('F_ApplicantId');
 var bootstrap = function ($, learun) {
     "use strict";
 
@@ -38,7 +39,7 @@ var bootstrap = function ($, learun) {
 
                     switch (_type) {
                         case '2':
-                            $("#lr_iframe_item2").attr("src", "/LR_CodeDemo/IDCard/Index?F_PersonId=" + F_PersonId + "&F_IDCardNo=" + F_IDCardNo + "&F_UserName=" + F_UserName)
+                            $("#lr_iframe_item2").attr("src", "/LR_CodeDemo/IDCard/Index?F_PersonId=" + F_PersonId + "&F_IDCardNo=" + F_IDCardNo + "&F_UserName=" + F_UserName + "&F_ApplicantId=" + F_ApplicantId + "&ParentDisable=" + true)
                             break;
                         case '3':
                             $("#lr_iframe_item3").attr("src", "/LR_CodeDemo/IDCard/Index")
