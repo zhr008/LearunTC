@@ -141,6 +141,18 @@
     <Compile Include="LR_CodeDemo\Credentials\CredentialsService.cs" />
     <Compile Include="LR_CodeDemo\Credentials\CredentialsBLL.cs" />
     <Compile Include="LR_CodeDemo\Credentials\CredentialsIBLL.cs" />
+    <Compile Include="LR_CodeDemo\WorkExperience\tc_WorkExperienceEntity.cs" />
+    <Compile Include="LR_CodeDemo\WorkExperience\WorkExperienceService.cs" />
+    <Compile Include="LR_CodeDemo\WorkExperience\WorkExperienceBLL.cs" />
+    <Compile Include="LR_CodeDemo\WorkExperience\WorkExperienceIBLL.cs" />
+    <Compile Include="LR_CodeDemo\PersonnelTrain\tc_PersonnelTrainEntity.cs" />
+    <Compile Include="LR_CodeDemo\PersonnelTrain\PersonnelTrainService.cs" />
+    <Compile Include="LR_CodeDemo\PersonnelTrain\PersonnelTrainBLL.cs" />
+    <Compile Include="LR_CodeDemo\PersonnelTrain\PersonnelTrainIBLL.cs" />
+    <Compile Include="LR_CodeDemo\Settlements\tc_SettlementsEntity.cs" />
+    <Compile Include="LR_CodeDemo\Settlements\SettlementsService.cs" />
+    <Compile Include="LR_CodeDemo\Settlements\SettlementsBLL.cs" />
+    <Compile Include="LR_CodeDemo\Settlements\SettlementsIBLL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\Learun.Application.Organization\Learun.Application.Organization.csproj">

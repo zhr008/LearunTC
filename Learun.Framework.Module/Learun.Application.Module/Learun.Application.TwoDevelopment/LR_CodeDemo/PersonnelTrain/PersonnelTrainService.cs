@@ -10,115 +10,58 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
 {
     /// <summary>
     /// 创 建：超级管理员
-    /// 日 期：2020-07-02 23:28
-    /// 描 述：毕业证书
+    /// 日 期：2020-07-05 19:59
+    /// 描 述：培训记录
     /// </summary>
-    public class GradCertService : RepositoryFactory
+    public class PersonnelTrainService : RepositoryFactory
     {
-        #region 构造函数和属性
-
-        private string fieldSql;
-        /// <summary>
-        /// 构造方法
-        /// </summary>
-        public GradCertService()
-        {
-            fieldSql=@"
-                t.F_GradCertId,
-                t.F_UserName,
-                t.F_IDCardNo,
-                t.F_PersonId,
-                t.F_Major,
-                t.F_GradTime,
-                t.F_EducationType,
-                t.F_Term,
-                t.F_OriginalType,
-                t.F_DeleteMark,
-                t.F_Description,
-                t.F_CreateDate,
-                t.F_CreateUserName,
-                t.F_CreateUserId,
-                t.F_ModifyDate,
-                t.F_ModifyUserName,
-                t.F_ModifyUserId
-            ";
-        }
-        #endregion
-
         #region 获取数据
 
         /// <summary>
-        /// 获取列表数据
+        /// 获取页面显示列表数据
         /// </summary>
-        /// <param name="queryJson">条件参数</param>
+        /// <param name="pagination">查询参数</param>
+        /// <param name="queryJson">查询参数</param>
         /// <returns></returns>
-        public IEnumerable<tc_GradCertEntity> GetList( string queryJson )
-        {
-            try
-            {
-                //参考写法
-                //var queryParam = queryJson.ToJObject();
-                // 虚拟参数
-                //var dp = new DynamicParameters(new { });
-                //dp.Add("startTime", queryParam["StartTime"].ToDate(), DbType.DateTime);
-                var strSql = new StringBuilder();
-                strSql.Append("SELECT ");
-                strSql.Append(fieldSql);
-                strSql.Append(" FROM tc_GradCert t ");
-                return this.BaseRepository().FindList<tc_GradCertEntity>(strSql.ToString());
-            }
-            catch (Exception ex)
-            {
-                if (ex is ExceptionEx)
-                {
-                    throw;
-                }
-                else
-                {
-                    throw ExceptionEx.ThrowServiceException(ex);
-                }
-            }
-        }
-
-        /// <summary>
-        /// 获取列表分页数据
-        /// </summary>
-        /// <param name="pagination">分页参数</param>
-        /// <param name="queryJson">条件参数</param>
-        /// <returns></returns>
-        public IEnumerable<GradCertInfo> GetPageList(Pagination pagination, string queryJson)
+        public IEnumerable<PersonnelTrainInfo> GetPageList(Pagination pagination, string queryJson)
         {
             try
             {
                 var strSql = new StringBuilder();
                 strSql.Append("SELECT ");
-                strSql.Append(@" 
-                t.F_GradCertId,
+                strSql.Append(@"
                 t.F_UserName,
                 t.F_IDCardNo,
-                t.F_PersonId,
+                t.F_PersonnelTrainId,
+                t.F_CertType,
+                t.F_MajorType,
                 t.F_Major,
-                t.F_GradTime,
-                t.F_EducationType,
-                t.F_Term,
-                t.F_OriginalType,
-                t.F_DeleteMark,
-                t.F_Description,
-                t.F_CreateDate,
-                t.F_CreateUserName,
-                t.F_CreateUserId,
-                t.F_ModifyDate,
-                t.F_ModifyUserName,
-                t.F_ModifyUserId,
-                p.F_ApplicantId
+                t.F_CertOrganization,
+                t.F_CertDateBegin,
+                t.F_CertDateEnd,
+                t.F_CertStyle,
+                t.F_CertStatus,
+                t.F_TrainStatus,
+                t.F_CheckInDate,
+                t.F_ApplyDate,
+                t.F_ExpectedTrainDate,
+                t.F_FeeStandard,
+                t.F_TrainCollectStatus,
+                t.F_TrainOrgName,
+                t.F_TrainOrgBankName,
+                t.F_TrainOrgBankAccount,
+                t.F_TrainPayAmount,
+                t.F_TrainPayVoucher,
+                t.F_TrainPayStatus,
+                t.F_Description
                 ");
-           
-                strSql.Append(" FROM tc_GradCert t ");
+                strSql.Append("  FROM tc_PersonnelTrain t ");
                 strSql.Append("  LEFT JOIN tc_Personnels p ON t.F_PersonId =p.F_PersonId ");
                 strSql.Append("  WHERE 1=1 ");
                 var queryParam = queryJson.ToJObject();
                 // 虚拟参数
                 var dp = new DynamicParameters(new { });
+
                 if (!queryParam["F_IDCardNo"].IsEmpty())
                 {
                     dp.Add("F_IDCardNo", "%" + queryParam["F_IDCardNo"].ToString() + "%", DbType.String);
@@ -134,13 +77,52 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
                     dp.Add("F_PersonId", queryParam["F_PersonId"].ToString(), DbType.String);
                     strSql.Append(" AND t.F_PersonId = @F_PersonId ");
                 }
-
                 if (!queryParam["F_ApplicantId"].IsEmpty())
                 {
                     dp.Add("F_ApplicantId", queryParam["F_ApplicantId"].ToString(), DbType.String);
                     strSql.Append(" AND p.F_ApplicantId = @F_ApplicantId ");
                 }
-                return this.BaseRepository().FindList<GradCertInfo>(strSql.ToString(),dp, pagination);
+                if (!queryParam["F_CertType"].IsEmpty())
+                {
+                    dp.Add("F_CertType", "%" + queryParam["F_CertType"].ToString() + "%", DbType.String);
+                    strSql.Append(" AND t.F_CertType Like @F_CertType ");
+                }
+                if (!queryParam["F_MajorType"].IsEmpty())
+                {
+                    dp.Add("F_MajorType", "%" + queryParam["F_MajorType"].ToString() + "%", DbType.String);
+                    strSql.Append(" AND t.F_MajorType Like @F_MajorType ");
+                }
+                if (!queryParam["F_Major"].IsEmpty())
+                {
+                    dp.Add("F_Major", "%" + queryParam["F_Major"].ToString() + "%", DbType.String);
+                    strSql.Append(" AND t.F_Major Like @F_Major ");
+                }
+                if (!queryParam["F_CertOrganization"].IsEmpty())
+                {
+                    dp.Add("F_CertOrganization", "%" + queryParam["F_CertOrganization"].ToString() + "%", DbType.String);
+                    strSql.Append(" AND t.F_CertOrganization Like @F_CertOrganization ");
+                }
+                if (!queryParam["F_CertDateBegin"].IsEmpty())
+                {
+                    dp.Add("F_CertDateBegin",queryParam["F_CertDateBegin"].ToString(), DbType.String);
+                    strSql.Append(" AND t.F_CertDateBegin = @F_CertDateBegin ");
+                }
+                if (!queryParam["F_CertDateEnd"].IsEmpty())
+                {
+                    dp.Add("F_CertDateEnd",queryParam["F_CertDateEnd"].ToString(), DbType.String);
+                    strSql.Append(" AND t.F_CertDateEnd = @F_CertDateEnd ");
+                }
+                if (!queryParam["F_CertStatus"].IsEmpty())
+                {
+                    dp.Add("F_CertStatus",queryParam["F_CertStatus"].ToString(), DbType.String);
+                    strSql.Append(" AND t.F_CertStatus = @F_CertStatus ");
+                }
+                if (!queryParam["F_TrainPayStatus"].IsEmpty())
+                {
+                    dp.Add("F_TrainPayStatus",queryParam["F_TrainPayStatus"].ToString(), DbType.String);
+                    strSql.Append(" AND t.F_TrainPayStatus = @F_TrainPayStatus ");
+                }
+                return this.BaseRepository().FindList<PersonnelTrainInfo>(strSql.ToString(),dp, pagination);
             }
             catch (Exception ex)
             {
@@ -156,15 +138,15 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
         }
 
         /// <summary>
-        /// 获取实体数据
+        /// 获取tc_PersonnelTrain表实体数据
         /// </summary>
         /// <param name="keyValue">主键</param>
         /// <returns></returns>
-        public tc_GradCertEntity GetEntity(string keyValue)
+        public tc_PersonnelTrainEntity Gettc_PersonnelTrainEntity(string keyValue)
         {
             try
             {
-                return this.BaseRepository().FindEntity<tc_GradCertEntity>(keyValue);
+                return this.BaseRepository().FindEntity<tc_PersonnelTrainEntity>(keyValue);
             }
             catch (Exception ex)
             {
@@ -191,7 +173,7 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
         {
             try
             {
-                this.BaseRepository().Delete<tc_GradCertEntity>(t=>t.F_GradCertId == keyValue);
+                this.BaseRepository().Delete<tc_PersonnelTrainEntity>(t=>t.F_PersonnelTrainId == keyValue);
             }
             catch (Exception ex)
             {
@@ -208,10 +190,10 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
 
         /// <summary>
         /// 保存实体数据（新增、修改）
+        /// </summary>
         /// <param name="keyValue">主键</param>
         /// <param name="entity">实体</param>
-        /// </summary>
-        public void SaveEntity(string keyValue, tc_GradCertEntity entity)
+        public void SaveEntity(string keyValue, tc_PersonnelTrainEntity entity)
         {
             try
             {

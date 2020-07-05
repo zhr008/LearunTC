@@ -25,7 +25,6 @@ var bootstrap = function ($, learun) {
         },
         initleft: function () {
             $('#lr_left_list li').on('click', function () {
-                debugger
                 var $this = $(this);
                 if (!$this.hasClass('active')) {
                     var $parent = $this.parent();
@@ -48,13 +47,13 @@ var bootstrap = function ($, learun) {
                             $("#lr_iframe_item4").attr("src", "/LR_CodeDemo/GradCert/Index" + baseUrl)
                             break;
                         case '5':
-                            $("#lr_iframe_item5").attr("src", "/LR_CodeDemo/IDCard/Index" + baseUrl)
+                            $("#lr_iframe_item5").attr("src", "/LR_CodeDemo/PersonnelTrain/Index" + baseUrl)
                             break;
                         case '6':
-                            $("#lr_iframe_item6").attr("src", "/LR_CodeDemo/IDCard/Index" + baseUrl)
+                            $("#lr_iframe_item6").attr("src", "/LR_CodeDemo/WorkExperience/Index" + baseUrl)
                             break;
                         case '7':
-                            $("#lr_iframe_item7").attr("src", "/LR_CodeDemo/IDCard/Index" + baseUrl)
+                            $("#lr_iframe_item7").attr("src", "/LR_CodeDemo/Settlements/Index" + baseUrl)
                             break;
                     }
 

@@ -43,8 +43,8 @@ var loaddfimg;
             };
             // 打开首页模板
             learun.frameTab.open({ F_ModuleId: '0', F_Icon: 'fa fa-desktop', F_FullName: '我的桌面', F_UrlAddress: '/Home/AdminDesktop' }, true);
-            learun.frameTab.open({ F_ModuleId: 'AdminDesktopTemp1', F_Icon: 'fa fa-desktop', F_FullName: '首页', F_UrlAddress: '/Home/AdminDesktopTemp' }, true);
-            learun.frameTab.open({ F_ModuleId: 'DesktopIndex', F_Icon: 'fa fa-desktop', F_FullName: '热门功能', F_UrlAddress: '/Home/DesktopIndex' }, true);
+            //learun.frameTab.open({ F_ModuleId: 'AdminDesktopTemp1', F_Icon: 'fa fa-desktop', F_FullName: '首页', F_UrlAddress: '/Home/AdminDesktopTemp' }, true);
+            //learun.frameTab.open({ F_ModuleId: 'DesktopIndex', F_Icon: 'fa fa-desktop', F_FullName: '热门功能', F_UrlAddress: '/Home/DesktopIndex' }, true);
             
 
             learun.clientdata.init(function () {

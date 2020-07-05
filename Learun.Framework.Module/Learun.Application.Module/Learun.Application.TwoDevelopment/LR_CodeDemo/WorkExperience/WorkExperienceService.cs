@@ -10,115 +10,47 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
 {
     /// <summary>
     /// 创 建：超级管理员
-    /// 日 期：2020-07-02 23:28
-    /// 描 述：毕业证书
+    /// 日 期：2020-07-05 19:31
+    /// 描 述：从业经历
     /// </summary>
-    public class GradCertService : RepositoryFactory
+    public class WorkExperienceService : RepositoryFactory
     {
-        #region 构造函数和属性
-
-        private string fieldSql;
-        /// <summary>
-        /// 构造方法
-        /// </summary>
-        public GradCertService()
-        {
-            fieldSql=@"
-                t.F_GradCertId,
-                t.F_UserName,
-                t.F_IDCardNo,
-                t.F_PersonId,
-                t.F_Major,
-                t.F_GradTime,
-                t.F_EducationType,
-                t.F_Term,
-                t.F_OriginalType,
-                t.F_DeleteMark,
-                t.F_Description,
-                t.F_CreateDate,
-                t.F_CreateUserName,
-                t.F_CreateUserId,
-                t.F_ModifyDate,
-                t.F_ModifyUserName,
-                t.F_ModifyUserId
-            ";
-        }
-        #endregion
-
         #region 获取数据
 
         /// <summary>
-        /// 获取列表数据
+        /// 获取页面显示列表数据
         /// </summary>
-        /// <param name="queryJson">条件参数</param>
+        /// <param name="pagination">查询参数</param>
+        /// <param name="queryJson">查询参数</param>
         /// <returns></returns>
-        public IEnumerable<tc_GradCertEntity> GetList( string queryJson )
-        {
-            try
-            {
-                //参考写法
-                //var queryParam = queryJson.ToJObject();
-                // 虚拟参数
-                //var dp = new DynamicParameters(new { });
-                //dp.Add("startTime", queryParam["StartTime"].ToDate(), DbType.DateTime);
-                var strSql = new StringBuilder();
-                strSql.Append("SELECT ");
-                strSql.Append(fieldSql);
-                strSql.Append(" FROM tc_GradCert t ");
-                return this.BaseRepository().FindList<tc_GradCertEntity>(strSql.ToString());
-            }
-            catch (Exception ex)
-            {
-                if (ex is ExceptionEx)
-                {
-                    throw;
-                }
-                else
-                {
-                    throw ExceptionEx.ThrowServiceException(ex);
-                }
-            }
-        }
-
-        /// <summary>
-        /// 获取列表分页数据
-        /// </summary>
-        /// <param name="pagination">分页参数</param>
-        /// <param name="queryJson">条件参数</param>
-        /// <returns></returns>
-        public IEnumerable<GradCertInfo> GetPageList(Pagination pagination, string queryJson)
+        public IEnumerable<WorkExperienceInfo> GetPageList(Pagination pagination, string queryJson)
         {
             try
             {
                 var strSql = new StringBuilder();
                 strSql.Append("SELECT ");
-                strSql.Append(@" 
-                t.F_GradCertId,
-                t.F_UserName,
-                t.F_IDCardNo,
+                strSql.Append(@"
                 t.F_PersonId,
-                t.F_Major,
-                t.F_GradTime,
-                t.F_EducationType,
-                t.F_Term,
-                t.F_OriginalType,
-                t.F_DeleteMark,
+                t.F_IDCardNo,
+                t.F_UserName,
+                t.F_WorkExperienceId,
+                t.F_CompanyName,
+                t.F_VocationType,
+                t.F_EntryDate,
+                t.F_QuitDate,
+                t.F_CertType,
+                t.F_CheckInDate,
+                t.F_MajorProjects,
                 t.F_Description,
-                t.F_CreateDate,
-                t.F_CreateUserName,
-                t.F_CreateUserId,
-                t.F_ModifyDate,
-                t.F_ModifyUserName,
-                t.F_ModifyUserId,
                 p.F_ApplicantId
                 ");
-           
-                strSql.Append(" FROM tc_GradCert t ");
-                strSql.Append("  LEFT JOIN tc_Personnels p ON t.F_PersonId =p.F_PersonId ");
+                strSql.Append("  FROM tc_WorkExperience t ");
+                strSql.Append("  LEFT JOIN tc_Personnels p ON p.F_PersonId =t.F_PersonId ");
                 strSql.Append("  WHERE 1=1 ");
                 var queryParam = queryJson.ToJObject();
                 // 虚拟参数
                 var dp = new DynamicParameters(new { });
+
                 if (!queryParam["F_IDCardNo"].IsEmpty())
                 {
                     dp.Add("F_IDCardNo", "%" + queryParam["F_IDCardNo"].ToString() + "%", DbType.String);
@@ -134,13 +66,37 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
                     dp.Add("F_PersonId", queryParam["F_PersonId"].ToString(), DbType.String);
                     strSql.Append(" AND t.F_PersonId = @F_PersonId ");
                 }
-
                 if (!queryParam["F_ApplicantId"].IsEmpty())
                 {
                     dp.Add("F_ApplicantId", queryParam["F_ApplicantId"].ToString(), DbType.String);
                     strSql.Append(" AND p.F_ApplicantId = @F_ApplicantId ");
                 }
-                return this.BaseRepository().FindList<GradCertInfo>(strSql.ToString(),dp, pagination);
+                if (!queryParam["F_CompanyName"].IsEmpty())
+                {
+                    dp.Add("F_CompanyName", "%" + queryParam["F_CompanyName"].ToString() + "%", DbType.String);
+                    strSql.Append(" AND t.F_CompanyName Like @F_CompanyName ");
+                }
+                if (!queryParam["F_VocationType"].IsEmpty())
+                {
+                    dp.Add("F_VocationType",queryParam["F_VocationType"].ToString(), DbType.String);
+                    strSql.Append(" AND t.F_VocationType = @F_VocationType ");
+                }
+                if (!queryParam["F_CertType"].IsEmpty())
+                {
+                    dp.Add("F_CertType",queryParam["F_CertType"].ToString(), DbType.String);
+                    strSql.Append(" AND t.F_CertType = @F_CertType ");
+                }
+                if (!queryParam["F_EntryDate"].IsEmpty())
+                {
+                    dp.Add("F_EntryDate",queryParam["F_EntryDate"].ToString(), DbType.String);
+                    strSql.Append(" AND t.F_EntryDate = @F_EntryDate ");
+                }
+                if (!queryParam["F_QuitDate"].IsEmpty())
+                {
+                    dp.Add("F_QuitDate",queryParam["F_QuitDate"].ToString(), DbType.String);
+                    strSql.Append(" AND t.F_QuitDate = @F_QuitDate ");
+                }
+                return this.BaseRepository().FindList<WorkExperienceInfo>(strSql.ToString(),dp, pagination);
             }
             catch (Exception ex)
             {
@@ -156,15 +112,15 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
         }
 
         /// <summary>
-        /// 获取实体数据
+        /// 获取tc_WorkExperience表实体数据
         /// </summary>
         /// <param name="keyValue">主键</param>
         /// <returns></returns>
-        public tc_GradCertEntity GetEntity(string keyValue)
+        public tc_WorkExperienceEntity Gettc_WorkExperienceEntity(string keyValue)
         {
             try
             {
-                return this.BaseRepository().FindEntity<tc_GradCertEntity>(keyValue);
+                return this.BaseRepository().FindEntity<tc_WorkExperienceEntity>(keyValue);
             }
             catch (Exception ex)
             {
@@ -191,7 +147,7 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
         {
             try
             {
-                this.BaseRepository().Delete<tc_GradCertEntity>(t=>t.F_GradCertId == keyValue);
+                this.BaseRepository().Delete<tc_WorkExperienceEntity>(t=>t.F_WorkExperienceId == keyValue);
             }
             catch (Exception ex)
             {
@@ -208,10 +164,10 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
 
         /// <summary>
         /// 保存实体数据（新增、修改）
+        /// </summary>
         /// <param name="keyValue">主键</param>
         /// <param name="entity">实体</param>
-        /// </summary>
-        public void SaveEntity(string keyValue, tc_GradCertEntity entity)
+        public void SaveEntity(string keyValue, tc_WorkExperienceEntity entity)
         {
             try
             {

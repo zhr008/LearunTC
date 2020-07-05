@@ -343,6 +343,9 @@
     <Compile Include="Areas\LR_CodeDemo\Controllers\IDCardController.cs" />
     <Compile Include="Areas\LR_CodeDemo\Controllers\GradCertController.cs" />
     <Compile Include="Areas\LR_CodeDemo\Controllers\CredentialsController.cs" />
+    <Compile Include="Areas\LR_CodeDemo\Controllers\WorkExperienceController.cs" />
+    <Compile Include="Areas\LR_CodeDemo\Controllers\PersonnelTrainController.cs" />
+    <Compile Include="Areas\LR_CodeDemo\Controllers\SettlementsController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="ActiveReports.ReportService.asmx" />
@@ -2811,6 +2814,18 @@
     <Content Include="Areas\LR_CodeDemo\Views\Credentials\Index.js" />
     <Content Include="Areas\LR_CodeDemo\Views\Credentials\Form.cshtml" />
     <Content Include="Areas\LR_CodeDemo\Views\Credentials\Form.js" />
+    <Content Include="Areas\LR_CodeDemo\Views\WorkExperience\Index.cshtml" />
+    <Content Include="Areas\LR_CodeDemo\Views\WorkExperience\Index.js" />
+    <Content Include="Areas\LR_CodeDemo\Views\WorkExperience\Form.cshtml" />
+    <Content Include="Areas\LR_CodeDemo\Views\WorkExperience\Form.js" />
+    <Content Include="Areas\LR_CodeDemo\Views\PersonnelTrain\Index.cshtml" />
+    <Content Include="Areas\LR_CodeDemo\Views\PersonnelTrain\Index.js" />
+    <Content Include="Areas\LR_CodeDemo\Views\PersonnelTrain\Form.cshtml" />
+    <Content Include="Areas\LR_CodeDemo\Views\PersonnelTrain\Form.js" />
+    <Content Include="Areas\LR_CodeDemo\Views\Settlements\Index.cshtml" />
+    <Content Include="Areas\LR_CodeDemo\Views\Settlements\Index.js" />
+    <Content Include="Areas\LR_CodeDemo\Views\Settlements\Form.cshtml" />
+    <Content Include="Areas\LR_CodeDemo\Views\Settlements\Form.js" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\LR_SystemModule\Views\Img\" />
