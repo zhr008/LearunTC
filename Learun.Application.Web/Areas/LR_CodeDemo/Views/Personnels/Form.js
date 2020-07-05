@@ -17,6 +17,18 @@ var bootstrap = function ($, learun) {
         bind: function () {
             $('#F_ApplicantId').lrDataSourceSelect({ code: 'applicantdata', value: 'f_applicantid', text: 'f_companyname' });
             $('#F_SceneType').lrDataItemSelect({ code: 'SceneType' });
+
+            $("#F_IDCardNo").bind('input', function () {
+                debugger
+
+                var age = learun.getIDCardAge($("#F_IDCardNo").val());
+                $("#F_IDCardNo").val(age);
+
+            })
+                
+
+
+
         },
         initData: function () {
             if (!!keyValue) {
