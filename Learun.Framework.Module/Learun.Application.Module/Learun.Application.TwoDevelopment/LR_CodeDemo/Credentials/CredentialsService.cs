@@ -43,8 +43,8 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
                 t.F_PracticeSealStyle,
                 t.F_CheckInTime,
                 t.F_Description,
-                t.F_UserName,
-                t.F_IDCardNo,
+                p.F_UserName,
+                p.F_IDCardNo,
                 p.F_ApplicantId
                 ");
                 strSql.Append("  FROM tc_Credentials t ");

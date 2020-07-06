@@ -320,7 +320,6 @@
             if (!$obj.hasClass('lr-laydate-init')) {
                 op = op || {};
                 op.dateFmt = op.dateFmt || 'yyyy-MM-dd';
-
                 var _type = 'date';
                 if (op.dateFmt == 'yyyy-MM-dd HH:mm' || op.dateFmt == 'yyyy-MM-dd HH:mm:ss') {
                     _type = 'datetime';

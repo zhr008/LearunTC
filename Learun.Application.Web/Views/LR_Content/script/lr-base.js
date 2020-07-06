@@ -227,7 +227,6 @@ top.learun = (function ($) {
 
 
         getUrlParameter: function (name) {
-            debugger
             name = name.replace(/[]/, "\[").replace(/[]/, "\[").replace(/[]/, "\\\]");
             var regexS = "[\\?&]" + name + "=([^&#]*)";
             var regex = new RegExp(regexS);

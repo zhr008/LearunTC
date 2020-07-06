@@ -94,8 +94,8 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
                 strSql.Append("SELECT ");
                 strSql.Append(@" 
                 t.F_GradCertId,
-                t.F_UserName,
-                t.F_IDCardNo,
+                p.F_UserName,
+                p.F_IDCardNo,
                 t.F_PersonId,
                 t.F_Major,
                 t.F_GradTime,
@@ -122,24 +122,44 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
                 if (!queryParam["F_IDCardNo"].IsEmpty())
                 {
                     dp.Add("F_IDCardNo", "%" + queryParam["F_IDCardNo"].ToString() + "%", DbType.String);
-                    strSql.Append(" AND t.F_IDCardNo Like @F_IDCardNo ");
+                    strSql.Append(" AND p.F_IDCardNo Like @F_IDCardNo ");
                 }
                 if (!queryParam["F_UserName"].IsEmpty())
                 {
                     dp.Add("F_UserName", "%" + queryParam["F_UserName"].ToString() + "%", DbType.String);
-                    strSql.Append(" AND t.F_UserName Like @F_UserName ");
+                    strSql.Append(" AND p.F_UserName Like @F_UserName ");
                 }
                 if (!queryParam["F_PersonId"].IsEmpty())
                 {
                     dp.Add("F_PersonId", queryParam["F_PersonId"].ToString(), DbType.String);
                     strSql.Append(" AND t.F_PersonId = @F_PersonId ");
                 }
-
                 if (!queryParam["F_ApplicantId"].IsEmpty())
                 {
                     dp.Add("F_ApplicantId", queryParam["F_ApplicantId"].ToString(), DbType.String);
                     strSql.Append(" AND p.F_ApplicantId = @F_ApplicantId ");
                 }
+                if (!queryParam["F_Major"].IsEmpty())
+                {
+                    dp.Add("F_Major", queryParam["F_Major"].ToString(), DbType.String);
+                    strSql.Append(" AND t.F_Major = @F_Major ");
+                }
+                if (!queryParam["F_EducationType"].IsEmpty())
+                {
+                    dp.Add("F_EducationType", queryParam["F_EducationType"].ToString(), DbType.String);
+                    strSql.Append(" AND t.F_EducationType = @F_EducationType ");
+                }
+                if (!queryParam["F_Term"].IsEmpty())
+                {
+                    dp.Add("F_Term", queryParam["F_Term"].ToString(), DbType.String);
+                    strSql.Append(" AND t.F_Term = @F_Term ");
+                }
+                if (!queryParam["F_OriginalType"].IsEmpty())
+                {
+                    dp.Add("F_OriginalType", queryParam["F_OriginalType"].ToString(), DbType.String);
+                    strSql.Append(" AND t.F_OriginalType = @F_OriginalType ");
+                }
+
                 return this.BaseRepository().FindList<GradCertInfo>(strSql.ToString(),dp, pagination);
             }
             catch (Exception ex)

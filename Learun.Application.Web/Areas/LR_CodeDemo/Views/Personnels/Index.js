@@ -22,7 +22,7 @@ var bootstrap = function ($, learun) {
             });
             $('#multiple_condition_query').lrMultipleQuery(function (queryJson) {
                 page.search(queryJson);
-            }, 220, 400);
+            }, 285, 400);
             $('#F_ApplicantId').lrDataSourceSelect({ code: 'Rptdata',value: 'f_id',text: 'f_name' });
             $('#F_SceneType').lrDataItemSelect({ code: 'SceneType' });
             // 刷新
@@ -56,8 +56,8 @@ var bootstrap = function ($, learun) {
                     id: 'form',
                     title: '新增',
                     url: top.$.rootUrl + '/LR_CodeDemo/Personnels/Form',
-                    width: 600,
-                    height: 400,
+                    width: 700,
+                    height: 350,
                     callBack: function (id) {
                         return top[id].acceptClick(refreshGirdData);
                     }
@@ -71,8 +71,8 @@ var bootstrap = function ($, learun) {
                         id: 'form',
                         title: '编辑',
                         url: top.$.rootUrl + '/LR_CodeDemo/Personnels/Form?keyValue=' + keyValue,
-                        width: 600,
-                        height: 400,
+                        width: 700,
+                        height: 350,
                         callBack: function (id) {
                             return top[id].acceptClick(refreshGirdData);
                         }
@@ -98,24 +98,26 @@ var bootstrap = function ($, learun) {
             $('#gridtable').lrAuthorizeJfGrid({
                 url: top.$.rootUrl + '/LR_CodeDemo/Personnels/GetPageList',
                 headData: [
-                    { label: "姓名", name: "F_UserName", width: 100, align: "left"},
-                    { label: "身份证号码", name: "F_IDCardNo", width: 100, align: "left"},
-                    { label: "性别", name: "F_Gender", width: 100, align: "left"},
-                    { label: "年龄", name: "F_Age", width: 100, align: "left"},
-                    { label: "存档编号", name: "F_PlaceCode", width: 100, align: "left"},
-                    { label: "证书编码", name: "F_CertCode", width: 100, align: "left"},
-                    { label: "供应商", name: "F_ApplicantId", width: 100, align: "left",
+                    { label: "姓名", name: "F_UserName", width: 100, align: "center"},
+                    { label: "身份证号码", name: "F_IDCardNo", width: 150, align: "center"},
+                    { label: "性别", name: "F_Gender", width: 100, align: "center"},
+                    { label: "年龄", name: "F_Age", width: 100, align: "center"},
+                    { label: "存档编号", name: "F_PlaceCode", width: 100, align: "center"},
+                    { label: "证书编码", name: "F_CertCode", width: 100, align: "center"},
+                    {
+                        label: "供应商", name: "F_ApplicantId", width: 180, align: "center",
                         formatterAsync: function (callback, value, row, op,$cell) {
                              learun.clientdata.getAsync('custmerData', {
-                                 url: '/LR_SystemModule/DataSource/GetDataTable?code=' + 'Rptdata',
+                                 url: '/LR_SystemModule/DataSource/GetDataTable?code=' + 'applicantdata',
                                  key: value,
-                                 keyId: 'f_id',
+                                 keyId: 'f_applicantid',
                                  callback: function (_data) {
-                                     callback(_data['f_name']);
+                                     callback(_data['f_companyname']);
                                  }
                              });
                         }},
-                    { label: "到场", name: "F_SceneType", width: 100, align: "left",
+                    {
+                        label: "到场", name: "F_SceneType", width: 100, align: "center",
                         formatterAsync: function (callback, value, row, op,$cell) {
                              learun.clientdata.getAsync('dataItem', {
                                  key: value,

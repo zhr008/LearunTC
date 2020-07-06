@@ -31,18 +31,17 @@ var bootstrap = function ($, learun) {
                         page.search();
                     }
                     else {
-                      
+
                         F_PersonId = "";
                         F_UserName = "";
                         F_IDCardNo = "";
                         F_ApplicantId = item.id
-                        debugger
-                        if (ParentDisable != "true")
-                        {
+
+                        if (ParentDisable != "true") {
                             page.search();
                         }
                     }
-                   
+
                 }
             });
             $('#multiple_condition_query').lrMultipleQuery(function (queryJson) {
@@ -60,14 +59,13 @@ var bootstrap = function ($, learun) {
                         id: 'form',
                         title: '新增',
                         url: top.$.rootUrl + '/LR_CodeDemo/IDCard/Form?F_PersonId=' + F_PersonId + "&F_UserName=" + F_UserName + "&F_IDCardNo=" + F_IDCardNo,
-                        width: 600,
-                        height: 400,
+                        width: 750,
+                        height: 330,
                         callBack: function (id) {
                             return top[id].acceptClick(refreshGirdData);
                         }
                     });
-                } else
-                {
+                } else {
                     learun.alert.warning('请选择树形列表人员!');
                 }
 
@@ -80,8 +78,8 @@ var bootstrap = function ($, learun) {
                         id: 'form',
                         title: '编辑',
                         url: top.$.rootUrl + '/LR_CodeDemo/IDCard/Form?keyValue=' + keyValue,
-                        width: 600,
-                        height: 400,
+                        width: 750,
+                        height: 330,
                         callBack: function (id) {
                             return top[id].acceptClick(refreshGirdData);
                         }
@@ -111,12 +109,22 @@ var bootstrap = function ($, learun) {
             $('#gridtable').lrAuthorizeJfGrid({
                 url: top.$.rootUrl + '/LR_CodeDemo/IDCard/GetPageList',
                 headData: [
-                    { label: "姓名", name: "F_UserName", width: 100, align: "left" },
-                    { label: "身份证号码", name: "F_IDCardNo", width: 100, align: "left" },
-                    { label: "身份证发证日", name: "F_IssueDate", width: 100, align: "left" },
-                    { label: "身份证失效日", name: "F_ExpirationDate", width: 100, align: "left" },
+                    { label: "姓名", name: "F_UserName", width: 100, align: "center" },
+                    { label: "身份证号码", name: "F_IDCardNo", width: 150, align: "center" },
                     {
-                        label: "身份证保管方式", name: "F_SafeguardType", width: 100, align: "left",
+                        label: "身份证发证日", name: "F_IssueDate", width: 100, align: "center",
+                        formatter: function (cellvalue, row) {
+                            return learun.formatDate(cellvalue, 'yyyy-MM-dd');
+                        }
+                    },
+                    {
+                        label: "身份证失效日", name: "F_ExpirationDate", width: 100, align: "center",
+                        formatter: function (cellvalue, row) {
+                            return learun.formatDate(cellvalue, 'yyyy-MM-dd');
+                        }
+                    },
+                    {
+                        label: "身份证保管方式", name: "F_SafeguardType", width: 100, align: "center",
                         formatterAsync: function (callback, value, row, op, $cell) {
                             learun.clientdata.getAsync('dataItem', {
                                 key: value,
@@ -127,7 +135,12 @@ var bootstrap = function ($, learun) {
                             });
                         }
                     },
-                    { label: "入库登记日", name: "F_WarehouseDate", width: 100, align: "left" },
+                    {
+                        label: "入库登记日", name: "F_WarehouseDate", width: 100, align: "center",
+                        formatter: function (cellvalue, row) {
+                            return learun.formatDate(cellvalue, 'yyyy-MM-dd');
+                        }
+                    },
                     { label: "备注", name: "F_Description", width: 100, align: "left" },
                 ],
                 mainId: 'F_PersonId',

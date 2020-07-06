@@ -30,8 +30,8 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
                 var strSql = new StringBuilder();
                 strSql.Append("SELECT ");
                 strSql.Append(@"
-                t.F_UserName,
-                t.F_IDCardNo,
+                p.F_UserName,
+                p.F_IDCardNo,
                 t.F_SettlementsId,
                 t.F_ContractStatus,
                 t.F_ContractStartDate,

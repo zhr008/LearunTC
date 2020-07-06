@@ -35,7 +35,6 @@ var bootstrap = function ($, learun) {
                         F_UserName = "";
                         F_IDCardNo = "";
                         F_ApplicantId = item.id
-                        debugger
                         if (ParentDisable != "true") {
                             page.search();
                         }
@@ -45,7 +44,7 @@ var bootstrap = function ($, learun) {
             });
             $('#multiple_condition_query').lrMultipleQuery(function (queryJson) {
                 page.search(queryJson);
-            }, 220, 400);
+            }, 250, 400);
             $('#F_VocationType').lrDataItemSelect({ code: 'VocationType' });
             $('#F_CertType').lrDataItemSelect({ code: 'CertType' });
             // 刷新
@@ -59,8 +58,8 @@ var bootstrap = function ($, learun) {
                         id: 'form',
                         title: '新增',
                         url: top.$.rootUrl + '/LR_CodeDemo/WorkExperience/Form?F_PersonId=' + F_PersonId + "&F_UserName=" + F_UserName + "&F_IDCardNo=" + F_IDCardNo,
-                        width: 600,
-                        height: 400,
+                        width: 750,
+                        height: 480,
                         callBack: function (id) {
                             return top[id].acceptClick(refreshGirdData);
                         }
@@ -77,8 +76,8 @@ var bootstrap = function ($, learun) {
                         id: 'form',
                         title: '编辑',
                         url: top.$.rootUrl + '/LR_CodeDemo/WorkExperience/Form?keyValue=' + keyValue,
-                        width: 600,
-                        height: 400,
+                        width: 750,
+                        height: 480,
                         callBack: function (id) {
                             return top[id].acceptClick(refreshGirdData);
                         }
@@ -108,9 +107,9 @@ var bootstrap = function ($, learun) {
             $('#gridtable').lrAuthorizeJfGrid({
                 url: top.$.rootUrl + '/LR_CodeDemo/WorkExperience/GetPageList',
                 headData: [
-                    { label: '姓名', name: 'F_UserName', width: 100, align: "left" },
-                    { label: '身份证号码', name: 'F_IDCardNo', width: 200, align: "left" },
-                    { label: "从业单位名称", name: "F_CompanyName", width: 100, align: "left" },
+                    { label: '姓名', name: 'F_UserName', width: 100, align: "center" },
+                    { label: '身份证号码', name: 'F_IDCardNo', width: 200, align: "center" },
+                    { label: "从业单位名称", name: "F_CompanyName", width: 100, align: "center" },
                     {
                         label: "就职类型", name: "F_VocationType", width: 100, align: "center",
                         formatterAsync: function (callback, value, row, op, $cell) {
@@ -123,8 +122,19 @@ var bootstrap = function ($, learun) {
                             });
                         }
                     },
-                    { label: "入职日期", name: "F_EntryDate", width: 100, align: "center" },
-                    { label: "离职日期", name: "F_QuitDate", width: 100, align: "center" },
+                    {
+                        label: "入职日期", name: "F_EntryDate", width: 100, align: "center",
+                        formatter: function (cellvalue, row) {
+                            return learun.formatDate(cellvalue, 'yyyy-MM-dd');
+                        }
+
+                    },
+                    {
+                        label: "离职日期", name: "F_QuitDate", width: 100, align: "center",
+                        formatter: function (cellvalue, row) {
+                            return learun.formatDate(cellvalue, 'yyyy-MM-dd');
+                        }
+                    },
                     {
                         label: "就职证书类型", name: "F_CertType", width: 100, align: "center",
                         formatterAsync: function (callback, value, row, op, $cell) {
@@ -137,7 +147,12 @@ var bootstrap = function ($, learun) {
                             });
                         }
                     },
-                    { label: "登记日期", name: "F_CheckInDate", width: 100, align: "center" },
+                    {
+                        label: "登记日期", name: "F_CheckInDate", width: 100, align: "center",
+                        formatter: function (cellvalue, row) {
+                            return learun.formatDate(cellvalue, 'yyyy-MM-dd');
+                        }
+                    },
                     { label: "主要担任项目", name: "F_MajorProjects", width: 100, align: "left" },
                     { label: "就职备注", name: "F_Description", width: 100, align: "left" },
                 ],

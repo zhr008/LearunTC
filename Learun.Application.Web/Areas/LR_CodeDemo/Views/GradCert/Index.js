@@ -36,7 +36,6 @@ var bootstrap = function ($, learun) {
                         F_UserName = "";
                         F_IDCardNo = "";
                         F_ApplicantId = item.id
-                        debugger
                         if (ParentDisable != "true") {
                             page.search();
                         }
@@ -44,11 +43,12 @@ var bootstrap = function ($, learun) {
 
                 }
             });
-            // 查询
-            $('#btn_Search').on('click', function () {
-                var keyword = $('#txt_Keyword').val();
-                page.search({ keyword: keyword });
-            });
+            $('#multiple_condition_query').lrMultipleQuery(function (queryJson) {
+                page.search(queryJson);
+            }, 285, 400);
+            $('#F_EducationType').lrDataItemSelect({ code: 'EducationType' });
+            $('#F_Term').lrDataItemSelect({ code: 'Term' });
+            $('#F_OriginalType').lrDataItemSelect({ code: 'OriginalType' });
             // 刷新
             $('#lr_refresh').on('click', function () {
                 location.reload();
@@ -60,7 +60,7 @@ var bootstrap = function ($, learun) {
                         id: 'form',
                         title: '新增',
                         url: top.$.rootUrl + '/LR_CodeDemo/GradCert/Form?F_PersonId=' + F_PersonId + "&F_UserName=" + F_UserName + "&F_IDCardNo=" + F_IDCardNo,
-                        width: 700,
+                        width: 750,
                         height: 400,
                         callBack: function (id) {
                             return top[id].acceptClick(refreshGirdData);
@@ -82,7 +82,7 @@ var bootstrap = function ($, learun) {
                         id: 'form',
                         title: '编辑',
                         url: top.$.rootUrl + '/LR_CodeDemo/GradCert/Form?keyValue=' + keyValue,
-                        width: 700,
+                        width: 750,
                         height: 400,
                         callBack: function (id) {
                             return top[id].acceptClick(refreshGirdData);
@@ -107,12 +107,16 @@ var bootstrap = function ($, learun) {
             $('#gridtable').lrAuthorizeJfGrid({
                 url: top.$.rootUrl + '/LR_CodeDemo/GradCert/GetPageList',
                 headData: [
-                    { label: '姓名', name: 'F_UserName', width: 100, align: "left" },
-                    { label: '身份证号码', name: 'F_IDCardNo', width: 200, align: "left" },
-                    { label: '专业', name: 'F_Major', width: 100, align: "left" },
-                    { label: '毕业时间', name: 'F_GradTime', width: 50, align: "left" },
+                    { label: '姓名', name: 'F_UserName', width: 100, align: "center" },
+                    { label: '身份证号码', name: 'F_IDCardNo', width: 200, align: "center" },
+                    { label: '专业', name: 'F_Major', width: 200, align: "center" },
                     {
-                        label: '学历类型', name: 'F_EducationType', width: 100, align: "left",
+                        label: '毕业时间', name: 'F_GradTime', width: 100, align: "center",
+                        formatter: function (cellvalue, row) {
+                            return learun.formatDate(cellvalue, 'yyyy-MM-dd');
+                        }},
+                    {
+                        label: '学历类型', name: 'F_EducationType', width: 100, align: "center",
                         formatterAsync: function (callback, value, row, op, $cell) {
                             learun.clientdata.getAsync('dataItem', {
                                 key: value,
@@ -124,7 +128,7 @@ var bootstrap = function ($, learun) {
                         }
                     },
                     {
-                        label: '学制类型', name: 'F_Term', width: 100, align: "left",
+                        label: '学制类型', name: 'F_Term', width: 100, align: "center",
                         formatterAsync: function (callback, value, row, op, $cell) {
                             learun.clientdata.getAsync('dataItem', {
                                 key: value,
@@ -136,7 +140,7 @@ var bootstrap = function ($, learun) {
                         }
                     },
                     {
-                        label: '保管方式', name: 'F_OriginalType', width: 100, align: "left",
+                        label: '保管方式', name: 'F_OriginalType', width: 100, align: "center",
                           formatterAsync: function (callback, value, row, op, $cell) {
                             learun.clientdata.getAsync('dataItem', {
                                 key: value,

@@ -30,19 +30,19 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
                 var strSql = new StringBuilder();
                 strSql.Append("SELECT ");
                 strSql.Append(@"
-                t1.F_IDCardId,
-                t1.F_PersonId,
-                t1.F_IDCardNo,
-                t1.F_UserName,
-                t1.F_IssueDate,
-                t1.F_ExpirationDate,
-                t1.F_SafeguardType,
-                t1.F_WarehouseDate,
-                t1.F_Description,
-                t2.F_ApplicantId
+                t.F_IDCardId,
+                t.F_PersonId,
+                p.F_UserName,
+                p.F_IDCardNo,
+                t.F_IssueDate,
+                t.F_ExpirationDate,
+                t.F_SafeguardType,
+                t.F_WarehouseDate,
+                t.F_Description,
+                p.F_ApplicantId
                 ");
-                strSql.Append("  FROM tc_IDCard t1 ");
-                strSql.Append("  LEFT JOIN tc_Personnels t2 ON t1.F_PersonId =t2.F_PersonId ");
+                strSql.Append("  FROM tc_IDCard t ");
+                strSql.Append("  LEFT JOIN tc_Personnels p ON t.F_PersonId =p.F_PersonId ");
                 strSql.Append("  WHERE 1=1 ");
                 var queryParam = queryJson.ToJObject();
                 // 虚拟参数
@@ -50,37 +50,37 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
                 if (!queryParam["F_IDCardNo"].IsEmpty())
                 {
                     dp.Add("F_IDCardNo", "%" + queryParam["F_IDCardNo"].ToString() + "%", DbType.String);
-                    strSql.Append(" AND t1.F_IDCardNo Like @F_IDCardNo ");
+                    strSql.Append(" AND t.F_IDCardNo Like @F_IDCardNo ");
                 }
                 if (!queryParam["F_UserName"].IsEmpty())
                 {
                     dp.Add("F_UserName", "%" + queryParam["F_UserName"].ToString() + "%", DbType.String);
-                    strSql.Append(" AND t1.F_UserName Like @F_UserName ");
+                    strSql.Append(" AND t.F_UserName Like @F_UserName ");
                 }
                 if (!queryParam["F_SafeguardType"].IsEmpty())
                 {
                     dp.Add("F_SafeguardType", queryParam["F_SafeguardType"].ToString(), DbType.String);
-                    strSql.Append(" AND t1.F_SafeguardType = @F_SafeguardType ");
+                    strSql.Append(" AND t.F_SafeguardType = @F_SafeguardType ");
                 }
                 if (!queryParam["F_PersonId"].IsEmpty())
                 {
                     dp.Add("F_PersonId", queryParam["F_PersonId"].ToString(), DbType.String);
-                    strSql.Append(" AND t1.F_PersonId = @F_PersonId ");
+                    strSql.Append(" AND t.F_PersonId = @F_PersonId ");
                 }
                 if (!queryParam["F_ApplicantId"].IsEmpty())
                 {
                     dp.Add("F_ApplicantId", queryParam["F_ApplicantId"].ToString(), DbType.String);
-                    strSql.Append(" AND t2.F_ApplicantId = @F_ApplicantId ");
+                    strSql.Append(" AND p.F_ApplicantId = @F_ApplicantId ");
                 }
                 if (!queryParam["F_IssueDate"].IsEmpty())
                 {
                     dp.Add("F_IssueDate", queryParam["F_IssueDate"].ToString(), DbType.String);
-                    strSql.Append(" AND t1.F_IssueDate = @F_IssueDate ");
+                    strSql.Append(" AND t.F_IssueDate = @F_IssueDate ");
                 }
                 if (!queryParam["F_ExpirationDate"].IsEmpty())
                 {
                     dp.Add("F_ExpirationDate", queryParam["F_ExpirationDate"].ToString(), DbType.String);
-                    strSql.Append(" AND t1.F_ExpirationDate = @F_ExpirationDate ");
+                    strSql.Append(" AND t.F_ExpirationDate = @F_ExpirationDate ");
                 }
 
                 return this.BaseRepository().FindList<IDCardEntityInfo>(strSql.ToString(), dp, pagination);

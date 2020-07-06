@@ -129,7 +129,7 @@
                         $obj.lrGirdSelectSet(value);
                         break;
                     case "datepicker":
-                        var _dateFmt = $obj.attr('data-dateFmt') || 'yyyy-MM-dd hh:mm';
+                        var _dateFmt = $obj.attr('data-dateFmt') || 'yyyy-MM-dd';
                         $obj.val(learun.formatDate(value, _dateFmt));
                         break;
                     case "lr-Uploader":

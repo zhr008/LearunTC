@@ -31,8 +31,8 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
                 strSql.Append("SELECT ");
                 strSql.Append(@"
                 t.F_PersonId,
-                t.F_IDCardNo,
-                t.F_UserName,
+                p.F_IDCardNo,
+                p.F_UserName,
                 t.F_WorkExperienceId,
                 t.F_CompanyName,
                 t.F_VocationType,

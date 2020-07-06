@@ -26,6 +26,10 @@ var bootstrap = function ($, learun) {
             $('#F_TrainCollectStatus').lrDataItemSelect({ code: 'TrainCollectStatus' });
             $('#F_TrainPayVoucher').lrDataItemSelect({ code: 'TrainPayVoucher' });
             $('#F_TrainPayStatus').lrDataItemSelect({ code: 'TrainPayStatus' });
+
+            $('#F_CertType').lrDataItemSelect({ code: 'CertType' });
+            $('#F_MajorType').lrDataItemSelect({ code: 'MajorType' });
+
         },
         initData: function () {
             if (!!keyValue) {

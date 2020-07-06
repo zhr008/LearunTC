@@ -3,7 +3,6 @@
  * 描  述：身份证管理
  */
 var acceptClick;
-debugger;
 var keyValue = request('keyValue');
 
 var F_PersonId = request('F_PersonId');

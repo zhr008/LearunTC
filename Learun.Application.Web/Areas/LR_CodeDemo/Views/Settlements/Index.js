@@ -37,7 +37,6 @@ var bootstrap = function ($, learun) {
                         F_UserName = "";
                         F_IDCardNo = "";
                         F_ApplicantId = item.id
-                        debugger
                         if (ParentDisable != "true") {
                             page.search();
                         }
@@ -115,10 +114,10 @@ var bootstrap = function ($, learun) {
             $('#gridtable').lrAuthorizeJfGrid({
                 url: top.$.rootUrl + '/LR_CodeDemo/Settlements/GetPageList',
                 headData: [
-                    { label: '姓名', name: 'F_UserName', width: 100, align: "left" },
-                    { label: '身份证号码', name: 'F_IDCardNo', width: 200, align: "left" },
+                    { label: '姓名', name: 'F_UserName', width: 100, align: "center" },
+                    { label: '身份证号码', name: 'F_IDCardNo', width: 200, align: "center" },
                     {
-                        label: "合同状态", name: "F_ContractStatus", width: 100, align: "left",
+                        label: "合同状态", name: "F_ContractStatus", width: 100, align: "center",
                         formatterAsync: function (callback, value, row, op, $cell) {
                             learun.clientdata.getAsync('dataItem', {
                                 key: value,
@@ -129,12 +128,12 @@ var bootstrap = function ($, learun) {
                             });
                         }
                     },
-                    { label: "合同起日", name: "F_ContractStartDate", width: 100, align: "left" },
-                    { label: "合同止日", name: "F_ContractEndDate", width: 100, align: "left" },
-                    { label: "手机", name: "F_Mobile", width: 100, align: "left" },
-                    { label: "其它方式", name: "F_Address", width: 100, align: "left" },
+                    { label: "合同起日", name: "F_ContractStartDate", width: 100, align: "center" },
+                    { label: "合同止日", name: "F_ContractEndDate", width: 100, align: "center" },
+                    { label: "手机", name: "F_Mobile", width: 100, align: "center" },
+                    { label: "其它方式", name: "F_Address", width: 100, align: "center" },
                     {
-                        label: "人才签约代表", name: "F_ApplicantId", width: 100, align: "left",
+                        label: "人才签约代表", name: "F_ApplicantId", width: 100, align: "center",
                         formatterAsync: function (callback, value, row, op, $cell) {
                             learun.clientdata.getAsync('custmerData', {
                                 url: '/LR_SystemModule/DataSource/GetDataTable?code=' + 'applicant',
@@ -146,14 +145,14 @@ var bootstrap = function ($, learun) {
                             });
                         }
                     },
-                    { label: "收款人", name: "F_payee", width: 100, align: "left" },
-                    { label: "开户行", name: "F_BankName", width: 100, align: "left" },
-                    { label: "银行账号", name: "F_BankAccount", width: 100, align: "left" },
-                    { label: "人员薪酬", name: "F_PersonAmount", width: 100, align: "left" },
-                    { label: "中介费用", name: "F_ApplicantAmount", width: 100, align: "left" },
-                    { label: "签约金额", name: "F_ContractAmount", width: 100, align: "left" },
+                    { label: "收款人", name: "F_payee", width: 100, align: "center" },
+                    { label: "开户行", name: "F_BankName", width: 100, align: "center" },
+                    { label: "银行账号", name: "F_BankAccount", width: 100, align: "center" },
+                    { label: "人员薪酬", name: "F_PersonAmount", width: 100, align: "center" },
+                    { label: "中介费用", name: "F_ApplicantAmount", width: 100, align: "center" },
+                    { label: "签约金额", name: "F_ContractAmount", width: 100, align: "center" },
                     {
-                        label: "付款状态", name: "F_PayStatus", width: 100, align: "left",
+                        label: "付款状态", name: "F_PayStatus", width: 100, align: "center",
                         formatterAsync: function (callback, value, row, op, $cell) {
                             learun.clientdata.getAsync('dataItem', {
                                 key: value,

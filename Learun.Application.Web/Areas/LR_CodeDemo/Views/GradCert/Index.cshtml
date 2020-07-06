@@ -15,10 +15,35 @@
                 <div class="lr-layout-tool">
                     <div class="lr-layout-tool-left">
                         <div class="lr-layout-tool-item">
-                            <input id="txt_Keyword" type="text" class="form-control" placeholder="请输入要查询关键字" />
-                        </div>
-                        <div class="lr-layout-tool-item">
-                            <a id="btn_Search" class="btn btn-primary btn-sm"><i class="fa fa-search"></i>&nbsp;查询</a>
+                            <div id="multiple_condition_query">
+                                <div class="lr-query-formcontent">
+                                    <div class="col-xs-12 lr-form-item">
+                                        <div class="lr-form-item-title">身份证号码</div>
+                                        <input id="F_IDCardNo" type="text" class="form-control" />
+                                    </div>
+                                    <div class="col-xs-12 lr-form-item">
+                                        <div class="lr-form-item-title">姓名</div>
+                                        <input id="F_UserName" type="text" class="form-control" />
+                                    </div>
+                                    <div class="col-xs-12 lr-form-item">
+                                        <div class="lr-form-item-title">专业</div>
+                                        <input id="F_Major" type="text" class="form-control" />
+                                    </div>
+                                 
+                                    <div class="col-xs-12 lr-form-item">
+                                        <div class="lr-form-item-title">学历类型</div>
+                                        <div id="F_EducationType"></div>
+                                    </div>
+                                    <div class="col-xs-12 lr-form-item">
+                                        <div class="lr-form-item-title">学制类型</div>
+                                        <div id="F_Term"></div>
+                                    </div>
+                                    <div class="col-xs-12 lr-form-item">
+                                        <div class="lr-form-item-title">保管方式</div>
+                                        <div id="F_OriginalType"></div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="lr-layout-tool-right">

@@ -19,7 +19,6 @@ var bootstrap = function ($, learun) {
             $('#F_SceneType').lrDataItemSelect({ code: 'SceneType' });
 
             $("#F_IDCardNo").bind('input', function () {
-                debugger
 
                 var age = learun.getIDCardAge($("#F_IDCardNo").val());
                 $("#F_IDCardNo").val(age);
