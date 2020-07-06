@@ -13,7 +13,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Learun.Application.Web</RootNamespace>
     <AssemblyName>Learun.Application.Web</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -346,6 +346,7 @@
     <Compile Include="Areas\LR_CodeDemo\Controllers\WorkExperienceController.cs" />
     <Compile Include="Areas\LR_CodeDemo\Controllers\PersonnelTrainController.cs" />
     <Compile Include="Areas\LR_CodeDemo\Controllers\SettlementsController.cs" />
+    <Compile Include="Areas\LR_CodeDemo\Controllers\projectmanageController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="ActiveReports.ReportService.asmx" />
@@ -2826,6 +2827,10 @@
     <Content Include="Areas\LR_CodeDemo\Views\Settlements\Index.js" />
     <Content Include="Areas\LR_CodeDemo\Views\Settlements\Form.cshtml" />
     <Content Include="Areas\LR_CodeDemo\Views\Settlements\Form.js" />
+    <Content Include="Areas\LR_CodeDemo\Views\projectmanage\Index.cshtml" />
+    <Content Include="Areas\LR_CodeDemo\Views\projectmanage\Index.js" />
+    <Content Include="Areas\LR_CodeDemo\Views\projectmanage\Form.cshtml" />
+    <Content Include="Areas\LR_CodeDemo\Views\projectmanage\Form.js" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\LR_SystemModule\Views\Img\" />

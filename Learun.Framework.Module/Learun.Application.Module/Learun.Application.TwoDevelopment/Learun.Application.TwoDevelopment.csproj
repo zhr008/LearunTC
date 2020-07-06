@@ -153,6 +153,11 @@
     <Compile Include="LR_CodeDemo\Settlements\SettlementsService.cs" />
     <Compile Include="LR_CodeDemo\Settlements\SettlementsBLL.cs" />
     <Compile Include="LR_CodeDemo\Settlements\SettlementsIBLL.cs" />
+    <Compile Include="LR_CodeDemo\projectmanage\tc_ProjectEntity.cs" />
+    <Compile Include="LR_CodeDemo\projectmanage\tc_ProjectDetailEntity.cs" />
+    <Compile Include="LR_CodeDemo\projectmanage\projectmanageService.cs" />
+    <Compile Include="LR_CodeDemo\projectmanage\projectmanageBLL.cs" />
+    <Compile Include="LR_CodeDemo\projectmanage\projectmanageIBLL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\Learun.Application.Organization\Learun.Application.Organization.csproj">
