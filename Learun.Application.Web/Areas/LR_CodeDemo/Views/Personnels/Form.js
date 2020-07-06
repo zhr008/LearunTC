@@ -19,10 +19,10 @@ var bootstrap = function ($, learun) {
             $('#F_SceneType').lrDataItemSelect({ code: 'SceneType' });
 
             $("#F_IDCardNo").bind('input', function () {
-
                 var age = learun.getIDCardAge($("#F_IDCardNo").val());
-                $("#F_IDCardNo").val(age);
-
+                $("#F_Age").val(age);
+                var gender = learun.getIDCardGender($("#F_IDCardNo").val());
+                $("#F_Gender").val(gender);
             })
                 
 
