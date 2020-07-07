@@ -1,5 +1,5 @@
 ﻿/* * 创建人：超级管理员
- * 日  期：2020-07-06 17:37
+ * 日  期：2020-07-07 13:32
  * 描  述：projectmanage
  */
 var refreshGirdData;
@@ -11,13 +11,6 @@ var bootstrap = function ($, learun) {
             page.bind();
         },
         bind: function () {
-            // 初始化左侧树形数据
-            $('#dataTree').lrtree({
-                url: top.$.rootUrl + '/LR_CodeDemo/projectmanage/GetTree',
-                nodeClick: function (item) {
-                    page.search({ ApplicantId: item.value });
-                }
-            });
             $('#multiple_condition_query').lrMultipleQuery(function (queryJson) {
                 page.search(queryJson);
             }, 220, 400);
@@ -34,8 +27,8 @@ var bootstrap = function ($, learun) {
                     id: 'form',
                     title: '新增',
                     url: top.$.rootUrl + '/LR_CodeDemo/projectmanage/Form',
-                    width: 600,
-                    height: 400,
+                    width: 900,
+                    height: 500,
                     callBack: function (id) {
                         return top[id].acceptClick(refreshGirdData);
                     }
@@ -49,8 +42,8 @@ var bootstrap = function ($, learun) {
                         id: 'form',
                         title: '编辑',
                         url: top.$.rootUrl + '/LR_CodeDemo/projectmanage/Form?keyValue=' + keyValue,
-                        width: 600,
-                        height: 400,
+                        width: 900,
+                        height: 500,
                         callBack: function (id) {
                             return top[id].acceptClick(refreshGirdData);
                         }

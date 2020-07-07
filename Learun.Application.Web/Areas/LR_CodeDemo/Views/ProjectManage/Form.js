@@ -1,5 +1,5 @@
 ﻿/* * 创建人：超级管理员
- * 日  期：2020-07-06 17:37
+ * 日  期：2020-07-07 13:32
  * 描  述：projectmanage
  */
 var acceptClick;
@@ -37,9 +37,13 @@ var bootstrap = function ($, learun) {
                         }
                     },
                     {
-                        label: '标准数量', name: 'StandardNum', width:100, align: 'left'
+                        label: '标准数量', name: 'StandardNum', width: 100, align: 'left', statistics: true   
                         ,edit:{
-                            type:'input'
+                            type: 'input',
+                            change: function (row, rownum) {// 行数据和行号
+                                row.NeedNum = parseInt(row.StandardNum || '0' )- parseInt(row.AlreadyNum || '0');
+                                $('#tc_ProjectDetail').jfGridSet('updateRow', rownum);
+                            },
                         }
                     },
                     {
@@ -89,17 +93,17 @@ var bootstrap = function ($, learun) {
                         }
                     },
                     {
-                        label: '甲方提供数量', name: 'AlreadyNum', width:100, align: 'left'
+                        label: '甲方提供数量', name: 'AlreadyNum', width: 100, align: 'left', statistics: true   
                         ,edit:{
-                            type:'input'
+                            type: 'input',
+                            change: function (row, rownum) {// 行数据和行号
+                                row.NeedNum = parseInt(row.StandardNum || '0' )- parseInt(row.AlreadyNum || '0');
+                                $('#tc_ProjectDetail').jfGridSet('updateRow', rownum);
+                            },
                         }
                     },
                     {
-                        label: '我方配置数量', name: 'NeedNum', width:100, align: 'left'
-                        ,edit:{
-                            type:'input'
-                        }
-                    },
+                        label: '我方配置数量', name: 'NeedNum', width: 100, align: 'left', statistics: true                 },
                     {
                         label: '配置状态', name: 'Status', width:100, align: 'left'
                         ,edit:{
@@ -116,7 +120,7 @@ var bootstrap = function ($, learun) {
                     },
                 ],
                 isEdit: true,
-                height: 400
+                height: 200
             });
         },
         initData: function () {

@@ -10,7 +10,7 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
 {
     /// <summary>
     /// 创 建：超级管理员
-    /// 日 期：2020-07-06 17:37
+    /// 日 期：2020-07-07 13:32
     /// 描 述：projectmanage
     /// </summary>
     public class projectmanageService : RepositoryFactory
@@ -61,11 +61,6 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
                 {
                     dp.Add("Status",queryParam["Status"].ToString(), DbType.String);
                     strSql.Append(" AND t.Status = @Status ");
-                }
-                if (!queryParam["ApplicantId"].IsEmpty())
-                {
-                    dp.Add("ApplicantId",queryParam["ApplicantId"].ToString(), DbType.String);
-                    strSql.Append(" AND t.ApplicantId = @ApplicantId ");
                 }
                 return this.BaseRepository().FindList<tc_ProjectEntity>(strSql.ToString(),dp, pagination);
             }
@@ -140,29 +135,6 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
             try
             {
                 return this.BaseRepository().FindEntity<tc_ProjectDetailEntity>(t=>t.ProjectId == keyValue);
-            }
-            catch (Exception ex)
-            {
-                if (ex is ExceptionEx)
-                {
-                    throw;
-                }
-                else
-                {
-                    throw ExceptionEx.ThrowServiceException(ex);
-                }
-            }
-        }
-
-        /// <summary>
-        /// 获取树形数据
-        /// </summary>
-        /// <returns></returns>
-        public DataTable GetSqlTree()
-        {
-            try
-            {
-                return this.BaseRepository().FindTable("   SELECT * FROM  dbo.tc_Applicant WHERE F_ApplicantType=2 ");
             }
             catch (Exception ex)
             {
