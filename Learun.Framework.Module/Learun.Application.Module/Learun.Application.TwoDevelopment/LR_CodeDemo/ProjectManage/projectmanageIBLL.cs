@@ -6,7 +6,7 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
 {
     /// <summary>
     /// 创 建：超级管理员
-    /// 日 期：2020-07-06 17:37
+    /// 日 期：2020-07-07 13:32
     /// 描 述：projectmanage
     /// </summary>
     public interface projectmanageIBLL
@@ -36,11 +36,6 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
         /// <param name="keyValue">主键</param>
         /// <returns></returns>
         tc_ProjectDetailEntity Gettc_ProjectDetailEntity(string keyValue);
-        /// <summary>
-        /// 获取左侧树形数据
-        /// </summary>
-        /// <returns></returns>
-        List<TreeModel> GetTree();
         #endregion
 
         #region 提交数据

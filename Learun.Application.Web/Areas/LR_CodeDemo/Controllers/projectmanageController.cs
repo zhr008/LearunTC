@@ -8,7 +8,7 @@ namespace Learun.Application.Web.Areas.LR_CodeDemo.Controllers
 {
     /// <summary>
     /// 创 建：超级管理员
-    /// 日 期：2020-07-06 17:37
+    /// 日 期：2020-07-07 13:32
     /// 描 述：projectmanage
     /// </summary>
     public class projectmanageController : MvcControllerBase
@@ -76,17 +76,6 @@ namespace Learun.Application.Web.Areas.LR_CodeDemo.Controllers
                 tc_ProjectDetail = tc_ProjectDetailData,
             };
             return Success(jsonData);
-        }
-        /// <summary>
-        /// 获取左侧树形数据
-        /// </summary>
-        /// <returns></returns>
-        [HttpGet]
-        [AjaxOnly]
-        public ActionResult GetTree()
-        {
-            var data = projectmanageIBLL.GetTree();
-            return Success(data);
         }
         #endregion
 

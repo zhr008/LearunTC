@@ -7,7 +7,7 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
 {
     /// <summary>
     /// 创 建：超级管理员
-    /// 日 期：2020-07-06 17:37
+    /// 日 期：2020-07-07 13:32
     /// 描 述：projectmanage
     /// </summary>
     public class projectmanageBLL : projectmanageIBLL
@@ -99,44 +99,6 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
             try
             {
                 return projectmanageService.Gettc_ProjectDetailEntity(keyValue);
-            }
-            catch (Exception ex)
-            {
-                if (ex is ExceptionEx)
-                {
-                    throw;
-                }
-                else
-                {
-                    throw ExceptionEx.ThrowBusinessException(ex);
-                }
-            }
-        }
-
-        /// <summary>
-        /// 获取左侧树形数据
-        /// </summary>
-        /// <returns></returns>
-         public List<TreeModel> GetTree()
-        {
-            try
-            {
-                DataTable list = projectmanageService.GetSqlTree();
-                List<TreeModel> treeList = new List<TreeModel>();
-                foreach (DataRow item in list.Rows)
-                {
-                    TreeModel node = new TreeModel
-                    {
-                        id = item["f_applicantid"].ToString(),
-                        text = item["f_companyname"].ToString(),
-                        value = item["f_applicantid"].ToString(),
-                        showcheck = false,
-                        checkstate = 0,
-                        isexpand = true,
-                        parentId =""// item["f_applicantid"].ToString()
-                    };
-                    treeList.Add(node);                }
-                return treeList.ToTree();
             }
             catch (Exception ex)
             {
