@@ -190,6 +190,7 @@
     <Compile Include="LR_CodeDemo\tc_SettlementsMap.cs" />
     <Compile Include="LR_CodeDemo\tc_ProjectMap.cs" />
     <Compile Include="LR_CodeDemo\tc_ProjectDetailMap.cs" />
+    <Compile Include="LR_CodeDemo\tc_SettlementsDetailsMap.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\Learun.Application.Organization\Learun.Application.Organization.csproj">

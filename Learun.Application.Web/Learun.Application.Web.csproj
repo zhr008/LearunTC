@@ -223,6 +223,7 @@
     <Compile Include="Areas\LR_AuthorizeModule\Controllers\FilterTimeController.cs" />
     <Compile Include="Areas\LR_AuthorizeModule\Controllers\UserRelationController.cs" />
     <Compile Include="Areas\LR_AuthorizeModule\LR_AuthorizeModuleAreaRegistration.cs" />
+    <Compile Include="Areas\LR_CodeDemo\Controllers\SettlementsDetailsController.cs" />
     <Compile Include="Areas\LR_CodeDemo\LR_CodeDemoAreaRegistration.cs" />
     <Compile Include="Areas\LR_CodeGeneratorModule\Controllers\IconController.cs" />
     <Compile Include="Areas\LR_CodeGeneratorModule\Controllers\PluginDemoController.cs" />
@@ -413,6 +414,8 @@
     <Content Include="Areas\LR_AuthorizeModule\Views\UserRelation\SelectForms.js" />
     <Content Include="Areas\LR_CodeDemo\Views\Personnels\AllIndex.css" />
     <Content Include="Areas\LR_CodeDemo\Views\Personnels\AllIndex.js" />
+    <Content Include="Areas\LR_CodeDemo\Views\SettlementsDetails\Form.js" />
+    <Content Include="Areas\LR_CodeDemo\Views\SettlementsDetails\Index.js" />
     <Content Include="Areas\LR_CodeGeneratorModule\Views\TemplateAPP\Index.css" />
     <Content Include="Areas\LR_CodeGeneratorModule\Views\TemplateAPP\Index.js" />
     <Content Include="Areas\LR_CodeGeneratorModule\Views\TemplatePC\AddBtnForm.js" />
@@ -3048,6 +3051,8 @@
     <Content Include="Areas\LR_NewWorkFlow\Views\NWFProcess\AddTaskForm.cshtml" />
     <Content Include="Areas\LR_CodeGeneratorModule\Views\TemplatePC\WxCustmerCodeIndex.cshtml" />
     <Content Include="Areas\LR_CodeDemo\Views\Personnels\AllIndex.cshtml" />
+    <Content Include="Areas\LR_CodeDemo\Views\SettlementsDetails\Form.cshtml" />
+    <Content Include="Areas\LR_CodeDemo\Views\SettlementsDetails\Index.cshtml" />
     <None Include="Properties\licenses.licx" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <Content Include="Views\Shared\_AllIndex.cshtml" />

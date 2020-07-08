@@ -157,13 +157,13 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
             {
 
                 StringBuilder str = new StringBuilder();
-                str.Append(@"select a.F_PersonId id ,a.F_UserName text ,a.F_IDCardNo value ,a.F_ApplicantId  parentid   from  tc_Personnels a  where 1=1 ");
+                str.Append(@"select a.F_PersonId id ,a.F_UserName text ,a.F_IDCardNo value ,a.F_ApplicantId  parentid   from  tc_Personnels a  where 1=1   ");
                 if (!string.IsNullOrEmpty(PersonId))
                 {
                     str.AppendFormat(@" and a.F_PersonId='{0}' ", PersonId);
                 }
                 str.Append(" union ");
-                str.Append(@"   select b.F_ApplicantId ,b.F_CompanyName text ,'' value ,''  parentid   from  tc_Applicant b  where 1=1 ");
+                str.Append(@"   select b.F_ApplicantId ,b.F_CompanyName text ,'' value ,''  parentid   from  tc_Applicant b  where   b.F_ApplicantType=1 ");
                 if (!string.IsNullOrEmpty(ApplicantId))
                 {
                     str.AppendFormat(@" and b.F_ApplicantId='{0}' ", ApplicantId);

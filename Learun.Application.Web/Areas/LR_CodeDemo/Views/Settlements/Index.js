@@ -3,7 +3,7 @@
  * 描  述：合同结算
  */
 var refreshGirdData;
-
+var selectedRow;
 var F_PersonId = request('F_PersonId');
 var F_IDCardNo = request('F_IDCardNo');
 var F_UserName = request('F_UserName');
@@ -106,7 +106,27 @@ var bootstrap = function ($, learun) {
                 $('#gridtable').jqprintTable();
             });
             //  结算详情
-            $('#11231').on('click', function () {
+            $('#lr_adddetails').on('click', function () {
+                debugger;
+                var keyValue = $('#gridtable').jfGridValue('F_SettlementsId');
+                var F_PersonId = $('#gridtable').jfGridValue('F_PersonId');
+                var F_UserName = $('#gridtable').jfGridValue('F_UserName');
+                var F_IDCardNo = $('#gridtable').jfGridValue('F_IDCardNo');
+                if (learun.checkrow(keyValue)) {
+                    learun.layerForm({
+                        id: 'form',
+                        title: '新增',
+                        url: top.$.rootUrl + '/LR_CodeDemo/SettlementsDetails/Form?F_PersonId=' + F_PersonId + "&F_UserName=" + F_UserName + "&F_IDCardNo=" + F_IDCardNo + "&F_SettlementsId=" + keyValue,
+                        width: 600,
+                        height: 400,
+                        callBack: function (id) {
+                            return top[id].acceptClick(refreshGirdData);
+                        }
+                    });
+                }
+                else {
+                    learun.alert.warning('请选择树形列表人员!');
+                }
             });
         },
         // 初始化列表
@@ -165,9 +185,39 @@ var bootstrap = function ($, learun) {
                     },
                     { label: "累计支付金额", name: "F_PayTotalAmount", width: 100, align: "left" },
                 ],
+
+                reloadSelected: true,
                 mainId: 'F_SettlementsId',
-                isPage: true
-            });
+                isPage: true,
+                onSelectRow: function (rowdata) {
+                    $('#detailstable').jfGrid({
+                        url: top.$.rootUrl + '/LR_CodeDemo/SettlementsDetails/GetPageListBySettlementsId',
+                        headData: [
+                            { label: '姓名', name: 'F_UserName', width: 100, align: "center" },
+                            { label: '身份证号码', name: 'F_IDCardNo', width: 200, align: "center" },
+                            { label: "批次号", name: "F_BatchNumber", width: 100, align: "center" },
+                            { label: "支付金额", name: "F_PayAmount", width: 100, align: "left" },
+                            {
+                                label: "支付状态", name: "F_PayStatus", width: 100, align: "center",
+                                formatterAsync: function (callback, value, row, op, $cell) {
+                                    learun.clientdata.getAsync('dataItem', {
+                                        key: value,
+                                        code: 'TrainPayStatus',
+                                        callback: function (_data) {
+                                            callback(_data.text);
+                                        }
+                                    });
+                                }
+                            },
+                            { label: "支付条件", name: "F_PayCondition", width: 100, align: "left" },
+                        ]
+                    });
+
+                    $('#detailstable').jfGridSet('reload', { param: { F_SettlementsId: rowdata.F_SettlementsId } });
+                }
+
+
+            })
             page.search();
         },
         search: function (param) {
