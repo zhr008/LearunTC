@@ -50,6 +50,7 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
                 strSql.Append("  FROM tc_Credentials t ");
                 strSql.Append("  LEFT JOIN tc_Personnels p ON t.F_PersonId =p.F_PersonId ");
                 strSql.Append("  WHERE 1=1 ");
+                strSql.Append("  AND t.F_DeleteMark=0 ");
                 var queryParam = queryJson.ToJObject();
                 // 虚拟参数
                 var dp = new DynamicParameters(new { });
@@ -62,6 +63,16 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
                 {
                     dp.Add("F_ApplicantId", queryParam["F_ApplicantId"].ToString(), DbType.String);
                     strSql.Append(" AND p.F_ApplicantId = @F_ApplicantId ");
+                }
+                if (!queryParam["F_IDCardNo"].IsEmpty())
+                {
+                    dp.Add("F_IDCardNo", "%" + queryParam["F_IDCardNo"].ToString() + "%", DbType.String);
+                    strSql.Append(" AND p.F_IDCardNo Like @F_IDCardNo ");
+                }
+                if (!queryParam["F_UserName"].IsEmpty())
+                {
+                    dp.Add("F_UserName", "%" + queryParam["F_UserName"].ToString() + "%", DbType.String);
+                    strSql.Append(" AND p.F_UserName Like @F_UserName ");
                 }
                 if (!queryParam["F_CertType"].IsEmpty())
                 {
@@ -199,7 +210,12 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
         {
             try
             {
-                this.BaseRepository().Delete<tc_CredentialsEntity>(t=>t.F_CredentialsId == keyValue);
+                tc_CredentialsEntity entity = new tc_CredentialsEntity()
+                {
+                    F_CredentialsId= keyValue,
+                    F_DeleteMark = 1
+                };
+                this.BaseRepository().Update(entity);
             }
             catch (Exception ex)
             {

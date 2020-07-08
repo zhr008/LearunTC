@@ -182,6 +182,7 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
         {
             this.F_PersonnelTrainId = Guid.NewGuid().ToString();
             this.F_CreateDate = DateTime.Now;
+            this.F_DeleteMark = 0;
             UserInfo userInfo = LoginUserInfo.Get();
             this.F_CreateUserId = userInfo.userId;
             this.F_CreateUserName = userInfo.realName;

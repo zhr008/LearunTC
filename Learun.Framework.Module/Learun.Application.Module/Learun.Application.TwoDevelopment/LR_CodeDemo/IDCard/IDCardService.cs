@@ -44,6 +44,7 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
                 strSql.Append("  FROM tc_IDCard t ");
                 strSql.Append("  LEFT JOIN tc_Personnels p ON t.F_PersonId =p.F_PersonId ");
                 strSql.Append("  WHERE 1=1 ");
+                strSql.Append("  AND t.F_DeleteMark=0 ");
                 var queryParam = queryJson.ToJObject();
                 // 虚拟参数
                 var dp = new DynamicParameters(new { });
@@ -193,15 +194,18 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
         /// <param name="keyValue">主键</param>
         public void DeleteEntity(string keyValue)
         {
-            var db = this.BaseRepository().BeginTrans();
+
             try
             {
-                db.Delete<tc_IDCardEntity>(t => t.F_IDCardId == keyValue);
-                db.Commit();
+                tc_IDCardEntity entity = new tc_IDCardEntity()
+                {
+                    F_IDCardId = keyValue,
+                    F_DeleteMark = 1
+                };
+                this.BaseRepository().Update(entity);
             }
             catch (Exception ex)
             {
-                db.Rollback();
                 if (ex is ExceptionEx)
                 {
                     throw;
@@ -211,6 +215,24 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
                     throw ExceptionEx.ThrowServiceException(ex);
                 }
             }
+            //var db = this.BaseRepository().BeginTrans();
+            //try
+            //{
+            //    db.Delete<tc_IDCardEntity>(t => t.F_IDCardId == keyValue);
+            //    db.Commit();
+            //}
+            //catch (Exception ex)
+            //{
+            //    db.Rollback();
+            //    if (ex is ExceptionEx)
+            //    {
+            //        throw;
+            //    }
+            //    else
+            //    {
+            //        throw ExceptionEx.ThrowServiceException(ex);
+            //    }
+            //}
         }
 
         /// <summary>

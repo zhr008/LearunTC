@@ -9,8 +9,8 @@ using System.Text;
 namespace Learun.Application.TwoDevelopment.LR_CodeDemo
 {
     /// <summary>
-    
-    
+
+
     /// 创 建：超级管理员
     /// 日 期：2020-06-27 23:47
     /// 描 述：供应商登记
@@ -50,6 +50,7 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
                 ");
                 strSql.Append("  FROM tc_Applicant t ");
                 strSql.Append("  WHERE 1=1 ");
+                strSql.Append("  AND t.F_DeleteMark=0 ");
                 var queryParam = queryJson.ToJObject();
                 // 虚拟参数
                 var dp = new DynamicParameters(new { });
@@ -65,10 +66,10 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
                 }
                 if (!queryParam["F_ManageType"].IsEmpty())
                 {
-                    dp.Add("F_ManageType",queryParam["F_ManageType"].ToString(), DbType.String);
+                    dp.Add("F_ManageType", queryParam["F_ManageType"].ToString(), DbType.String);
                     strSql.Append(" AND t.F_ManageType = @F_ManageType ");
                 }
-                return this.BaseRepository().FindList<tc_ApplicantEntity>(strSql.ToString(),dp, pagination);
+                return this.BaseRepository().FindList<tc_ApplicantEntity>(strSql.ToString(), dp, pagination);
             }
             catch (Exception ex)
             {
@@ -119,7 +120,12 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
         {
             try
             {
-                this.BaseRepository().Delete<tc_ApplicantEntity>(t=>t.F_ApplicantId == keyValue);
+                tc_ApplicantEntity entity = new tc_ApplicantEntity()
+                {
+                    F_ApplicantId = keyValue,
+                    F_DeleteMark = 1
+                };
+                this.BaseRepository().Update(entity);
             }
             catch (Exception ex)
             {

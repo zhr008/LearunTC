@@ -116,6 +116,7 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
                 strSql.Append(" FROM tc_GradCert t ");
                 strSql.Append("  LEFT JOIN tc_Personnels p ON t.F_PersonId =p.F_PersonId ");
                 strSql.Append("  WHERE 1=1 ");
+                strSql.Append("  AND t.F_DeleteMark=0 ");
                 var queryParam = queryJson.ToJObject();
                 // 虚拟参数
                 var dp = new DynamicParameters(new { });
@@ -211,7 +212,12 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
         {
             try
             {
-                this.BaseRepository().Delete<tc_GradCertEntity>(t=>t.F_GradCertId == keyValue);
+                tc_GradCertEntity entity = new tc_GradCertEntity()
+                {
+                    F_GradCertId = keyValue,
+                    F_DeleteMark = 1
+                };
+                this.BaseRepository().Update(entity);
             }
             catch (Exception ex)
             {

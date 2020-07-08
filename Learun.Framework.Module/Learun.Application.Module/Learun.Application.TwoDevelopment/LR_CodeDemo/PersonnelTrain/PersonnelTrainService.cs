@@ -58,6 +58,7 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
                 strSql.Append("  FROM tc_PersonnelTrain t ");
                 strSql.Append("  LEFT JOIN tc_Personnels p ON t.F_PersonId =p.F_PersonId ");
                 strSql.Append("  WHERE 1=1 ");
+                strSql.Append("  AND t.F_DeleteMark=0 ");
                 var queryParam = queryJson.ToJObject();
                 // 虚拟参数
                 var dp = new DynamicParameters(new { });
@@ -65,12 +66,12 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
                 if (!queryParam["F_IDCardNo"].IsEmpty())
                 {
                     dp.Add("F_IDCardNo", "%" + queryParam["F_IDCardNo"].ToString() + "%", DbType.String);
-                    strSql.Append(" AND t.F_IDCardNo Like @F_IDCardNo ");
+                    strSql.Append(" AND p.F_IDCardNo Like @F_IDCardNo ");
                 }
                 if (!queryParam["F_UserName"].IsEmpty())
                 {
                     dp.Add("F_UserName", "%" + queryParam["F_UserName"].ToString() + "%", DbType.String);
-                    strSql.Append(" AND t.F_UserName Like @F_UserName ");
+                    strSql.Append(" AND p.F_UserName Like @F_UserName ");
                 }
                 if (!queryParam["F_PersonId"].IsEmpty())
                 {
@@ -104,25 +105,25 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
                 }
                 if (!queryParam["F_CertDateBegin"].IsEmpty())
                 {
-                    dp.Add("F_CertDateBegin",queryParam["F_CertDateBegin"].ToString(), DbType.String);
+                    dp.Add("F_CertDateBegin", queryParam["F_CertDateBegin"].ToString(), DbType.String);
                     strSql.Append(" AND t.F_CertDateBegin = @F_CertDateBegin ");
                 }
                 if (!queryParam["F_CertDateEnd"].IsEmpty())
                 {
-                    dp.Add("F_CertDateEnd",queryParam["F_CertDateEnd"].ToString(), DbType.String);
+                    dp.Add("F_CertDateEnd", queryParam["F_CertDateEnd"].ToString(), DbType.String);
                     strSql.Append(" AND t.F_CertDateEnd = @F_CertDateEnd ");
                 }
                 if (!queryParam["F_CertStatus"].IsEmpty())
                 {
-                    dp.Add("F_CertStatus",queryParam["F_CertStatus"].ToString(), DbType.String);
+                    dp.Add("F_CertStatus", queryParam["F_CertStatus"].ToString(), DbType.String);
                     strSql.Append(" AND t.F_CertStatus = @F_CertStatus ");
                 }
                 if (!queryParam["F_TrainPayStatus"].IsEmpty())
                 {
-                    dp.Add("F_TrainPayStatus",queryParam["F_TrainPayStatus"].ToString(), DbType.String);
+                    dp.Add("F_TrainPayStatus", queryParam["F_TrainPayStatus"].ToString(), DbType.String);
                     strSql.Append(" AND t.F_TrainPayStatus = @F_TrainPayStatus ");
                 }
-                return this.BaseRepository().FindList<PersonnelTrainInfo>(strSql.ToString(),dp, pagination);
+                return this.BaseRepository().FindList<PersonnelTrainInfo>(strSql.ToString(), dp, pagination);
             }
             catch (Exception ex)
             {
@@ -173,7 +174,13 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
         {
             try
             {
-                this.BaseRepository().Delete<tc_PersonnelTrainEntity>(t=>t.F_PersonnelTrainId == keyValue);
+
+                tc_PersonnelTrainEntity entity = new tc_PersonnelTrainEntity()
+                {
+                    F_PersonnelTrainId = keyValue,
+                    F_DeleteMark = 1
+                };
+                this.BaseRepository().Update(entity);
             }
             catch (Exception ex)
             {

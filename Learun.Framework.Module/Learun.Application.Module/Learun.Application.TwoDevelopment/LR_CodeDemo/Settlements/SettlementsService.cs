@@ -52,6 +52,7 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
                 strSql.Append("  FROM tc_Settlements t ");
                 strSql.Append("  LEFT JOIN tc_Personnels p ON t.F_PersonId =p.F_PersonId ");
                 strSql.Append("  WHERE 1=1 ");
+                strSql.Append("  AND t.F_DeleteMark=0 ");
                 var queryParam = queryJson.ToJObject();
                 // 虚拟参数
                 var dp = new DynamicParameters(new { });
@@ -135,6 +136,12 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
         {
             try
             {
+                tc_SettlementsEntity entity = new tc_SettlementsEntity()
+                {
+                    F_SettlementsId = keyValue,
+                    F_DeleteMark = 1
+                };
+                this.BaseRepository().Update(entity);
                 return this.BaseRepository().FindEntity<tc_SettlementsEntity>(keyValue);
             }
             catch (Exception ex)
