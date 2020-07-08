@@ -64,7 +64,7 @@
         </div>
         <div class="col-xs-6 lr-form-item" data-table="tc_Settlements">
             <div class="lr-form-item-title">签约金额<font face="宋体">*</font></div>
-            <input id="F_ContractAmount" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+            <input id="F_ContractAmount" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" readonly style="background: rgb(238, 238, 238);" />
         </div>
         <div class="col-xs-6 lr-form-item" data-table="tc_Settlements">
             <div class="lr-form-item-title">付款状态<font face="宋体">*</font></div>
@@ -72,7 +72,7 @@
         </div>
         <div class="col-xs-6 lr-form-item" data-table="tc_Settlements">
             <div class="lr-form-item-title">累计支付金额</div>
-            <input id="F_PayTotalAmount" type="text" class="form-control" />
+            <input id="F_PayTotalAmount" type="text" class="form-control"  readonly style="background: rgb(238, 238, 238);"/>
         </div>
     </div>
 @Html.AppendJsFile("/Areas/LR_CodeDemo/Views/Settlements/Form.js")

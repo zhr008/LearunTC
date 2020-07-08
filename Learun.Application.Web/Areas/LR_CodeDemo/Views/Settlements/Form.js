@@ -21,6 +21,21 @@ var bootstrap = function ($, learun) {
             $('#F_ContractStatus').lrDataItemSelect({ code: 'ContractStatus' });
             $('#F_ApplicantId').lrDataSourceSelect({ code: 'applicant',value: 'f_applicantid',text: 'f_companyname' });
             $('#F_PayStatus').lrDataItemSelect({ code: 'PayStatus' });
+
+
+
+
+            $('#F_PersonAmount').on('input', function () {
+                var PersonAmount=  $("#F_PersonAmount").val();
+                var ApplicantAmount = $("#F_ApplicantAmount").val();
+                $('#F_ContractAmount').val(learun.accAdd(PersonAmount, ApplicantAmount))
+            });
+            $('#F_ApplicantAmount').on('input', function () {
+                var PersonAmount = $("#F_PersonAmount").val();
+                var ApplicantAmount = $("#F_ApplicantAmount").val();
+                $('#F_ContractAmount').val(learun.accAdd(PersonAmount, ApplicantAmount))
+            });
+
         },
         initData: function () {
             if (!!keyValue) {

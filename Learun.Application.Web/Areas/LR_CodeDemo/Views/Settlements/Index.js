@@ -61,7 +61,7 @@ var bootstrap = function ($, learun) {
                         id: 'form',
                         title: '新增',
                         url: top.$.rootUrl + '/LR_CodeDemo/Settlements/Form?F_PersonId=' + F_PersonId + "&F_UserName=" + F_UserName + "&F_IDCardNo=" + F_IDCardNo,
-                        width: 600,
+                        width: 750,
                         height: 400,
                         callBack: function (id) {
                             return top[id].acceptClick(refreshGirdData);
@@ -80,7 +80,7 @@ var bootstrap = function ($, learun) {
                         id: 'form',
                         title: '编辑',
                         url: top.$.rootUrl + '/LR_CodeDemo/Settlements/Form?keyValue=' + keyValue,
-                        width: 600,
+                        width: 750,
                         height: 400,
                         callBack: function (id) {
                             return top[id].acceptClick(refreshGirdData);

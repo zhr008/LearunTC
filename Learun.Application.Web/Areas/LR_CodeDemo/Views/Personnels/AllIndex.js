@@ -21,7 +21,8 @@ var bootstrap = function ($, learun) {
             page.initData();
         },
         bind: function () {
-
+            $('#F_SceneType').lrDataItemSelect({ code: 'SceneType' });
+            $('#F_Gender').lrDataItemSelect({ code: 'Gender' });
         },
         initleft: function () {
             $('#lr_left_list li').on('click', function () {
@@ -71,6 +72,9 @@ var bootstrap = function ($, learun) {
                             $('[data-table="' + id + '"]').lrSetFormData(data[id]);
                         }
                     }
+
+                  
+
                 });
             }
 

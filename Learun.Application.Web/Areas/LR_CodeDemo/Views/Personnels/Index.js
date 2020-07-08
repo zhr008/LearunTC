@@ -100,8 +100,21 @@ var bootstrap = function ($, learun) {
                 headData: [
                     { label: "姓名", name: "F_UserName", width: 100, align: "center"},
                     { label: "身份证号码", name: "F_IDCardNo", width: 150, align: "center"},
-                    { label: "性别", name: "F_Gender", width: 100, align: "center"},
-                    { label: "年龄", name: "F_Age", width: 100, align: "center"},
+                    {
+                        label: "性别", name: "F_Gender", width: 100, align: "center",
+                        formatterAsync: function (callback, value, row, op, $cell) {
+                            learun.clientdata.getAsync('dataItem', {
+                                key: value,
+                                code: 'Gender',
+                                callback: function (_data) {
+                                    callback(_data.text);
+                                }
+                            });
+                        }
+
+                    },
+                    { label: "年龄", name: "F_Age", width: 100, align: "center" },
+
                     { label: "存档编号", name: "F_PlaceCode", width: 100, align: "center"},
                     { label: "证书编码", name: "F_CertCode", width: 100, align: "center"},
                     {

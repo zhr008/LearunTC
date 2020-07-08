@@ -33,8 +33,13 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
                 t.F_PersonId,
                 t.F_UserName,
                 t.F_IDCardNo,
-                t.F_Gender,
-                t.F_Age,
+
+ 
+        DATEDIFF(year, CONVERT(smalldatetime, SUBSTRING(ISNULL(t.F_IDCardNo, 0), 7, 8)), GETDATE()) AS F_Age, 
+        CASE LEFT(RIGHT(t.F_IDCardNo, 2), 1) % 2 WHEN 1 THEN '2' ELSE '1' END AS F_Gender,
+
+
+        
                 t.F_PlaceCode,
                 t.F_CertCode,
                 t.F_ApplicantId,
