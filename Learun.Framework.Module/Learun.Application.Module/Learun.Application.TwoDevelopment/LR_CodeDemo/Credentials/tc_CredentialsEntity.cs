@@ -63,16 +63,6 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
         [Column("F_CERTDATEEND")]
         public DateTime? F_CertDateEnd { get; set; }
         /// <summary>
-        /// F_MarketDate
-        /// </summary>
-        [Column("F_MARKETDATE")]
-        public DateTime? F_MarketDate { get; set; }
-        /// <summary>
-        /// F_MarketPrice
-        /// </summary>
-        [Column("F_MARKETPRICE")]
-        public decimal? F_MarketPrice { get; set; }
-        /// <summary>
         /// F_CertStatus
         /// </summary>
         [Column("F_CERTSTATUS")]

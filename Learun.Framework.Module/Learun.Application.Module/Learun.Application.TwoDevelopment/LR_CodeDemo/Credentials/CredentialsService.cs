@@ -152,6 +152,41 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
             }
         }
 
+
+        public tc_CredentialsEntity Gettc_CredentialsEntity(string keyValue, int? F_CertType, int? F_MajorType)
+        {
+            try
+            {
+                var expression = LinqExtensions.True<tc_CredentialsEntity>();
+                if (!string.IsNullOrEmpty(keyValue))
+                {
+                    expression = expression.And(t => t.F_PersonId == keyValue);
+                }
+                if (F_CertType>0)
+                {
+                    expression = expression.And(t => t.F_CertType == F_CertType);
+                }
+                if (F_MajorType > 0)
+                {
+                    expression = expression.And(t => t.F_MajorType == F_MajorType);
+                }
+                //expression = expression.And(t => t.F_DeleteMark == 0);
+                return this.BaseRepository().FindEntity<tc_CredentialsEntity>(expression);
+            }
+            catch (Exception ex)
+            {
+                if (ex is ExceptionEx)
+                {
+                    throw;
+                }
+                else
+                {
+                    throw ExceptionEx.ThrowServiceException(ex);
+                }
+            }
+        }
+
+
         #endregion
 
         #region 提交数据

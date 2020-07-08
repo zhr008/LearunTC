@@ -34,7 +34,7 @@ var bootstrap = function ($, learun) {
                     $('.lr-layout-wrap-item').removeClass('active');
                     $('#lr_layout_item' + _type).addClass('active');
 
-                    var baseUrl = "?F_PersonId=" + F_PersonId + "&F_IDCardNo=" + F_IDCardNo + "&F_UserName=" + F_UserName + "&F_ApplicantId=" + F_ApplicantId + "&ParentDisable=" + true;
+                    var baseUrl = "?F_PersonId=" + F_PersonId + "&F_IDCardNo=" + F_IDCardNo + "&F_UserName=" + decodeURIComponent(escape(F_UserName)) + "&F_ApplicantId=" + F_ApplicantId + "&ParentDisable=" + true;
 
                     switch (_type) {
                         case '2':

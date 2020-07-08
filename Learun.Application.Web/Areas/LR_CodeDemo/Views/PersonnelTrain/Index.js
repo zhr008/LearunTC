@@ -104,6 +104,31 @@ var bootstrap = function ($, learun) {
                     });
                 }
             });
+            $('#lr_synchro').on('click', function () {
+                var keyValue = $('#gridtable').jfGridValue('F_PersonnelTrainId');
+                if (learun.checkrow(keyValue)) {
+                    learun.layerConfirm('是否确认同步人才库！', function (res, index) {
+                        if (res) {
+                            learun.loading(true, '正在同步人才库！');
+                            learun.httpAsyncPost(top.$.rootUrl + '/LR_CodeDemo/PersonnelTrain/SyncToCredentials', { keyValue: keyValue }, function (res) {
+                                learun.loading(false);
+                                if (res.code == learun.httpCode.success) {
+                                    learun.alert.success(res.info);
+                                    refreshGirdData();
+                                }
+                                else {
+                                    learun.alert.error(res.info);
+                                    learun.httpErrorLog(res.info);
+                                }
+                                top.layer.close(index)
+                            });
+                        }
+                    })
+                }
+            })
+
+
+
             // 打印
             $('#lr_print').on('click', function () {
                 $('#gridtable').jqprintTable();

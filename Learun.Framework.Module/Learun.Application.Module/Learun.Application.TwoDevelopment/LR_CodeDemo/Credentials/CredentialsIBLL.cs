@@ -25,6 +25,12 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
         /// <param name="keyValue">主键</param>
         /// <returns></returns>
         tc_CredentialsEntity Gettc_CredentialsEntity(string keyValue);
+        /// <summary>
+        /// 获取tc_Credentials表实体数据
+        /// </summary>
+        /// <param name="keyValue">主键</param>
+        /// <returns></returns>
+        tc_CredentialsEntity Gettc_CredentialsEntity(string keyValue, int? F_CertType, int? F_MajorType);
         #endregion
 
         #region 提交数据

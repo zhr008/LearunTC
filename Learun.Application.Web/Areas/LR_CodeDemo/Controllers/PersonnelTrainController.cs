@@ -3,6 +3,7 @@ using System.Data;
 using Learun.Application.TwoDevelopment.LR_CodeDemo;
 using System.Web.Mvc;
 using System.Collections.Generic;
+using DataVisualization.core;
 
 namespace Learun.Application.Web.Areas.LR_CodeDemo.Controllers
 {
@@ -14,7 +15,8 @@ namespace Learun.Application.Web.Areas.LR_CodeDemo.Controllers
     public class PersonnelTrainController : MvcControllerBase
     {
         private PersonnelTrainIBLL personnelTrainIBLL = new PersonnelTrainBLL();
-
+        private PersonnelsIBLL personnelsIBLL = new PersonnelsBLL();
+        private CredentialsIBLL credentialsIBLL = new CredentialsBLL();
         #region 视图功能
 
         /// <summary>
@@ -24,7 +26,7 @@ namespace Learun.Application.Web.Areas.LR_CodeDemo.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-             return View();
+            return View();
         }
         /// <summary>
         /// 表单页
@@ -33,7 +35,7 @@ namespace Learun.Application.Web.Areas.LR_CodeDemo.Controllers
         [HttpGet]
         public ActionResult Form()
         {
-             return View();
+            return View();
         }
         #endregion
 
@@ -69,8 +71,9 @@ namespace Learun.Application.Web.Areas.LR_CodeDemo.Controllers
         [AjaxOnly]
         public ActionResult GetFormData(string keyValue)
         {
-            var tc_PersonnelTrainData = personnelTrainIBLL.Gettc_PersonnelTrainEntity( keyValue );
-            var jsonData = new {
+            var tc_PersonnelTrainData = personnelTrainIBLL.Gettc_PersonnelTrainEntity(keyValue);
+            var jsonData = new
+            {
                 tc_PersonnelTrain = tc_PersonnelTrainData,
             };
             return Success(jsonData);
@@ -103,13 +106,61 @@ namespace Learun.Application.Web.Areas.LR_CodeDemo.Controllers
         public ActionResult SaveForm(string keyValue, string strEntity)
         {
             tc_PersonnelTrainEntity entity = strEntity.ToObject<tc_PersonnelTrainEntity>();
-            personnelTrainIBLL.SaveEntity(keyValue,entity);
-            if (string.IsNullOrEmpty(keyValue))
+            personnelTrainIBLL.SaveEntity(keyValue, entity);
+            if (string.IsNullOrWhiteSpace(keyValue))
             {
+                if (entity.F_TrainStatus == 6)
+                {
+                    return Fail("不能直接培训完成，需要同步人才库！");
+                }
+            }
+            else 
+            {
+                if (entity.F_TrainStatus == 6)
+                {
+                    return Fail("培训完成，不允许修改！");
+                }
             }
             return Success("保存成功！");
         }
         #endregion
 
+
+
+        [HttpPost]
+        public ActionResult SyncToCredentials(string keyValue)
+        {
+            var entity = personnelTrainIBLL.Gettc_PersonnelTrainEntity(keyValue);
+            if (entity.F_TrainStatus != 5)
+            {
+                return Fail("未取得证书,不能同步到人才证书库");
+            }
+            var certEntity = credentialsIBLL.Gettc_CredentialsEntity(keyValue, entity.F_CertType, entity.F_MajorType);
+            if (certEntity != null)
+            {
+                return Fail("已经同步到人才证书库，无需再次同步！");
+            }
+            tc_CredentialsEntity info = new tc_CredentialsEntity
+            {
+                F_UserName = entity.F_UserName,
+                F_IDCardNo = entity.F_UserName,
+                F_PersonId = entity.F_PersonId,
+                F_CertType = entity.F_CertType,
+                F_MajorType = entity.F_MajorType,
+                F_Major = entity.F_Major,
+                F_CertOrganization = entity.F_CertOrganization,
+                F_CertDateBegin = entity.F_CertDateBegin,
+                F_CertDateEnd = entity.F_CertDateEnd,
+                F_CertStatus = entity.F_CertStatus,
+                F_CertStyle = entity.F_CertStyle,
+                F_PracticeStyle = 1,   //默认无
+                F_PracticeSealStyle = 1,  //默认无
+                F_CheckInTime = System.DateTime.Now
+            };
+            credentialsIBLL.SaveEntity("", info);
+            entity.F_TrainStatus = 6;
+            personnelTrainIBLL.SaveEntity(entity.F_PersonnelTrainId, entity);
+            return Success("同步成功！");
+        }
     }
 }

@@ -65,6 +65,27 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
             }
         }
 
+
+        public tc_CredentialsEntity Gettc_CredentialsEntity(string keyValue, int? F_CertType, int? F_MajorType) 
+        {
+            try
+            {
+                return credentialsService.Gettc_CredentialsEntity(keyValue, F_CertType, F_MajorType);
+            }
+            catch (Exception ex)
+            {
+                if (ex is ExceptionEx)
+                {
+                    throw;
+                }
+                else
+                {
+                    throw ExceptionEx.ThrowBusinessException(ex);
+                }
+            }
+        }
+
+
         #endregion
 
         #region 提交数据
