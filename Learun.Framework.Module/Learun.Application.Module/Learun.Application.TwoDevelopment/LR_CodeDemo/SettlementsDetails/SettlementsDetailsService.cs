@@ -44,6 +44,7 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
                 strSql.Append("  LEFT JOIN tc_Personnels p ON t.F_PersonId =p.F_PersonId ");
                 strSql.Append("  LEFT JOIN tc_Settlements s ON s.F_SettlementsId =t.F_SettlementsId ");
                 strSql.Append("  WHERE 1=1 ");
+                strSql.Append("  AND t.F_DeleteMark=0 ");
                 var queryParam = queryJson.ToJObject();
                 // 虚拟参数
                 var dp = new DynamicParameters(new { });
