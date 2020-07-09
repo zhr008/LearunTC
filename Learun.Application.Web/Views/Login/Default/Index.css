@@ -579,13 +579,13 @@ input:disabled {
         vertical-align: baseline;
         font-size: 24px;
         color: #ffffff;
-        position: absolute;
+        /*position: absolute;*/
         left: 50%;
         top: 3px;
         margin-left:5px;
     }
 
-        .lr-login-logo .lr-login-title:before {
+        /*.lr-login-logo .lr-login-title:before {
             content: '';
             display: block;
             position: absolute;
@@ -594,7 +594,7 @@ input:disabled {
             width: 2px;
             height: 25px;
             background-color: #fff;
-        }
+        }*/
 
 
 .lr-login-middle {

@@ -581,7 +581,7 @@ input:disabled {
         top: 26px;
     }
 
-        .lr-login-logo .lr-login-title:before {
+        /*.lr-login-logo .lr-login-title:before {
             content: '';
             display: block;
             position: absolute;
@@ -590,7 +590,7 @@ input:disabled {
             width: 2px;
             height: 25px;
             background-color: #179FEF;
-        }
+        }*/
 
 
 .lr-login-middle {

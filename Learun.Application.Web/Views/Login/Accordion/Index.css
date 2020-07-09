@@ -568,7 +568,7 @@ body {
         left:257px;
     }
 
-        .lr-login-logo .lr-login-title:before {
+        /*.lr-login-logo .lr-login-title:before {
             content: '';
             display: block;
             position: absolute;
@@ -576,7 +576,7 @@ body {
             width: 2px;
             height: 25px;
             background-color: #fff;
-        }
+        }*/
 .lr-login-body {
     position: absolute;
     top: 90px;
