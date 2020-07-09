@@ -157,7 +157,7 @@ var bootstrap = function ($, learun) {
                         label: "人才签约代表", name: "F_ApplicantId", width: 100, align: "center",
                         formatterAsync: function (callback, value, row, op, $cell) {
                             learun.clientdata.getAsync('custmerData', {
-                                url: '/LR_SystemModule/DataSource/GetDataTable?code=' + 'applicant',
+                                url: '/LR_SystemModule/DataSource/GetDataTable?code=' + 'applicantdata',
                                 key: value,
                                 keyId: 'f_applicantid',
                                 callback: function (_data) {

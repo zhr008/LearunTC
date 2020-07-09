@@ -27,6 +27,9 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
         /// <param name="keyValue">主键</param>
         /// <returns></returns>
         tc_ApplicantEntity Gettc_ApplicantEntity(string keyValue);
+
+
+        List<tc_ApplicantEntity> GetApplicantRepresentative(string PersonId);
         #endregion
 
         #region 提交数据

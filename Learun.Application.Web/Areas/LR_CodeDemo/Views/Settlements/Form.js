@@ -16,6 +16,7 @@ var bootstrap = function ($, learun) {
             $('.lr-form-wrap').lrscroll();
             page.bind();
             page.initData();
+            page.buildTree();
         },
         bind: function () {
             $('#F_ContractStatus').lrDataItemSelect({ code: 'ContractStatus' });
@@ -35,6 +36,40 @@ var bootstrap = function ($, learun) {
                 var ApplicantAmount = $("#F_ApplicantAmount").val();
                 $('#F_ContractAmount').val(learun.accAdd(PersonAmount, ApplicantAmount))
             });
+
+        },
+
+        buildTree: function () {
+            debugger
+            $('#F_ApplicantId').lrDataSourceSelect({ code: 'applicantdata', value: 'f_applicantid', text: 'f_companyname' });
+            //$('#F_ApplicantId').lrselect({
+            //    url: top.$.rootUrl + '/LR_CodeDemo/Settlements/GetApplicantRepresentative?PersonId=' + F_PersonId,
+            //    select: function (item) {
+            //        symbolName = item.text;
+            //    }
+            //});
+
+            //$('#F_ApplicantId').lrselect({
+            //    url: top.$.rootUrl + '/LR_CodeDemo/Settlements/GetApplicantRepresentative?PersonId=' + F_PersonId,
+            //    maxHeight: 230,
+            //    value: "F_ApplicantId",
+            //    text: "F_CompanyName",
+            //    select: function (item) {
+                   
+            //    }
+            //});
+
+
+            //$('#F_ModuleId').lrselect({
+            //    url: top.$.rootUrl + '/LR_SystemModule/Module/GetModuleTree',
+            //    type: 'tree',
+            //    maxHeight: 250,
+            //    allowSearch: true
+            //}).on('change', function () {
+            //    moduleId = $(this).lrselectGet();
+            //    var module = learun.clientdata.get(['modulesMap', moduleId]);
+            //    $('#F_ModuleUrl').val(module.F_UrlAddress);
+            //});
 
         },
         initData: function () {

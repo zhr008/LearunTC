@@ -23,7 +23,7 @@ var bootstrap = function ($, learun) {
             $('#multiple_condition_query').lrMultipleQuery(function (queryJson) {
                 page.search(queryJson);
             }, 285, 400);
-            $('#F_ApplicantId').lrDataSourceSelect({ code: 'Rptdata',value: 'f_id',text: 'f_name' });
+            $('#F_ApplicantId').lrDataSourceSelect({ code: 'Rptdata', value: 'f_id', text: 'f_name' });
             $('#F_SceneType').lrDataItemSelect({ code: 'SceneType' });
             // 刷新
             $('#lr_refresh').on('click', function () {
@@ -85,7 +85,7 @@ var bootstrap = function ($, learun) {
                 if (learun.checkrow(keyValue)) {
                     learun.layerConfirm('是否确认删除该项！', function (res) {
                         if (res) {
-                            learun.deleteForm(top.$.rootUrl + '/LR_CodeDemo/Personnels/DeleteForm', { keyValue: keyValue}, function () {
+                            learun.deleteForm(top.$.rootUrl + '/LR_CodeDemo/Personnels/DeleteForm', { keyValue: keyValue }, function () {
                                 refreshGirdData();
                             });
                         }
@@ -98,8 +98,8 @@ var bootstrap = function ($, learun) {
             $('#gridtable').lrAuthorizeJfGrid({
                 url: top.$.rootUrl + '/LR_CodeDemo/Personnels/GetPageList',
                 headData: [
-                    { label: "姓名", name: "F_UserName", width: 100, align: "center"},
-                    { label: "身份证号码", name: "F_IDCardNo", width: 150, align: "center"},
+                    { label: "姓名", name: "F_UserName", width: 100, align: "center" },
+                    { label: "身份证号码", name: "F_IDCardNo", width: 150, align: "center" },
                     {
                         label: "性别", name: "F_Gender", width: 100, align: "center",
                         formatterAsync: function (callback, value, row, op, $cell) {
@@ -115,42 +115,43 @@ var bootstrap = function ($, learun) {
                     },
                     { label: "年龄", name: "F_Age", width: 100, align: "center" },
 
-                    { label: "存档编号", name: "F_PlaceCode", width: 100, align: "center"},
-                    { label: "证书编码", name: "F_CertCode", width: 100, align: "center"},
+                    { label: "存档编号", name: "F_PlaceCode", width: 100, align: "center" },
+                    { label: "证书编码", name: "F_CertCode", width: 100, align: "center" },
                     {
                         label: "供应商", name: "F_ApplicantId", width: 180, align: "center",
-                        formatterAsync: function (callback, value, row, op,$cell) {
-                             learun.clientdata.getAsync('custmerData', {
-                                 url: '/LR_SystemModule/DataSource/GetDataTable?code=' + 'applicantdata',
-                                 key: value,
-                                 keyId: 'f_applicantid',
-                                 callback: function (_data) {
-                                     callback(_data['f_companyname']);
-                                 }
-                             });
-                        }},
+                        formatterAsync: function (callback, value, row, op, $cell) {
+                            learun.clientdata.getAsync('custmerData', {
+                                url: '/LR_SystemModule/DataSource/GetDataTable?code=' + 'applicantdata',
+                                key: value,
+                                keyId: 'f_applicantid',
+                                callback: function (_data) {
+                                    callback(_data['f_companyname']);
+                                }
+                            });
+                        }
+                    },
                     {
                         label: "到场", name: "F_SceneType", width: 100, align: "center",
-                        formatterAsync: function (callback, value, row, op,$cell) {
-                             learun.clientdata.getAsync('dataItem', {
-                                 key: value,
-                                 code: 'SceneType',
-                                 callback: function (_data) {
-                                     callback(_data.text);
-                                 }
-                             });
+                        formatterAsync: function (callback, value, row, op, $cell) {
+                            learun.clientdata.getAsync('dataItem', {
+                                key: value,
+                                code: 'SceneType',
+                                callback: function (_data) {
+                                    callback(_data.text);
+                                }
+                            });
                         }
                     },
                     { label: "备注", name: "F_Description", width: 100, align: "left" },
                 ],
-                mainId:'F_PersonId',
+                mainId: 'F_PersonId',
                 isPage: true
             });
             page.search();
         },
         search: function (param) {
             param = param || {};
-            $('#gridtable').jfGridSet('reload',{ queryJson: JSON.stringify(param) });
+            $('#gridtable').jfGridSet('reload', { queryJson: JSON.stringify(param) });
         }
     };
     refreshGirdData = function () {

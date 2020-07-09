@@ -4,6 +4,7 @@ using Learun.Util;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 using System.Text;
 
 namespace Learun.Application.TwoDevelopment.LR_CodeDemo
@@ -173,6 +174,17 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
             }
         }
 
+
+        public List<tc_ApplicantEntity> GetApplicantRepresentative(string PersonId) 
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendFormat(@" select * from dbo.tc_Applicant where F_ApplicantId=(
+select F_ApplicantId from dbo.tc_Personnels where F_PersonId = '{0}')
+or F_CompanyName = '本人'", PersonId);
+
+            return this.BaseRepository().FindList<tc_ApplicantEntity>(sb.ToString()).ToList();
+
+        }
         #endregion
 
     }

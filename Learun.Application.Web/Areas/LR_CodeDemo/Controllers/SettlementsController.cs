@@ -14,7 +14,7 @@ namespace Learun.Application.Web.Areas.LR_CodeDemo.Controllers
     public class SettlementsController : MvcControllerBase
     {
         private SettlementsIBLL settlementsIBLL = new SettlementsBLL();
-
+        private ApplicantIBLL applicantIBLL = new ApplicantBLL();
         #region 视图功能
 
         /// <summary>
@@ -74,6 +74,13 @@ namespace Learun.Application.Web.Areas.LR_CodeDemo.Controllers
                 tc_Settlements = tc_SettlementsData,
             };
             return Success(jsonData);
+        }
+
+
+        public ActionResult GetApplicantRepresentative(string PersonId)
+        {
+            var list = applicantIBLL.GetApplicantRepresentative(PersonId);
+            return Success(list);
         }
         #endregion
 

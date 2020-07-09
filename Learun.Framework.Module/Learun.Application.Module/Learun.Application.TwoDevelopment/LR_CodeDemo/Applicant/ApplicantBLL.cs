@@ -65,6 +65,25 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
             }
         }
 
+
+        public List<tc_ApplicantEntity> GetApplicantRepresentative(string PersonId)
+        {
+            try
+            {
+                return applicantService.GetApplicantRepresentative(PersonId);
+            }
+            catch (Exception ex)
+            {
+                if (ex is ExceptionEx)
+                {
+                    throw;
+                }
+                else
+                {
+                    throw ExceptionEx.ThrowBusinessException(ex);
+                }
+            }
+        }
         #endregion
 
         #region 提交数据
