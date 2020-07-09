@@ -130,7 +130,7 @@ var bootstrap = function ($, learun) {
                              });
                         }},
                     {
-                        label: "专业类型", name: "F_MajorType", width: 100, align: "center",
+                        label: "专业序列", name: "F_MajorType", width: 100, align: "center",
                         formatterAsync: function (callback, value, row, op,$cell) {
                              learun.clientdata.getAsync('dataItem', {
                                  key: value,
@@ -153,7 +153,7 @@ var bootstrap = function ($, learun) {
                             return learun.formatDate(cellvalue, 'yyyy-MM-dd');
                         }},
                     {
-                        label: "资格证形式", name: "F_CertStyle", width: 100, align: "center",
+                        label: "资格证保管", name: "F_CertStyle", width: 100, align: "center",
                         formatterAsync: function (callback, value, row, op,$cell) {
                              learun.clientdata.getAsync('dataItem', {
                                  key: value,
@@ -175,7 +175,7 @@ var bootstrap = function ($, learun) {
                              });
                         }},
                     {
-                        label: "执业证形式", name: "F_PracticeStyle", width: 100, align: "center",
+                        label: "执业证", name: "F_PracticeStyle", width: 100, align: "center",
                         formatterAsync: function (callback, value, row, op,$cell) {
                              learun.clientdata.getAsync('dataItem', {
                                  key: value,

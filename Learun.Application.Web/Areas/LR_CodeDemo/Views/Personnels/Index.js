@@ -56,8 +56,8 @@ var bootstrap = function ($, learun) {
                     id: 'form',
                     title: '新增',
                     url: top.$.rootUrl + '/LR_CodeDemo/Personnels/Form',
-                    width: 700,
-                    height: 350,
+                    width: 750,
+                    height: 400,
                     callBack: function (id) {
                         return top[id].acceptClick(refreshGirdData);
                     }
@@ -71,8 +71,8 @@ var bootstrap = function ($, learun) {
                         id: 'form',
                         title: '编辑',
                         url: top.$.rootUrl + '/LR_CodeDemo/Personnels/Form?keyValue=' + keyValue,
-                        width: 700,
-                        height: 350,
+                        width: 750,
+                        height: 400,
                         callBack: function (id) {
                             return top[id].acceptClick(refreshGirdData);
                         }

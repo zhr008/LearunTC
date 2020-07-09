@@ -60,6 +60,25 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
         /// <returns></returns>
         [Column("F_TERM")]
         public int? F_Term { get; set; }
+
+        /// <summary>
+        /// 专业序列
+        /// </summary>
+        /// <returns></returns>
+        [Column("F_MAJORTYPE")]
+        public int? F_MajorType { get; set; }
+        /// <summary>
+        /// 库存状态
+        /// </summary>
+        /// <returns></returns>
+        [Column("F_CERTSTATUS")]
+        public int? F_CertStatus { get; set; }
+        /// <summary>
+        /// 登记日期
+        /// </summary>
+        /// <returns></returns>
+        [Column("F_CHECKINDATE")]
+        public DateTime? F_CheckInDate { get; set; }
         /// <summary>
         /// F_OriginalType
         /// </summary>

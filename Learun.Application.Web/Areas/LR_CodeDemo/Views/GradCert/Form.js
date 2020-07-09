@@ -21,6 +21,8 @@ var bootstrap = function ($, learun) {
             $('#F_EducationType').lrDataItemSelect({ code: 'EducationType' });
             $('#F_Term').lrDataItemSelect({ code: 'Term' });
             $('#F_OriginalType').lrDataItemSelect({ code: 'OriginalType' });
+            $('#F_CertStatus').lrDataItemSelect({ code: 'CertStatus' });
+            $('#F_MajorType').lrDataItemSelect({ code: 'MajorType' });
 
         },
         initData: function () {

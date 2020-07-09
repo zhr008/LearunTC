@@ -112,11 +112,9 @@ namespace Learun.Application.Web.Areas.LR_CodeDemo.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [AjaxOnly]
-        public ActionResult SaveForm(string keyValue, string strtc_IDCardEntity)
+        public ActionResult SaveForm(string keyValue, tc_IDCardEntity strtc_IDCardEntity)
         {
-
-            tc_IDCardEntity tc_IDCardEntity = strtc_IDCardEntity.ToObject<tc_IDCardEntity>();
-            iDCardIBLL.SaveEntity(keyValue, tc_IDCardEntity);
+            iDCardIBLL.SaveEntity(keyValue, strtc_IDCardEntity);
             return Success("保存成功！");
         }
         #endregion

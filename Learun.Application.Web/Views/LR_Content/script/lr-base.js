@@ -273,9 +273,9 @@ top.learun = (function ($) {
         getIDCardGender: function (identityCard) {
             //获取性别
             if (parseInt(identityCard.substr(16, 1)) % 2 == 1) {
-                return  '1'
+                return  '2'  //女
             } else {
-                return '0'
+                return '1'    //男
             }
         },
 

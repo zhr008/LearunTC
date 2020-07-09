@@ -17,17 +17,13 @@ var bootstrap = function ($, learun) {
         bind: function () {
             $('#F_ApplicantId').lrDataSourceSelect({ code: 'applicantdata', value: 'f_applicantid', text: 'f_companyname' });
             $('#F_SceneType').lrDataItemSelect({ code: 'SceneType' });
-
+            $('#F_Gender').lrDataItemSelect({ code: 'Gender' });
             $("#F_IDCardNo").bind('input', function () {
                 var age = learun.getIDCardAge($("#F_IDCardNo").val());
                 $("#F_Age").val(age);
                 var gender = learun.getIDCardGender($("#F_IDCardNo").val());
-                $("#F_Gender").val(gender);
+                $("#F_Gender").lrselectSet(gender);
             })
-                
-
-
-
         },
         initData: function () {
             if (!!keyValue) {

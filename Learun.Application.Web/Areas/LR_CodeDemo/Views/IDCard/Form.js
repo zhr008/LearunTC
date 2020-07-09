@@ -42,12 +42,10 @@ var bootstrap = function ($, learun) {
     };
     // 保存数据
     acceptClick = function (callBack) {
-        if (!$('body').lrValidform()) {
+        if (!$('#form').lrValidform()) {
             return false;
         }
-        var postData = {};
-        postData.strtc_IDCardEntity = JSON.stringify($('[data-table="tc_IDCard"]').lrGetFormData());
-        postData.strEntity = JSON.stringify($('[data-table="tc_Personnels"]').lrGetFormData());
+        var postData = $('#form').lrGetFormData();
         $.lrSaveForm(top.$.rootUrl + '/LR_CodeDemo/IDCard/SaveForm?keyValue=' + keyValue, postData, function (res) {
             // 保存成功后才回调
             if (!!callBack) {

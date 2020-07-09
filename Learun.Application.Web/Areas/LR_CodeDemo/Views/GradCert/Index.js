@@ -60,7 +60,7 @@ var bootstrap = function ($, learun) {
                         id: 'form',
                         title: '新增',
                         url: top.$.rootUrl + '/LR_CodeDemo/GradCert/Form?F_PersonId=' + F_PersonId + "&F_UserName=" + F_UserName + "&F_IDCardNo=" + F_IDCardNo,
-                        width: 750,
+                        width: 770,
                         height: 400,
                         callBack: function (id) {
                             return top[id].acceptClick(refreshGirdData);
@@ -82,7 +82,7 @@ var bootstrap = function ($, learun) {
                         id: 'form',
                         title: '编辑',
                         url: top.$.rootUrl + '/LR_CodeDemo/GradCert/Form?keyValue=' + keyValue,
-                        width: 750,
+                        width: 770,
                         height: 400,
                         callBack: function (id) {
                             return top[id].acceptClick(refreshGirdData);
@@ -97,6 +97,7 @@ var bootstrap = function ($, learun) {
                     learun.layerConfirm('是否确认删除该项！', function (res) {
                         if (res) {
                             learun.deleteForm(top.$.rootUrl + '/LR_CodeDemo/GradCert/DeleteForm', { keyValue: keyValue }, function () {
+                                refreshGirdData();
                             });
                         }
                     });
@@ -109,14 +110,15 @@ var bootstrap = function ($, learun) {
                 headData: [
                     { label: '姓名', name: 'F_UserName', width: 100, align: "center" },
                     { label: '身份证号码', name: 'F_IDCardNo', width: 200, align: "center" },
-                    { label: '专业', name: 'F_Major', width: 200, align: "center" },
+                    { label: '毕业专业', name: 'F_Major', width: 200, align: "center" },
                     {
-                        label: '毕业时间', name: 'F_GradTime', width: 100, align: "center",
+                        label: '毕业日期', name: 'F_GradTime', width: 100, align: "center",
                         formatter: function (cellvalue, row) {
                             return learun.formatDate(cellvalue, 'yyyy-MM-dd');
-                        }},
+                        }
+                    },
                     {
-                        label: '学历类型', name: 'F_EducationType', width: 100, align: "center",
+                        label: '学历', name: 'F_EducationType', width: 100, align: "center",
                         formatterAsync: function (callback, value, row, op, $cell) {
                             learun.clientdata.getAsync('dataItem', {
                                 key: value,
@@ -140,8 +142,20 @@ var bootstrap = function ($, learun) {
                         }
                     },
                     {
-                        label: '保管方式', name: 'F_OriginalType', width: 100, align: "center",
-                          formatterAsync: function (callback, value, row, op, $cell) {
+                        label: '专业序列', name: 'F_MajorType', width: 100, align: "center",
+                        formatterAsync: function (callback, value, row, op, $cell) {
+                            learun.clientdata.getAsync('dataItem', {
+                                key: value,
+                                code: 'MajorType',
+                                callback: function (_data) {
+                                    callback(_data.text);
+                                }
+                            });
+                        }
+                    },
+                    {
+                        label: '毕业证保管', name: 'F_OriginalType', width: 100, align: "center",
+                        formatterAsync: function (callback, value, row, op, $cell) {
                             learun.clientdata.getAsync('dataItem', {
                                 key: value,
                                 code: 'OriginalType',
@@ -151,6 +165,25 @@ var bootstrap = function ($, learun) {
                             });
                         }
                     },
+                    {
+                        label: '库存状态', name: 'F_CertStatus', width: 100, align: "center",
+                        formatterAsync: function (callback, value, row, op, $cell) {
+                            learun.clientdata.getAsync('dataItem', {
+                                key: value,
+                                code: 'CertStatus',
+                                callback: function (_data) {
+                                    callback(_data.text);
+                                }
+                            });
+                        }
+                    },
+                    {
+                        label: '入库时间', name: 'F_CheckInDate', width: 100, align: "center",
+                        formatter: function (cellvalue, row) {
+                            return learun.formatDate(cellvalue, 'yyyy-MM-dd');
+                        }
+                    },
+
                     { label: '备注', name: 'F_Description', width: 200, align: "left" },
 
                 ],

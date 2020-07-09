@@ -62,7 +62,7 @@ var bootstrap = function ($, learun) {
                         title: '新增',
                         url: top.$.rootUrl + '/LR_CodeDemo/Settlements/Form?F_PersonId=' + F_PersonId + "&F_UserName=" + F_UserName + "&F_IDCardNo=" + F_IDCardNo,
                         width: 750,
-                        height: 400,
+                        height: 480,
                         callBack: function (id) {
                             return top[id].acceptClick(refreshGirdData);
                         }
@@ -81,7 +81,7 @@ var bootstrap = function ($, learun) {
                         title: '编辑',
                         url: top.$.rootUrl + '/LR_CodeDemo/Settlements/Form?keyValue=' + keyValue,
                         width: 750,
-                        height: 400,
+                        height: 480,
                         callBack: function (id) {
                             return top[id].acceptClick(refreshGirdData);
                         }
@@ -151,7 +151,8 @@ var bootstrap = function ($, learun) {
                     { label: "合同起日", name: "F_ContractStartDate", width: 100, align: "center" },
                     { label: "合同止日", name: "F_ContractEndDate", width: 100, align: "center" },
                     { label: "手机", name: "F_Mobile", width: 100, align: "center" },
-                    { label: "其它方式", name: "F_Address", width: 100, align: "center" },
+                    { label: "联系地址", name: "F_Address", width: 100, align: "center" },
+                    { label: "其它方式", name: "F_OtherContact", width: 100, align: "center" },
                     {
                         label: "人才签约代表", name: "F_ApplicantId", width: 100, align: "center",
                         formatterAsync: function (callback, value, row, op, $cell) {

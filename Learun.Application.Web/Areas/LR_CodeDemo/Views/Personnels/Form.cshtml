@@ -9,15 +9,15 @@
         </div>
         <div class="col-xs-6 lr-form-item" data-table="tc_Personnels">
             <div class="lr-form-item-title">身份证号码<font face="宋体">*</font></div>
-            <input id="F_IDCardNo" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+            <input id="F_IDCardNo" type="text" class="form-control" isvalid="no" checkexpession="isIDCard" />
         </div>
         <div class="col-xs-6 lr-form-item" data-table="tc_Personnels">
             <div class="lr-form-item-title">性别<font face="宋体">*</font></div>
-            <input id="F_Gender" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+            <div id="F_Gender" isvalid="yes" checkexpession="NotNull" readonly style="background: rgb(238, 238, 238);"></div>
         </div>
         <div class="col-xs-6 lr-form-item" data-table="tc_Personnels">
             <div class="lr-form-item-title">年龄<font face="宋体">*</font></div>
-            <input id="F_Age" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+            <input id="F_Age" type="text" class="form-control" isvalid="yes"  readonly style="background: rgb(238, 238, 238);" />
         </div>
         <div class="col-xs-6 lr-form-item" data-table="tc_Personnels">
             <div class="lr-form-item-title">存档编号<font face="宋体">*</font></div>
@@ -35,6 +35,12 @@
             <div class="lr-form-item-title">到场<font face="宋体">*</font></div>
             <div id="F_SceneType" isvalid="yes" checkexpession="NotNull"></div>
         </div>
+
+        <div class="col-xs-12 lr-form-item" data-table="tc_Personnels">
+            <div class="lr-form-item-title">社保地<font face="宋体">*</font></div>
+            <input id="F_ProvinceCode" type="text"  class="form-control" />
+        </div>
+
         <div class="col-xs-12 lr-form-item" data-table="tc_Personnels">
             <div class="lr-form-item-title">备注</div>
             <textarea id="F_Description" type="text" class="form-control" style="height:80px;"></textarea>

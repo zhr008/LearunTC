@@ -142,7 +142,7 @@ var bootstrap = function ($, learun) {
                     { label: '姓名', name: 'F_UserName', width: 100, align: "center" },
                     { label: '身份证号码', name: 'F_IDCardNo', width: 200, align: "center" },
                     {
-                        label: "培训证书类型", name: "F_CertType", width: 100, align: "center",
+                        label: "培训证书名称", name: "F_CertType", width: 100, align: "center",
                         formatterAsync: function (callback, value, row, op, $cell) {
                             learun.clientdata.getAsync('dataItem', {
                                 key: value,
@@ -155,7 +155,7 @@ var bootstrap = function ($, learun) {
                     },
 
                     {
-                        label: "培训专业类型", name: "F_MajorType", width: 100, align: "center",
+                        label: "培训专业序列", name: "F_MajorType", width: 100, align: "center",
                         formatterAsync: function (callback, value, row, op, $cell) {
                             learun.clientdata.getAsync('dataItem', {
                                 key: value,
@@ -168,8 +168,8 @@ var bootstrap = function ($, learun) {
 
 
                     },
-                    { label: "培训证书专业 ", name: "F_Major", width: 100, align: "center" },
-                    { label: "培训发证机构", name: "F_CertOrganization", width: 100, align: "center" },
+                    { label: "报名专业/工种 ", name: "F_Major", width: 100, align: "center" },
+                    { label: "预定发证机构", name: "F_CertOrganization", width: 100, align: "center" },
                     {
                         label: "预定发证日期", name: "F_CertDateBegin", width: 100, align: "center",
                         formatter: function (cellvalue, row) {
@@ -183,7 +183,7 @@ var bootstrap = function ($, learun) {
                         }
                     },
                     {
-                        label: "资格证形式", name: "F_CertStyle", width: 100, align: "center",
+                        label: "资格证保管", name: "F_CertStyle", width: 100, align: "center",
                         formatterAsync: function (callback, value, row, op, $cell) {
                             learun.clientdata.getAsync('dataItem', {
                                 key: value,
@@ -272,7 +272,7 @@ var bootstrap = function ($, learun) {
                             });
                         }
                     },
-                    { label: "备注", name: "F_Description", width: 100, align: "left" },
+                    { label: "培训备注", name: "F_Description", width: 100, align: "left" },
                 ],
                 mainId: 'F_PersonnelTrainId',
                 isPage: true

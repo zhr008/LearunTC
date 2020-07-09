@@ -60,7 +60,7 @@ var bootstrap = function ($, learun) {
                         title: '新增',
                         url: top.$.rootUrl + '/LR_CodeDemo/IDCard/Form?F_PersonId=' + F_PersonId + "&F_UserName=" + F_UserName + "&F_IDCardNo=" + F_IDCardNo,
                         width: 750,
-                        height: 330,
+                        height: 400,
                         callBack: function (id) {
                             return top[id].acceptClick(refreshGirdData);
                         }
@@ -72,14 +72,14 @@ var bootstrap = function ($, learun) {
             });
             // 编辑
             $('#lr_edit').on('click', function () {
-                var keyValue = $('#gridtable').jfGridValue('F_PersonId');
+                var keyValue = $('#gridtable').jfGridValue('F_IDCardId');
                 if (learun.checkrow(keyValue)) {
                     learun.layerForm({
                         id: 'form',
                         title: '编辑',
                         url: top.$.rootUrl + '/LR_CodeDemo/IDCard/Form?keyValue=' + keyValue,
                         width: 750,
-                        height: 330,
+                        height: 400,
                         callBack: function (id) {
                             return top[id].acceptClick(refreshGirdData);
                         }
@@ -88,7 +88,7 @@ var bootstrap = function ($, learun) {
             });
             // 删除
             $('#lr_delete').on('click', function () {
-                var keyValue = $('#gridtable').jfGridValue('F_PersonId');
+                var keyValue = $('#gridtable').jfGridValue('F_IDCardId');
                 if (learun.checkrow(keyValue)) {
                     learun.layerConfirm('是否确认删除该项！', function (res) {
                         if (res) {
@@ -112,19 +112,19 @@ var bootstrap = function ($, learun) {
                     { label: "姓名", name: "F_UserName", width: 100, align: "center" },
                     { label: "身份证号码", name: "F_IDCardNo", width: 150, align: "center" },
                     {
-                        label: "身份证发证日", name: "F_IssueDate", width: 100, align: "center",
+                        label: "SFZ发证日", name: "F_IssueDate", width: 100, align: "center",
                         formatter: function (cellvalue, row) {
                             return learun.formatDate(cellvalue, 'yyyy-MM-dd');
                         }
                     },
                     {
-                        label: "身份证失效日", name: "F_ExpirationDate", width: 100, align: "center",
+                        label: "SFZ失效日", name: "F_ExpirationDate", width: 100, align: "center",
                         formatter: function (cellvalue, row) {
                             return learun.formatDate(cellvalue, 'yyyy-MM-dd');
                         }
                     },
                     {
-                        label: "身份证保管方式", name: "F_SafeguardType", width: 100, align: "center",
+                        label: "SFZ保管", name: "F_SafeguardType", width: 100, align: "center",
                         formatterAsync: function (callback, value, row, op, $cell) {
                             learun.clientdata.getAsync('dataItem', {
                                 key: value,
@@ -136,7 +136,7 @@ var bootstrap = function ($, learun) {
                         }
                     },
                     {
-                        label: "入库登记日", name: "F_WarehouseDate", width: 100, align: "center",
+                        label: "SFZ入库登记日", name: "F_WarehouseDate", width: 100, align: "center",
                         formatter: function (cellvalue, row) {
                             return learun.formatDate(cellvalue, 'yyyy-MM-dd');
                         }

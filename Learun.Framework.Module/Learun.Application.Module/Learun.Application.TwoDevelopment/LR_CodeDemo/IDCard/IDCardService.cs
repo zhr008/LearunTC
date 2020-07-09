@@ -108,7 +108,7 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
         {
             try
             {
-                return this.BaseRepository().FindEntity<tc_IDCardEntity>(t => t.F_PersonId == keyValue);
+                return this.BaseRepository().FindEntity<tc_IDCardEntity>(t => t.F_IDCardId == keyValue);
             }
             catch (Exception ex)
             {
@@ -240,29 +240,23 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
         /// </summary>
         /// <param name="keyValue">主键</param>
         /// <param name="entity">实体</param>
-        public void SaveEntity(string keyValue, tc_IDCardEntity tc_IDCardEntity)
+        public void SaveEntity(string keyValue, tc_IDCardEntity entity)
         {
-            var db = this.BaseRepository().BeginTrans();
             try
             {
                 if (!string.IsNullOrEmpty(keyValue))
                 {
-                    var tc_PersonnelsEntityTmp = Gettc_IDCardEntity(keyValue);
-                    tc_IDCardEntity.Modify(keyValue);
-                    db.Update(tc_IDCardEntity);
+                    entity.Modify(keyValue);
+                    this.BaseRepository().Update(entity);
                 }
                 else
                 {
-
-                    tc_IDCardEntity.Create();
-                    tc_IDCardEntity.F_PersonId = tc_IDCardEntity.F_PersonId;
-                    db.Insert(tc_IDCardEntity);
+                    entity.Create();
+                    this.BaseRepository().Insert(entity);
                 }
-                db.Commit();
             }
             catch (Exception ex)
             {
-                db.Rollback();
                 if (ex is ExceptionEx)
                 {
                     throw;
