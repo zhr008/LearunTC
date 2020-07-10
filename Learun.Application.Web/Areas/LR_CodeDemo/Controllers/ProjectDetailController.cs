@@ -8,12 +8,12 @@ namespace Learun.Application.Web.Areas.LR_CodeDemo.Controllers
 {
     /// <summary>
     /// 创 建：超级管理员
-    /// 日 期：2020-07-10 17:09
-    /// 描 述：项目管理
+    /// 日 期：2020-07-10 18:11
+    /// 描 述：项目详情
     /// </summary>
-    public class ProjectManageController : MvcControllerBase
+    public class ProjectDetailController : MvcControllerBase
     {
-        private ProjectManageIBLL projectManageIBLL = new ProjectManageBLL();
+        private ProjectDetailIBLL projectDetailIBLL = new ProjectDetailBLL();
 
         #region 视图功能
 
@@ -50,7 +50,7 @@ namespace Learun.Application.Web.Areas.LR_CodeDemo.Controllers
         public ActionResult GetPageList(string pagination, string queryJson)
         {
             Pagination paginationobj = pagination.ToObject<Pagination>();
-            var data = projectManageIBLL.GetPageList(paginationobj, queryJson);
+            var data = projectDetailIBLL.GetPageList(paginationobj, queryJson);
             var jsonData = new
             {
                 rows = data,
@@ -69,9 +69,9 @@ namespace Learun.Application.Web.Areas.LR_CodeDemo.Controllers
         [AjaxOnly]
         public ActionResult GetFormData(string keyValue)
         {
-            var tc_ProjectData = projectManageIBLL.Gettc_ProjectEntity( keyValue );
+            var tc_ProjectDetailData = projectDetailIBLL.Gettc_ProjectDetailEntity( keyValue );
             var jsonData = new {
-                tc_Project = tc_ProjectData,
+                tc_ProjectDetail = tc_ProjectDetailData,
             };
             return Success(jsonData);
         }
@@ -88,7 +88,7 @@ namespace Learun.Application.Web.Areas.LR_CodeDemo.Controllers
         [AjaxOnly]
         public ActionResult DeleteForm(string keyValue)
         {
-            projectManageIBLL.DeleteEntity(keyValue);
+            projectDetailIBLL.DeleteEntity(keyValue);
             return Success("删除成功！");
         }
         /// <summary>
@@ -102,8 +102,8 @@ namespace Learun.Application.Web.Areas.LR_CodeDemo.Controllers
         [AjaxOnly]
         public ActionResult SaveForm(string keyValue, string strEntity)
         {
-            tc_ProjectEntity entity = strEntity.ToObject<tc_ProjectEntity>();
-            projectManageIBLL.SaveEntity(keyValue,entity);
+            tc_ProjectDetailEntity entity = strEntity.ToObject<tc_ProjectDetailEntity>();
+            projectDetailIBLL.SaveEntity(keyValue,entity);
             if (string.IsNullOrEmpty(keyValue))
             {
             }

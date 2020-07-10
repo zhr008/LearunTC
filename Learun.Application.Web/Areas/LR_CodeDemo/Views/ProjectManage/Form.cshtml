@@ -1,52 +1,51 @@
 ﻿@{
-    ViewBag.Title = "projectmanage";
+    ViewBag.Title = "项目管理";
     Layout = "~/Views/Shared/_Form.cshtml";
 }
-
 <div class="lr-form-wrap" id="form">
-    <div class="col-xs-6 lr-form-item" data-table="tc_Project">
-        <div class="lr-form-item-title">单位名称<font face="宋体">*</font></div>
-        <div id="ApplicantId" isvalid="yes" checkexpession="NotNull"></div>
+    <div class="col-xs-6 lr-form-item"  data-table="tc_Project" >
+        <div class="lr-form-item-title">单位名称</div>
+        <div id="ApplicantId"  ></div>
     </div>
-    <div class="col-xs-6 lr-form-item" data-table="tc_Project">
-        <div class="lr-form-item-title">注册地址</div>
-        <input id="RegisterAddress" type="text" class="form-control" />
+    <div class="col-xs-6 lr-form-item"  data-table="tc_Project" >
+        <div class="lr-form-item-title">注册地<font face="宋体">*</font></div>
+        <input id="RegisterAddress" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
     </div>
-    <div class="col-xs-6 lr-form-item" data-table="tc_Project">
-        <div class="lr-form-item-title">资质类别</div>
-        <div id="ProjectType"></div>
+    <div class="col-xs-6 lr-form-item"  data-table="tc_Project" >
+        <div class="lr-form-item-title">资质类别<font face="宋体">*</font></div>
+        <div id="ProjectType" isvalid="yes" checkexpession="NotNull" ></div>
     </div>
-    <div class="col-xs-6 lr-form-item" data-table="tc_Project">
+    <div class="col-xs-6 lr-form-item"  data-table="tc_Project" >
         <div class="lr-form-item-title">社保交费<font face="宋体">*</font></div>
-        <div id="SocialSecurities" isvalid="yes" checkexpession="NotNull"></div>
+        <div id="SocialSecurities" isvalid="yes" checkexpession="NotNull" ></div>
     </div>
-    <div class="col-xs-6 lr-form-item" data-table="tc_Project">
+    <div class="col-xs-6 lr-form-item"  data-table="tc_Project" >
         <div class="lr-form-item-title">资质专业<font face="宋体">*</font></div>
         <input id="Major" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
     </div>
-    <div class="col-xs-6 lr-form-item" data-table="tc_Project">
+    <div class="col-xs-6 lr-form-item"  data-table="tc_Project" >
         <div class="lr-form-item-title">资质等级<font face="宋体">*</font></div>
-        <div id="Rank" isvalid="yes" checkexpession="NotNull"></div>
+        <div id="Rank" isvalid="yes" checkexpession="NotNull" ></div>
     </div>
-    <div class="col-xs-6 lr-form-item" data-table="tc_Project">
+    <div class="col-xs-6 lr-form-item"  data-table="tc_Project" >
         <div class="lr-form-item-title">需求发布日期<font face="宋体">*</font></div>
-        <input id="PublishDate" type="text" class="form-control lr-input-wdatepicker" onfocus="WdatePicker({ dateFmt:'yyyy-MM-dd',onpicked: function () { $('#PublishDate').trigger('change'); } })" isvalid="yes" checkexpession="NotNull" />
+        <input id="PublishDate" type="text" class="form-control lr-input-wdatepicker" onfocus="WdatePicker({ dateFmt:'yyyy-MM-dd',onpicked: function () { $('#PublishDate').trigger('change'); } })"  isvalid="yes" checkexpession="NotNull" />
     </div>
-    <div class="col-xs-6 lr-form-item" data-table="tc_Project">
+    <div class="col-xs-6 lr-form-item"  data-table="tc_Project" >
         <div class="lr-form-item-title">配置完成日期</div>
-        <input id="ConfigDate" type="text" class="form-control lr-input-wdatepicker" onfocus="WdatePicker({ dateFmt:'yyyy-MM-dd',onpicked: function () { $('#ConfigDate').trigger('change'); } })" />
+        <input id="ConfigDate" type="text" class="form-control lr-input-wdatepicker" onfocus="WdatePicker({ dateFmt:'yyyy-MM-dd',onpicked: function () { $('#ConfigDate').trigger('change'); } })"   />
     </div>
-    <div class="col-xs-6 lr-form-item" data-table="tc_Project">
+    <div class="col-xs-6 lr-form-item"  data-table="tc_Project" >
         <div class="lr-form-item-title">项目结束日期</div>
-        <input id="CompleteDate" type="text" class="form-control lr-input-wdatepicker" onfocus="WdatePicker({ dateFmt:'yyyy-MM-dd',onpicked: function () { $('#CompleteDate').trigger('change'); } })" />
+        <input id="CompleteDate" type="text" class="form-control lr-input-wdatepicker" onfocus="WdatePicker({ dateFmt:'yyyy-MM-dd',onpicked: function () { $('#CompleteDate').trigger('change'); } })"   />
     </div>
-    <div class="col-xs-6 lr-form-item" data-table="tc_Project">
-        <div class="lr-form-item-title">项目状态<font face="宋体">*</font></div>
-        <div id="Status" isvalid="yes" checkexpession="NotNull"></div>
+    <div class="col-xs-6 lr-form-item"  data-table="tc_Project" >
+        <div class="lr-form-item-title">项目状态</div>
+        <div id="Status"  ></div>
     </div>
-    <div class="col-xs-12 lr-form-item lr-form-item-grid">
-        <div id="tc_ProjectDetail"></div>
+    <div class="col-xs-12 lr-form-item"  data-table="tc_Project" >
+        <div class="lr-form-item-title">备注</div>
+        <textarea id="F_Description" class="form-control" style="height:50px;"  ></textarea>
     </div>
 </div>
-
-@Html.AppendJsFile("/Areas/LR_CodeDemo/Views/projectmanage/Form.js")
+@Html.AppendJsFile("/Areas/LR_CodeDemo/Views/ProjectManage/Form.js")
