@@ -6,8 +6,8 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
 {
     /// <summary>
     /// 创 建：超级管理员
-    /// 日 期：2020-07-07 13:32
-    /// 描 述：projectmanage
+    /// 日 期：2020-07-10 18:11
+    /// 描 述：项目详情
     /// </summary>
     public class tc_ProjectDetailEntity 
     {
@@ -148,6 +148,8 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
             this.F_ModifyUserId = userInfo.userId;
             this.F_ModifyUserName = userInfo.realName;
         }
+        #endregion
+        #region 扩展字段
         #endregion
     }
 }

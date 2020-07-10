@@ -1,0 +1,63 @@
+﻿@{
+    ViewBag.Title = "项目详情";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+<div class="lr-form-wrap" id="form">
+    <div class="col-xs-12 lr-form-item"  data-table="tc_ProjectDetail" style="display: none; " >
+        <div class="lr-form-item-title">ProjectId<font face="宋体">*</font></div>
+        <input id="ProjectId" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+    </div>
+    <div class="col-xs-6 lr-form-item"  data-table="tc_ProjectDetail" >
+        <div class="lr-form-item-title">证书类型<font face="宋体">*</font></div>
+        <div id="CertType" isvalid="yes" checkexpession="NotNull" ></div>
+    </div>
+    <div class="col-xs-6 lr-form-item"  data-table="tc_ProjectDetail" >
+        <div class="lr-form-item-title">证书专业<font face="宋体">*</font></div>
+        <input id="CertMajor" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+    </div>
+    <div class="col-xs-6 lr-form-item"  data-table="tc_ProjectDetail" >
+        <div class="lr-form-item-title">标准数量<font face="宋体">*</font></div>
+        <input id="StandardNum" type="text" class="form-control" isvalid="yes" checkexpession="Num" />
+    </div>
+    <div class="col-xs-6 lr-form-item"  data-table="tc_ProjectDetail" >
+        <div class="lr-form-item-title">社保要求<font face="宋体">*</font></div>
+        <div id="SocialSecurityRequire" isvalid="yes" checkexpession="NotNull" ></div>
+    </div>
+    <div class="col-xs-6 lr-form-item"  data-table="tc_ProjectDetail" >
+        <div class="lr-form-item-title">资格证要求<font face="宋体">*</font></div>
+        <div id="CertRequire" isvalid="yes" checkexpession="NotNull" ></div>
+    </div>
+    <div class="col-xs-6 lr-form-item"  data-table="tc_ProjectDetail" >
+        <div class="lr-form-item-title">身份证要求<font face="宋体">*</font></div>
+        <div id="IDCardRequire" isvalid="yes" checkexpession="NotNull" ></div>
+    </div>
+    <div class="col-xs-6 lr-form-item"  data-table="tc_ProjectDetail" >
+        <div class="lr-form-item-title">毕业证要求<font face="宋体">*</font></div>
+        <div id="GradCertRequire" isvalid="yes" checkexpession="NotNull" ></div>
+    </div>
+    <div class="col-xs-6 lr-form-item"  data-table="tc_ProjectDetail" >
+        <div class="lr-form-item-title">到场要求<font face="宋体">*</font></div>
+        <div id="SceneRequire" isvalid="yes" checkexpession="NotNull" ></div>
+    </div>
+    <div class="col-xs-12 lr-form-item"  data-table="tc_ProjectDetail" >
+        <div class="lr-form-item-title">其他要求</div>
+        <textarea id="OtherRequire" class="form-control" style="height:30px;"  ></textarea>
+    </div>
+    <div class="col-xs-6 lr-form-item"  data-table="tc_ProjectDetail" >
+        <div class="lr-form-item-title">甲方提供数量<font face="宋体">*</font></div>
+        <input id="AlreadyNum" type="text" class="form-control" isvalid="yes" checkexpession="Num" />
+    </div>
+    <div class="col-xs-6 lr-form-item"  data-table="tc_ProjectDetail" >
+        <div class="lr-form-item-title">我方配置数量<font face="宋体">*</font></div>
+        <input id="NeedNum" type="text" class="form-control" isvalid="yes" checkexpession="Num" />
+    </div>
+    <div class="col-xs-6 lr-form-item"  data-table="tc_ProjectDetail" >
+        <div class="lr-form-item-title">配置状态<font face="宋体">*</font></div>
+        <div id="Status" isvalid="yes" checkexpession="NotNull" ></div>
+    </div>
+    <div class="col-xs-12 lr-form-item"  data-table="tc_ProjectDetail" >
+        <div class="lr-form-item-title">配置说明</div>
+        <textarea id="F_Description" class="form-control" style="height:50px;"  ></textarea>
+    </div>
+</div>
+@Html.AppendJsFile("/Areas/LR_CodeDemo/Views/ProjectDetail/Form.js")

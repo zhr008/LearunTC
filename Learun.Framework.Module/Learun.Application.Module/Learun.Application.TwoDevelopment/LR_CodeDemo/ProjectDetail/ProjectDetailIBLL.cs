@@ -6,10 +6,10 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
 {
     /// <summary>
     /// 创 建：超级管理员
-    /// 日 期：2020-07-10 17:09
-    /// 描 述：项目管理
+    /// 日 期：2020-07-10 18:11
+    /// 描 述：项目详情
     /// </summary>
-    public interface ProjectManageIBLL
+    public interface ProjectDetailIBLL
     {
         #region 获取数据
 
@@ -18,13 +18,13 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
         /// </summary>
         /// <param name="queryJson">查询参数</param>
         /// <returns></returns>
-        IEnumerable<tc_ProjectEntity> GetPageList(Pagination pagination, string queryJson);
+        IEnumerable<tc_ProjectDetailEntity> GetPageList(Pagination pagination, string queryJson);
         /// <summary>
-        /// 获取tc_Project表实体数据
+        /// 获取tc_ProjectDetail表实体数据
         /// </summary>
         /// <param name="keyValue">主键</param>
         /// <returns></returns>
-        tc_ProjectEntity Gettc_ProjectEntity(string keyValue);
+        tc_ProjectDetailEntity Gettc_ProjectDetailEntity(string keyValue);
         #endregion
 
         #region 提交数据
@@ -39,7 +39,7 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
         /// </summary>
         /// <param name="keyValue">主键</param>
         /// <param name="entity">实体</param>
-        void SaveEntity(string keyValue, tc_ProjectEntity entity);
+        void SaveEntity(string keyValue, tc_ProjectDetailEntity entity);
         #endregion
 
     }

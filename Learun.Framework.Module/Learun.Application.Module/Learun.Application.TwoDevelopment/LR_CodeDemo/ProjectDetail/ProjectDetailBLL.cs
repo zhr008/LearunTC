@@ -7,12 +7,12 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
 {
     /// <summary>
     /// 创 建：超级管理员
-    /// 日 期：2020-07-10 17:09
-    /// 描 述：项目管理
+    /// 日 期：2020-07-10 18:11
+    /// 描 述：项目详情
     /// </summary>
-    public class ProjectManageBLL : ProjectManageIBLL
+    public class ProjectDetailBLL : ProjectDetailIBLL
     {
-        private ProjectManageService projectManageService = new ProjectManageService();
+        private ProjectDetailService projectDetailService = new ProjectDetailService();
 
         #region 获取数据
 
@@ -22,11 +22,11 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
         /// <param name="pagination">分页参数</param>
         /// <param name="queryJson">查询参数</param>
         /// <returns></returns>
-        public IEnumerable<tc_ProjectEntity> GetPageList(Pagination pagination, string queryJson)
+        public IEnumerable<tc_ProjectDetailEntity> GetPageList(Pagination pagination, string queryJson)
         {
             try
             {
-                return projectManageService.GetPageList(pagination, queryJson);
+                return projectDetailService.GetPageList(pagination, queryJson);
             }
             catch (Exception ex)
             {
@@ -42,15 +42,15 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
         }
 
         /// <summary>
-        /// 获取tc_Project表实体数据
+        /// 获取tc_ProjectDetail表实体数据
         /// </summary>
         /// <param name="keyValue">主键</param>
         /// <returns></returns>
-        public tc_ProjectEntity Gettc_ProjectEntity(string keyValue)
+        public tc_ProjectDetailEntity Gettc_ProjectDetailEntity(string keyValue)
         {
             try
             {
-                return projectManageService.Gettc_ProjectEntity(keyValue);
+                return projectDetailService.Gettc_ProjectDetailEntity(keyValue);
             }
             catch (Exception ex)
             {
@@ -77,7 +77,7 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
         {
             try
             {
-                projectManageService.DeleteEntity(keyValue);
+                projectDetailService.DeleteEntity(keyValue);
             }
             catch (Exception ex)
             {
@@ -98,11 +98,11 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
         /// <param name="keyValue">主键</param>
         /// <param name="entity">实体</param>
         /// <returns></returns>
-        public void SaveEntity(string keyValue, tc_ProjectEntity entity)
+        public void SaveEntity(string keyValue, tc_ProjectDetailEntity entity)
         {
             try
             {
-                projectManageService.SaveEntity(keyValue, entity);
+                projectDetailService.SaveEntity(keyValue, entity);
             }
             catch (Exception ex)
             {

@@ -153,15 +153,18 @@
     <Compile Include="LR_CodeDemo\Settlements\SettlementsService.cs" />
     <Compile Include="LR_CodeDemo\Settlements\SettlementsBLL.cs" />
     <Compile Include="LR_CodeDemo\Settlements\SettlementsIBLL.cs" />
-    <Compile Include="LR_CodeDemo\projectmanage\tc_ProjectEntity.cs" />
-    <Compile Include="LR_CodeDemo\projectmanage\tc_ProjectDetailEntity.cs" />
-    <Compile Include="LR_CodeDemo\projectmanage\projectmanageService.cs" />
-    <Compile Include="LR_CodeDemo\projectmanage\projectmanageBLL.cs" />
-    <Compile Include="LR_CodeDemo\projectmanage\projectmanageIBLL.cs" />
     <Compile Include="LR_CodeDemo\SettlementsDetails\tc_SettlementsDetailsEntity.cs" />
     <Compile Include="LR_CodeDemo\SettlementsDetails\SettlementsDetailsService.cs" />
     <Compile Include="LR_CodeDemo\SettlementsDetails\SettlementsDetailsBLL.cs" />
     <Compile Include="LR_CodeDemo\SettlementsDetails\SettlementsDetailsIBLL.cs" />
+    <Compile Include="LR_CodeDemo\ProjectDetail\tc_ProjectDetailEntity.cs" />
+    <Compile Include="LR_CodeDemo\ProjectDetail\ProjectDetailService.cs" />
+    <Compile Include="LR_CodeDemo\ProjectDetail\ProjectDetailIBLL.cs" />
+    <Compile Include="LR_CodeDemo\ProjectDetail\ProjectDetailBLL.cs" />
+    <Compile Include="LR_CodeDemo\ProjectManage\tc_ProjectEntity.cs" />
+    <Compile Include="LR_CodeDemo\ProjectManage\ProjectManageService.cs" />
+    <Compile Include="LR_CodeDemo\ProjectManage\ProjectManageIBLL.cs" />
+    <Compile Include="LR_CodeDemo\ProjectManage\ProjectManageBLL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\Learun.Application.Organization\Learun.Application.Organization.csproj">

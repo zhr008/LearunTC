@@ -5,8 +5,8 @@ namespace  Learun.Application.Mapping
 {
     /// <summary>
     /// 创 建：超级管理员
-    /// 日 期：2020-07-07 13:32
-    /// 描 述：projectmanage
+    /// 日 期：2020-07-10 18:11
+    /// 描 述：项目详情
     /// </summary>
     public class tc_ProjectDetailMap : EntityTypeConfiguration<tc_ProjectDetailEntity>
     {

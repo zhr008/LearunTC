@@ -6,8 +6,8 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
 {
     /// <summary>
     /// 创 建：超级管理员
-    /// 日 期：2020-07-07 13:32
-    /// 描 述：projectmanage
+    /// 日 期：2020-07-10 17:09
+    /// 描 述：项目管理
     /// </summary>
     public class tc_ProjectEntity 
     {
@@ -22,6 +22,11 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
         /// </summary>
         [Column("APPLICANTID")]
         public string ApplicantId { get; set; }
+        /// <summary>
+        /// ApplicantName
+        /// </summary>
+        [Column("APPLICANTNAME")]
+        public string ApplicantName { get; set; }
         /// <summary>
         /// RegisterAddress
         /// </summary>
