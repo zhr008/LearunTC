@@ -223,6 +223,7 @@
     <Compile Include="Areas\LR_AuthorizeModule\Controllers\FilterTimeController.cs" />
     <Compile Include="Areas\LR_AuthorizeModule\Controllers\UserRelationController.cs" />
     <Compile Include="Areas\LR_AuthorizeModule\LR_AuthorizeModuleAreaRegistration.cs" />
+    <Compile Include="Areas\LR_CodeDemo\Controllers\RecruitController.cs" />
     <Compile Include="Areas\LR_CodeDemo\Controllers\SettlementsDetailsController.cs" />
     <Compile Include="Areas\LR_CodeDemo\LR_CodeDemoAreaRegistration.cs" />
     <Compile Include="Areas\LR_CodeGeneratorModule\Controllers\IconController.cs" />
@@ -412,6 +413,8 @@
     <Content Include="Areas\LR_AuthorizeModule\Views\UserRelation\SelectForm.js" />
     <Content Include="Areas\LR_AuthorizeModule\Views\UserRelation\SelectForms.css" />
     <Content Include="Areas\LR_AuthorizeModule\Views\UserRelation\SelectForms.js" />
+    <Content Include="Areas\LR_CodeDemo\Views\Recruit\Form.js" />
+    <Content Include="Areas\LR_CodeDemo\Views\Recruit\Index.js" />
     <Content Include="Areas\LR_CodeDemo\Views\Personnels\AllIndex.css" />
     <Content Include="Areas\LR_CodeDemo\Views\Personnels\AllIndex.js" />
     <Content Include="Areas\LR_CodeDemo\Views\SettlementsDetails\Form.js" />
@@ -3053,6 +3056,8 @@
     <Content Include="Areas\LR_CodeDemo\Views\Personnels\AllIndex.cshtml" />
     <Content Include="Areas\LR_CodeDemo\Views\SettlementsDetails\Form.cshtml" />
     <Content Include="Areas\LR_CodeDemo\Views\SettlementsDetails\Index.cshtml" />
+    <Content Include="Areas\LR_CodeDemo\Views\Recruit\Form.cshtml" />
+    <Content Include="Areas\LR_CodeDemo\Views\Recruit\Index.cshtml" />
     <None Include="Properties\licenses.licx" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <Content Include="Views\Shared\_AllIndex.cshtml" />

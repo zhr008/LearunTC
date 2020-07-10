@@ -2,7 +2,7 @@
  * Copyright (c) 2013-2020 力软信息技术（苏州）有限公司
  * 创建人：超级管理员
  * 日  期：2020-06-27 23:47
- * 描  述：供应商登记
+ * 描  述：招聘单位登记
  */
 var refreshGirdData;
 var bootstrap = function ($, learun) {
@@ -26,7 +26,7 @@ var bootstrap = function ($, learun) {
                 learun.layerForm({
                     id: 'form',
                     title: '新增',
-                    url: top.$.rootUrl + '/LR_CodeDemo/Applicant/Form',
+                    url: top.$.rootUrl + '/LR_CodeDemo/Recruit/Form',
                     width: 750,
                     height: 500,
                     callBack: function (id) {
@@ -41,7 +41,7 @@ var bootstrap = function ($, learun) {
                     learun.layerForm({
                         id: 'form',
                         title: '编辑',
-                        url: top.$.rootUrl + '/LR_CodeDemo/Applicant/Form?keyValue=' + keyValue,
+                        url: top.$.rootUrl + '/LR_CodeDemo/Recruit/Form?keyValue=' + keyValue,
                         width: 750,
                         height: 500,
                         callBack: function (id) {
@@ -56,7 +56,7 @@ var bootstrap = function ($, learun) {
                 if (learun.checkrow(keyValue)) {
                     learun.layerConfirm('是否确认删除该项！', function (res) {
                         if (res) {
-                            learun.deleteForm(top.$.rootUrl + '/LR_CodeDemo/Applicant/DeleteForm', { keyValue: keyValue }, function () {
+                            learun.deleteForm(top.$.rootUrl + '/LR_CodeDemo/Recruit/DeleteForm', { keyValue: keyValue }, function () {
                                 refreshGirdData();
                             });
                         }
@@ -67,7 +67,7 @@ var bootstrap = function ($, learun) {
         // 初始化列表
         initGird: function () {
             $('#gridtable').lrAuthorizeJfGrid({
-                url: top.$.rootUrl + '/LR_CodeDemo/Applicant/GetPageList',
+                url: top.$.rootUrl + '/LR_CodeDemo/Recruit/GetPageList',
                 headData: [
                     { label: "公司名称", name: "F_CompanyName", width: 260, align: "left" },
                     { label: "工商注册号码", name: "F_RegistrationNo", width: 150, align: "center" },
@@ -134,7 +134,7 @@ var bootstrap = function ($, learun) {
         },
         search: function (param) {
             param = param || {};
-            param.F_ApplicantType = 1;
+            param.F_ApplicantType = 2;
             $('#gridtable').jfGridSet('reload', { queryJson: JSON.stringify(param) });
         }
     };

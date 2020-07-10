@@ -150,6 +150,7 @@ var bootstrap = function ($, learun) {
                     },
                     { label: "合同起日", name: "F_ContractStartDate", width: 100, align: "center" },
                     { label: "合同止日", name: "F_ContractEndDate", width: 100, align: "center" },
+                    { label: "维护代表", name: "F_Maintain", width: 100, align: "center" },
                     { label: "手机", name: "F_Mobile", width: 100, align: "center" },
                     { label: "联系地址", name: "F_Address", width: 100, align: "center" },
                     { label: "其它方式", name: "F_OtherContact", width: 100, align: "center" },

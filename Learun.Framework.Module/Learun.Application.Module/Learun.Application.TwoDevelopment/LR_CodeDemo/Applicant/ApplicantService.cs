@@ -70,6 +70,11 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
                     dp.Add("F_ManageType", queryParam["F_ManageType"].ToString(), DbType.String);
                     strSql.Append(" AND t.F_ManageType = @F_ManageType ");
                 }
+                if (!queryParam["F_ApplicantType"].IsEmpty())
+                {
+                    dp.Add("F_ApplicantType", queryParam["F_ApplicantType"].ToString(), DbType.String);
+                    strSql.Append(" AND t.F_ApplicantType = @F_ApplicantType ");
+                }
                 return this.BaseRepository().FindList<tc_ApplicantEntity>(strSql.ToString(), dp, pagination);
             }
             catch (Exception ex)

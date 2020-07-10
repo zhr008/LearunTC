@@ -136,7 +136,7 @@ var bootstrap = function ($, learun) {
                         }
                     },
                     {
-                        label: "就职证书类型", name: "F_CertType", width: 100, align: "center",
+                        label: "就职证书名称", name: "F_CertType", width: 100, align: "center",
                         formatterAsync: function (callback, value, row, op, $cell) {
                             learun.clientdata.getAsync('dataItem', {
                                 key: value,
