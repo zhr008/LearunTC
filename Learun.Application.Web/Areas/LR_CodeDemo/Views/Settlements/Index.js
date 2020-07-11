@@ -126,28 +126,7 @@ var bootstrap = function ($, learun) {
                 }
             });
 
-            $('#detailstable').jfGrid({
-                url: top.$.rootUrl + '/LR_CodeDemo/SettlementsDetails/GetPageListBySettlementsId',
-                headData: [
-                    { label: '姓名', name: 'F_UserName', width: 100, align: "center" },
-                    { label: '身份证号码', name: 'F_IDCardNo', width: 200, align: "center" },
-                    { label: "批次号", name: "F_BatchNumber", width: 100, align: "center" },
-                    { label: "支付金额", name: "F_PayAmount", width: 100, align: "left" },
-                    {
-                        label: "支付状态", name: "F_PayStatus", width: 100, align: "center",
-                        formatterAsync: function (callback, value, row, op, $cell) {
-                            learun.clientdata.getAsync('dataItem', {
-                                key: value,
-                                code: 'TrainPayStatus',
-                                callback: function (_data) {
-                                    callback(_data.text);
-                                }
-                            });
-                        }
-                    },
-                    { label: "支付条件", name: "F_PayCondition", width: 100, align: "left" },
-                ]
-            });
+           
         },
         // 初始化列表
         initGird: function () {
@@ -211,10 +190,32 @@ var bootstrap = function ($, learun) {
                 reloadSelected: true,
                 mainId: 'F_SettlementsId',
                 isPage: true,
-                onSelectRow: function (rowdata) {
-                 
+                isSubGrid: true,  
+                subGridExpanded: function (subid, rowdata) {
+                    $('#' + subid).jfGrid({
+                        url: top.$.rootUrl + '/LR_CodeDemo/SettlementsDetails/GetPageListBySettlementsId',
+                        headData: [
+                            { label: '姓名', name: 'F_UserName', width: 100, align: "center" },
+                            { label: '身份证号码', name: 'F_IDCardNo', width: 200, align: "center" },
+                            { label: "批次号", name: "F_BatchNumber", width: 100, align: "center" },
+                            { label: "支付金额", name: "F_PayAmount", width: 100, align: "left" },
+                            {
+                                label: "支付状态", name: "F_PayStatus", width: 100, align: "center",
+                                formatterAsync: function (callback, value, row, op, $cell) {
+                                    learun.clientdata.getAsync('dataItem', {
+                                        key: value,
+                                        code: 'TrainPayStatus',
+                                        callback: function (_data) {
+                                            callback(_data.text);
+                                        }
+                                    });
+                                }
+                            },
+                            { label: "支付条件", name: "F_PayCondition", width: 100, align: "left" },
+                        ]
+                    });
 
-                    $('#detailstable').jfGridSet('reload', { param: { F_SettlementsId: rowdata.F_SettlementsId } });
+                    $('#' + subid).jfGridSet('reload', { param: { F_SettlementsId: rowdata.F_SettlementsId } });
                 }
 
 
