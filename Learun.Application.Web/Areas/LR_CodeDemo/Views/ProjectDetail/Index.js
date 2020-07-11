@@ -24,8 +24,8 @@ var bootstrap = function ($, learun) {
                     id: 'form',
                     title: '新增',
                     url: top.$.rootUrl + '/LR_CodeDemo/ProjectDetail/Form',
-                    width: 600,
-                    height: 400,
+                    width: 750,
+                    height: 450,
                     callBack: function (id) {
                         return top[id].acceptClick(refreshGirdData);
                     }
@@ -39,8 +39,8 @@ var bootstrap = function ($, learun) {
                         id: 'form',
                         title: '编辑',
                         url: top.$.rootUrl + '/LR_CodeDemo/ProjectDetail/Form?keyValue=' + keyValue,
-                        width: 600,
-                        height: 400,
+                        width: 750,
+                        height: 450,
                         callBack: function (id) {
                             return top[id].acceptClick(refreshGirdData);
                         }
@@ -70,7 +70,8 @@ var bootstrap = function ($, learun) {
             $('#gridtable').lrAuthorizeJfGrid({
                 url: top.$.rootUrl + '/LR_CodeDemo/ProjectDetail/GetPageList',
                 headData: [
-                    { label: "证书类型", name: "CertType", width: 100, align: "left",
+                    {
+                        label: "证书类型", name: "CertType", width: 100, align: "center",
                         formatterAsync: function (callback, value, row, op,$cell) {
                              learun.clientdata.getAsync('dataItem', {
                                  key: value,
@@ -80,9 +81,10 @@ var bootstrap = function ($, learun) {
                                  }
                              });
                         }},
-                    { label: "证书专业", name: "CertMajor", width: 100, align: "left"},
-                    { label: "标准数量", name: "StandardNum", width: 100, align: "left"},
-                    { label: "社保要求", name: "SocialSecurityRequire", width: 100, align: "left",
+                    { label: "证书专业", name: "CertMajor", width: 100, align: "center"},
+                    { label: "标准数量", name: "StandardNum", width: 100, align: "right"},
+                    {
+                        label: "社保要求", name: "SocialSecurityRequire", width: 100, align: "center",
                         formatterAsync: function (callback, value, row, op,$cell) {
                              learun.clientdata.getAsync('dataItem', {
                                  key: value,
@@ -92,7 +94,8 @@ var bootstrap = function ($, learun) {
                                  }
                              });
                         }},
-                    { label: "资格证要求", name: "CertRequire", width: 100, align: "left",
+                    {
+                        label: "资格证要求", name: "CertRequire", width: 100, align: "center",
                         formatterAsync: function (callback, value, row, op,$cell) {
                              learun.clientdata.getAsync('dataItem', {
                                  key: value,
@@ -102,7 +105,8 @@ var bootstrap = function ($, learun) {
                                  }
                              });
                         }},
-                    { label: "身份证要求", name: "IDCardRequire", width: 100, align: "left",
+                    {
+                        label: "身份证要求", name: "IDCardRequire", width: 100, align: "center",
                         formatterAsync: function (callback, value, row, op,$cell) {
                              learun.clientdata.getAsync('dataItem', {
                                  key: value,
@@ -112,7 +116,8 @@ var bootstrap = function ($, learun) {
                                  }
                              });
                         }},
-                    { label: "毕业证要求", name: "GradCertRequire", width: 100, align: "left",
+                    {
+                        label: "毕业证要求", name: "GradCertRequire", width: 100, align: "center",
                         formatterAsync: function (callback, value, row, op,$cell) {
                              learun.clientdata.getAsync('dataItem', {
                                  key: value,
@@ -122,7 +127,8 @@ var bootstrap = function ($, learun) {
                                  }
                              });
                         }},
-                    { label: "到场要求", name: "SceneRequire", width: 100, align: "left",
+                    {
+                        label: "到场要求", name: "SceneRequire", width: 100, align: "center",
                         formatterAsync: function (callback, value, row, op,$cell) {
                              learun.clientdata.getAsync('dataItem', {
                                  key: value,
@@ -132,10 +138,11 @@ var bootstrap = function ($, learun) {
                                  }
                              });
                         }},
-                    { label: "其他要求", name: "OtherRequire", width: 100, align: "left"},
-                    { label: "甲方提供数量", name: "AlreadyNum", width: 100, align: "left"},
-                    { label: "我方配置数量", name: "NeedNum", width: 100, align: "left"},
-                    { label: "配置状态", name: "Status", width: 100, align: "left",
+                    { label: "其他要求", name: "OtherRequire", width: 100, align: "center"},
+                    { label: "甲方提供数量", name: "AlreadyNum", width: 100, align: "right"},
+                    { label: "我方配置数量", name: "NeedNum", width: 100, align: "right"},
+                    {
+                        label: "配置状态", name: "Status", width: 100, align: "center",
                         formatterAsync: function (callback, value, row, op,$cell) {
                              learun.clientdata.getAsync('dataItem', {
                                  key: value,
