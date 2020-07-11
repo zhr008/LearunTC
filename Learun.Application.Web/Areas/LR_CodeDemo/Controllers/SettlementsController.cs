@@ -110,6 +110,7 @@ namespace Learun.Application.Web.Areas.LR_CodeDemo.Controllers
         public ActionResult SaveForm(string keyValue, string strEntity)
         {
             tc_SettlementsEntity entity = strEntity.ToObject<tc_SettlementsEntity>();
+
             settlementsIBLL.SaveEntity(keyValue,entity);
             if (string.IsNullOrEmpty(keyValue))
             {

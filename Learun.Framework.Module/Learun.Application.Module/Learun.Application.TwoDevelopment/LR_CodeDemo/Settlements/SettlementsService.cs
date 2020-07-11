@@ -48,6 +48,8 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
                 t.F_ContractAmount,
                 t.F_PayStatus,
                 t.F_PayTotalAmount,
+                t.F_Maintain,
+                t.F_OtherContact,
                 p.F_ApplicantId ApplicantId
                 ");
                 strSql.Append("  FROM tc_Settlements t ");
@@ -75,17 +77,17 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
                 }
                 if (!queryParam["F_ContractStatus"].IsEmpty())
                 {
-                    dp.Add("F_ContractStatus",queryParam["F_ContractStatus"].ToString(), DbType.String);
+                    dp.Add("F_ContractStatus", queryParam["F_ContractStatus"].ToString(), DbType.String);
                     strSql.Append(" AND t.F_ContractStatus = @F_ContractStatus ");
                 }
                 if (!queryParam["F_ContractStartDate"].IsEmpty())
                 {
-                    dp.Add("F_ContractStartDate",queryParam["F_ContractStartDate"].ToString(), DbType.String);
+                    dp.Add("F_ContractStartDate", queryParam["F_ContractStartDate"].ToString(), DbType.String);
                     strSql.Append(" AND t.F_ContractStartDate = @F_ContractStartDate ");
                 }
                 if (!queryParam["F_ContractEndDate"].IsEmpty())
                 {
-                    dp.Add("F_ContractEndDate",queryParam["F_ContractEndDate"].ToString(), DbType.String);
+                    dp.Add("F_ContractEndDate", queryParam["F_ContractEndDate"].ToString(), DbType.String);
                     strSql.Append(" AND t.F_ContractEndDate = @F_ContractEndDate ");
                 }
                 if (!queryParam["F_Mobile"].IsEmpty())
@@ -105,7 +107,7 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
                 }
                 if (!queryParam["F_PayStatus"].IsEmpty())
                 {
-                    dp.Add("F_PayStatus",queryParam["F_PayStatus"].ToString(), DbType.String);
+                    dp.Add("F_PayStatus", queryParam["F_PayStatus"].ToString(), DbType.String);
                     strSql.Append(" AND t.F_PayStatus = @F_PayStatus ");
                 }
                 if (!queryParam["F_ApplicantId"].IsEmpty())
@@ -113,7 +115,7 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
                     dp.Add("F_ApplicantId", queryParam["F_ApplicantId"].ToString(), DbType.String);
                     strSql.Append(" AND p.F_ApplicantId = @F_ApplicantId ");
                 }
-                return this.BaseRepository().FindList<SettlementsInfo>(strSql.ToString(),dp, pagination);
+                return this.BaseRepository().FindList<SettlementsInfo>(strSql.ToString(), dp, pagination);
             }
             catch (Exception ex)
             {
@@ -137,12 +139,7 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
         {
             try
             {
-                tc_SettlementsEntity entity = new tc_SettlementsEntity()
-                {
-                    F_SettlementsId = keyValue,
-                    F_DeleteMark = 1
-                };
-                this.BaseRepository().Update(entity);
+
                 return this.BaseRepository().FindEntity<tc_SettlementsEntity>(keyValue);
             }
             catch (Exception ex)
@@ -170,7 +167,13 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
         {
             try
             {
-                this.BaseRepository().Delete<tc_SettlementsEntity>(t=>t.F_SettlementsId == keyValue);
+                tc_SettlementsEntity entity = new tc_SettlementsEntity()
+                {
+                    F_SettlementsId = keyValue,
+                    F_DeleteMark = 1
+                };
+                this.BaseRepository().Update(entity);
+
             }
             catch (Exception ex)
             {

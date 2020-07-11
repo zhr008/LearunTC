@@ -52,8 +52,8 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
                 var dp = new DynamicParameters(new { });
                 if (!queryParam["ProjectId"].IsEmpty())
                 {
-                    dp.Add("ProjectId", "%" + queryParam["ProjectId"].ToString() + "%", DbType.String);
-                    strSql.Append(" AND t.ProjectId Like @ProjectId ");
+                    dp.Add("ProjectId", queryParam["ProjectId"].ToString(), DbType.String);
+                    strSql.Append(" AND t.ProjectId = @ProjectId ");
                 }
                 return this.BaseRepository().FindList<tc_ProjectDetailEntity>(strSql.ToString(),dp, pagination);
             }
@@ -69,6 +69,59 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
                 }
             }
         }
+
+
+
+
+
+        public IEnumerable<tc_ProjectDetailEntity> GetPageListByProjectId(string ProjectId)
+        {
+            try
+            {
+                var strSql = new StringBuilder();
+                strSql.Append("SELECT ");
+                strSql.Append(@"
+                t.ProjectDetailId,
+                t.ProjectId,
+                t.CertType,
+                t.CertMajor,
+                t.StandardNum,
+                t.SocialSecurityRequire,
+                t.CertRequire,
+                t.IDCardRequire,
+                t.GradCertRequire,
+                t.SceneRequire,
+                t.OtherRequire,
+                t.AlreadyNum,
+                t.NeedNum,
+                t.Status,
+                t.F_Description
+                ");
+                strSql.Append("  FROM tc_ProjectDetail t ");
+                strSql.Append("  WHERE 1=1 ");
+              
+                // 虚拟参数
+                var dp = new DynamicParameters(new { });
+                if (!string.IsNullOrEmpty(ProjectId))
+                {
+                  
+                    strSql.AppendFormat(" AND t.ProjectId = '{0}' ", ProjectId);
+                }
+                return this.BaseRepository().FindList<tc_ProjectDetailEntity>(strSql.ToString());
+            }
+            catch (Exception ex)
+            {
+                if (ex is ExceptionEx)
+                {
+                    throw;
+                }
+                else
+                {
+                    throw ExceptionEx.ThrowServiceException(ex);
+                }
+            }
+        }
+
 
         /// <summary>
         /// 获取tc_ProjectDetail表实体数据

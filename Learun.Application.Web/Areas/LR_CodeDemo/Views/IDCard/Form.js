@@ -6,7 +6,6 @@ var acceptClick;
 var keyValue = request('keyValue');
 
 var F_PersonId = request('F_PersonId');
-debugger
 var F_UserName = request('F_UserName');
 var F_IDCardNo = request('F_IDCardNo');
 

@@ -80,7 +80,116 @@ var bootstrap = function ($, learun) {
             });
             //   需求
             $('#lr_adddetail').on('click', function () {
+                var ProjectId = $('#gridtable').jfGridValue('ProjectId');
+                if (learun.checkrow(ProjectId)) {
+                    learun.layerForm({
+                        id: 'detail',
+                        title: '新增',
+                        url: top.$.rootUrl + '/LR_CodeDemo/ProjectDetail/Form?ProjectId=' + ProjectId,
+                        width: 600,
+                        height: 400,
+                        callBack: function (id) {
+                            return top[id].acceptClick(refreshGirdData);
+                        }
+                    });
+                }
             });
+            $('#detailstable').jfGrid({
+                url: top.$.rootUrl + '/LR_CodeDemo/ProjectDetail/GetPageListByProjectId',
+                headData: [
+                    {
+                        label: "证书类型", name: "CertType", width: 100, align: "left",
+                        formatterAsync: function (callback, value, row, op, $cell) {
+                            learun.clientdata.getAsync('dataItem', {
+                                key: value,
+                                code: 'CertType',
+                                callback: function (_data) {
+                                    callback(_data.text);
+                                }
+                            });
+                        }
+                    },
+                    { label: "证书专业", name: "CertMajor", width: 100, align: "left" },
+                    { label: "标准数量", name: "StandardNum", width: 100, align: "left" },
+                    {
+                        label: "社保要求", name: "SocialSecurityRequire", width: 100, align: "left",
+                        formatterAsync: function (callback, value, row, op, $cell) {
+                            learun.clientdata.getAsync('dataItem', {
+                                key: value,
+                                code: 'SocialSecurityRequire',
+                                callback: function (_data) {
+                                    callback(_data.text);
+                                }
+                            });
+                        }
+                    },
+                    {
+                        label: "资格证要求", name: "CertRequire", width: 100, align: "left",
+                        formatterAsync: function (callback, value, row, op, $cell) {
+                            learun.clientdata.getAsync('dataItem', {
+                                key: value,
+                                code: 'CertRequire',
+                                callback: function (_data) {
+                                    callback(_data.text);
+                                }
+                            });
+                        }
+                    },
+                    {
+                        label: "身份证要求", name: "IDCardRequire", width: 100, align: "left",
+                        formatterAsync: function (callback, value, row, op, $cell) {
+                            learun.clientdata.getAsync('dataItem', {
+                                key: value,
+                                code: 'CertRequire',
+                                callback: function (_data) {
+                                    callback(_data.text);
+                                }
+                            });
+                        }
+                    },
+                    {
+                        label: "毕业证要求", name: "GradCertRequire", width: 100, align: "left",
+                        formatterAsync: function (callback, value, row, op, $cell) {
+                            learun.clientdata.getAsync('dataItem', {
+                                key: value,
+                                code: 'CertRequire',
+                                callback: function (_data) {
+                                    callback(_data.text);
+                                }
+                            });
+                        }
+                    },
+                    {
+                        label: "到场要求", name: "SceneRequire", width: 100, align: "left",
+                        formatterAsync: function (callback, value, row, op, $cell) {
+                            learun.clientdata.getAsync('dataItem', {
+                                key: value,
+                                code: 'SceneRequire',
+                                callback: function (_data) {
+                                    callback(_data.text);
+                                }
+                            });
+                        }
+                    },
+                    { label: "其他要求", name: "OtherRequire", width: 100, align: "left" },
+                    { label: "甲方提供数量", name: "AlreadyNum", width: 100, align: "left" },
+                    { label: "我方配置数量", name: "NeedNum", width: 100, align: "left" },
+                    {
+                        label: "配置状态", name: "Status", width: 100, align: "left",
+                        formatterAsync: function (callback, value, row, op, $cell) {
+                            learun.clientdata.getAsync('dataItem', {
+                                key: value,
+                                code: 'CurrentCertStatus',
+                                callback: function (_data) {
+                                    callback(_data.text);
+                                }
+                            });
+                        }
+                    },
+                    { label: "配置说明", name: "F_Description", width: 100, align: "left" },
+                ]
+            });
+            
         },
         // 初始化列表
         initGird: function () {
@@ -147,8 +256,9 @@ var bootstrap = function ($, learun) {
                 ],
                 mainId:'ProjectId',
                 isPage: true,
-                acceptClick: function (item) {
-                    $("#lr_iframe_detail").attr("src", "/LR_CodeDemo/ProjectDetail/Index");
+                onSelectRow: function (rowdata) {
+                 
+                    $('#detailstable').jfGridSet('reload', { param: { ProjectId: rowdata.ProjectId } });
                 }
             });
             page.search();

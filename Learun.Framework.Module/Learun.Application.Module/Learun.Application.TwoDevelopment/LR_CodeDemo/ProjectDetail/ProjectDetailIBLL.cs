@@ -40,6 +40,13 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
         /// <param name="keyValue">主键</param>
         /// <param name="entity">实体</param>
         void SaveEntity(string keyValue, tc_ProjectDetailEntity entity);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="ProjectId"></param>
+        /// <returns></returns>
+        IEnumerable<tc_ProjectDetailEntity> GetPageListByProjectId(string ProjectId);
         #endregion
 
     }

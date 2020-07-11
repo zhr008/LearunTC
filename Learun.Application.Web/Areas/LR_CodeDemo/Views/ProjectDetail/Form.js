@@ -4,6 +4,9 @@
  */
 var acceptClick;
 var keyValue = request('keyValue');
+var ProjectId = request('ProjectId');
+
+console.log(ProjectId);
 var bootstrap = function ($, learun) {
     "use strict";
     var page = {
@@ -34,6 +37,7 @@ var bootstrap = function ($, learun) {
                     }
                 });
             }
+            $("#ProjectId").val(ProjectId);
         }
     };
     // 保存数据

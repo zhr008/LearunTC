@@ -117,6 +117,25 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
             }
         }
 
+        public IEnumerable<tc_ProjectDetailEntity> GetPageListByProjectId(string ProjectId)
+        {
+            try
+            {
+                return projectDetailService.GetPageListByProjectId(ProjectId);
+            }
+            catch (Exception ex)
+            {
+                if (ex is ExceptionEx)
+                {
+                    throw;
+                }
+                else
+                {
+                    throw ExceptionEx.ThrowBusinessException(ex);
+                }
+            }
+        }
+
         #endregion
 
     }

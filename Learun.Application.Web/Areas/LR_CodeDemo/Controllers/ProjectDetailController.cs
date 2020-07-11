@@ -109,6 +109,17 @@ namespace Learun.Application.Web.Areas.LR_CodeDemo.Controllers
             }
             return Success("保存成功！");
         }
+
+
+
+        [HttpGet]
+        public ActionResult GetPageListByProjectId(string ProjectId)
+        {
+            var data = projectDetailIBLL.GetPageListByProjectId(ProjectId);
+            return Success(data);
+        }
+
+
         #endregion
 
     }
