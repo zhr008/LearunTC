@@ -166,7 +166,8 @@ var bootstrap = function ($, learun) {
                     { label: "备注", name: "F_Description", width: 100, align: "left"},
                 ],
                 mainId:'ProjectId',
-                isSubGrid: true,
+                isPage: true,
+                isSubGrid: true,  
                 subGridExpanded: function (subid, rowdata) {
                     $('#' + subid).jfGrid({
                         url: top.$.rootUrl + '/LR_CodeDemo/ProjectDetail/GetPageListByProjectId',
