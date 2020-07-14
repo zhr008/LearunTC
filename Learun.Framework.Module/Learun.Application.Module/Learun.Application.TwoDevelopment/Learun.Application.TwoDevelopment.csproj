@@ -165,6 +165,10 @@
     <Compile Include="LR_CodeDemo\ProjectManage\ProjectManageService.cs" />
     <Compile Include="LR_CodeDemo\ProjectManage\ProjectManageIBLL.cs" />
     <Compile Include="LR_CodeDemo\ProjectManage\ProjectManageBLL.cs" />
+    <Compile Include="LR_CodeDemo\Relation\tc_RelationEntity.cs" />
+    <Compile Include="LR_CodeDemo\Relation\RelationService.cs" />
+    <Compile Include="LR_CodeDemo\Relation\RelationIBLL.cs" />
+    <Compile Include="LR_CodeDemo\Relation\RelationBLL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\Learun.Application.Organization\Learun.Application.Organization.csproj">

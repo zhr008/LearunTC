@@ -1,48 +1,38 @@
-﻿using Learun.Util;
-using System.Data;
+﻿using DocumentFormat.OpenXml.Vml.Office;
+using GrapeCity.ActiveReports.PageReportModel;
 using Learun.Application.TwoDevelopment.LR_CodeDemo;
+using Learun.Util;
+using System.Data;
 using System.Web.Mvc;
-using System.Collections.Generic;
 
 namespace Learun.Application.Web.Areas.LR_CodeDemo.Controllers
 {
     /// <summary>
     /// 创 建：超级管理员
-    /// 日 期：2020-07-02 23:56
-    /// 描 述：个人资格证
+    /// 日 期：2020-07-14 23:25
+    /// 描 述：1231
     /// </summary>
-    public class CredentialsController : MvcControllerBase
+    public class RelationController : MvcControllerBase
     {
+        private RelationIBLL RelationIBLL = new RelationBLL();
         private CredentialsIBLL credentialsIBLL = new CredentialsBLL();
-
         #region 视图功能
 
         /// <summary>
         /// 主页面
-        /// <summary>
+        /// </summary>
         /// <returns></returns>
         [HttpGet]
         public ActionResult Index()
         {
-             return View();
+            return View();
         }
         /// <summary>
         /// 表单页
-        /// <summary>
-        /// <returns></returns>
-        [HttpGet]
-        public ActionResult Form()
-        {
-             return View();
-        }
-
-
-        /// <summary>
-        /// 人员分配
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        public ActionResult AllocationIndex()
+        public ActionResult Form()
         {
             return View();
         }
@@ -51,7 +41,19 @@ namespace Learun.Application.Web.Areas.LR_CodeDemo.Controllers
         #region 获取数据
 
         /// <summary>
-        /// 获取页面显示列表数据
+        /// 获取列表数据
+        /// </summary>
+        /// <param name="queryJson">查询参数</param>
+        /// <returns></returns>
+        [HttpGet]
+        [AjaxOnly]
+        public ActionResult GetList(string queryJson)
+        {
+            var data = RelationIBLL.GetList(queryJson);
+            return Success(data);
+        }
+        /// <summary>
+        /// 获取列表分页数据
         /// </summary>
         /// <param name="pagination">分页参数</param>
         /// <param name="queryJson">查询参数</param>
@@ -61,7 +63,7 @@ namespace Learun.Application.Web.Areas.LR_CodeDemo.Controllers
         public ActionResult GetPageList(string pagination, string queryJson)
         {
             Pagination paginationobj = pagination.ToObject<Pagination>();
-            var data = credentialsIBLL.GetPageList(paginationobj, queryJson);
+            var data = RelationIBLL.GetPageList(paginationobj, queryJson);
             var jsonData = new
             {
                 rows = data,
@@ -80,11 +82,8 @@ namespace Learun.Application.Web.Areas.LR_CodeDemo.Controllers
         [AjaxOnly]
         public ActionResult GetFormData(string keyValue)
         {
-            var tc_CredentialsData = credentialsIBLL.Gettc_CredentialsEntity( keyValue );
-            var jsonData = new {
-                tc_Credentials = tc_CredentialsData,
-            };
-            return Success(jsonData);
+            var data = RelationIBLL.GetEntity(keyValue);
+            return Success(data);
         }
         #endregion
 
@@ -99,28 +98,54 @@ namespace Learun.Application.Web.Areas.LR_CodeDemo.Controllers
         [AjaxOnly]
         public ActionResult DeleteForm(string keyValue)
         {
-            credentialsIBLL.DeleteEntity(keyValue);
+            RelationIBLL.DeleteEntity(keyValue);
             return Success("删除成功！");
         }
         /// <summary>
         /// 保存实体数据（新增、修改）
         /// </summary>
         /// <param name="keyValue">主键</param>
-        /// <param name="strEntity">实体</param>
+        /// <param name="entity">实体</param>
         /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
         [AjaxOnly]
-        public ActionResult SaveForm(string keyValue, string strEntity)
+        public ActionResult SaveForm(string keyValue, tc_RelationEntity entity)
         {
-            tc_CredentialsEntity entity = strEntity.ToObject<tc_CredentialsEntity>();
-            credentialsIBLL.SaveEntity(keyValue,entity);
-            if (string.IsNullOrEmpty(keyValue))
-            {
-            }
+            RelationIBLL.SaveEntity(keyValue, entity);
             return Success("保存成功！");
         }
         #endregion
 
+        [HttpPost]
+        public ActionResult AllocationRaltion(string CredentialsId, string ProjectDetailId, string ProjectId)
+        {
+            foreach (var item in CredentialsId.Split(','))
+            {
+                var certEntity = credentialsIBLL.Gettc_CredentialsEntity(item);
+                if (certEntity == null)
+                {
+                    return Fail("该用户证书不存在");
+                }
+                tc_RelationEntity tc = new tc_RelationEntity()
+                {
+                    ProjectDetailId = ProjectDetailId,
+                    ProjectId = ProjectDetailId,
+                    F_CertId = item,
+                    F_PersonId = certEntity.F_PersonId
+                };
+                RelationIBLL.SaveEntity("",tc);
+            }
+            return Success("分配成功");
+        }
+
+
+
+        public ActionResult GetRelationDetail(string ProjectDetailId) 
+        {
+            var data = RelationIBLL.GetRelationDetail(ProjectDetailId);
+            return Success(data);
+
+        }
     }
 }

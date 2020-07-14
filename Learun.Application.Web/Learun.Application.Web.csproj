@@ -350,6 +350,7 @@
     <Compile Include="Areas\LR_CodeDemo\Controllers\SettlementsController.cs" />
     <Compile Include="Areas\LR_CodeDemo\Controllers\ProjectDetailController.cs" />
     <Compile Include="Areas\LR_CodeDemo\Controllers\ProjectManageController.cs" />
+    <Compile Include="Areas\LR_CodeDemo\Controllers\RelationController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="ActiveReports.ReportService.asmx" />
@@ -414,6 +415,7 @@
     <Content Include="Areas\LR_AuthorizeModule\Views\UserRelation\SelectForm.js" />
     <Content Include="Areas\LR_AuthorizeModule\Views\UserRelation\SelectForms.css" />
     <Content Include="Areas\LR_AuthorizeModule\Views\UserRelation\SelectForms.js" />
+    <Content Include="Areas\LR_CodeDemo\Views\Credentials\AllocationIndex.js" />
     <Content Include="Areas\LR_CodeDemo\Views\Recruit\Form.js" />
     <Content Include="Areas\LR_CodeDemo\Views\Recruit\Index.js" />
     <Content Include="Areas\LR_CodeDemo\Views\Personnels\AllIndex.css" />
@@ -2842,6 +2844,10 @@
     <Content Include="Areas\LR_CodeDemo\Views\ProjectDetail\Index.js" />
     <Content Include="Areas\LR_CodeDemo\Views\ProjectDetail\Form.cshtml" />
     <Content Include="Areas\LR_CodeDemo\Views\ProjectDetail\Form.js" />
+    <Content Include="Areas\LR_CodeDemo\Views\Relation\Index.cshtml" />
+    <Content Include="Areas\LR_CodeDemo\Views\Relation\Index.js" />
+    <Content Include="Areas\LR_CodeDemo\Views\Relation\Form.cshtml" />
+    <Content Include="Areas\LR_CodeDemo\Views\Relation\Form.js" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\LR_SystemModule\Views\Img\" />
@@ -3063,6 +3069,7 @@
     <Content Include="Areas\LR_CodeDemo\Views\SettlementsDetails\Index.cshtml" />
     <Content Include="Areas\LR_CodeDemo\Views\Recruit\Form.cshtml" />
     <Content Include="Areas\LR_CodeDemo\Views\Recruit\Index.cshtml" />
+    <Content Include="Areas\LR_CodeDemo\Views\Credentials\AllocationIndex.cshtml" />
     <None Include="Properties\licenses.licx" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <Content Include="Views\Shared\_AllIndex.cshtml" />

@@ -1,0 +1,59 @@
+﻿@{
+    ViewBag.Title = "1231";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+<div class="lr-form-wrap" id="form">
+    <div class="col-xs-6 lr-form-item">
+        <div class="lr-form-item-title">F_RelationId<font face="宋体">*</font></div>
+        <input id="F_RelationId" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+    </div>
+    <div class="col-xs-6 lr-form-item">
+        <div class="lr-form-item-title">ProjectId<font face="宋体">*</font></div>
+        <input id="ProjectId" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+    </div>
+    <div class="col-xs-6 lr-form-item">
+        <div class="lr-form-item-title">ProjectDetailId<font face="宋体">*</font></div>
+        <input id="ProjectDetailId" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+    </div>
+    <div class="col-xs-6 lr-form-item">
+        <div class="lr-form-item-title">F_CertId<font face="宋体">*</font></div>
+        <input id="F_CertId" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+    </div>
+    <div class="col-xs-6 lr-form-item">
+        <div class="lr-form-item-title">F_PersonId<font face="宋体">*</font></div>
+        <input id="F_PersonId" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+    </div>
+    <div class="col-xs-6 lr-form-item">
+        <div class="lr-form-item-title">F_Description<font face="宋体">*</font></div>
+        <input id="F_Description" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+    </div>
+    <div class="col-xs-6 lr-form-item">
+        <div class="lr-form-item-title">F_CreateDate<font face="宋体">*</font></div>
+        <input id="F_CreateDate" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+    </div>
+    <div class="col-xs-6 lr-form-item">
+        <div class="lr-form-item-title">F_CreateUserName<font face="宋体">*</font></div>
+        <input id="F_CreateUserName" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+    </div>
+    <div class="col-xs-6 lr-form-item">
+        <div class="lr-form-item-title">F_CreateUserId<font face="宋体">*</font></div>
+        <input id="F_CreateUserId" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+    </div>
+    <div class="col-xs-6 lr-form-item">
+        <div class="lr-form-item-title">F_ModifyDate<font face="宋体">*</font></div>
+        <input id="F_ModifyDate" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+    </div>
+    <div class="col-xs-6 lr-form-item">
+        <div class="lr-form-item-title">F_ModifyUserName<font face="宋体">*</font></div>
+        <input id="F_ModifyUserName" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+    </div>
+    <div class="col-xs-6 lr-form-item">
+        <div class="lr-form-item-title">F_ModifyUserId<font face="宋体">*</font></div>
+        <input id="F_ModifyUserId" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+    </div>
+    <div class="col-xs-6 lr-form-item">
+        <div class="lr-form-item-title">F_DeleteMark<font face="宋体">*</font></div>
+        <input id="F_DeleteMark" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+    </div>
+</div>
+@Html.AppendJsFile("/Areas/LR_CodeDemo/Views/Relation/Form.js")

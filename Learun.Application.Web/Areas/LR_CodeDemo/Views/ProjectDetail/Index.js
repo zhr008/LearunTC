@@ -60,6 +60,24 @@ var bootstrap = function ($, learun) {
                     });
                 }
             });
+            //人员分配
+            $("#lr_addperson").on('click', function () {
+                debugger
+                var ProjectDetailId = $('#gridtable').jfGridValue('ProjectDetailId');
+                var ProjectId = $('#gridtable').jfGridValue('ProjectId');
+                if (learun.checkrow(ProjectDetailId)) {
+                    learun.layerForm({
+                        id: 'form',
+                        title: '人员分配',
+                        url: top.$.rootUrl + '/LR_CodeDemo/Credentials/AllocationIndex?ProjectDetailId=' + ProjectDetailId + "&ProjectId=" + ProjectId,
+                        width: 1000,
+                        height: 800,
+                        callBack: function (id) {
+                            return top[id].acceptClick(refreshGirdData);
+                        }
+                    });
+                }
+            });
             // 打印
             $('#lr_print').on('click', function () {
                 $('#gridtable').jqprintTable();
@@ -155,7 +173,112 @@ var bootstrap = function ($, learun) {
                     { label: "配置说明", name: "F_Description", width: 100, align: "left"},
                 ],
                 mainId:'ProjectDetailId',
-                isPage: true
+                isPage: true,
+
+                 isSubGrid: true,
+                subGridExpanded: function (subid, rowdata) {
+                    $('#' + subid).jfGrid({
+                        url: top.$.rootUrl + '/LR_CodeDemo/Relation/GetRelationDetail',
+                        headData: [
+                            { label: "姓名", name: "F_UserName", width: 100, align: "center" },
+                            { label: "身份证号码", name: "F_IDCardNo", width: 150, align: "center" },
+                            {
+                                label: "证书类型", name: "F_CertType", width: 100, align: "center",
+                                formatterAsync: function (callback, value, row, op, $cell) {
+                                    learun.clientdata.getAsync('dataItem', {
+                                        key: value,
+                                        code: 'CertType',
+                                        callback: function (_data) {
+                                            callback(_data.text);
+                                        }
+                                    });
+                                }
+                            },
+                            {
+                                label: "专业序列", name: "F_MajorType", width: 100, align: "center",
+                                formatterAsync: function (callback, value, row, op, $cell) {
+                                    learun.clientdata.getAsync('dataItem', {
+                                        key: value,
+                                        code: 'MajorType',
+                                        callback: function (_data) {
+                                            callback(_data.text);
+                                        }
+                                    });
+                                }
+                            },
+                            { label: "证书专业", name: "F_Major", width: 100, align: "center" },
+                            { label: "发证机构", name: "F_CertOrganization", width: 100, align: "center" },
+                            {
+                                label: "资格发证日", name: "F_CertDateBegin", width: 100, align: "center",
+                                formatter: function (cellvalue, row) {
+                                    return learun.formatDate(cellvalue, 'yyyy-MM-dd');
+                                }
+                            },
+                            {
+                                label: "资格失效日", name: "F_CertDateEnd", width: 100, align: "center",
+                                formatter: function (cellvalue, row) {
+                                    return learun.formatDate(cellvalue, 'yyyy-MM-dd');
+                                }
+                            },
+                            {
+                                label: "资格证保管", name: "F_CertStyle", width: 100, align: "center",
+                                formatterAsync: function (callback, value, row, op, $cell) {
+                                    learun.clientdata.getAsync('dataItem', {
+                                        key: value,
+                                        code: 'CertStyle',
+                                        callback: function (_data) {
+                                            callback(_data.text);
+                                        }
+                                    });
+                                }
+                            },
+                            {
+                                label: "库存状态", name: "F_CertStatus", width: 100, align: "center",
+                                formatterAsync: function (callback, value, row, op, $cell) {
+                                    learun.clientdata.getAsync('dataItem', {
+                                        key: value,
+                                        code: 'CertStatus',
+                                        callback: function (_data) {
+                                            callback(_data.text);
+                                        }
+                                    });
+                                }
+                            },
+                            {
+                                label: "执业证", name: "F_PracticeStyle", width: 100, align: "center",
+                                formatterAsync: function (callback, value, row, op, $cell) {
+                                    learun.clientdata.getAsync('dataItem', {
+                                        key: value,
+                                        code: 'PracticeStyle',
+                                        callback: function (_data) {
+                                            callback(_data.text);
+                                        }
+                                    });
+                                }
+                            },
+                            {
+                                label: "执业印章", name: "F_PracticeSealStyle", width: 100, align: "center",
+                                formatterAsync: function (callback, value, row, op, $cell) {
+                                    learun.clientdata.getAsync('dataItem', {
+                                        key: value,
+                                        code: 'PracticeSealStyle',
+                                        callback: function (_data) {
+                                            callback(_data.text);
+                                        }
+                                    });
+                                }
+                            },
+                            {
+                                label: "登记日期", name: "F_CheckInTime", width: 100, align: "center",
+                                formatter: function (cellvalue, row) {
+                                    return learun.formatDate(cellvalue, 'yyyy-MM-dd');
+                                }
+                            },
+                            { label: "备注", name: "F_Description", width: 100, align: "left" },
+                        ]
+                    });
+                    $('#' + subid).jfGridSet('reload', { param: { ProjectDetailId: rowdata.ProjectDetailId } });
+                }
             });
             page.search();
         },

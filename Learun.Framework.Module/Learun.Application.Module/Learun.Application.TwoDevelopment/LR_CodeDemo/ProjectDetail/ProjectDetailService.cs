@@ -31,6 +31,7 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
                 strSql.Append("SELECT ");
                 strSql.Append(@"
                 t.ProjectDetailId,
+                t.ProjectId,
                 t.CertType,
                 t.CertMajor,
                 t.StandardNum,
