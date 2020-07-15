@@ -3,6 +3,7 @@ using System.Data;
 using Learun.Application.TwoDevelopment.LR_CodeDemo;
 using System.Web.Mvc;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Learun.Application.Web.Areas.LR_CodeDemo.Controllers
 {
@@ -14,7 +15,7 @@ namespace Learun.Application.Web.Areas.LR_CodeDemo.Controllers
     public class SettlementsDetailsController : MvcControllerBase
     {
         private SettlementsDetailsIBLL settlementsDetailsIBLL = new SettlementsDetailsBLL();
-
+        private SettlementsIBLL settlementsIBLL = new SettlementsBLL();
         #region 视图功能
 
         /// <summary>
@@ -116,9 +117,11 @@ namespace Learun.Application.Web.Areas.LR_CodeDemo.Controllers
         {
             tc_SettlementsDetailsEntity entity = strEntity.ToObject<tc_SettlementsDetailsEntity>();
             settlementsDetailsIBLL.SaveEntity(keyValue, entity);
-            if (string.IsNullOrEmpty(keyValue))
-            {
-            }
+            var data = settlementsDetailsIBLL.GetPageList(entity.F_SettlementsId);
+            var Settlementsentity = settlementsIBLL.Gettc_SettlementsEntity(entity.F_SettlementsId);
+            Settlementsentity.F_PayNumber = data.Count();
+            Settlementsentity.F_PayTotalAmount = data.Sum(c => c.F_PayAmount);
+            settlementsIBLL.SaveEntity(Settlementsentity.F_SettlementsId, Settlementsentity);
             return Success("保存成功！");
         }
         #endregion

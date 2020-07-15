@@ -50,6 +50,7 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
                 t.F_PayTotalAmount,
                 t.F_Maintain,
                 t.F_OtherContact,
+                t.F_PayNumber,
                 p.F_ApplicantId ApplicantId
                 ");
                 strSql.Append("  FROM tc_Settlements t ");

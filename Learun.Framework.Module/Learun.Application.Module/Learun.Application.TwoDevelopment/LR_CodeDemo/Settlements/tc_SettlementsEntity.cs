@@ -113,6 +113,11 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
         [Column("F_PAYTOTALAMOUNT")]
         public decimal? F_PayTotalAmount { get; set; }
         /// <summary>
+        /// 累计支付次数
+        /// </summary>
+        [Column("F_PAYNUMBER")]
+        public int? F_PayNumber { get; set; }
+        /// <summary>
         /// 备注
         /// </summary>
         [Column("F_DESCRIPTION")]

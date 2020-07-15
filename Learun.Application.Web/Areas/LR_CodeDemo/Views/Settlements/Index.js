@@ -46,7 +46,7 @@ var bootstrap = function ($, learun) {
             });
             $('#multiple_condition_query').lrMultipleQuery(function (queryJson) {
                 page.search(queryJson);
-            }, 220, 400);
+            }, 360, 400);
             $('#F_ContractStatus').lrDataItemSelect({ code: 'ContractStatus' });
             $('#F_PayStatus').lrDataItemSelect({ code: 'PayStatus' });
             $('#F_ApplicantId').lrDataSourceSelect({ code: 'applicant', value: 'f_applicantid', text: 'f_companyname' });
@@ -62,7 +62,7 @@ var bootstrap = function ($, learun) {
                         title: '新增',
                         url: top.$.rootUrl + '/LR_CodeDemo/Settlements/Form?F_PersonId=' + F_PersonId + "&F_UserName=" + F_UserName + "&F_IDCardNo=" + F_IDCardNo,
                         width: 750,
-                        height: 480,
+                        height: 520,
                         callBack: function (id) {
                             return top[id].acceptClick(refreshGirdData);
                         }
@@ -81,7 +81,7 @@ var bootstrap = function ($, learun) {
                         title: '编辑',
                         url: top.$.rootUrl + '/LR_CodeDemo/Settlements/Form?keyValue=' + keyValue,
                         width: 750,
-                        height: 480,
+                        height: 520,
                         callBack: function (id) {
                             return top[id].acceptClick(refreshGirdData);
                         }
@@ -183,6 +183,7 @@ var bootstrap = function ($, learun) {
                             });
                         }
                     },
+                    { label: "累计支付次数", name: "F_PayNumber", width: 100, align: "left" },
                     { label: "累计支付金额", name: "F_PayTotalAmount", width: 100, align: "left" },
                 ],
 
@@ -198,18 +199,18 @@ var bootstrap = function ($, learun) {
                             { label: '身份证号码', name: 'F_IDCardNo', width: 200, align: "center" },
                             { label: "批次号", name: "F_BatchNumber", width: 100, align: "center" },
                             { label: "支付金额", name: "F_PayAmount", width: 100, align: "left" },
-                            {
-                                label: "支付状态", name: "F_PayStatus", width: 100, align: "center",
-                                formatterAsync: function (callback, value, row, op, $cell) {
-                                    learun.clientdata.getAsync('dataItem', {
-                                        key: value,
-                                        code: 'TrainPayStatus',
-                                        callback: function (_data) {
-                                            callback(_data.text);
-                                        }
-                                    });
-                                }
-                            },
+                            //{
+                            //    label: "支付状态", name: "F_PayStatus", width: 100, align: "center",
+                            //    formatterAsync: function (callback, value, row, op, $cell) {
+                            //        learun.clientdata.getAsync('dataItem', {
+                            //            key: value,
+                            //            code: 'TrainPayStatus',
+                            //            callback: function (_data) {
+                            //                callback(_data.text);
+                            //            }
+                            //        });
+                            //    }
+                            //},
                             { label: "支付条件", name: "F_PayCondition", width: 100, align: "left" },
                         ]
                     });

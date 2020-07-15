@@ -110,18 +110,18 @@ var bootstrap = function ($, learun) {
                     { label: '身份证号码', name: 'F_IDCardNo', width: 200, align: "center" },
                     { label: "批次号", name: "F_BatchNumber", width: 100, align: "center" },
                     { label: "支付金额", name: "F_PayAmount", width: 100, align: "left" },
-                    {
-                        label: "支付状态", name: "F_PayStatus", width: 100, align: "center",
-                        formatterAsync: function (callback, value, row, op, $cell) {
-                            learun.clientdata.getAsync('dataItem', {
-                                key: value,
-                                code: 'TrainPayStatus',
-                                callback: function (_data) {
-                                    callback(_data.text);
-                                }
-                            });
-                        }
-                    },
+                    //{
+                    //    label: "支付状态", name: "F_PayStatus", width: 100, align: "center",
+                    //    formatterAsync: function (callback, value, row, op, $cell) {
+                    //        learun.clientdata.getAsync('dataItem', {
+                    //            key: value,
+                    //            code: 'TrainPayStatus',
+                    //            callback: function (_data) {
+                    //                callback(_data.text);
+                    //            }
+                    //        });
+                    //    }
+                    //},
                     { label: "支付条件", name: "F_PayCondition", width: 100, align: "left" },
                 ],
                 mainId: 'F_SettlementDetailsId',
