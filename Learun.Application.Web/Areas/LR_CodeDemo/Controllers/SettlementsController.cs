@@ -46,7 +46,7 @@ namespace Learun.Application.Web.Areas.LR_CodeDemo.Controllers
         /// <param name="queryJson">查询参数</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetPageList(string pagination, string queryJson)
         {
             Pagination paginationobj = pagination.ToObject<Pagination>();
@@ -66,7 +66,7 @@ namespace Learun.Application.Web.Areas.LR_CodeDemo.Controllers
         /// <param name="keyValue">主键</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetFormData(string keyValue)
         {
             var tc_SettlementsData = settlementsIBLL.Gettc_SettlementsEntity( keyValue );
@@ -92,7 +92,7 @@ namespace Learun.Application.Web.Areas.LR_CodeDemo.Controllers
         /// <param name="keyValue">主键</param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult DeleteForm(string keyValue)
         {
             settlementsIBLL.DeleteEntity(keyValue);
@@ -106,7 +106,7 @@ namespace Learun.Application.Web.Areas.LR_CodeDemo.Controllers
         /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [AjaxOnly]
+        
         public ActionResult SaveForm(string keyValue, string strEntity)
         {
             tc_SettlementsEntity entity = strEntity.ToObject<tc_SettlementsEntity>();

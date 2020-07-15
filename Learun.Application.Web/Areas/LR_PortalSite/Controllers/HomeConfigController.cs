@@ -162,7 +162,7 @@ namespace Learun.Application.Web.Areas.LR_PortalSite.Controllers
         /// <summary>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetAllList()
         {
             var data = homeConfigIBLL.GetALLList();
@@ -173,7 +173,7 @@ namespace Learun.Application.Web.Areas.LR_PortalSite.Controllers
         /// <summary>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetList(string type)
         {
             var data = homeConfigIBLL.GetList(type);
@@ -184,7 +184,7 @@ namespace Learun.Application.Web.Areas.LR_PortalSite.Controllers
         /// <summary>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetTree()
         {
             var data = homeConfigIBLL.GetTree();
@@ -196,7 +196,7 @@ namespace Learun.Application.Web.Areas.LR_PortalSite.Controllers
         /// <summary>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetEntity(string keyValue)
         {
             var data = homeConfigIBLL.GetEntity(keyValue);
@@ -211,7 +211,7 @@ namespace Learun.Application.Web.Areas.LR_PortalSite.Controllers
         /// <summary>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult DeleteForm(string keyValue)
         {
             homeConfigIBLL.DeleteEntity(keyValue);

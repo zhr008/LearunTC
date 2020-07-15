@@ -74,7 +74,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// <param name="keyword">关键词（名称/编码）</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetClassifyList(string keyword)
         {
             var data = dataItemIBLL.GetClassifyList(keyword, false);
@@ -85,7 +85,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetClassifyTree()
         {
             var data = dataItemIBLL.GetClassifyTree();
@@ -99,7 +99,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [AjaxOnly]
+        
         public ActionResult SaveClassifyForm(string keyValue, DataItemEntity entity) {
             dataItemIBLL.SaveClassifyEntity(keyValue, entity);
             return Success("保存成功！");
@@ -110,7 +110,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// <param name="keyValue">主键</param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult DeleteClassifyForm(string keyValue) {
             dataItemIBLL.VirtualDeleteClassify(keyValue);
             return Success("删除成功！");
@@ -123,7 +123,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// <param name="keyValue">主键</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult ExistItemCode(string keyValue, string F_ItemCode)
         {
             bool res = dataItemIBLL.ExistItemCode(keyValue, F_ItemCode);
@@ -136,7 +136,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// <param name="keyValue">主键</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult ExistItemName(string keyValue, string F_ItemName)
         {
             bool res = dataItemIBLL.ExistItemName(keyValue, F_ItemName);
@@ -153,7 +153,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// <param name="keyword">查询条件</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetDetailList(string itemCode, string keyword)
         {
             var data = dataItemIBLL.GetDetailList(itemCode, keyword);
@@ -165,7 +165,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// <param name="itemCode">分类编号</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetDetailTree(string itemCode)
         {
             var data = dataItemIBLL.GetDetailTree(itemCode);
@@ -179,7 +179,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// <param name="itemCode">分类编码</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult ExistDetailItemValue(string keyValue, string F_ItemValue, string itemCode)
         {
             bool res = dataItemIBLL.ExistDetailItemValue(keyValue, F_ItemValue, itemCode);
@@ -193,7 +193,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// <param name="itemCode">分类编码</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult ExistDetailItemName(string keyValue, string F_ItemName, string itemCode)
         {
             bool res = dataItemIBLL.ExistDetailItemName(keyValue, F_ItemName, itemCode);
@@ -206,7 +206,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// <param name="itemCode">分类编码</param>
         /// <param name="entity">实体</param>
         [HttpPost]
-        [AjaxOnly]
+        
         [ValidateAntiForgeryToken]
         public ActionResult SaveDetailForm(string keyValue, string itemCode, DataItemDetailEntity entity)
         {
@@ -221,7 +221,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// <param name="keyValue">主键</param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult DeleteDetailForm(string keyValue)
         {
             dataItemIBLL.VirtualDeleteDetail(keyValue);
@@ -232,7 +232,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetMap(string ver)
         {
             var data = dataItemIBLL.GetModelMap();
@@ -261,7 +261,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// <param name="parentId">父级主键</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetDetailListByParentId(string itemCode, string parentId)
         {
             var data = dataItemIBLL.GetDetailListByParentId(itemCode, parentId);

@@ -43,7 +43,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// <param name="keyword">关键字</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetList(string keyword)
         {
             var data = databaseLinkIBLL.GetListByNoConnection(keyword);
@@ -55,7 +55,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetMap(string ver)
         {
             var data = databaseLinkIBLL.GetMap();
@@ -80,7 +80,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetTreeList()
         {
             var data = databaseLinkIBLL.GetTreeList();
@@ -98,7 +98,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [AjaxOnly]
+        
         public ActionResult SaveForm(string keyValue, DatabaseLinkEntity entity)
         {
             bool res = databaseLinkIBLL.SaveEntity(keyValue, entity);
@@ -117,7 +117,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// <param name="keyValue">主键</param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult DeleteForm(string keyValue)
         {
             databaseLinkIBLL.VirtualDelete(keyValue);
@@ -134,7 +134,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// <param name="keyValue">主键</param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult TestConnection(string connection, string dbType,string keyValue)
         {
             bool res = databaseLinkIBLL.TestConnection(connection, dbType,keyValue);

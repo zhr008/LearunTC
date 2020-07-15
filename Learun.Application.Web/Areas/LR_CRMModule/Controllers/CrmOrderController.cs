@@ -52,7 +52,7 @@ namespace Learun.Application.Web.Areas.LR_CRMModule.Controllers
         /// <param name="queryJson">查询条件函数</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetPageList(string pagination, string queryJson)
         {
             Pagination paginationobj = pagination.ToObject<Pagination>();
@@ -73,7 +73,7 @@ namespace Learun.Application.Web.Areas.LR_CRMModule.Controllers
         /// <param name="queryJson">查询条件函数</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetFormData(string keyValue)
         {
             var orderData = crmOrderIBLL.GetCrmOrderEntity(keyValue);
@@ -94,7 +94,7 @@ namespace Learun.Application.Web.Areas.LR_CRMModule.Controllers
         /// <param name="keyValue">主键值</param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult DeleteForm(string keyValue)
         {
             crmOrderIBLL.DeleteEntity(keyValue);
@@ -109,7 +109,7 @@ namespace Learun.Application.Web.Areas.LR_CRMModule.Controllers
         /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [AjaxOnly]
+        
         public ActionResult SaveForm(string keyValue, string crmOrderJson, string crmOrderProductJson)
         {
             var crmOrderEntity = crmOrderJson.ToObject<CrmOrderEntity>();

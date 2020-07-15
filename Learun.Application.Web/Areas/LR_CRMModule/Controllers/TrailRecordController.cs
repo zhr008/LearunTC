@@ -71,7 +71,7 @@ namespace Learun.Application.Web.Areas.LR_CRMModule.Controllers
         /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [AjaxOnly]
+        
         public ActionResult SaveForm(string keyValue, CrmTrailRecordEntity entity)
         {
             CrmTrailRecordIBLL.SaveEntity(keyValue, entity);

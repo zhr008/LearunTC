@@ -35,7 +35,7 @@ namespace Learun.Application.Web.Areas.LR_WebChatModule.Controllers
         /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [AjaxOnly]
+        
         public ActionResult SaveForm(string CorpId, string CorpSecret)
         {
             Config.SetValue("CorpId", CorpId);

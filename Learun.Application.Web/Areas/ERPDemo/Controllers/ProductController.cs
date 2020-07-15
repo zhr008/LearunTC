@@ -45,7 +45,7 @@ namespace Learun.Application.Web.Areas.ERPDemo.Controllers
         /// <summary>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetList( string queryJson )
         {
             var data = productIBLL.GetList(queryJson);
@@ -57,7 +57,7 @@ namespace Learun.Application.Web.Areas.ERPDemo.Controllers
         /// <summary>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetPageList(string pagination, string queryJson)
         {
             Pagination paginationobj = pagination.ToObject<Pagination>();
@@ -72,7 +72,7 @@ namespace Learun.Application.Web.Areas.ERPDemo.Controllers
             return Success(jsonData);
         }
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetGridList(string pagination, string queryJson)
         {
             pagination = "{ \"rows\":100,\"page\":1,\"sidx\":\"F_Id\",\"sord\":\"ASC\",\"records\":0,\"total\":0}";
@@ -93,7 +93,7 @@ namespace Learun.Application.Web.Areas.ERPDemo.Controllers
         /// <summary>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetFormData(string keyValue)
         {
             var data = productIBLL.GetEntity(keyValue);
@@ -109,7 +109,7 @@ namespace Learun.Application.Web.Areas.ERPDemo.Controllers
         /// <summary>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult DeleteForm(string keyValue)
         {
             productIBLL.DeleteEntity(keyValue);
@@ -122,7 +122,7 @@ namespace Learun.Application.Web.Areas.ERPDemo.Controllers
         /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [AjaxOnly]
+        
         public ActionResult SaveForm(string keyValue,LR_ERP_ProductEntity entity)
         {
             productIBLL.SaveEntity(keyValue, entity);

@@ -43,7 +43,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// <param name="keyword">关键字查询（名称/编号）</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult Getlist(string parentId, string keyword) {
             var data = areaIBLL.GetList(parentId, keyword);
             return Success(data);
@@ -54,7 +54,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// <param name="parentId"></param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetTree(string parentId)
         {
             var data = areaIBLL.GetTree(parentId);
@@ -71,7 +71,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [AjaxOnly]
+        
         public ActionResult SaveForm(string keyValue, AreaEntity entity)
         {
             areaIBLL.SaveEntity(keyValue, entity);
@@ -83,7 +83,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// <param name="keyValue"></param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult DeleteForm(string keyValue)
         {
             areaIBLL.VirtualDelete(keyValue);

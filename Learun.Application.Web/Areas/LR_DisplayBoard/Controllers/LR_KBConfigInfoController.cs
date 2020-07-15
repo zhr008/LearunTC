@@ -63,7 +63,7 @@ namespace Learun.Application.Web.Areas.LR_DisplayBoard.Controllers
         /// <summary>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetList( string queryJson )
         {
             var data = lR_KBConfigInfoIBLL.GetList(queryJson);
@@ -75,7 +75,7 @@ namespace Learun.Application.Web.Areas.LR_DisplayBoard.Controllers
         /// <summary>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetPageList(string pagination, string queryJson)
         {
             Pagination paginationobj = pagination.ToObject<Pagination>();
@@ -95,7 +95,7 @@ namespace Learun.Application.Web.Areas.LR_DisplayBoard.Controllers
         /// <summary>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetFormData(string keyValue)
         {
             var data = lR_KBConfigInfoIBLL.GetEntity(keyValue);
@@ -111,7 +111,7 @@ namespace Learun.Application.Web.Areas.LR_DisplayBoard.Controllers
         /// <summary>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult DeleteForm(string keyValue)
         {
             lR_KBConfigInfoIBLL.DeleteEntity(keyValue);
@@ -124,7 +124,7 @@ namespace Learun.Application.Web.Areas.LR_DisplayBoard.Controllers
         /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [AjaxOnly]
+        
         public ActionResult SaveForm(string keyValue,LR_KBConfigInfoEntity entity)
         {
             lR_KBConfigInfoIBLL.SaveEntity(keyValue, entity);
@@ -139,7 +139,7 @@ namespace Learun.Application.Web.Areas.LR_DisplayBoard.Controllers
         /// <param name="configuration">配置信息</param>
         /// <param name="type">类型statistics统计;2表格3图表</param>
         /// <returns></returns>
-        [AjaxOnly]
+        
         public ActionResult GetConfigData(string configInfoList)
         {
             List<ConfigInfoModel> list = configInfoList.ToObject<List<ConfigInfoModel>>();

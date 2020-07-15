@@ -43,7 +43,7 @@ namespace Learun.Application.Web.Areas.LR_OrganizationModule.Controllers
         /// <param name="keyWord">查询关键字</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetList(string keyword)
         {
             var data = roleIBLL.GetList(keyword);
@@ -56,7 +56,7 @@ namespace Learun.Application.Web.Areas.LR_OrganizationModule.Controllers
         /// <param name="keyword">关键字</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetPageList(string pagination, string keyword)
         {
             Pagination paginationobj = pagination.ToObject<Pagination>();
@@ -75,7 +75,7 @@ namespace Learun.Application.Web.Areas.LR_OrganizationModule.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetRoleList()
         {
             var data = roleIBLL.GetList();
@@ -87,7 +87,7 @@ namespace Learun.Application.Web.Areas.LR_OrganizationModule.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetTree()
         {
             var data = roleIBLL.GetTree();
@@ -104,7 +104,7 @@ namespace Learun.Application.Web.Areas.LR_OrganizationModule.Controllers
         /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [AjaxOnly]
+        
         public ActionResult SaveForm(string keyValue, RoleEntity entity)
         {
             roleIBLL.SaveEntity(keyValue, entity);
@@ -116,7 +116,7 @@ namespace Learun.Application.Web.Areas.LR_OrganizationModule.Controllers
         /// <param name="keyValue">主键</param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult DeleteForm(string keyValue)
         {
             roleIBLL.VirtualDelete(keyValue);

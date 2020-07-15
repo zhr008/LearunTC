@@ -69,7 +69,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// <param name="queryJson">查询参数</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetPageList(string pagination, string queryJson)
         {
             Pagination paginationobj = pagination.ToObject<Pagination>();
@@ -89,7 +89,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// <param name="moduleId">功能模块主键</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetList(string moduleId)
         {
             var data = excelImportIBLL.GetList(moduleId);
@@ -101,7 +101,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// <summary>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetFormData(string keyValue)
         {
             ExcelImportEntity entity = excelImportIBLL.GetEntity(keyValue);
@@ -124,7 +124,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [AjaxOnly]
+        
         public ActionResult SaveForm(string keyValue, string strEntity, string strList)
         {
             ExcelImportEntity entity = strEntity.ToObject<ExcelImportEntity>();
@@ -138,7 +138,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// <param name="keyValue">主键</param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult DeleteForm(string keyValue)
         {
             excelImportIBLL.DeleteEntity(keyValue);
@@ -151,7 +151,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// <param name="entity">实体数据</param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult UpdateForm(string keyValue, ExcelImportEntity entity)
         {
             excelImportIBLL.UpdateEntity(keyValue, entity);

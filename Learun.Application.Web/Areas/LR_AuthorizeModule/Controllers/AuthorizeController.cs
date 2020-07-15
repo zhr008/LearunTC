@@ -50,7 +50,7 @@ namespace Learun.Application.Web.Areas.LR_AuthorizeModule.Controllers
         /// <param name="objectId">设置对象</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetFormData(string objectId)
         {
             var modules = authorizeIBLL.GetItemIdList(objectId, 1);
@@ -73,7 +73,7 @@ namespace Learun.Application.Web.Areas.LR_AuthorizeModule.Controllers
         /// <param name="objectId">设置对象</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetAppFormData(string objectId)
         {
             var data = authorizeIBLL.GetItemIdList(objectId, 5);
@@ -94,7 +94,7 @@ namespace Learun.Application.Web.Areas.LR_AuthorizeModule.Controllers
         /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [AjaxOnly]
+        
         public ActionResult SaveForm(string objectId,int objectType, string strModuleId, string strModuleButtonId, string strModuleColumnId,string strModuleFormId)
         {
             string[] moduleIds = strModuleId.Split(',');
@@ -114,7 +114,7 @@ namespace Learun.Application.Web.Areas.LR_AuthorizeModule.Controllers
         /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [AjaxOnly]
+        
         public ActionResult SaveAppForm(string objectId, int objectType, string strFormId)
         {
             string[] formIds = strFormId.Split(',');

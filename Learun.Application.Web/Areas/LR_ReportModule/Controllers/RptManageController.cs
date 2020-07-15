@@ -58,7 +58,7 @@ namespace Learun.Application.Web.Areas.LR_ReportModule.Controllers
         /// <param name="queryJson">查询参数</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetPageList(string pagination, string queryJson)
         {
             Pagination paginationobj = pagination.ToObject<Pagination>();
@@ -77,7 +77,7 @@ namespace Learun.Application.Web.Areas.LR_ReportModule.Controllers
         /// <summary>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetFormData(string keyValue)
         {
             var LR_RPT_FileInfoData = rptManageIBLL.GetLR_RPT_FileInfoEntity(keyValue);
@@ -93,7 +93,7 @@ namespace Learun.Application.Web.Areas.LR_ReportModule.Controllers
         /// <param name="itemCode">分类编号</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetDetailTree()
         {
             var data = rptManageIBLL.GetFileTree();
@@ -109,7 +109,7 @@ namespace Learun.Application.Web.Areas.LR_ReportModule.Controllers
         /// <summary>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult DeleteForm(string keyValue)
         {
             rptManageIBLL.DeleteEntity(keyValue);
@@ -122,7 +122,7 @@ namespace Learun.Application.Web.Areas.LR_ReportModule.Controllers
         /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [AjaxOnly]
+        
         public ActionResult SaveForm(string keyValue, string strEntity)
         {
             LR_RPT_FileInfoEntity entity = strEntity.ToObject<LR_RPT_FileInfoEntity>();

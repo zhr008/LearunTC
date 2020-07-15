@@ -40,7 +40,7 @@ namespace Learun.Application.Web.Areas.LR_WorkFlowModule.Controllers
         /// <param name="pagination">分页参数</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetPageList(string pagination)
         {
             Pagination paginationobj = pagination.ToObject<Pagination>();

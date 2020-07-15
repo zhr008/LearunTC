@@ -33,7 +33,7 @@ namespace Learun.Application.Web.Areas.LR_AuthorizeModule.Controllers
         /// <param name="keyValue">主键值</param>
         /// <returns>返回对象Json</returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetFormData(string keyValue)
         {
             var data = filterTimeIBLL.GetEntity(keyValue);
@@ -49,7 +49,7 @@ namespace Learun.Application.Web.Areas.LR_AuthorizeModule.Controllers
         /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [AjaxOnly]
+        
         public ActionResult SaveForm(FilterTimeEntity filterTimeEntity)
         {
             filterTimeIBLL.SaveForm(filterTimeEntity);
@@ -62,7 +62,7 @@ namespace Learun.Application.Web.Areas.LR_AuthorizeModule.Controllers
         /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [AjaxOnly]
+        
         public ActionResult DeleteForm(string keyValue)
         {
             filterTimeIBLL.DeleteEntiy(keyValue);

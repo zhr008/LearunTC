@@ -36,7 +36,7 @@ namespace Learun.Application.Web.Areas.LR_WorkFlowModule.Controllers
         /// <param name="keyword">关键字</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetPageList(string pagination, string keyword)
         {
             UserInfo userInfo = LoginUserInfo.Get();
@@ -57,7 +57,7 @@ namespace Learun.Application.Web.Areas.LR_WorkFlowModule.Controllers
         /// <param name="keyValue">主键</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetRelationList(string keyValue)
         {
             var relationList = wfDelegateRuleIBLL.GetRelationList(keyValue);
@@ -77,7 +77,7 @@ namespace Learun.Application.Web.Areas.LR_WorkFlowModule.Controllers
         /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [AjaxOnly]
+        
         public ActionResult SaveForm(string keyValue, string strEntity, string strSchemeInfo)
         {
             WfDelegateRuleEntity entity = strEntity.ToObject<WfDelegateRuleEntity>();
@@ -90,7 +90,7 @@ namespace Learun.Application.Web.Areas.LR_WorkFlowModule.Controllers
         /// <param name="keyValue">主键</param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult DeleteForm(string keyValue)
         {
             wfDelegateRuleIBLL.DeleteEntity(keyValue);
@@ -104,7 +104,7 @@ namespace Learun.Application.Web.Areas.LR_WorkFlowModule.Controllers
         /// <param name="state">状态1启用0禁用</param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult UpDateSate(string keyValue, int state)
         {
             wfDelegateRuleIBLL.UpdateState(keyValue, state);

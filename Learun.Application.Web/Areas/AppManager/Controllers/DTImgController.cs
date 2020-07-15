@@ -46,7 +46,7 @@ namespace Learun.Application.Web.Areas.AppManager.Controllers
         /// <summary> 
         /// <returns></returns> 
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetList()
         {
             var data = dTImgIBLL.GetList();
@@ -58,7 +58,7 @@ namespace Learun.Application.Web.Areas.AppManager.Controllers
         /// <summary> 
         /// <returns></returns> 
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetPageList(string pagination, string queryJson)
         {
             Pagination paginationobj = pagination.ToObject<Pagination>();
@@ -78,7 +78,7 @@ namespace Learun.Application.Web.Areas.AppManager.Controllers
         /// <summary> 
         /// <returns></returns> 
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetFormData(string keyValue)
         {
             var data = dTImgIBLL.GetEntity(keyValue);
@@ -94,7 +94,7 @@ namespace Learun.Application.Web.Areas.AppManager.Controllers
         /// <summary> 
         /// <returns></returns> 
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult DeleteForm(string keyValue)
         {
             dTImgIBLL.DeleteEntity(keyValue);
@@ -107,7 +107,7 @@ namespace Learun.Application.Web.Areas.AppManager.Controllers
         /// <returns></returns> 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [AjaxOnly]
+        
         public ActionResult SaveForm(string keyValue, DTImgEntity entity)
         {
             dTImgIBLL.SaveEntity(keyValue, entity);
@@ -167,7 +167,7 @@ namespace Learun.Application.Web.Areas.AppManager.Controllers
         /// <param name="state">状态1启用0禁用</param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult UpDateSate(string keyValue, int state)
         {
             dTImgIBLL.UpdateState(keyValue, state);

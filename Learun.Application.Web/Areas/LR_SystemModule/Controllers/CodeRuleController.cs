@@ -53,7 +53,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// <param name="keyword">关键字</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetPageList(string pagination, string keyword)
         {
             Pagination paginationobj = pagination.ToObject<Pagination>();
@@ -72,7 +72,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetList()
         {
             var data = codeRuleIBLL.GetList();
@@ -89,7 +89,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// <param name="F_EnCode">规则编码</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult ExistEnCode(string keyValue, string F_EnCode)
         {
             bool res = codeRuleIBLL.ExistEnCode(F_EnCode, keyValue);
@@ -102,7 +102,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// <param name="F_FullName"> 规则名</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult ExistFullName(string keyValue, string F_FullName)
         {
             bool res = codeRuleIBLL.ExistFullName(F_FullName, keyValue);
@@ -119,7 +119,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [AjaxOnly]
+        
         public ActionResult SaveForm(string keyValue, CodeRuleEntity entity)
         {
             codeRuleIBLL.SaveEntity2(keyValue, entity);
@@ -131,7 +131,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// <param name="keyValue"></param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult DeleteForm(string keyValue)
         {
             codeRuleIBLL.VirtualDelete(keyValue);
@@ -145,7 +145,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetEnCode(string code)
         {
             var data = codeRuleIBLL.GetBillCode(code);

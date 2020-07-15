@@ -88,7 +88,7 @@ namespace Learun.Application.Web.Areas.LR_CRMModule.Controllers
         /// <param name="keyValue">主键值</param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult DeleteForm(string keyValue)
         {
             crmExpensesIBLL.DeleteEntity(keyValue);
@@ -101,7 +101,7 @@ namespace Learun.Application.Web.Areas.LR_CRMModule.Controllers
         /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [AjaxOnly]
+        
         public ActionResult SaveForm(CrmExpensesEntity entity)
         {
             crmExpensesIBLL.SaveEntity(entity);

@@ -90,7 +90,7 @@ namespace Learun.Application.Web.Areas.LR_OAModule.Controllers
         /// <param name="keyValue">主键</param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult DeleteForm(string keyValue)
         {
             newsIBLL.DeleteEntity(keyValue);

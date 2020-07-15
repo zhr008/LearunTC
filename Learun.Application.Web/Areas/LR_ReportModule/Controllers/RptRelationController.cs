@@ -47,7 +47,7 @@ namespace Learun.Application.Web.Areas.LR_ReportModule.Controllers
         /// <param name="queryJson">查询参数</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetPageList(string pagination, string queryJson)
         {
             Pagination paginationobj = pagination.ToObject<Pagination>();
@@ -66,7 +66,7 @@ namespace Learun.Application.Web.Areas.LR_ReportModule.Controllers
         /// <summary>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetFormData(string keyValue)
         {
             var LR_RptRelationData = rptRelationIBLL.GetLR_RptRelationEntity( keyValue );
@@ -85,7 +85,7 @@ namespace Learun.Application.Web.Areas.LR_ReportModule.Controllers
         /// <summary>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult DeleteForm(string keyValue)
         {
             rptRelationIBLL.DeleteEntity(keyValue);
@@ -98,7 +98,7 @@ namespace Learun.Application.Web.Areas.LR_ReportModule.Controllers
         /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [AjaxOnly]
+        
         public ActionResult SaveForm(string keyValue, string strEntity)
         {
             LR_RPT_RelationEntity entity = strEntity.ToObject<LR_RPT_RelationEntity>();

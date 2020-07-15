@@ -66,7 +66,7 @@ namespace Learun.Application.Web.Areas.LR_AuthorizeModule.Controllers
         /// <param name="relationId">关系主键</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetDataAuthorizeConditionList(string relationId)
         {
             var data = dataAuthorizeIBLL.GetDataAuthorizeConditionList(relationId);
@@ -100,7 +100,7 @@ namespace Learun.Application.Web.Areas.LR_AuthorizeModule.Controllers
         /// <param name="relationId">关系主键</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetDataAuthorizeEntity(string keyValue)
         {
             var relationEntity = dataAuthorizeIBLL.GetRelationEntity(keyValue);
@@ -126,7 +126,7 @@ namespace Learun.Application.Web.Areas.LR_AuthorizeModule.Controllers
         /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [AjaxOnly]
+        
         public ActionResult SaveForm(string keyValue, string relation, string conditions)
         {
             DataAuthorizeRelationEntity relationEntity = relation.ToObject<DataAuthorizeRelationEntity>();
@@ -141,7 +141,7 @@ namespace Learun.Application.Web.Areas.LR_AuthorizeModule.Controllers
         /// <param name="keyValue">主键</param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult DeleteForm(string keyValue)
         {
             dataAuthorizeIBLL.DeleteEntity(keyValue);

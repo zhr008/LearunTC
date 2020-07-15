@@ -45,7 +45,7 @@ namespace Learun.Application.Web.Areas.LR_OrganizationModule.Controllers
         /// <param name="keyWord">查询关键字</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetList(string companyId,string keyword)
         {
             var data = departmentIBLL.GetList(companyId, keyword);
@@ -58,7 +58,7 @@ namespace Learun.Application.Web.Areas.LR_OrganizationModule.Controllers
         /// <param name="parentId">父级id</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetTree(string companyId, string parentId)
         {
             if (string.IsNullOrEmpty(companyId))
@@ -79,7 +79,7 @@ namespace Learun.Application.Web.Areas.LR_OrganizationModule.Controllers
         /// <param name="companyId"></param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetEntity(string departmentId)
         {
             var data = departmentIBLL.GetEntity(departmentId);
@@ -90,7 +90,7 @@ namespace Learun.Application.Web.Areas.LR_OrganizationModule.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetMap(string ver)
         {
             var data = departmentIBLL.GetModelMap();
@@ -120,7 +120,7 @@ namespace Learun.Application.Web.Areas.LR_OrganizationModule.Controllers
         /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [AjaxOnly]
+        
         public ActionResult SaveForm(string keyValue, DepartmentEntity entity)
         {
             departmentIBLL.SaveEntity(keyValue, entity);
@@ -132,7 +132,7 @@ namespace Learun.Application.Web.Areas.LR_OrganizationModule.Controllers
         /// <param name="keyValue"></param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult DeleteForm(string keyValue)
         {
             departmentIBLL.VirtualDelete(keyValue);

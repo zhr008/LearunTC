@@ -85,7 +85,7 @@ namespace Learun.Application.Web.Areas.LR_PortalSite.Controllers
         /// <summary>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetPageList(string pagination, string queryJson)
         {
             Pagination paginationobj = pagination.ToObject<Pagination>();
@@ -106,7 +106,7 @@ namespace Learun.Application.Web.Areas.LR_PortalSite.Controllers
         /// <summary>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetList()
         {
             var data = pageIBLL.GetList();
@@ -118,7 +118,7 @@ namespace Learun.Application.Web.Areas.LR_PortalSite.Controllers
         /// <summary>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetFormData(string keyValue)
         {
             var data = pageIBLL.GetEntity(keyValue);
@@ -133,7 +133,7 @@ namespace Learun.Application.Web.Areas.LR_PortalSite.Controllers
         /// <summary>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult DeleteForm(string keyValue)
         {
             var entity = pageIBLL.GetEntity(keyValue);

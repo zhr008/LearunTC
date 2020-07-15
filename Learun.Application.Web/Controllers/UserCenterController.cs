@@ -89,7 +89,7 @@ namespace Learun.Application.Web.Controllers
             return File(new VerifyCode().GetVerifyCode(), @"image/Gif");
         }
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetUserInfo()
         {
             var data = LoginUserInfo.Get();
@@ -143,7 +143,7 @@ namespace Learun.Application.Web.Controllers
         /// <param name="OldPassword"></param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult ValidationOldPassword(string OldPassword)
         {
             UserInfo userInfo = LoginUserInfo.Get();
@@ -165,7 +165,7 @@ namespace Learun.Application.Web.Controllers
         /// <param name="verifyCode">验证码</param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult SubmitResetPassword(string password, string oldPassword, string verifyCode)
         {
             verifyCode = Md5Helper.Encrypt(verifyCode.ToLower(), 16);

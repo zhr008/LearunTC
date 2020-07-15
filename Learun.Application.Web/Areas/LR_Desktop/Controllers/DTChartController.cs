@@ -46,7 +46,7 @@ namespace Learun.Application.Web.Areas.LR_Desktop.Controllers
         /// <summary>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetPageList(string queryJson)
         {
             var data = dTChartIBLL.GetList(queryJson);
@@ -58,7 +58,7 @@ namespace Learun.Application.Web.Areas.LR_Desktop.Controllers
         /// <summary>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetFormData(string keyValue)
         {
             var data = dTChartIBLL.GetEntity(keyValue);
@@ -71,7 +71,7 @@ namespace Learun.Application.Web.Areas.LR_Desktop.Controllers
         /// <param name="Id">主键</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetSqlData(string Id)
         {
             var data = dTChartIBLL.GetEntity(Id);
@@ -105,7 +105,7 @@ namespace Learun.Application.Web.Areas.LR_Desktop.Controllers
         /// <summary>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult DeleteForm(string keyValue)
         {
             dTChartIBLL.DeleteEntity(keyValue);
@@ -118,7 +118,7 @@ namespace Learun.Application.Web.Areas.LR_Desktop.Controllers
         /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [AjaxOnly]
+        
         public ActionResult SaveForm(string keyValue, DTChartEntity entity)
         {
             dTChartIBLL.SaveEntity(keyValue, entity);

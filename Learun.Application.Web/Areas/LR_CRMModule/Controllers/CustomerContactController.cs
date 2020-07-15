@@ -68,7 +68,7 @@ namespace Learun.Application.Web.Areas.LR_CRMModule.Controllers
         /// <param name="keyValue">主键值</param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult DeleteContactForm(string keyValue)
         {
             crmCustomerContactIBLL.DeleteEntity(keyValue);
@@ -82,7 +82,7 @@ namespace Learun.Application.Web.Areas.LR_CRMModule.Controllers
         /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [AjaxOnly]
+        
         public ActionResult SaveContactForm(string keyValue, CrmCustomerContactEntity entity)
         {
             crmCustomerContactIBLL.SaveEntity(keyValue, entity);

@@ -48,7 +48,7 @@ namespace Learun.Application.Web.Areas.LR_CodeDemo.Controllers
         /// <param name="queryJson">查询参数</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetPageList(string pagination, string queryJson)
         {
             Pagination paginationobj = pagination.ToObject<Pagination>();
@@ -68,7 +68,7 @@ namespace Learun.Application.Web.Areas.LR_CodeDemo.Controllers
         /// <param name="keyValue">主键</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetFormData(string keyValue)
         {
             var tc_PersonnelTrainData = personnelTrainIBLL.Gettc_PersonnelTrainEntity(keyValue);
@@ -88,7 +88,7 @@ namespace Learun.Application.Web.Areas.LR_CodeDemo.Controllers
         /// <param name="keyValue">主键</param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult DeleteForm(string keyValue)
         {
             personnelTrainIBLL.DeleteEntity(keyValue);
@@ -102,7 +102,7 @@ namespace Learun.Application.Web.Areas.LR_CodeDemo.Controllers
         /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [AjaxOnly]
+        
         public ActionResult SaveForm(string keyValue, string strEntity)
         {
             tc_PersonnelTrainEntity entity = strEntity.ToObject<tc_PersonnelTrainEntity>();

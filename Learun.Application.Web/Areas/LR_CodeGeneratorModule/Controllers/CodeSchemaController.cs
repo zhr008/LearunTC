@@ -47,7 +47,7 @@ namespace Learun.Application.Web.Areas.LR_CodeGeneratorModule.Controllers
         /// <param name="queryJson">查询参数</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetPageList(string pagination, string queryJson)
         {
             Pagination paginationobj = pagination.ToObject<Pagination>();
@@ -66,7 +66,7 @@ namespace Learun.Application.Web.Areas.LR_CodeGeneratorModule.Controllers
         /// <summary>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetFormData(string keyValue)
         {
             var LR_Base_CodeSchemaData = codeSchemaIBLL.GetLR_Base_CodeSchemaEntity( keyValue );
@@ -80,7 +80,7 @@ namespace Learun.Application.Web.Areas.LR_CodeGeneratorModule.Controllers
         /// <summary>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetTree()
         {
             var data = codeSchemaIBLL.GetTree();
@@ -96,7 +96,7 @@ namespace Learun.Application.Web.Areas.LR_CodeGeneratorModule.Controllers
         /// <summary>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult DeleteForm(string keyValue)
         {
             codeSchemaIBLL.DeleteEntity(keyValue);
@@ -109,7 +109,7 @@ namespace Learun.Application.Web.Areas.LR_CodeGeneratorModule.Controllers
         /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [AjaxOnly]
+        
         public ActionResult SaveForm(string keyValue, string strEntity)
         {
             LR_Base_CodeSchemaEntity entity = strEntity.ToObject<LR_Base_CodeSchemaEntity>();

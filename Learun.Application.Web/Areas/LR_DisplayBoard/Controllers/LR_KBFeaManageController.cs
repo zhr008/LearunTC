@@ -47,7 +47,7 @@ namespace Learun.Application.Web.Areas.LR_DisplayBoard.Controllers
         /// <summary>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetList( string queryJson )
         {
             var data = lR_KBFeaManageIBLL.GetList(queryJson);
@@ -59,7 +59,7 @@ namespace Learun.Application.Web.Areas.LR_DisplayBoard.Controllers
         /// <summary>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetPageList(string pagination, string queryJson)
         {
             Pagination paginationobj = pagination.ToObject<Pagination>();
@@ -79,7 +79,7 @@ namespace Learun.Application.Web.Areas.LR_DisplayBoard.Controllers
         /// <summary>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetFormData(string keyValue)
         {
             var data = lR_KBFeaManageIBLL.GetEntity(keyValue);
@@ -95,7 +95,7 @@ namespace Learun.Application.Web.Areas.LR_DisplayBoard.Controllers
         /// <summary>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult DeleteForm(string keyValue)
         {
             string moduleId = lR_KBFeaManageIBLL.GetEntity(keyValue).F_ModuleId;
@@ -111,7 +111,7 @@ namespace Learun.Application.Web.Areas.LR_DisplayBoard.Controllers
         /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [AjaxOnly]
+        
         public ActionResult SaveForm(string keyValue,LR_KBFeaManageEntity entity)
         {
             try

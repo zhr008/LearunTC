@@ -54,7 +54,7 @@ namespace Learun.Application.Web.Areas.ERPDemo.Controllers
         /// <param name="queryJson">查询参数</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetPageList(string pagination, string queryJson)
         {
             Pagination paginationobj = pagination.ToObject<Pagination>();
@@ -73,7 +73,7 @@ namespace Learun.Application.Web.Areas.ERPDemo.Controllers
         /// <summary>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetFormData(string keyValue)
         {
             var LR_ERP_ReceiptInfoData = receiptInfoIBLL.GetLR_ERP_ReceiptInfoEntity( keyValue );
@@ -94,7 +94,7 @@ namespace Learun.Application.Web.Areas.ERPDemo.Controllers
         /// <summary>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult DeleteForm(string keyValue)
         {
             receiptInfoIBLL.DeleteEntity(keyValue);
@@ -107,7 +107,7 @@ namespace Learun.Application.Web.Areas.ERPDemo.Controllers
         /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [AjaxOnly]
+        
         public ActionResult SaveForm(string keyValue, string strEntity, string strlR_ERP_ReceiptInfoDetailList)
         {
             LR_ERP_ReceiptInfoEntity entity = strEntity.ToObject<LR_ERP_ReceiptInfoEntity>();
@@ -119,7 +119,7 @@ namespace Learun.Application.Web.Areas.ERPDemo.Controllers
             return Success("保存成功！");
         }
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetPurchasePageList(string pagination, string purchaseId)
         {
             Pagination paginationobj = pagination.ToObject<Pagination>();
@@ -134,7 +134,7 @@ namespace Learun.Application.Web.Areas.ERPDemo.Controllers
             return Success(jsonData);
         }
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult Update(string purchaseInfoId, string purchaseId)
         {
             receiptInfoIBLL.UpdatePurchaseInfo(purchaseInfoId, purchaseId);

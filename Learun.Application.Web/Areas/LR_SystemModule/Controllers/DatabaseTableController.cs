@@ -84,7 +84,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// <param name="tableName">表名</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetList(string databaseLinkId,string tableName)
         {
             var data = databaseTableIBLL.GetTableList(databaseLinkId, tableName);
@@ -97,7 +97,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// <param name="tableName">表名</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetDraftList(string queryJson)
         {
             var data = dbDraftIBLL.GetList(queryJson);
@@ -111,7 +111,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// <param name="tableName">表名</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetFieldList(string databaseLinkId, string tableName) {
             var data = databaseTableIBLL.GetTableFiledList(databaseLinkId, tableName);
             return Success(data);
@@ -127,7 +127,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// <param name="pagination">分页参数</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetTableDataList(string databaseLinkId, string tableName, string field, string logic, string keyword, string pagination)
         {
             Pagination paginationobj = pagination.ToObject<Pagination>();
@@ -148,7 +148,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// <param name="tableName">表名</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetTableDataAllList(string databaseLinkId, string tableName)
         {
             var data = databaseTableIBLL.GetTableDataList(databaseLinkId, tableName);
@@ -160,7 +160,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// <param name="parentId">连接串主键</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetTreeList(string parentId)
         {
             var data = databaseTableIBLL.GetTreeList(parentId);
@@ -197,7 +197,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// <summary>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult SaveDraft(string keyValue, DbDraftEntity entity)
         {
             dbDraftIBLL.SaveEntity(keyValue, entity);
@@ -209,7 +209,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// <summary>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult DeleteDraft(string keyValue)
         {
             dbDraftIBLL.DeleteEntity(keyValue);
@@ -223,7 +223,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// <summary>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult SaveTable(string databaseLinkId, string draftId, string tableName,string tableRemark,string strColList)
         {
             List<DatabaseTableFieldModel> colList = strColList.ToObject<List<DatabaseTableFieldModel>>();

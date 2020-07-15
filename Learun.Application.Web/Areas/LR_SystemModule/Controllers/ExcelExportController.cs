@@ -37,7 +37,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// <param name="queryJson">查询参数</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetPageList(string pagination, string queryJson)
         {
             Pagination paginationobj = pagination.ToObject<Pagination>();
@@ -57,7 +57,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// <param name="moduleId">功能模块主键</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetList(string moduleId)
         {
             var data = excelExportIBLL.GetList(moduleId);
@@ -69,7 +69,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// <summary>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetEntity(string keyValue)
         {
             var data = excelExportIBLL.GetEntity(keyValue);
@@ -86,7 +86,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [AjaxOnly]
+        
         public ActionResult SaveForm(string keyValue, ExcelExportEntity entity)
         {
             excelExportIBLL.SaveEntity(keyValue, entity);
@@ -98,7 +98,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// <param name="keyValue">主键</param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult DeleteForm(string keyValue)
         {
             excelExportIBLL.DeleteEntity(keyValue);
@@ -111,7 +111,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// <param name="entity">实体数据</param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult UpdateState(string keyValue, int state)
         {
             ExcelExportEntity entity = new ExcelExportEntity()

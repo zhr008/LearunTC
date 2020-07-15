@@ -61,7 +61,7 @@ namespace Learun.Application.Web.Areas.ERPDemo.Controllers
         /// <param name="queryJson">查询参数</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetPageList(string pagination, string queryJson)
         {
             Pagination paginationobj = pagination.ToObject<Pagination>();
@@ -80,7 +80,7 @@ namespace Learun.Application.Web.Areas.ERPDemo.Controllers
         /// <summary>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetFormData(string keyValue)
         {
             var LR_ERP_PurchaseRequisitionData = purchaseRequisitionIBLL.GetLR_ERP_PurchaseRequisitionEntity( keyValue );
@@ -101,7 +101,7 @@ namespace Learun.Application.Web.Areas.ERPDemo.Controllers
         /// <summary>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult DeleteForm(string keyValue)
         {
             purchaseRequisitionIBLL.DeleteEntity(keyValue);
@@ -114,7 +114,7 @@ namespace Learun.Application.Web.Areas.ERPDemo.Controllers
         /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [AjaxOnly]
+        
         public ActionResult SaveForm(string keyValue, string strEntity, string strlR_ERP_ProductInfoList)
         {
             LR_ERP_PurchaseRequisitionEntity entity = strEntity.ToObject<LR_ERP_PurchaseRequisitionEntity>();
@@ -130,7 +130,7 @@ namespace Learun.Application.Web.Areas.ERPDemo.Controllers
 
 
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetPurchasePageList(string pagination, string purchaseId)
         {
             Pagination paginationobj = pagination.ToObject<Pagination>();
@@ -145,7 +145,7 @@ namespace Learun.Application.Web.Areas.ERPDemo.Controllers
             return Success(jsonData);
         }
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult Update(string purchaseInfoId, string purchaseId)
         {
             purchaseRequisitionIBLL.UpdatePurchaseInfo(purchaseInfoId, purchaseId);

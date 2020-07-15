@@ -136,7 +136,7 @@ namespace Learun.Application.Web.Areas.LR_FormModule.Controllers
         /// <param name="keyword">关键字</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetPageList(string pagination, string keyword, string category)
         {
             Pagination paginationobj = pagination.ToObject<Pagination>();
@@ -157,7 +157,7 @@ namespace Learun.Application.Web.Areas.LR_FormModule.Controllers
         /// <param name="schemeInfoId"></param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetSchemePageList(string pagination, string schemeInfoId)
         {
             Pagination paginationobj = pagination.ToObject<Pagination>();
@@ -177,7 +177,7 @@ namespace Learun.Application.Web.Areas.LR_FormModule.Controllers
         /// <param name="keyValue">主键</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetFormData(string keyValue)
         {
             FormSchemeInfoEntity schemeInfoEntity = formSchemeIBLL.GetSchemeInfoEntity(keyValue);
@@ -195,7 +195,7 @@ namespace Learun.Application.Web.Areas.LR_FormModule.Controllers
         /// <param name="keyValue">主键</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetSchemeEntity(string keyValue)
         {
             var data = formSchemeIBLL.GetSchemeEntity(keyValue);
@@ -206,7 +206,7 @@ namespace Learun.Application.Web.Areas.LR_FormModule.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetSchemeInfoList()
         {
             var data = formSchemeIBLL.GetCustmerSchemeInfoList();
@@ -221,7 +221,7 @@ namespace Learun.Application.Web.Areas.LR_FormModule.Controllers
         /// <param name="keyValue">数据主键值</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetInstanceForm(string schemeInfoId,string processIdName, string keyValue)
         {
             if (string.IsNullOrEmpty(processIdName))
@@ -250,7 +250,7 @@ namespace Learun.Application.Web.Areas.LR_FormModule.Controllers
         /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [AjaxOnly]
+        
         public ActionResult SaveForm(string keyValue, string schemeInfo, string scheme, int type)
         {
             FormSchemeInfoEntity schemeInfoEntity = schemeInfo.ToObject<FormSchemeInfoEntity>();
@@ -267,7 +267,7 @@ namespace Learun.Application.Web.Areas.LR_FormModule.Controllers
         /// <param name="keyValue">主键</param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult DeleteForm(string keyValue)
         {
             formSchemeIBLL.VirtualDelete(keyValue);
@@ -280,7 +280,7 @@ namespace Learun.Application.Web.Areas.LR_FormModule.Controllers
         /// <param name="state">状态1启用0禁用</param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult UpdateScheme(string schemeInfoId, string schemeId)
         {
             formSchemeIBLL.UpdateScheme(schemeInfoId, schemeId);
@@ -293,7 +293,7 @@ namespace Learun.Application.Web.Areas.LR_FormModule.Controllers
         /// <param name="state">状态1启用0禁用</param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult UpDateSate(string keyValue, int state)
         {
             formSchemeIBLL.UpdateState(keyValue, state);
@@ -310,7 +310,7 @@ namespace Learun.Application.Web.Areas.LR_FormModule.Controllers
         /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [AjaxOnly]
+        
         [ValidateInput(false)]
         public ActionResult SaveInstanceForm(string schemeInfoId, string processIdName, string keyValue, string formData)
         {
@@ -328,7 +328,7 @@ namespace Learun.Application.Web.Areas.LR_FormModule.Controllers
         /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [AjaxOnly]
+        
         [ValidateInput(false)]
         public ActionResult SaveInstanceForms(string data)
         {
@@ -345,7 +345,7 @@ namespace Learun.Application.Web.Areas.LR_FormModule.Controllers
         /// <param name="schemeInfoId">表单模板主键</param>
         /// <param name="keyValue">数据主键值</param>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult DeleteInstanceForm(string schemeInfoId, string keyValue)
         {
             formSchemeIBLL.DeleteInstanceForm(schemeInfoId, keyValue);

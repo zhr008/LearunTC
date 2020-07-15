@@ -46,7 +46,7 @@ namespace Learun.Application.Web.Areas.LR_CodeDemo.Controllers
         /// <param name="queryJson">查询参数</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetList(string queryJson)
         {
             var data = RelationIBLL.GetList(queryJson);
@@ -59,7 +59,7 @@ namespace Learun.Application.Web.Areas.LR_CodeDemo.Controllers
         /// <param name="queryJson">查询参数</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetPageList(string pagination, string queryJson)
         {
             Pagination paginationobj = pagination.ToObject<Pagination>();
@@ -79,7 +79,7 @@ namespace Learun.Application.Web.Areas.LR_CodeDemo.Controllers
         /// <param name="keyValue">主键</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetFormData(string keyValue)
         {
             var data = RelationIBLL.GetEntity(keyValue);
@@ -95,7 +95,7 @@ namespace Learun.Application.Web.Areas.LR_CodeDemo.Controllers
         /// <param name="keyValue">主键</param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult DeleteForm(string keyValue)
         {
             RelationIBLL.DeleteEntity(keyValue);
@@ -109,7 +109,7 @@ namespace Learun.Application.Web.Areas.LR_CodeDemo.Controllers
         /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [AjaxOnly]
+        
         public ActionResult SaveForm(string keyValue, tc_RelationEntity entity)
         {
             RelationIBLL.SaveEntity(keyValue, entity);

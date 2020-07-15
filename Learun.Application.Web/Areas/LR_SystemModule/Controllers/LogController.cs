@@ -52,7 +52,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// <param name="queryJson">查询条件函数</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetPageList(string pagination, string queryJson)
         {
 
@@ -74,7 +74,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// <param name="queryJson"></param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetPageListByMy(string pagination, string queryJson)
         {
 
@@ -101,7 +101,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [AjaxOnly]
+        
         public ActionResult SaveRemoveLog(int categoryId, string keepTime)
         {
             LogBLL.RemoveLog(categoryId, keepTime);
@@ -117,7 +117,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// <param name="moduleName">功能模块</param>
         /// <param name="moduleUrl">访问路径</param>
         /// <returns></returns>
-        [AjaxOnly]
+        
         [HttpPost]
         public ActionResult VisitModules(string moduleName, string moduleUrl)
         {

@@ -69,7 +69,7 @@ namespace Learun.Application.Web.Areas.LR_OrganizationModule.Controllers
         /// <param name="departmentId">部门主键</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetPageList(string pagination, string keyword, string companyId, string departmentId)
         {
             Pagination paginationobj = pagination.ToObject<Pagination>();
@@ -91,7 +91,7 @@ namespace Learun.Application.Web.Areas.LR_OrganizationModule.Controllers
         /// <param name="keyword">查询关键词</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetList(string companyId, string departmentId, string keyword)
         {
             if (string.IsNullOrEmpty(companyId))
@@ -121,7 +121,7 @@ namespace Learun.Application.Web.Areas.LR_OrganizationModule.Controllers
         /// <param name="keyword">查询关键词</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetMyDepartmentList()
         {
             UserInfo userinfo = LoginUserInfo.Get();
@@ -134,7 +134,7 @@ namespace Learun.Application.Web.Areas.LR_OrganizationModule.Controllers
         /// <param name="userIds">用户主键串</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetListByUserIds(string keyValue)
         {
             var list = userIBLL.GetListByUserIds(keyValue);
@@ -155,7 +155,7 @@ namespace Learun.Application.Web.Areas.LR_OrganizationModule.Controllers
         /// <param name="userIds">用户主键串</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetEntityListByUserIds(string keyValue)
         {
             var list = userIBLL.GetListByUserIds(keyValue);
@@ -168,7 +168,7 @@ namespace Learun.Application.Web.Areas.LR_OrganizationModule.Controllers
         /// <param name="userIds">用户主键</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetUserEntity(string userId)
         {
             var data = userIBLL.GetEntityByUserId(userId);
@@ -180,7 +180,7 @@ namespace Learun.Application.Web.Areas.LR_OrganizationModule.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetMap(string ver)
         {
             var data = userIBLL.GetModelMap();
@@ -221,7 +221,7 @@ namespace Learun.Application.Web.Areas.LR_OrganizationModule.Controllers
         /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [AjaxOnly]
+        
         public ActionResult SaveForm(string keyValue, UserEntity entity)
         {
             try
@@ -241,7 +241,7 @@ namespace Learun.Application.Web.Areas.LR_OrganizationModule.Controllers
         /// <param name="keyValue">主键</param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult DeleteForm(string keyValue)
         {
             userIBLL.VirtualDelete(keyValue);
@@ -253,7 +253,7 @@ namespace Learun.Application.Web.Areas.LR_OrganizationModule.Controllers
         /// <param name="keyValue">主键</param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult UpdateState(string keyValue, int state)
         {
             userIBLL.UpdateState(keyValue, state);
@@ -265,7 +265,7 @@ namespace Learun.Application.Web.Areas.LR_OrganizationModule.Controllers
         /// <param name="keyValue">主键</param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult ResetPassword(string keyValue)
         {
             userIBLL.ResetPassword(keyValue);
@@ -294,7 +294,7 @@ namespace Learun.Application.Web.Areas.LR_OrganizationModule.Controllers
         /// <param name="F_Account">账号</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult ExistAccount(string keyValue, string F_Account)
         {
             bool res = userIBLL.ExistAccount(F_Account, keyValue);

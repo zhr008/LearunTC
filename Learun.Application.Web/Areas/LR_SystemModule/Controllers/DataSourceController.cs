@@ -62,7 +62,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// <param name="keyword">关键字</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetPageList(string pagination, string keyword)
         {
             Pagination paginationobj = pagination.ToObject<Pagination>();
@@ -81,7 +81,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetList()
         {
             var data = dataSourceIBLL.GetList();
@@ -93,7 +93,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// <param name="keyValue">编号</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetEntityByCode(string keyValue)
         {
             if (string.IsNullOrEmpty(keyValue))
@@ -113,7 +113,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// <param name="keyValue">编号</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetNameByCode(string keyValue)
         {
             if (string.IsNullOrEmpty(keyValue))
@@ -138,7 +138,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [AjaxOnly]
+        
         public ActionResult SaveForm(string keyValue, DataSourceEntity entity)
         {
             bool res = dataSourceIBLL.SaveEntity(keyValue, entity);
@@ -157,7 +157,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// <param name="keyValue">主键</param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult DeleteForm(string keyValue)
         {
             dataSourceIBLL.DeleteEntity(keyValue);
@@ -174,7 +174,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// <param name="queryJson">数据源请求条件字串</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetDataTable(string code,string strWhere, string queryJson)
         {
             var data = dataSourceIBLL.GetDataTable(code, strWhere, queryJson);
@@ -189,7 +189,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// <param name="queryJson">数据源请求条件字串</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetDataTablePage(string pagination, string code, string strWhere, string queryJson)
         {
 
@@ -210,7 +210,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// <param name="code">数据源编码</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetDataColName(string code)
         {
             var data = dataSourceIBLL.GetDataColName(code);
@@ -225,7 +225,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// <param name="queryJson">数据源请求条件字串</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetMap(string code, string ver)
         {
             var data = dataSourceIBLL.GetDataTable(code, "");
@@ -250,7 +250,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// <summary>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetTree(string code, string parentId, string Id, string showId)
         {
             var data = dataSourceIBLL.GetTree(code, parentId, Id, showId);

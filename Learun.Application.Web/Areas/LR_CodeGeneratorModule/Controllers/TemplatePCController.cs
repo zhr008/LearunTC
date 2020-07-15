@@ -181,7 +181,7 @@ namespace Learun.Application.Web.Areas.LR_CodeGeneratorModule.Controllers
         /// <param name="baseInfo">基础信息</param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult LookCustmerCode(string databaseLinkId, string dbTable, string formData, string queryData, string colData, string baseInfo)
         {
             // 数据实体化
@@ -269,7 +269,7 @@ namespace Learun.Application.Web.Areas.LR_CodeGeneratorModule.Controllers
         /// <param name="moduleEntityJson">系统功能配置信息</param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult CreateCustmerCode(string databaseLinkId, string dbTable, string formData, string queryData, string colData, string baseInfo, string moduleEntityJson)
         {
             // 数据
@@ -427,7 +427,7 @@ namespace Learun.Application.Web.Areas.LR_CodeGeneratorModule.Controllers
         /// <param name="codeBaseConfigModel">配置信息</param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult LookFastCode(CodeBaseConfigModel codeBaseConfigModel)
         {
             string entityCode = "";
@@ -476,7 +476,7 @@ namespace Learun.Application.Web.Areas.LR_CodeGeneratorModule.Controllers
         /// <param name="codeBaseConfigModel">配置信息</param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult CreateFastCode(CodeBaseConfigModel codeBaseConfigModel)
         {
             string codeContent = "";
@@ -572,7 +572,7 @@ namespace Learun.Application.Web.Areas.LR_CodeGeneratorModule.Controllers
         /// <param name="codeBaseConfigModel">配置信息</param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult LookEntityCode(CodeBaseConfigModel codeBaseConfigModel)
         {
             string entityCode = "";
@@ -600,7 +600,7 @@ namespace Learun.Application.Web.Areas.LR_CodeGeneratorModule.Controllers
         /// <param name="codeBaseConfigModel">配置信息</param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult CreateEntityCode(CodeBaseConfigModel codeBaseConfigModel)
         {
             string codeContent = "";
@@ -626,7 +626,7 @@ namespace Learun.Application.Web.Areas.LR_CodeGeneratorModule.Controllers
         /// <param name="codeBaseConfigModel">配置信息</param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult LookWorkflowCode(string databaseLinkId, string dbTable, string formData, string queryData, string colData, string baseInfo)
         {
             // 数据
@@ -711,7 +711,7 @@ namespace Learun.Application.Web.Areas.LR_CodeGeneratorModule.Controllers
         /// <param name="codeBaseConfigModel">配置信息</param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult CreateWorkflowCode(string databaseLinkId, string dbTable, string formData, string queryData, string colData, string baseInfo, string moduleEntityJson)
         {
             // 数据
@@ -877,7 +877,7 @@ namespace Learun.Application.Web.Areas.LR_CodeGeneratorModule.Controllers
         /// <param name="baseInfo">基础信息</param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult LookGridEditCode(string databaseLinkId, string dbTable,string dbTablePk, string formData, string queryData, string colData, string baseInfo)
         {
             // 数据实体化
@@ -951,7 +951,7 @@ namespace Learun.Application.Web.Areas.LR_CodeGeneratorModule.Controllers
         /// <param name="moduleEntityJson">系统功能配置信息</param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult CreateGridEditCode(string databaseLinkId, string dbTable, string dbTablePk, string formData, string queryData, string colData, string baseInfo, string moduleEntityJson)
         {
             // 数据
@@ -1100,7 +1100,7 @@ namespace Learun.Application.Web.Areas.LR_CodeGeneratorModule.Controllers
         /// <param name="baseInfo">基础信息</param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult LookReportCode(string databaseLinkId,string strSql, string queryData, string colData, string baseInfo)
         {
             // 数据实体化
@@ -1144,7 +1144,7 @@ namespace Learun.Application.Web.Areas.LR_CodeGeneratorModule.Controllers
         /// <param name="moduleEntityJson">系统功能配置信息</param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult CreateReportCode(string databaseLinkId, string strSql, string queryData, string colData, string baseInfo, string moduleEntityJson)
         {
             // 数据
@@ -1230,7 +1230,7 @@ namespace Learun.Application.Web.Areas.LR_CodeGeneratorModule.Controllers
         /// <param name="baseInfo">基础信息</param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult LookAppCustmerCode(string databaseLinkId, string dbTable, string formData, string queryData, string colData, string baseInfo)
         {
             // 数据实体化
@@ -1337,7 +1337,7 @@ namespace Learun.Application.Web.Areas.LR_CodeGeneratorModule.Controllers
         /// <param name="moduleEntityJson">系统功能配置信息</param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult CreateAppCustmerCode(string databaseLinkId, string dbTable, string formData, string queryData, string colData, string baseInfo, string moduleEntityJson,string functionEntityJson)
         {
             // 数据
@@ -1529,7 +1529,7 @@ namespace Learun.Application.Web.Areas.LR_CodeGeneratorModule.Controllers
         /// <param name="baseInfo">基础信息</param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult LookWxCustmerCode(string databaseLinkId, string dbTable, string formData, string queryData, string colData, string baseInfo)
         {
             // 数据实体化
@@ -1630,7 +1630,7 @@ namespace Learun.Application.Web.Areas.LR_CodeGeneratorModule.Controllers
         /// <param name="moduleEntityJson">系统功能配置信息</param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult CreateWxCustmerCode(string databaseLinkId, string dbTable, string formData, string queryData, string colData, string baseInfo, string moduleEntityJson, string functionEntityJson)
         {
             // 数据

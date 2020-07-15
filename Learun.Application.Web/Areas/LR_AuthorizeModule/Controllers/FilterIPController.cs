@@ -43,7 +43,7 @@ namespace Learun.Application.Web.Areas.LR_AuthorizeModule.Controllers
         /// <param name="visitType">访问:0-拒绝，1-允许</param>
         /// <returns>返回树形列表Json</returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetList(string objectId, string visitType)
         {
             var data = filterIPIBLL.GetList(objectId, visitType);
@@ -55,7 +55,7 @@ namespace Learun.Application.Web.Areas.LR_AuthorizeModule.Controllers
         /// <param name="keyValue">主键值</param>
         /// <returns>返回对象Json</returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetFormData(string keyValue)
         {
             var data = filterIPIBLL.GetEntity(keyValue);
@@ -72,7 +72,7 @@ namespace Learun.Application.Web.Areas.LR_AuthorizeModule.Controllers
         /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [AjaxOnly]
+        
         public ActionResult SaveForm(string keyValue, FilterIPEntity filterIPEntity)
         {
             filterIPIBLL.SaveForm(keyValue, filterIPEntity);
@@ -84,7 +84,7 @@ namespace Learun.Application.Web.Areas.LR_AuthorizeModule.Controllers
         /// <param name="keyValue">主键值</param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult DeleteForm(string keyValue)
         {
             filterIPIBLL.DeleteEntiy(keyValue);

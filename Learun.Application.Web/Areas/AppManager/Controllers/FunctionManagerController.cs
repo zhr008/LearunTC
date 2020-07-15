@@ -46,7 +46,7 @@ namespace Learun.Application.Web.Areas.AppManager.Controllers
         /// <param name="type">类型</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetPageList(string pagination, string keyword, string type)
         {
             Pagination paginationobj = pagination.ToObject<Pagination>();
@@ -66,7 +66,7 @@ namespace Learun.Application.Web.Areas.AppManager.Controllers
         /// <param name="keyValue">主键</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetForm(string keyValue) {
 
             FunctionEntity entity = functionIBLL.GetEntity(keyValue);
@@ -84,7 +84,7 @@ namespace Learun.Application.Web.Areas.AppManager.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetCheckTree()
         {
             var data = functionIBLL.GetCheckTree();
@@ -101,7 +101,7 @@ namespace Learun.Application.Web.Areas.AppManager.Controllers
         /// <param name="keyValue">主键</param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult DeleteForm(string keyValue)
         {
             functionIBLL.Delete(keyValue);
@@ -116,7 +116,7 @@ namespace Learun.Application.Web.Areas.AppManager.Controllers
         /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [AjaxOnly]
+        
         public ActionResult SaveForm(string keyValue, string strEntity, string strSchemeEntity)
         {
             FunctionEntity entity = strEntity.ToObject<FunctionEntity>();
@@ -132,7 +132,7 @@ namespace Learun.Application.Web.Areas.AppManager.Controllers
         /// <param name="state">状态1启用0禁用</param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult UpDateSate(string keyValue, int state)
         {
             functionIBLL.UpdateState(keyValue, state);

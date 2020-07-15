@@ -56,7 +56,7 @@ namespace Learun.Application.Web.Areas.LR_WebChatModule.Controllers
         /// <param name="keyword">关键字</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetTreeList(string keyword)
         {
             //获取微信部门数据
@@ -171,7 +171,7 @@ namespace Learun.Application.Web.Areas.LR_WebChatModule.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetLeftTree(string parentId)
         {
             var data = companyIBLL.GetWeChatTree(parentId);

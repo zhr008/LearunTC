@@ -59,7 +59,7 @@ namespace Learun.Application.Web.Areas.LR_DisplayBoard.Controllers
         /// <summary>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetList( string queryJson )
         {
             var data = lR_KBKanBanInfoIBLL.GetList(queryJson);
@@ -67,7 +67,7 @@ namespace Learun.Application.Web.Areas.LR_DisplayBoard.Controllers
             return Success(data);
         }
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetTemptList()
         {
             var data = lR_KBKanBanInfoIBLL.GetTemptList();
@@ -79,7 +79,7 @@ namespace Learun.Application.Web.Areas.LR_DisplayBoard.Controllers
         /// <summary>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetPageList(string pagination, string queryJson)
         {
             Pagination paginationobj = pagination.ToObject<Pagination>();
@@ -99,7 +99,7 @@ namespace Learun.Application.Web.Areas.LR_DisplayBoard.Controllers
         /// <summary>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetFormData(string keyValue)
         {
             var baseinfo = lR_KBKanBanInfoIBLL.GetEntity(keyValue);
@@ -121,7 +121,7 @@ namespace Learun.Application.Web.Areas.LR_DisplayBoard.Controllers
         /// <summary>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult DeleteForm(string keyValue)
         {
             lR_KBKanBanInfoIBLL.DeleteEntity(keyValue);
@@ -134,7 +134,7 @@ namespace Learun.Application.Web.Areas.LR_DisplayBoard.Controllers
         /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [AjaxOnly]
+        
         public ActionResult SaveForm(string keyValue,string kanbaninfo,string kbconfigInfo)
         {
             lR_KBKanBanInfoIBLL.SaveEntity(keyValue, kanbaninfo, kbconfigInfo);

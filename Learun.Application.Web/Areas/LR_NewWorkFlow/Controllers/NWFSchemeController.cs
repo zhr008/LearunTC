@@ -193,7 +193,7 @@ namespace Learun.Application.Web.Areas.LR_NewWorkFlow.Controllers
         /// <param name="queryJson">查询条件</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetInfoPageList(string pagination, string queryJson)
         {
             Pagination paginationobj = pagination.ToObject<Pagination>();
@@ -212,7 +212,7 @@ namespace Learun.Application.Web.Areas.LR_NewWorkFlow.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetList()
         {
             var data = nWFSchemeIBLL.GetInfoList();
@@ -224,7 +224,7 @@ namespace Learun.Application.Web.Areas.LR_NewWorkFlow.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetMyInfoList(string userId)
         {
             UserInfo userInfo = LoginUserInfo.Get();
@@ -243,7 +243,7 @@ namespace Learun.Application.Web.Areas.LR_NewWorkFlow.Controllers
         /// <param name="code">流程编码</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetFormData(string code)
         {
             NWFSchemeInfoEntity schemeInfoEntity = nWFSchemeIBLL.GetInfoEntityByCode(code);
@@ -270,7 +270,7 @@ namespace Learun.Application.Web.Areas.LR_NewWorkFlow.Controllers
         /// <param name="schemeInfoId"></param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetSchemePageList(string pagination, string schemeInfoId)
         {
             Pagination paginationobj = pagination.ToObject<Pagination>();
@@ -290,7 +290,7 @@ namespace Learun.Application.Web.Areas.LR_NewWorkFlow.Controllers
         /// <param name="schemeId">模板主键</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetScheme(string schemeId)
         {
             var data = nWFSchemeIBLL.GetSchemeEntity(schemeId);
@@ -376,7 +376,7 @@ namespace Learun.Application.Web.Areas.LR_NewWorkFlow.Controllers
         /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [AjaxOnly]
+        
         public ActionResult SaveForm(string keyValue, string schemeInfo, string shcemeAuth, string scheme, int type)
         {
             NWFSchemeInfoEntity schemeInfoEntity = schemeInfo.ToObject<NWFSchemeInfoEntity>();
@@ -400,7 +400,7 @@ namespace Learun.Application.Web.Areas.LR_NewWorkFlow.Controllers
         /// <param name="keyValue">主键</param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult DeleteForm(string keyValue)
         {
             nWFSchemeIBLL.DeleteEntity(keyValue);
@@ -414,7 +414,7 @@ namespace Learun.Application.Web.Areas.LR_NewWorkFlow.Controllers
         /// <param name="state">状态1启用0禁用</param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult UpDateSate(string keyValue, int state)
         {
             nWFSchemeIBLL.UpdateState(keyValue, state);
@@ -427,7 +427,7 @@ namespace Learun.Application.Web.Areas.LR_NewWorkFlow.Controllers
         /// <param name="state">状态1启用0禁用</param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult UpdateScheme(string schemeInfoId, string schemeId)
         {
             nWFSchemeIBLL.UpdateScheme(schemeInfoId, schemeId);

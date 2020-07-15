@@ -57,7 +57,7 @@ namespace Learun.Application.Web.Areas.LR_NewWorkFlow.Controllers
         /// <param name="queryJson"></param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetPageList(string pagination, string queryJson)
         {
             Pagination paginationobj = pagination.ToObject<Pagination>();
@@ -79,7 +79,7 @@ namespace Learun.Application.Web.Areas.LR_NewWorkFlow.Controllers
         /// <param name="category"></param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetList(string keyword)
         {
             var data = lr_StampManageIBLL.GetList(keyword);
@@ -109,7 +109,7 @@ namespace Learun.Application.Web.Areas.LR_NewWorkFlow.Controllers
         /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [AjaxOnly]
+        
         public ActionResult SaveForm(string keyValue, LR_StampManageEntity entity)
         {
             lr_StampManageIBLL.SaveEntity(keyValue, entity);
@@ -122,7 +122,7 @@ namespace Learun.Application.Web.Areas.LR_NewWorkFlow.Controllers
         /// <param name="keyValue">主键</param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult DeleteForm(string keyValue)
         {
             lr_StampManageIBLL.DeleteEntity(keyValue);
@@ -179,7 +179,7 @@ namespace Learun.Application.Web.Areas.LR_NewWorkFlow.Controllers
         /// <param name="state">状态 1启用 0禁用</param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult UpDateSate(string keyValue, int state)
         {
             lr_StampManageIBLL.UpdateState(keyValue, state);
@@ -192,7 +192,7 @@ namespace Learun.Application.Web.Areas.LR_NewWorkFlow.Controllers
         /// <param name="Password">密码</param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult EqualForm(string keyValue, string Password)
         {
             var result = lr_StampManageIBLL.EqualPassword(keyValue, Password);

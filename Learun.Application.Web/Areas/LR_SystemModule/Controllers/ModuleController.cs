@@ -45,7 +45,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetModuleList()
         {
             var data = moduleIBLL.GetModuleList();
@@ -56,7 +56,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetModuleTree()
         {
             var data = moduleIBLL.GetModuleTree();
@@ -67,7 +67,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetModuleCheckTree()
         {
             var data = moduleIBLL.GetModuleCheckTree();
@@ -78,7 +78,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetExpendModuleTree()
         {
             var data = moduleIBLL.GetExpendModuleTree();
@@ -91,7 +91,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// <param name="type">功能类型</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetModuleListByParentId(string keyword, string parentId)
         {
             var jsondata = moduleIBLL.GetModuleListByParentId(keyword, parentId);
@@ -103,7 +103,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetCheckTree()
         {
             var moduleList = moduleIBLL.GetModuleCheckTree();
@@ -131,7 +131,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// <param name="moduleId">模块主键</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetButtonListNoAuthorize(string moduleId)
         {
             var data = moduleIBLL.GetButtonListNoAuthorize(moduleId);
@@ -143,7 +143,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// <param name="moduleId">模块主键</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetButtonList(string moduleId)
         {
             var data = moduleIBLL.GetButtonList(moduleId);
@@ -154,7 +154,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetButtonCheckTree()
         {
             var data = moduleIBLL.GetButtonCheckTree();
@@ -169,7 +169,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// <param name="moduleId">模块主键</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetColumnList(string moduleId)
         {
             var data = moduleIBLL.GetColumnList(moduleId);
@@ -180,7 +180,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetColumnCheckTree()
         {
             var data = moduleIBLL.GetColumnCheckTree();
@@ -195,7 +195,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// <param name="keyValue">主键</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetFormData(string keyValue)
         {
             var module = moduleIBLL.GetModuleEntity(keyValue);
@@ -226,7 +226,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [AjaxOnly]
+        
         public ActionResult SaveForm(string keyValue, string moduleEntityJson, string moduleButtonListJson, string moduleColumnListJson, string moduleFormListJson)
         {
             var moduleButtonList = moduleButtonListJson.ToList<ModuleButtonEntity>();
@@ -243,7 +243,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// <param name="keyValue">主键</param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult DeleteForm(string keyValue)
         {
             bool res = moduleIBLL.Delete(keyValue);
@@ -265,7 +265,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// <param name="url">页面地址</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetAuthorizeButtonColumnList(string url)
         {
             Dictionary<string, string> dicButton = new Dictionary<string, string>();

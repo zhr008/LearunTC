@@ -33,7 +33,7 @@ namespace Learun.Application.Web.Areas.LR_CRMModule.Controllers
         /// <param name="queryJson">查询参数</param>
         /// <returns>返回列表Json</returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetList(string queryJson)
         {
             var data = crmCashBalanceIBLL.GetList(queryJson);

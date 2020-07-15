@@ -83,7 +83,7 @@ namespace Learun.Application.Web.Areas.LR_OAModule.Controllers
         /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [AjaxOnly]
+        
         public ActionResult RemoveForm(string keyValue)
         {
             scheduleIBLL.RemoveForm(keyValue);
@@ -97,7 +97,7 @@ namespace Learun.Application.Web.Areas.LR_OAModule.Controllers
         /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [AjaxOnly]
+        
         public ActionResult SaveForm(string keyValue, ScheduleEntity entity)
         {
             scheduleIBLL.SaveForm(keyValue, entity);

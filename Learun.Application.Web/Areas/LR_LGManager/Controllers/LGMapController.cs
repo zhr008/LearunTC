@@ -80,7 +80,7 @@ namespace Learun.Application.Web.Areas.LR_LGManager.Controllers
         /// <summary>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetList(string queryJson)
         {
             var data = lGMapIBLL.GetList(queryJson);
@@ -92,7 +92,7 @@ namespace Learun.Application.Web.Areas.LR_LGManager.Controllers
         /// <summary>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetPageList(string pagination, string queryJson, string typeList)
         {
             Pagination paginationobj = pagination.ToObject<Pagination>();
@@ -112,7 +112,7 @@ namespace Learun.Application.Web.Areas.LR_LGManager.Controllers
         /// <summary>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetFormData(string keyValue)
         {
             var data = lGMapIBLL.GetEntity(keyValue);
@@ -124,7 +124,7 @@ namespace Learun.Application.Web.Areas.LR_LGManager.Controllers
         /// <summary>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetListByName(string keyValue)
         {
             var data = lGMapIBLL.GetListByName(keyValue);
@@ -137,7 +137,7 @@ namespace Learun.Application.Web.Areas.LR_LGManager.Controllers
         /// <summary>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetListByNameAndType(string keyValue, string typeCode)
         {
             var data = lGMapIBLL.GetListByNameAndType(keyValue, typeCode);
@@ -150,7 +150,7 @@ namespace Learun.Application.Web.Areas.LR_LGManager.Controllers
         /// <param name="ver">版本号</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetLanguageByCode(string typeCode,string ver,bool isMain) {
             var data = lGMapIBLL.GetMap(typeCode, isMain);
             string md5 = Md5Helper.Encrypt(data.ToJson(), 32);
@@ -179,7 +179,7 @@ namespace Learun.Application.Web.Areas.LR_LGManager.Controllers
         /// <summary>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult DeleteForm(string keyValue)
         {
             lGMapIBLL.DeleteEntity(keyValue);
@@ -194,7 +194,7 @@ namespace Learun.Application.Web.Areas.LR_LGManager.Controllers
         /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [AjaxOnly]
+        
         public ActionResult SaveForm(string nameList, string newNameList, string code)
         {
             lGMapIBLL.SaveEntity(nameList, newNameList, code);

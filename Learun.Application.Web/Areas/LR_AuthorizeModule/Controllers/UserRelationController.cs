@@ -53,7 +53,7 @@ namespace Learun.Application.Web.Areas.LR_AuthorizeModule.Controllers
         /// <param name="objectId">用户主键</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetUserIdList(string objectId)
         {
             var data = userRelationIBLL.GetUserIdList(objectId);
@@ -86,7 +86,7 @@ namespace Learun.Application.Web.Areas.LR_AuthorizeModule.Controllers
         /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [AjaxOnly]
+        
         public ActionResult SaveForm(string objectId, int category, string userIds)
         {
             userRelationIBLL.SaveEntityList(objectId, category, userIds);
@@ -94,7 +94,7 @@ namespace Learun.Application.Web.Areas.LR_AuthorizeModule.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [AjaxOnly]
+        
         public ActionResult SaveForms(string objectId, int category,string companyId, string departmentId)
         {
             string userIds = "";

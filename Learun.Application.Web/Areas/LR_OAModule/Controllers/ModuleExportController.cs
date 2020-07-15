@@ -39,7 +39,7 @@ namespace Learun.Application.Web.Areas.LR_OAModule.Controllers
         /// <param name="queryJson">查询条件函数</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetFormData(string keyValue)
         {
             var orderData = crmOrderIBLL.GetCrmOrderEntity(keyValue);

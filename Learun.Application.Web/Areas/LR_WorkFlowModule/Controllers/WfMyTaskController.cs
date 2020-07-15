@@ -93,7 +93,7 @@ namespace Learun.Application.Web.Areas.LR_WorkFlowModule.Controllers
         /// <param name="queryJson">查询条件</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetTaskList(string pagination, string queryJson, string categoryId)
         {
             Pagination paginationobj = pagination.ToObject<Pagination>();

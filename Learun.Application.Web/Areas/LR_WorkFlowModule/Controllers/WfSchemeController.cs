@@ -174,7 +174,7 @@ namespace Learun.Application.Web.Areas.LR_WorkFlowModule.Controllers
         /// <param name="keyword">关键字</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetSchemeInfoPageList(string pagination, string keyword, string category)
         {
             Pagination paginationobj = pagination.ToObject<Pagination>();
@@ -193,7 +193,7 @@ namespace Learun.Application.Web.Areas.LR_WorkFlowModule.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetCustmerSchemeInfoList()
         {
             UserInfo userInfo = LoginUserInfo.Get();
@@ -206,7 +206,7 @@ namespace Learun.Application.Web.Areas.LR_WorkFlowModule.Controllers
         /// <param name="keyValue">主键</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetFormData(string schemeCode)
         {
             WfSchemeInfoEntity schemeInfoEntity = wfSchemeIBLL.GetWfSchemeInfoEntityByCode(schemeCode);
@@ -232,7 +232,7 @@ namespace Learun.Application.Web.Areas.LR_WorkFlowModule.Controllers
         /// <param name="schemeInfoId"></param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetSchemePageList(string pagination, string schemeInfoId)
         {
             Pagination paginationobj = pagination.ToObject<Pagination>();
@@ -252,7 +252,7 @@ namespace Learun.Application.Web.Areas.LR_WorkFlowModule.Controllers
         /// <param name="schemeId">模板主键</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetScheme(string schemeId)
         {
             var data = wfSchemeIBLL.GetWfSchemeEntity(schemeId);
@@ -272,7 +272,7 @@ namespace Learun.Application.Web.Areas.LR_WorkFlowModule.Controllers
         /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [AjaxOnly]
+        
         public ActionResult SaveForm(string keyValue, string schemeInfo, string shcemeAuthorize, string scheme, int type)
         {
             WfSchemeInfoEntity schemeInfoEntity = schemeInfo.ToObject<WfSchemeInfoEntity>();
@@ -290,7 +290,7 @@ namespace Learun.Application.Web.Areas.LR_WorkFlowModule.Controllers
         /// <param name="keyValue">主键</param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult DeleteForm(string keyValue)
         {
             wfSchemeIBLL.VirtualDelete(keyValue);
@@ -304,7 +304,7 @@ namespace Learun.Application.Web.Areas.LR_WorkFlowModule.Controllers
         /// <param name="state">状态1启用0禁用</param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult UpDateSate(string keyValue, int state)
         {
             wfSchemeIBLL.UpdateState(keyValue, state);
@@ -317,7 +317,7 @@ namespace Learun.Application.Web.Areas.LR_WorkFlowModule.Controllers
         /// <param name="state">状态1启用0禁用</param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult UpdateScheme(string schemeInfoId, string schemeId)
         {
             wfSchemeIBLL.UpdateScheme(schemeInfoId, schemeId);

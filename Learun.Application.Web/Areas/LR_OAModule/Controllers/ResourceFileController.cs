@@ -204,7 +204,7 @@ namespace Learun.Application.Web.Areas.LR_OAModule.Controllers
         /// <param name="fileType">文件类型</param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult RestoreFile(string keyValue, string fileType)
         {
             if (fileType == "folder")
@@ -224,7 +224,7 @@ namespace Learun.Application.Web.Areas.LR_OAModule.Controllers
         /// <param name="fileType">文件类型</param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult RemoveForm(string keyValue, string fileType)
         {
             if (fileType == "folder")
@@ -244,7 +244,7 @@ namespace Learun.Application.Web.Areas.LR_OAModule.Controllers
         /// <param name="fileType">文件类型</param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult ThoroughRemoveForm(string keyValue, string fileType)
         {
             if (fileType == "folder")
@@ -263,7 +263,7 @@ namespace Learun.Application.Web.Areas.LR_OAModule.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult EmptyRecycledForm()
         {
             fileFolderBLL.EmptyRecycledForm();
@@ -277,7 +277,7 @@ namespace Learun.Application.Web.Areas.LR_OAModule.Controllers
         /// <param name="fileFolderEntity">文件夹实体</param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult SaveFolderForm(string keyValue, FileFolderEntity fileFolderEntity)
         {
             fileFolderBLL.SaveForm(keyValue, fileFolderEntity);
@@ -290,7 +290,7 @@ namespace Learun.Application.Web.Areas.LR_OAModule.Controllers
         /// <param name="fileInfoEntity">文件实体</param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult SaveFileForm(string keyValue, FileInfoEntity fileInfoEntity)
         {
             fileInfoBLL.SaveForm(keyValue, fileInfoEntity);
@@ -304,7 +304,7 @@ namespace Learun.Application.Web.Areas.LR_OAModule.Controllers
         /// <param name="fileType">文件类型</param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult SaveMoveForm(string keyValue, string moveFolderId, string fileType)
         {
             if (fileType == "folder")
@@ -331,7 +331,7 @@ namespace Learun.Application.Web.Areas.LR_OAModule.Controllers
         /// <param name="IsShare">是否共享：1-共享 0取消共享</param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult ShareFile(string keyValue, int IsShare, string fileType)
         {
             if (fileType == "folder")

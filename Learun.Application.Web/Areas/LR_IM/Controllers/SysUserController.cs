@@ -44,7 +44,7 @@ namespace Learun.Application.Web.Areas.LR_IM.Controllers
         /// <summary>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetList(string queryJson)
         {
             var data = iMSysUserIBLL.GetList(queryJson);
@@ -56,7 +56,7 @@ namespace Learun.Application.Web.Areas.LR_IM.Controllers
         /// <summary>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetPageList(string pagination, string keyWord)
         {
             Pagination paginationobj = pagination.ToObject<Pagination>();
@@ -76,7 +76,7 @@ namespace Learun.Application.Web.Areas.LR_IM.Controllers
         /// <summary>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetFormData(string keyValue)
         {
             var data = iMSysUserIBLL.GetEntity(keyValue);
@@ -92,7 +92,7 @@ namespace Learun.Application.Web.Areas.LR_IM.Controllers
         /// <summary>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult DeleteForm(string keyValue)
         {
             iMSysUserIBLL.DeleteEntity(keyValue);
@@ -105,7 +105,7 @@ namespace Learun.Application.Web.Areas.LR_IM.Controllers
         /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [AjaxOnly]
+        
         public ActionResult SaveForm(string keyValue, IMSysUserEntity entity)
         {
             iMSysUserIBLL.SaveEntity(keyValue, entity);
@@ -121,7 +121,7 @@ namespace Learun.Application.Web.Areas.LR_IM.Controllers
         /// <param name="F_Code">编码</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult ExistCode(string keyValue, string F_Code)
         {
             bool res = iMSysUserIBLL.ExistEnCode(F_Code, keyValue);

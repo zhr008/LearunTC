@@ -133,7 +133,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         //}
 
         //[HttpGet]
-        //[AjaxOnly]
+        //
         //public ActionResult GetList(string keyword)
         //{
         //    var data = lr_StampManageIBLL.GetList(keyword);
@@ -141,7 +141,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         //}
 
         //[HttpPost]
-        //[AjaxOnly]
+        //
         //public ActionResult EqualForm(string keyValue, string Password)
         //{
         //    var result = lr_StampManageIBLL.EqualPassword(keyValue, Password);
@@ -156,7 +156,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
 
         //}
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult GetFileIdByFolderId(string folderid)
         {
             var list = annexesFileIBLL.GetList(folderid).ToList();

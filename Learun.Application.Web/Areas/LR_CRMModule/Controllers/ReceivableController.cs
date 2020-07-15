@@ -63,7 +63,7 @@ namespace Learun.Application.Web.Areas.LR_CRMModule.Controllers
         /// <param name="orderId">订单Id</param>
         /// <returns>返回列表Json</returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetPaymentRecordJson(string orderId)
         {
             var data = crmReceivableBLL.GetPaymentRecord(orderId);
@@ -80,7 +80,7 @@ namespace Learun.Application.Web.Areas.LR_CRMModule.Controllers
         /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [AjaxOnly]
+        
         public ActionResult SaveForm(CrmReceivableEntity entity)
         {
             crmReceivableBLL.SaveEntity(entity);

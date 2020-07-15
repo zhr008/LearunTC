@@ -117,7 +117,7 @@ namespace Learun.Application.Web.Areas.LR_ReportModule.Controllers
         /// <param name="keyValue">主键</param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult DeleteForm(string keyValue)
         {
             reportTempIBLL.DeleteEntity(keyValue);

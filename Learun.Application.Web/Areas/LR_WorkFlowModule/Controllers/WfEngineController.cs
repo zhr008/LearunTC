@@ -36,7 +36,7 @@ namespace Learun.Application.Web.Areas.LR_WorkFlowModule.Controllers
         /// <param name="schemeCode">流程模板编码</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult Bootstraper(bool isNew, string processId, string schemeCode)
         {
             WfParameter wfParameter = new WfParameter();
@@ -60,7 +60,7 @@ namespace Learun.Application.Web.Areas.LR_WorkFlowModule.Controllers
         /// <param name="taskId">流程模板编码</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult Taskinfo(string processId, string taskId)
         {
             WfParameter wfParameter = new WfParameter();
@@ -83,7 +83,7 @@ namespace Learun.Application.Web.Areas.LR_WorkFlowModule.Controllers
         /// <param name="taskId">流程模板编码</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult Processinfo(string processId, string taskId)
         {
             WfParameter wfParameter = new WfParameter();
@@ -106,7 +106,7 @@ namespace Learun.Application.Web.Areas.LR_WorkFlowModule.Controllers
         /// <param name="taskId"></param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult ProcessinfoByMonitor(string processId, string taskId)
         {
             WfParameter wfParameter = new WfParameter();
@@ -129,7 +129,7 @@ namespace Learun.Application.Web.Areas.LR_WorkFlowModule.Controllers
         /// <param name="taskId"></param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult Auditer(bool isNew, string processId, string schemeCode, string taskId,string formData)
         {
             WfParameter wfParameter = new WfParameter();
@@ -228,7 +228,7 @@ namespace Learun.Application.Web.Areas.LR_WorkFlowModule.Controllers
         /// <param name="formData">表单数据</param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult Create(bool isNew,string processId,string schemeCode,string processName,int processLevel,string description,string auditers, string formData) {
 
             WfParameter wfParameter = new WfParameter();
@@ -263,7 +263,7 @@ namespace Learun.Application.Web.Areas.LR_WorkFlowModule.Controllers
         /// <param name="formData">表单数据</param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult Audit(string taskId, string verifyType, string description, string auditorId, string auditorName,string auditers, string formData)
         {
 

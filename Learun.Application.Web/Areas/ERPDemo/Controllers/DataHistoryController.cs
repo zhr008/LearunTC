@@ -45,7 +45,7 @@ namespace Learun.Application.Web.Areas.ERPDemo.Controllers
         /// <summary>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetList( string queryJson )
         {
             var data = dataHistoryIBLL.GetList(queryJson);
@@ -57,7 +57,7 @@ namespace Learun.Application.Web.Areas.ERPDemo.Controllers
         /// <summary>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetPageList(string pagination, string queryJson)
         {
             Pagination paginationobj = pagination.ToObject<Pagination>();
@@ -77,7 +77,7 @@ namespace Learun.Application.Web.Areas.ERPDemo.Controllers
         /// <summary>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetFormData(string keyValue)
         {
             var data = dataHistoryIBLL.GetEntity(keyValue);
@@ -93,7 +93,7 @@ namespace Learun.Application.Web.Areas.ERPDemo.Controllers
         /// <summary>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult DeleteForm(string keyValue)
         {
             dataHistoryIBLL.DeleteEntity(keyValue);
@@ -106,7 +106,7 @@ namespace Learun.Application.Web.Areas.ERPDemo.Controllers
         /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [AjaxOnly]
+        
         public ActionResult SaveForm(string keyValue,LR_ERP_DataHistoryEntity entity)
         {
             dataHistoryIBLL.SaveEntity(keyValue, entity);

@@ -38,7 +38,7 @@ namespace Learun.Application.Web.Areas.LR_IM.Controllers
         /// <param name="userId">对方用户ID</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetMsgList(string userId)
         {
             UserInfo userInfo = LoginUserInfo.Get();
@@ -53,7 +53,7 @@ namespace Learun.Application.Web.Areas.LR_IM.Controllers
         /// <param name="keyWord">查询关键字</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetMsgPageList(string pagination,string userId, string keyWord)
         {
             Pagination paginationobj = pagination.ToObject<Pagination>();
@@ -75,7 +75,7 @@ namespace Learun.Application.Web.Areas.LR_IM.Controllers
         /// <summary>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetContactsList()
         {
             UserInfo userInfo = LoginUserInfo.Get();
@@ -100,7 +100,7 @@ namespace Learun.Application.Web.Areas.LR_IM.Controllers
         /// <summary>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult SendMsg(string userId,string content)
         {
             UserInfo userInfo = LoginUserInfo.Get();
@@ -117,7 +117,7 @@ namespace Learun.Application.Web.Areas.LR_IM.Controllers
         /// <param name="otherUserId">对方用户Id</param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult AddContact(string otherUserId)
         {
             IMContactsEntity entity = new IMContactsEntity();
@@ -133,7 +133,7 @@ namespace Learun.Application.Web.Areas.LR_IM.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult RemoveContact(string otherUserId)
         {
             UserInfo userInfo = LoginUserInfo.Get();
@@ -146,7 +146,7 @@ namespace Learun.Application.Web.Areas.LR_IM.Controllers
         /// <param name="otherUserId"></param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult UpdateContactState(string otherUserId)
         {
             UserInfo userInfo = LoginUserInfo.Get();

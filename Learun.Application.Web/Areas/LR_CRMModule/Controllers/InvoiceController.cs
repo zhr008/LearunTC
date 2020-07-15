@@ -44,7 +44,7 @@ namespace Learun.Application.Web.Areas.LR_CRMModule.Controllers
         /// <param name="queryJson">查询参数</param>
         /// <returns>返回分页列表Json</returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetPageListJson(string pagination, string queryJson)
         {
             Pagination paginationobj = pagination.ToObject<Pagination>();
@@ -64,7 +64,7 @@ namespace Learun.Application.Web.Areas.LR_CRMModule.Controllers
         /// <param name="queryJson">查询参数</param>
         /// <returns>返回列表Json</returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetListJson(string queryJson)
         {
             var data = crmInvoiceIBLL.GetList(queryJson);
@@ -76,7 +76,7 @@ namespace Learun.Application.Web.Areas.LR_CRMModule.Controllers
         /// <param name="keyValue">主键值</param>
         /// <returns>返回对象Json</returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetFormJson(string keyValue)
         {
             var data = crmInvoiceIBLL.GetEntity(keyValue);
@@ -91,7 +91,7 @@ namespace Learun.Application.Web.Areas.LR_CRMModule.Controllers
         /// <param name="keyValue">主键值</param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult DeleteForm(string keyValue)
         {
             crmInvoiceIBLL.DeleteEntity(keyValue);
@@ -105,7 +105,7 @@ namespace Learun.Application.Web.Areas.LR_CRMModule.Controllers
         /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [AjaxOnly]
+        
         public ActionResult SaveForm(string keyValue, CrmInvoiceEntity entity)
         {
             crmInvoiceIBLL.SaveEntity(keyValue, entity);

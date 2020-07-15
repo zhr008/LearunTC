@@ -189,7 +189,7 @@ namespace Learun.Application.Web.Areas.LR_NewWorkFlow.Controllers
         /// <param name="queryJson">查询条件</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetPorcessList(string pagination, string queryJson)
         {
             Pagination paginationobj = pagination.ToObject<Pagination>();
@@ -210,7 +210,7 @@ namespace Learun.Application.Web.Areas.LR_NewWorkFlow.Controllers
         /// <param name="queryJson">查询条件</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetTaskPageList(string pagination, string queryJson, string categoryId)
         {
             Pagination paginationobj = pagination.ToObject<Pagination>();
@@ -247,7 +247,7 @@ namespace Learun.Application.Web.Areas.LR_NewWorkFlow.Controllers
         /// <param name="queryJson">查询条件</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetBatchTaskPageList(string pagination, string queryJson)
         {
             Pagination paginationobj = pagination.ToObject<Pagination>();
@@ -270,7 +270,7 @@ namespace Learun.Application.Web.Areas.LR_NewWorkFlow.Controllers
         /// <param name="queryJson">查询条件</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetTask(string taskId)
         {
             var data = nWFTaskIBLL.GetEntity(taskId);
@@ -284,7 +284,7 @@ namespace Learun.Application.Web.Areas.LR_NewWorkFlow.Controllers
         /// </summary>
         /// <param name="processId">流程进程主键</param>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult DeleteEntity(string processId)
         {
             nWFProcessIBLL.DeleteEntity(processId);
@@ -299,7 +299,7 @@ namespace Learun.Application.Web.Areas.LR_NewWorkFlow.Controllers
         /// <param name="code">流程编码</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetSchemeByCode(string code)
         {
             var schemeInfo = nWFSchemeIBLL.GetInfoEntityByCode(code);
@@ -315,7 +315,7 @@ namespace Learun.Application.Web.Areas.LR_NewWorkFlow.Controllers
         /// <param name="processId">流程进程主键</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetSchemeByProcessId(string processId)
         {
             var processEntity = nWFProcessIBLL.GetEntity(processId);
@@ -347,7 +347,7 @@ namespace Learun.Application.Web.Areas.LR_NewWorkFlow.Controllers
         /// <param name="operationCode">操作编码</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetNextAuditors(string code, string processId, string taskId, string nodeId, string operationCode)
         {
             UserInfo userInfo = LoginUserInfo.Get();
@@ -362,7 +362,7 @@ namespace Learun.Application.Web.Areas.LR_NewWorkFlow.Controllers
         /// <param name="taskId">任务主键</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetProcessDetails(string processId, string taskId) {
             UserInfo userInfo = LoginUserInfo.Get();
             var data = nWFProcessIBLL.GetProcessDetails(processId, taskId, userInfo);
@@ -391,7 +391,7 @@ namespace Learun.Application.Web.Areas.LR_NewWorkFlow.Controllers
         /// <param name="nodeId">父流程发起子流程节点Id</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetChildProcessDetails(string processId,string taskId, string schemeCode,string nodeId)
         {
             UserInfo userInfo = LoginUserInfo.Get();
@@ -412,7 +412,7 @@ namespace Learun.Application.Web.Areas.LR_NewWorkFlow.Controllers
         /// <param name="schemeCode">流程模板编码</param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult SaveDraft(string processId, string schemeCode, string createUserId)
         {
             UserInfo userInfo = LoginUserInfo.Get();
@@ -445,7 +445,7 @@ namespace Learun.Application.Web.Areas.LR_NewWorkFlow.Controllers
         /// <param name="processId">流程进程主键</param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult DeleteDraft(string processId) {
             UserInfo userInfo = LoginUserInfo.Get();
             nWFProcessIBLL.DeleteDraft(processId, userInfo);
@@ -463,7 +463,7 @@ namespace Learun.Application.Web.Areas.LR_NewWorkFlow.Controllers
         /// <param name="createUserId">流程创建人</param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult CreateFlow(string schemeCode, string processId,string title,int level,string auditors,string createUserId)
         {
 
@@ -515,7 +515,7 @@ namespace Learun.Application.Web.Areas.LR_NewWorkFlow.Controllers
         /// <param name="parentTaskId">父流程任务主键</param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult CreateChildFlow(string schemeCode, string processId,string parentProcessId, string parentTaskId) {
             UserInfo userInfo = LoginUserInfo.Get();
             nWFProcessIBLL.CreateChildFlow(schemeCode, processId, parentProcessId, parentTaskId, userInfo);
@@ -528,7 +528,7 @@ namespace Learun.Application.Web.Areas.LR_NewWorkFlow.Controllers
         /// <param name="processId">流程进程主键</param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult AgainCreateFlow(string processId)
         {
             try
@@ -555,7 +555,7 @@ namespace Learun.Application.Web.Areas.LR_NewWorkFlow.Controllers
         /// <param name="auditors">下一节点指定审核人</param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult AuditFlow(string operationCode, string operationName, string processId, string taskId, string des, string auditors,string stamp, string signUrl)
         {
             UserInfo userInfo = LoginUserInfo.Get();
@@ -579,7 +579,7 @@ namespace Learun.Application.Web.Areas.LR_NewWorkFlow.Controllers
         /// <param name="taskIds">任务串</param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult AuditFlows(string operationCode, string taskIds)
         {
             UserInfo userInfo = LoginUserInfo.Get();
@@ -595,7 +595,7 @@ namespace Learun.Application.Web.Areas.LR_NewWorkFlow.Controllers
         /// <param name="des">加签说明</param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult SignFlow(string processId, string taskId, string userId, string des) {
             UserInfo userInfo = LoginUserInfo.Get();
             nWFProcessIBLL.SignFlow(processId, taskId, userId, des, userInfo);
@@ -610,7 +610,7 @@ namespace Learun.Application.Web.Areas.LR_NewWorkFlow.Controllers
         /// <param name="des">加签说明</param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult SignAuditFlow(string operationCode, string processId, string taskId, string des) {
             UserInfo userInfo = LoginUserInfo.Get();
             nWFProcessIBLL.SignAuditFlow(operationCode,processId, taskId, des, userInfo);
@@ -624,7 +624,7 @@ namespace Learun.Application.Web.Areas.LR_NewWorkFlow.Controllers
         /// <param name="taskId">流程任务主键</param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult ReferFlow(string processId, string taskId)
         {
             UserInfo userInfo = LoginUserInfo.Get();
@@ -639,7 +639,7 @@ namespace Learun.Application.Web.Areas.LR_NewWorkFlow.Controllers
         /// <param name="userInfo">当前操作人信息</param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult UrgeFlow(string processId)
         {
             UserInfo userInfo = LoginUserInfo.Get();
@@ -652,7 +652,7 @@ namespace Learun.Application.Web.Areas.LR_NewWorkFlow.Controllers
         /// <param name="processId">流程进程主键</param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult RevokeFlow(string processId) {
             UserInfo userInfo = LoginUserInfo.Get();
             nWFProcessIBLL.RevokeFlow(processId, userInfo);
@@ -665,7 +665,7 @@ namespace Learun.Application.Web.Areas.LR_NewWorkFlow.Controllers
         /// <param name="processId">流程进程主键</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetTaskUserList(string processId)
         {
             var data = nWFProcessIBLL.GetTaskUserList(processId);
@@ -677,7 +677,7 @@ namespace Learun.Application.Web.Areas.LR_NewWorkFlow.Controllers
         /// <param name="strList">任务列表</param>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [AjaxOnly]
+        
         public ActionResult AppointUser(string strList)
         {
             IEnumerable<NWFTaskEntity> list = strList.ToObject<IEnumerable<NWFTaskEntity>>();
@@ -691,7 +691,7 @@ namespace Learun.Application.Web.Areas.LR_NewWorkFlow.Controllers
         /// <param name="processId">流程进程主键</param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult DeleteFlow(string processId)
         {
             UserInfo userInfo = LoginUserInfo.Get();
@@ -707,7 +707,7 @@ namespace Learun.Application.Web.Areas.LR_NewWorkFlow.Controllers
         /// <param name="taskId">任务主键</param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult RevokeAudit(string processId,string taskId)
         {
             UserInfo userInfo = LoginUserInfo.Get();
@@ -730,7 +730,7 @@ namespace Learun.Application.Web.Areas.LR_NewWorkFlow.Controllers
         /// <param name="eNodeId"></param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult AddTask(string processId, string bNodeId,string eNodeId)
         {
             UserInfo userInfo = LoginUserInfo.Get();

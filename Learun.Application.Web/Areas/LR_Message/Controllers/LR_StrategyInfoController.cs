@@ -55,7 +55,7 @@ namespace Learun.Application.Web.Areas.LR_Message.Controllers
         /// <summary>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetList( string queryJson )
         {
             var data = lR_StrategyInfoIBLL.GetList(queryJson);
@@ -67,7 +67,7 @@ namespace Learun.Application.Web.Areas.LR_Message.Controllers
         /// <summary>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetPageList(string pagination, string queryJson)
         {
             Pagination paginationobj = pagination.ToObject<Pagination>();
@@ -87,7 +87,7 @@ namespace Learun.Application.Web.Areas.LR_Message.Controllers
         /// <summary>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetFormData(string keyValue)
         {
             var data = lR_StrategyInfoIBLL.GetEntity(keyValue);
@@ -103,7 +103,7 @@ namespace Learun.Application.Web.Areas.LR_Message.Controllers
         /// <summary>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult DeleteForm(string keyValue)
         {
             lR_StrategyInfoIBLL.DeleteEntity(keyValue);
@@ -116,7 +116,7 @@ namespace Learun.Application.Web.Areas.LR_Message.Controllers
         /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [AjaxOnly]
+        
         public ActionResult SaveForm(string keyValue,LR_MS_StrategyInfoEntity entity)
         {
             lR_StrategyInfoIBLL.SaveEntity(keyValue, entity);

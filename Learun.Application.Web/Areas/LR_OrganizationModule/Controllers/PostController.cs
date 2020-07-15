@@ -51,7 +51,7 @@ namespace Learun.Application.Web.Areas.LR_OrganizationModule.Controllers
         /// <param name="keyWord">查询关键字</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetList(string companyId, string keyword,string departmentId)
         {
             var data = postIBLL.GetList(companyId, keyword, departmentId);
@@ -63,7 +63,7 @@ namespace Learun.Application.Web.Areas.LR_OrganizationModule.Controllers
         /// <param name="companyId">公司主键</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetTree(string companyId)
         {
             var data = postIBLL.GetTree(companyId);
@@ -75,7 +75,7 @@ namespace Learun.Application.Web.Areas.LR_OrganizationModule.Controllers
         /// <param name="keyValue">岗位主键</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetEntityName(string keyValue)
         {
             if (keyValue == "0")
@@ -91,7 +91,7 @@ namespace Learun.Application.Web.Areas.LR_OrganizationModule.Controllers
         /// <param name="keyValue">岗位主键</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetEntity(string keyValue)
         {
             var data = postIBLL.GetEntity(keyValue);
@@ -108,7 +108,7 @@ namespace Learun.Application.Web.Areas.LR_OrganizationModule.Controllers
         /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [AjaxOnly]
+        
         public ActionResult SaveForm(string keyValue, PostEntity entity)
         {
             postIBLL.SaveEntity(keyValue, entity);
@@ -120,7 +120,7 @@ namespace Learun.Application.Web.Areas.LR_OrganizationModule.Controllers
         /// <param name="keyValue">主键</param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult DeleteForm(string keyValue)
         {
             postIBLL.VirtualDelete(keyValue);

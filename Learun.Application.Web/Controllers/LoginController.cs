@@ -73,7 +73,7 @@ namespace Learun.Application.Web.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         [HandlerLogin(FilterMode.Enforce)]
         public ActionResult GetUserInfo()
         {
@@ -92,7 +92,7 @@ namespace Learun.Application.Web.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         [HandlerLogin(FilterMode.Enforce)]
         public ActionResult OutLogin()
         {
@@ -120,7 +120,7 @@ namespace Learun.Application.Web.Controllers
         /// <param name="verifycode">验证码</param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult CheckLogin(string username, string password, string verifycode)
         {
 

@@ -50,7 +50,7 @@ namespace Learun.Application.Web.Areas.LR_Desktop.Controllers
         /// <summary>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetList()
         {
             var data = dTTargetIBLL.GetList();
@@ -62,7 +62,7 @@ namespace Learun.Application.Web.Areas.LR_Desktop.Controllers
         /// <summary>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetPageList(string queryJson)
         {
             var data = dTTargetIBLL.GetList(queryJson);
@@ -74,7 +74,7 @@ namespace Learun.Application.Web.Areas.LR_Desktop.Controllers
         /// <summary>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetFormData(string keyValue)
         {
             var data = dTTargetIBLL.GetEntity(keyValue);
@@ -86,7 +86,7 @@ namespace Learun.Application.Web.Areas.LR_Desktop.Controllers
         /// <param name="ver">版本号</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetMap(string ver)
         {
             var target = dTTargetIBLL.GetList();
@@ -121,7 +121,7 @@ namespace Learun.Application.Web.Areas.LR_Desktop.Controllers
         /// <param name="Id">主键ID</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetSqlData(string Id) {
             var data = dTTargetIBLL.GetEntity(Id);
             if (data != null && !string.IsNullOrEmpty(data.F_Sql))
@@ -156,7 +156,7 @@ namespace Learun.Application.Web.Areas.LR_Desktop.Controllers
         /// <summary>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult DeleteForm(string keyValue)
         {
             dTTargetIBLL.DeleteEntity(keyValue);
@@ -169,7 +169,7 @@ namespace Learun.Application.Web.Areas.LR_Desktop.Controllers
         /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [AjaxOnly]
+        
         public ActionResult SaveForm(string keyValue, DTTargetEntity entity)
         {
             dTTargetIBLL.SaveEntity(keyValue, entity);

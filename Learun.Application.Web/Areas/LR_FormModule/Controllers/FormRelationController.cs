@@ -81,7 +81,7 @@ namespace Learun.Application.Web.Areas.LR_FormModule.Controllers
         /// <param name="keyword">关键字</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetPageList(string pagination, string keyword)
         {
             Pagination paginationobj = pagination.ToObject<Pagination>();
@@ -101,7 +101,7 @@ namespace Learun.Application.Web.Areas.LR_FormModule.Controllers
         /// <param name="keyValue">主键</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetFormData(string keyValue)
         {
             var relation = formRelationIBLL.GetEntity(keyValue);
@@ -119,7 +119,7 @@ namespace Learun.Application.Web.Areas.LR_FormModule.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetTree()
         {
             var data = formRelationIBLL.GetTree();
@@ -139,7 +139,7 @@ namespace Learun.Application.Web.Areas.LR_FormModule.Controllers
         /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [AjaxOnly]
+        
         public ActionResult SaveForm(string keyValue, string relationJson, string moduleJson, string moduleColumnJson,string moduleFormJson)
         {
             FormRelationEntity formRelationEntity = relationJson.ToObject<FormRelationEntity>();
@@ -190,7 +190,7 @@ namespace Learun.Application.Web.Areas.LR_FormModule.Controllers
         /// <param name="keyValue">主键</param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult DeleteForm(string keyValue)
         {
             var relation = formRelationIBLL.GetEntity(keyValue);
@@ -229,7 +229,7 @@ namespace Learun.Application.Web.Areas.LR_FormModule.Controllers
         /// <param name="queryJson">关键字</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetPreviewPageList(string pagination, string keyValue, string queryJson)
         {
             dataAuthorizeIBLL.SetWhereSql(keyValue, true);
@@ -253,7 +253,7 @@ namespace Learun.Application.Web.Areas.LR_FormModule.Controllers
         /// <param name="keyword">关键字</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetPreviewList(string keyValue, string queryJson)
         {
             dataAuthorizeIBLL.SetWhereSql(keyValue, true);

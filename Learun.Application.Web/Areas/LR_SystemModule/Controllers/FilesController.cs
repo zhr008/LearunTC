@@ -109,7 +109,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetFolderList(string keyWord)
         {
             var data = folderIBLL.GetList(keyWord, null);
@@ -121,7 +121,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetFolderTree()
         {
             var data = folderIBLL.GetTree();
@@ -132,7 +132,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetFolderEntity(string keyValue)
         {
             var data = folderIBLL.GetEntity(keyValue);
@@ -140,7 +140,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         }
 
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetFileInfoByWF(string processId, string fileInfoId)
         {
             var fileListEntity = fileInfoIBLL.GetListEntity(processId);
@@ -204,7 +204,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// <param name="keyWord">查询条件</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetWFPageList(string pagination, string keyWord, string wfType)
         {
             Pagination paginationobj = pagination.ToObject<Pagination>();
@@ -246,7 +246,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// <param name="keyWord">查询条件</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetAllPublishPageList(string keyWord, string folderId)
         {
             var list = fileInfoIBLL.GetAllPublishPageList(keyWord, folderId);
@@ -259,7 +259,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// <param name="keyWord">查询条件</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetPublishList(string keyWord, string folderId)
         {
             var list = fileInfoIBLL.GetPublishList(keyWord, folderId);
@@ -272,7 +272,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// <param name="fileInfoId">文件夹Id</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetHistoryList(string fileInfoId)
         {
             var list = fileInfoIBLL.GetHistoryList(fileInfoId);
@@ -285,7 +285,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// <param name="fileInfoId">文件夹Id</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetDeleteList(string fileInfoId)
         {
             var list = fileInfoIBLL.GetDeleteList(fileInfoId);
@@ -295,14 +295,14 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
 
         #region 提交数据
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult SaveFolder(string keyValue,FolderEntity entity)
         {
             folderIBLL.SaveEntity(keyValue,entity);
             return this.Success("保存成功");
         }
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult DeleteFolder(string keyValue)
         {
             var res = folderIBLL.DeleteEntity(keyValue);
@@ -321,7 +321,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// <param name="keyValue"></param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult VDeleteFile(string keyValue)
         {
             fileInfoIBLL.VDeleteEntity(keyValue);
@@ -333,7 +333,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// <param name="keyValue"></param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult RecoveryFile(string keyValue)
         {
             fileInfoIBLL.RecoveryEntity(keyValue);
@@ -345,7 +345,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// <param name="keyValue"></param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult DeleteFile(string keyValue)
         {
             fileInfoIBLL.DeleteEntity(keyValue);
@@ -360,7 +360,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// <param name="strListEntity">文件列表信息</param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult SaveFile(string keyValue, string strInfoEntity, string strListEntity)
         {
             FileBInfoEntity fileBInfoEntity = strInfoEntity.ToObject<FileBInfoEntity>();
@@ -392,14 +392,14 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// <param name="fileInfoId">文件信息主键</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetAuthList(string fileInfoId)
         {
             var list = fileAuthIBLL.GetList(fileInfoId);
             return Success(list);
         }
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetAuthEntity(string keyValue)
         {
             var list = fileAuthIBLL.GetEntity(keyValue);
@@ -412,7 +412,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// <param name="keyValue">主键</param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult DeleteAuth(string keyValue)
         {
             fileAuthIBLL.DeleteEntity(keyValue);
@@ -425,7 +425,7 @@ namespace Learun.Application.Web.Areas.LR_SystemModule.Controllers
         /// <param name="entity">实体数据</param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult SaveAuth(string keyValue, FileAuthEntity entity)
         {
             var res = fileAuthIBLL.SaveEntity(keyValue, entity);

@@ -63,7 +63,7 @@ namespace Learun.Application.Web.Areas.LR_TaskScheduling.Controllers
         /// <summary>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetPageList(string pagination, string queryJson)
         {
             Pagination paginationobj = pagination.ToObject<Pagination>();
@@ -83,7 +83,7 @@ namespace Learun.Application.Web.Areas.LR_TaskScheduling.Controllers
         /// <summary>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetFormData(string keyValue)
         {
             var schemeInfoEntity = tSSchemeIBLL.GetSchemeInfoEntity(keyValue);
@@ -107,7 +107,7 @@ namespace Learun.Application.Web.Areas.LR_TaskScheduling.Controllers
         /// <summary>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult DeleteForm(string keyValue)
         {
             tSSchemeIBLL.DeleteEntity(keyValue);
@@ -120,7 +120,7 @@ namespace Learun.Application.Web.Areas.LR_TaskScheduling.Controllers
         /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [AjaxOnly]
+        
         public ActionResult SaveForm(string keyValue,string strSchemeInfo,string strScheme)
         {
             TSSchemeInfoEntity tSSchemeInfoEntity = strSchemeInfo.ToObject<TSSchemeInfoEntity>();

@@ -59,7 +59,7 @@ namespace Learun.Application.Web.Areas.LR_CRMModule.Controllers
         /// <param name="queryJson">查询参数</param>
         /// <returns>返回分页列表Json</returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetPageList(string pagination, string queryJson)
         {
             Pagination paginationobj = pagination.ToObject<Pagination>();
@@ -79,7 +79,7 @@ namespace Learun.Application.Web.Areas.LR_CRMModule.Controllers
         /// <param name="keyValue">主键值</param>
         /// <returns>返回对象Json</returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult GetFormJson(string keyValue)
         {
             var data = crmChanceIBLL.GetEntity(keyValue);
@@ -95,7 +95,7 @@ namespace Learun.Application.Web.Areas.LR_CRMModule.Controllers
         /// <param name="keyValue">主键</param>
         /// <returns></returns>
         [HttpGet]
-        [AjaxOnly]
+        
         public ActionResult ExistFullName(string FullName, string keyValue)
         {
             bool IsOk = crmChanceIBLL.ExistFullName(FullName, keyValue);
@@ -110,7 +110,7 @@ namespace Learun.Application.Web.Areas.LR_CRMModule.Controllers
         /// <param name="keyValue">主键值</param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult DeleteForm(string keyValue)
         {
             crmChanceIBLL.DeleteEntity(keyValue);
@@ -124,7 +124,7 @@ namespace Learun.Application.Web.Areas.LR_CRMModule.Controllers
         /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [AjaxOnly]
+        
         public ActionResult SaveForm(string keyValue, CrmChanceEntity entity)
         {
             crmChanceIBLL.SaveEntity(keyValue, entity);
@@ -140,7 +140,7 @@ namespace Learun.Application.Web.Areas.LR_CRMModule.Controllers
         /// <param name="keyValue">主键值</param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult Invalid(string keyValue)
         {
             crmChanceIBLL.Invalid(keyValue);
@@ -152,7 +152,7 @@ namespace Learun.Application.Web.Areas.LR_CRMModule.Controllers
         /// <param name="keyValue">主键值</param>
         /// <returns></returns>
         [HttpPost]
-        [AjaxOnly]
+        
         public ActionResult ToCustomer(string keyValue)
         {
             string enCode = codeRuleIBLL.GetBillCode(((int)CodeRuleEnum.CrmChanceCode).ToString());
