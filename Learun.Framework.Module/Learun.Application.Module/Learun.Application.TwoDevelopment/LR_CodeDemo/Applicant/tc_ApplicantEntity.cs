@@ -89,6 +89,14 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
         /// </summary>
         [Column("F_MANAGETYPE")]
         public string F_ManageType { get; set; }
+        [Column("F_CERTDATEBEGIN")]
+        public DateTime? F_CertDateBegin { get; set; }
+        /// <summary>
+        /// F_CertDateEnd
+        /// </summary>
+        [Column("F_CERTDATEEND")]
+        public DateTime? F_CertDateEnd { get; set; }
+
         /// <summary>
         /// 负责人姓名
         /// </summary>

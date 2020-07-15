@@ -22,10 +22,7 @@
             <div class="lr-form-item-title">从业单位名称<font face="宋体">*</font></div>
             <input id="F_CompanyName" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
         </div>
-        <div class="col-xs-6 lr-form-item" data-table="tc_WorkExperience">
-            <div class="lr-form-item-title">就职类型<font face="宋体">*</font></div>
-            <div id="F_VocationType" isvalid="yes" checkexpession="NotNull"></div>
-        </div>
+
         <div class="col-xs-6 lr-form-item" data-table="tc_WorkExperience">
             <div class="lr-form-item-title">入职日期<font face="宋体">*</font></div>
             <input id="F_EntryDate" type="text" class="form-control lr-input-wdatepicker" onfocus="WdatePicker({ dateFmt:'yyyy-MM-dd',onpicked: function () { $('#F_EntryDate').trigger('change'); } })" isvalid="yes" checkexpession="NotNull" />
@@ -35,16 +32,20 @@
             <input id="F_QuitDate" type="text" class="form-control lr-input-wdatepicker" onfocus="WdatePicker({ dateFmt:'yyyy-MM-dd',onpicked: function () { $('#F_QuitDate').trigger('change'); } })" isvalid="yes" checkexpession="NotNull" />
         </div>
         <div class="col-xs-6 lr-form-item" data-table="tc_WorkExperience">
-            <div class="lr-form-item-title">就职证书名称<font face="宋体">*</font></div>
-            <div id="F_CertType" isvalid="yes" checkexpession="NotNull"></div>
+            <div class="lr-form-item-title">就职类型<font face="宋体">*</font></div>
+            <div id="F_VocationType" isvalid="yes" checkexpession="NotNull"></div>
         </div>
         <div class="col-xs-6 lr-form-item" data-table="tc_WorkExperience">
-            <div class="lr-form-item-title">登记日期<font face="宋体">*</font></div>
-            <input id="F_CheckInDate" type="text" class="form-control lr-input-wdatepicker" onfocus="WdatePicker({ dateFmt:'yyyy-MM-dd',onpicked: function () { $('#F_CheckInDate').trigger('change'); } })" isvalid="yes" checkexpession="NotNull" />
+            <div class="lr-form-item-title">就职证书名称<font face="宋体">*</font></div>
+            <div id="F_CertType" isvalid="yes" checkexpession="NotNull"></div>
         </div>
         <div class="col-xs-12 lr-form-item" data-table="tc_WorkExperience">
             <div class="lr-form-item-title">主要担任项目<font face="宋体">*</font></div>
             <textarea id="F_MajorProjects" class="form-control" style="height:100px;" isvalid="yes" checkexpession="NotNull"></textarea>
+        </div>
+        <div class="col-xs-6 lr-form-item" data-table="tc_WorkExperience">
+            <div class="lr-form-item-title">登记日期<font face="宋体">*</font></div>
+            <input id="F_CheckInDate" type="text" class="form-control lr-input-wdatepicker" onfocus="WdatePicker({ dateFmt:'yyyy-MM-dd',onpicked: function () { $('#F_CheckInDate').trigger('change'); } })" isvalid="yes" checkexpession="NotNull" />
         </div>
         <div class="col-xs-12 lr-form-item" data-table="tc_WorkExperience">
             <div class="lr-form-item-title">就职备注</div>

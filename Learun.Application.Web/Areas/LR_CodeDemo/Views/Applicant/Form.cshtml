@@ -14,7 +14,7 @@
 
         <div class="col-xs-12 lr-form-item" data-table="tc_Applicant" style="display: none; ">
             <div class="lr-form-item-title">Id</div>
-            <input id="F_ApplicantType" type="text" class="form-control" value="1" />
+            <input id="F_ApplicantType" type="text" class="form-control" />
         </div>
 
 
@@ -77,6 +77,14 @@
         <div class="col-xs-6 lr-form-item" data-table="tc_Applicant">
             <div class="lr-form-item-title">现有资质证书<font face="宋体">*</font></div>
             <input id="F_QualificationCert" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+        </div>
+        <div class="col-xs-6 lr-form-item" data-table="tc_Applicant">
+            <div class="lr-form-item-title">资质取得日期<font face="宋体">*</font></div>
+            <input id="F_CertDateBegin" type="text" class="form-control lr-input-wdatepicker" onfocus="WdatePicker({ dateFmt:'yyyy-MM-dd',onpicked: function () { $('#F_CertDateBegin').trigger('change'); } })" isvalid="yes" checkexpession="NotNull" />
+        </div>
+        <div class="col-xs-6 lr-form-item" data-table="tc_Applicant">
+            <div class="lr-form-item-title">资质到期日期<font face="宋体">*</font></div>
+            <input id="F_CertDateEnd" type="text" class="form-control lr-input-wdatepicker" onfocus="WdatePicker({ dateFmt:'yyyy-MM-dd',onpicked: function () { $('#F_CertDateEnd').trigger('change'); } })" isvalid="yes" checkexpession="NotNull" />
         </div>
         <div class="col-xs-6 lr-form-item" data-table="tc_Applicant">
             <div class="lr-form-item-title">经营状态<font face="宋体">*</font></div>

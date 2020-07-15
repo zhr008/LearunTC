@@ -107,7 +107,6 @@ var bootstrap = function ($, learun) {
             });
             //  结算详情
             $('#lr_adddetails').on('click', function () {
-                debugger;
                 var keyValue = $('#gridtable').jfGridValue('F_SettlementsId');
                 var F_PersonId = $('#gridtable').jfGridValue('F_PersonId');
                 var F_UserName = $('#gridtable').jfGridValue('F_UserName');

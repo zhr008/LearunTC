@@ -115,10 +115,10 @@ var bootstrap = function ($, learun) {
                     },
                     { label: "年龄", name: "F_Age", width: 100, align: "center" },
 
-                    { label: "存档编号", name: "F_PlaceCode", width: 100, align: "center" },
+                    { label: "存档编码", name: "F_PlaceCode", width: 100, align: "center" },
                     { label: "证书编码", name: "F_CertCode", width: 100, align: "center" },
                     {
-                        label: "供应商", name: "F_ApplicantId", width: 180, align: "center",
+                        label: "来源", name: "F_ApplicantId", width: 180, align: "center",
                         formatterAsync: function (callback, value, row, op, $cell) {
                             learun.clientdata.getAsync('custmerData', {
                                 url: '/LR_SystemModule/DataSource/GetDataTable?code=' + 'applicantdata',

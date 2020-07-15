@@ -16,24 +16,24 @@
             <input id="F_IDCardNo" type="text" class="form-control" readonly style="background: rgb(238, 238, 238);" />
         </div>
         <div class="col-xs-6 lr-form-item" data-table="tc_GradeCert">
-            <div class="lr-form-item-title">毕业专业<font face="宋体">*</font></div>
-            <input id="F_Major" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+            <div class="lr-form-item-title">学历<font face="宋体">*</font></div>
+            <div id="F_EducationType" isvalid="yes" checkexpession="NotNull"></div>
         </div>
         <div class="col-xs-6 lr-form-item" data-table="tc_GradeCert">
-            <div class="lr-form-item-title">专业序列<font face="宋体">*</font></div>
-            <div id="F_MajorType" isvalid="yes" checkexpession="NotNull"></div>
+            <div class="lr-form-item-title">毕业专业<font face="宋体">*</font></div>
+            <input id="F_Major" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
         </div>
         <div class="col-xs-6 lr-form-item" data-table="tc_GradeCert">
             <div class="lr-form-item-title">毕业日期<font face="宋体">*</font></div>
             <input id="F_GradTime" type="text" class="form-control lr-input-wdatepicker" onfocus="WdatePicker({ dateFmt:'yyyy-MM-dd',onpicked: function () { $('#F_GradTime').trigger('change'); } })" isvalid="yes" checkexpession="NotNull" />
         </div>
         <div class="col-xs-6 lr-form-item" data-table="tc_GradeCert">
-            <div class="lr-form-item-title">学历<font face="宋体">*</font></div>
-            <div id="F_EducationType" isvalid="yes" checkexpession="NotNull"></div>
-        </div>
-        <div class="col-xs-6 lr-form-item" data-table="tc_GradeCert">
             <div class="lr-form-item-title">学制类型<font face="宋体">*</font></div>
             <div id="F_Term" isvalid="yes" checkexpession="NotNull"></div>
+        </div>
+        <div class="col-xs-6 lr-form-item" data-table="tc_GradeCert">
+            <div class="lr-form-item-title">专业序列<font face="宋体">*</font></div>
+            <div id="F_MajorType" isvalid="yes" checkexpession="NotNull"></div>
         </div>
         <div class="col-xs-6 lr-form-item" data-table="tc_GradeCert">
             <div class="lr-form-item-title">毕业证保管<font face="宋体">*</font></div>

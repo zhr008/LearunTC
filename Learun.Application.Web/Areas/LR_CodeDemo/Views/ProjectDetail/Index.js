@@ -62,7 +62,6 @@ var bootstrap = function ($, learun) {
             });
             //人员分配
             $("#lr_addperson").on('click', function () {
-                debugger
                 var ProjectDetailId = $('#gridtable').jfGridValue('ProjectDetailId');
                 var ProjectId = $('#gridtable').jfGridValue('ProjectId');
                 if (learun.checkrow(ProjectDetailId)) {

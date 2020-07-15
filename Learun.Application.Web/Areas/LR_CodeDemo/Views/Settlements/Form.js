@@ -40,7 +40,6 @@ var bootstrap = function ($, learun) {
         },
 
         buildTree: function () {
-            debugger
             $('#F_ApplicantId').lrDataSourceSelect({ code: 'applicantdata', value: 'f_applicantid', text: 'f_companyname' });
             //$('#F_ApplicantId').lrselect({
             //    url: top.$.rootUrl + '/LR_CodeDemo/Settlements/GetApplicantRepresentative?PersonId=' + F_PersonId,

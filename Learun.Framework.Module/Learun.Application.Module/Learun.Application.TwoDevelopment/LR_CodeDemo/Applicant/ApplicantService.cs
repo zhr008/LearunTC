@@ -47,7 +47,9 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
                 t.F_QualificationCert,
                 t.F_ManageType,
                 t.F_Description,
-                t.F_ApplicantType
+                t.F_ApplicantType,
+                t.F_CertDateBegin,
+                t.F_CertDateEnd
                 ");
                 strSql.Append("  FROM tc_Applicant t ");
                 strSql.Append("  WHERE 1=1 ");

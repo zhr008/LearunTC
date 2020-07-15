@@ -21,6 +21,7 @@ var bootstrap = function ($, learun) {
             $('#F_ApplicantType').lrDataItemSelect({ code: 'ApplicantType' });
             // 省市区
             $('#area').lrAreaSelect();
+            $("#F_ApplicantType").lrselectSet(2);  //招聘单位类型
         },
         initData: function () {
             if (!!keyValue) {
