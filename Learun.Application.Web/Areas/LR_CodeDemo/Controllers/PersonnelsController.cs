@@ -65,6 +65,15 @@ namespace Learun.Application.Web.Areas.LR_CodeDemo.Controllers
             };
             return Success(jsonData);
         }
+
+
+        public ActionResult GetPageListByApplicantId(string ApplicantId)
+        {
+            var data = personnelsIBLL.GetPageList(ApplicantId);
+            return Success(data);
+
+        }
+
         /// <summary>
         /// 获取表单数据
         /// </summary>

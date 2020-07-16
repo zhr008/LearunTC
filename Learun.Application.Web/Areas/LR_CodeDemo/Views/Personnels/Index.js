@@ -5,6 +5,11 @@
  * 描  述：个人基本信息
  */
 var refreshGirdData;
+
+
+var F_PersonId = request('F_PersonId');
+var F_ApplicantId = request('F_ApplicantId');
+
 var bootstrap = function ($, learun) {
     "use strict";
     var page = {
@@ -14,10 +19,29 @@ var bootstrap = function ($, learun) {
         },
         bind: function () {
             // 初始化左侧树形数据
+            // 初始化左侧树形数据
             $('#dataTree').lrtree({
-                url: top.$.rootUrl + '/LR_CodeDemo/Personnels/GetTree',
+                url: top.$.rootUrl + '/LR_CodeDemo/IDCard/GetTree?PersonId=' + F_PersonId + "&ApplicantId=" + F_ApplicantId,
                 nodeClick: function (item) {
-                    page.search({ F_ApplicantId: item.value });
+                    if (!!item.value) {
+                        F_PersonId = item.id;
+                        F_UserName = item.text;
+                        F_IDCardNo = item.value;
+                        F_ApplicantId = item.parentid
+                        page.search();
+                    }
+                    else {
+
+                        F_PersonId = "";
+                        F_UserName = "";
+                        F_IDCardNo = "";
+                        F_ApplicantId = item.id
+
+                        if (ParentDisable != "true") {
+                            page.search();
+                        }
+                    }
+
                 }
             });
             $('#multiple_condition_query').lrMultipleQuery(function (queryJson) {

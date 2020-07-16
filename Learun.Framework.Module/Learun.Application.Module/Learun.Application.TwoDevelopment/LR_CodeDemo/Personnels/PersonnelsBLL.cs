@@ -43,6 +43,25 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
             }
         }
 
+        public IEnumerable<tc_PersonnelsEntity> GetPageList(string ApplicantId)
+        {
+            try
+            {
+                return personnelsService.GetPageList(ApplicantId);
+            }
+            catch (Exception ex)
+            {
+                if (ex is ExceptionEx)
+                {
+                    throw;
+                }
+                else
+                {
+                    throw ExceptionEx.ThrowBusinessException(ex);
+                }
+            }
+        }
+
         /// <summary>
         /// 获取tc_Personnels表实体数据
         /// </summary>

@@ -102,6 +102,50 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
             }
         }
 
+
+        public IEnumerable<tc_PersonnelsEntity> GetPageList(string ApplicantId)
+        {
+            try
+            {
+                var strSql = new StringBuilder();
+                strSql.Append("SELECT ");
+                strSql.Append(@"
+                t.F_PersonId,
+                t.F_UserName,
+                t.F_IDCardNo,
+ 
+        DATEDIFF(year, CONVERT(smalldatetime, SUBSTRING(ISNULL(t.F_IDCardNo, 0), 7, 8)), GETDATE()) AS F_Age, 
+        CASE LEFT(RIGHT(t.F_IDCardNo, 2), 1) % 2 WHEN 1 THEN '2' ELSE '1' END AS F_Gender,
+
+        
+                t.F_PlaceCode,
+                t.F_CertCode,
+                t.F_ApplicantId,
+                t.F_SceneType,
+                t.F_Description
+                ");
+                strSql.Append("  FROM tc_Personnels t ");
+                strSql.Append("  WHERE 1=1 ");
+                strSql.Append("  AND t.F_DeleteMark=0 ");
+                if (!string.IsNullOrEmpty(ApplicantId))
+                {
+                    strSql.AppendFormat(" AND t.F_ApplicantId = '{0}' ",ApplicantId);
+                }
+                return this.BaseRepository().FindList<tc_PersonnelsEntity>(strSql.ToString());
+            }
+            catch (Exception ex)
+            {
+                if (ex is ExceptionEx)
+                {
+                    throw;
+                }
+                else
+                {
+                    throw ExceptionEx.ThrowServiceException(ex);
+                }
+            }
+        }
+
         /// <summary>
         /// 获取tc_Personnels表实体数据
         /// </summary>

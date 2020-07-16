@@ -108,7 +108,7 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
                         value = item["value"].ToString(),
                         showcheck = false,
                         checkstate = 0,
-                        isexpand = true,
+                        isexpand = false,
                         parentId = item["parentid"].ToString()
                     };
                     treeList.Add(node);

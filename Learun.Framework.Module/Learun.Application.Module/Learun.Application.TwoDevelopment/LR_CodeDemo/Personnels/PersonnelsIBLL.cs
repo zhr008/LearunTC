@@ -19,6 +19,10 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
         /// <param name="queryJson">查询参数</param>
         /// <returns></returns>
         IEnumerable<tc_PersonnelsEntity> GetPageList(Pagination pagination, string queryJson);
+
+
+
+        IEnumerable<tc_PersonnelsEntity> GetPageList(string ApplicantId);
         /// <summary>
         /// 获取tc_Personnels表实体数据
         /// </summary>

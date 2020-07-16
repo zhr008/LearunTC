@@ -128,7 +128,66 @@ var bootstrap = function ($, learun) {
                     { label: "备注", name: "F_Description", width: 100, align: "left" },
                 ],
                 mainId: 'F_ApplicantId',
-                isPage: true
+                isPage: true,
+
+                isSubGrid: true,
+                subGridExpanded: function (subid, rowdata) {
+                    $('#' + subid).jfGrid({
+                        url: top.$.rootUrl + '/LR_CodeDemo/Personnels/GetPageListByApplicantId',
+                        headData: [
+                            { label: "姓名", name: "F_UserName", width: 100, align: "center" },
+                            { label: "身份证号码", name: "F_IDCardNo", width: 150, align: "center" },
+                            {
+                                label: "性别", name: "F_Gender", width: 100, align: "center",
+                                formatterAsync: function (callback, value, row, op, $cell) {
+                                    learun.clientdata.getAsync('dataItem', {
+                                        key: value,
+                                        code: 'Gender',
+                                        callback: function (_data) {
+                                            callback(_data.text);
+                                        }
+                                    });
+                                }
+
+                            },
+                            { label: "年龄", name: "F_Age", width: 100, align: "center" },
+
+                            { label: "存档编码", name: "F_PlaceCode", width: 100, align: "center" },
+                            { label: "证书编码", name: "F_CertCode", width: 100, align: "center" },
+                            {
+                                label: "来源", name: "F_ApplicantId", width: 180, align: "center",
+                                formatterAsync: function (callback, value, row, op, $cell) {
+                                    learun.clientdata.getAsync('custmerData', {
+                                        url: '/LR_SystemModule/DataSource/GetDataTable?code=' + 'applicantdata',
+                                        key: value,
+                                        keyId: 'f_applicantid',
+                                        callback: function (_data) {
+                                            callback(_data['f_companyname']);
+                                        }
+                                    });
+                                }
+                            },
+                            {
+                                label: "到场", name: "F_SceneType", width: 100, align: "center",
+                                formatterAsync: function (callback, value, row, op, $cell) {
+                                    learun.clientdata.getAsync('dataItem', {
+                                        key: value,
+                                        code: 'SceneType',
+                                        callback: function (_data) {
+                                            callback(_data.text);
+                                        }
+                                    });
+                                }
+                            },
+                            { label: "备注", name: "F_Description", width: 100, align: "left" },
+                        ]
+                    });
+
+                    $('#' + subid).jfGridSet('reload', { param: { ApplicantId: rowdata.F_ApplicantId } });
+                }
+
+
+
             });
             page.search();
         },
