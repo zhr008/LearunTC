@@ -87,6 +87,32 @@
                 $option.append($search);
                 $option.css('padding-bottom', '25px');
                 $search.on('click', function () { return false; });
+
+                $search.find('.fa-search').on("click", function (e) {
+                    var $this = $search.find('input');
+                    var keyword = $this.val();
+                    var $option = $this.parents('.lr-select-option');
+                    var dfop = $option[0].dfop;
+                    if (dfop.type === "tree" || dfop.type === "treemultiple") {
+                        var $optionContent = $this.parent().prev();
+                        $optionContent.lrtreeSet('search', { keyword: keyword });
+                    }
+                    else if (dfop.type === "default" || dfop.type === "multiple") {
+                        for (var i = 0, l = dfop.data.length; i < l; i++) {
+                            var _item = dfop.data[i];
+                            if (!keyword || _item[dfop.text].indexOf(keyword) != -1) {
+                                _item._lrhide = false;
+                            }
+                            else {
+                                _item._lrhide = true;
+                            }
+                        }
+                        $.lrselect.render(dfop);
+                    }
+
+                    $option = null;
+                });
+
                 $search.find('input').on("keypress", function (e) {
                     e = e || window.event;
                     if (e.keyCode === 13) {
