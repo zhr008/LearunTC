@@ -62,10 +62,10 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
                     dp.Add("F_IDCardNo", "%" + queryParam["F_IDCardNo"].ToString() + "%", DbType.String);
                     strSql.Append(" AND t.F_IDCardNo Like @F_IDCardNo ");
                 }
-                if (!queryParam["F_ApplicantId"].IsEmpty())
+                if (!queryParam["F_PersonId"].IsEmpty())
                 {
-                    dp.Add("F_ApplicantId",queryParam["F_ApplicantId"].ToString(), DbType.String);
-                    strSql.Append(" AND t.F_ApplicantId = @F_ApplicantId ");
+                    dp.Add("F_PersonId", queryParam["F_PersonId"].ToString(), DbType.String);
+                    strSql.Append(" AND t.F_PersonId = @F_PersonId ");
                 }
                 if (!queryParam["F_PlaceCode"].IsEmpty())
                 {

@@ -8,42 +8,50 @@ var refreshGirdData;
 
 
 var F_PersonId = request('F_PersonId');
+var F_IDCardNo = request('F_IDCardNo');
+var F_UserName = request('F_UserName');
 var F_ApplicantId = request('F_ApplicantId');
+var ParentDisable = request('ParentDisable');
+
 
 var bootstrap = function ($, learun) {
     "use strict";
     var page = {
         init: function () {
-            page.initGird();
             page.bind();
+            page.initGird();
         },
         bind: function () {
-            // 初始化左侧树形数据
-            // 初始化左侧树形数据
-            $('#dataTree').lrtree({
-                url: top.$.rootUrl + '/LR_CodeDemo/IDCard/GetTree?PersonId=' + F_PersonId + "&ApplicantId=" + F_ApplicantId,
-                nodeClick: function (item) {
-                    if (!!item.value) {
-                        F_PersonId = item.id;
-                        F_UserName = item.text;
-                        F_IDCardNo = item.value;
-                        F_ApplicantId = item.parentid
-                        page.search();
-                    }
-                    else {
+            if (ParentDisable == "true") {
+                $(".lr-layout-left").remove();
+                $("#lr_layout").removeClass("lr-layout-left-center");
 
-                        F_PersonId = "";
-                        F_UserName = "";
-                        F_IDCardNo = "";
-                        F_ApplicantId = item.id
-
-                        if (ParentDisable != "true") {
+            } else {
+                // 初始化左侧树形数据
+                $('#dataTree').lrtree({
+                    url: top.$.rootUrl + '/LR_CodeDemo/IDCard/GetTree?PersonId=' + F_PersonId + "&ApplicantId=" + F_ApplicantId,
+                    nodeClick: function (item) {
+                        if (!!item.parentId) {
+                            F_PersonId = item.id;
+                            F_UserName = item.text;
+                            F_IDCardNo = item.value;
+                            F_ApplicantId = "";
                             page.search();
                         }
-                    }
+                        else {
 
-                }
-            });
+                            F_PersonId = "";
+                            F_UserName = "";
+                            F_IDCardNo = "";
+                            F_ApplicantId = item.id
+                            if (ParentDisable != "true") {
+                                page.search();
+                            }
+                        }
+
+                    }
+                });
+            }
             $('#multiple_condition_query').lrMultipleQuery(function (queryJson) {
                 page.search(queryJson);
             }, 285, 400);
@@ -175,6 +183,8 @@ var bootstrap = function ($, learun) {
         },
         search: function (param) {
             param = param || {};
+            param.F_PersonId = F_PersonId;
+            param.F_ApplicantId = F_ApplicantId;
             $('#gridtable').jfGridSet('reload', { queryJson: JSON.stringify(param) });
         }
     };

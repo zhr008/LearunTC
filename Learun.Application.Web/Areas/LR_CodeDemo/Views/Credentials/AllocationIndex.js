@@ -27,7 +27,7 @@ var bootstrap = function ($, learun) {
             $('#dataTree').lrtree({
                 url: top.$.rootUrl + '/LR_CodeDemo/IDCard/GetTree?PersonId=' + F_PersonId + "&ApplicantId=" + F_ApplicantId,
                 nodeClick: function (item) {
-                    if (!!item.value) {
+                    if (!!item.parentId) {
                         F_PersonId = item.id;
                         F_UserName = item.text;
                         F_IDCardNo = item.value;
