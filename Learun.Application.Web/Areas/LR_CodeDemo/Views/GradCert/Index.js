@@ -42,7 +42,7 @@ var bootstrap = function ($, learun) {
                             F_PersonId = "";
                             F_UserName = "";
                             F_IDCardNo = "";
-                            F_ApplicantId = item.id
+                            //F_ApplicantId = item.id
                             if (ParentDisable != "true") {
                                 page.search();
                             }

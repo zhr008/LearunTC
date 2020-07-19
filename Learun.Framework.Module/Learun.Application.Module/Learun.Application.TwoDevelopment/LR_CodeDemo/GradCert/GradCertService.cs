@@ -136,7 +136,7 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
                 if (!queryParam["F_PersonId"].IsEmpty())
                 {
                     dp.Add("F_PersonId", queryParam["F_PersonId"].ToString(), DbType.String);
-                    strSql.Append(" AND t.F_PersonId = @F_PersonId ");
+                    strSql.Append(" AND p.F_PersonId = @F_PersonId ");
                 }
                 if (!queryParam["F_ApplicantId"].IsEmpty())
                 {
