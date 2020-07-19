@@ -45,7 +45,7 @@ var bootstrap = function ($, learun) {
                     });
                 }
                 else {
-                    learun.alert.warning('请选择树形列表人员!');
+                    learun.alert.warning('请选择人员信息人员!');
                 }
             });
             // 编辑

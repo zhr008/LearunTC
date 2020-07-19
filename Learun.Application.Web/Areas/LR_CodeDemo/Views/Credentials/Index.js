@@ -32,7 +32,8 @@ var bootstrap = function ($, learun) {
                 $('#dataTree').lrtree({
                     url: top.$.rootUrl + '/LR_CodeDemo/Credentials/GetTree?PersonId=' + F_PersonId + "&ApplicantId=" + F_ApplicantId,
                     nodeClick: function (item) {
-                        if (!!item.parentid) {
+                        debugger;
+                        if (!!item.code) {
                             F_PersonId = item.value;
                             F_UserName = item.text;
                             F_IDCardNo = item.code;
@@ -81,7 +82,7 @@ var bootstrap = function ($, learun) {
                     });
                 }
                 else {
-                    learun.alert.warning('请选择树形列表人员!');
+                    learun.alert.warning('请选择人员信息人员!');
                 }
             });
             // 编辑
