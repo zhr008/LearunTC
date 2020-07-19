@@ -42,6 +42,15 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
         /// <returns></returns>
         [Column("F_PERSONID")]
         public string F_PersonId { get; set; }
+
+        /// <summary>
+        /// RELATIONSTATUS
+        /// </summary>
+        /// <returns></returns>
+        [Column("F_RELATIONSTATUS")]
+        public int? F_RelationStatus { get; set; }
+
+        
         /// <summary>
         /// F_Description
         /// </summary>
@@ -124,7 +133,9 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
 
     public class RelationDeatil
     {
-      
+
+     
+        public string F_RelationId { get; set; }
         public string F_CredentialsId { get; set; }
     
         public string F_UserName { get; set; }
@@ -164,6 +175,8 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
         public DateTime? F_CheckInTime { get; set; }
        
         public string F_Description { get; set; }
+
+        public int? F_RelationStatus { get; set; }
 
     }
 }

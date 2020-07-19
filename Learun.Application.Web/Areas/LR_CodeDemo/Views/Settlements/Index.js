@@ -111,7 +111,7 @@ var bootstrap = function ($, learun) {
             $('#lr_print').on('click', function () {
                 $('#gridtable').jqprintTable();
             });
-            //  结算详情
+            //新增结算详情
             $('#lr_adddetails').on('click', function () {
                 var keyValue = $('#gridtable').jfGridValue('F_SettlementsId');
                 var F_PersonId = $('#gridtable').jfGridValue('F_PersonId');
@@ -130,7 +130,26 @@ var bootstrap = function ($, learun) {
                     });
                 }
             });
+            //结算详情
+            $('#lr_details').on('click', function () {
+                var F_SettlementsId = $('#gridtable').jfGridValue('F_SettlementsId');
 
+                if (learun.checkrow(F_SettlementsId)) {
+
+                    learun.layerForm({
+                        id: 'Index',
+                        title: '结算详情',
+                        url: top.$.rootUrl + '/LR_CodeDemo/SettlementsDetails/Index?F_SettlementsId=' + F_SettlementsId,
+                        width: 1200,
+                        height: 800,
+                        maxmin: true,
+                        btn: null,
+                        end: function () {
+                            //location.reload();  //刷新页面
+                        }
+                    });
+                }
+            });
            
         },
         // 初始化列表

@@ -46,7 +46,7 @@ namespace Learun.Application.Web.Areas.LR_CodeDemo.Controllers
         /// <param name="queryJson">查询参数</param>
         /// <returns></returns>
         [HttpGet]
-        
+
         public ActionResult GetList(string queryJson)
         {
             var data = RelationIBLL.GetList(queryJson);
@@ -59,7 +59,7 @@ namespace Learun.Application.Web.Areas.LR_CodeDemo.Controllers
         /// <param name="queryJson">查询参数</param>
         /// <returns></returns>
         [HttpGet]
-        
+
         public ActionResult GetPageList(string pagination, string queryJson)
         {
             Pagination paginationobj = pagination.ToObject<Pagination>();
@@ -79,11 +79,15 @@ namespace Learun.Application.Web.Areas.LR_CodeDemo.Controllers
         /// <param name="keyValue">主键</param>
         /// <returns></returns>
         [HttpGet]
-        
+
         public ActionResult GetFormData(string keyValue)
         {
             var data = RelationIBLL.GetEntity(keyValue);
-            return Success(data);
+            var jsonData = new
+            {
+                tc_Relation = data,
+            };
+            return Success(jsonData);
         }
         #endregion
 
@@ -95,7 +99,7 @@ namespace Learun.Application.Web.Areas.LR_CodeDemo.Controllers
         /// <param name="keyValue">主键</param>
         /// <returns></returns>
         [HttpPost]
-        
+
         public ActionResult DeleteForm(string keyValue)
         {
             RelationIBLL.DeleteEntity(keyValue);
@@ -109,7 +113,7 @@ namespace Learun.Application.Web.Areas.LR_CodeDemo.Controllers
         /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        
+
         public ActionResult SaveForm(string keyValue, tc_RelationEntity entity)
         {
             RelationIBLL.SaveEntity(keyValue, entity);
@@ -132,16 +136,17 @@ namespace Learun.Application.Web.Areas.LR_CodeDemo.Controllers
                     ProjectDetailId = ProjectDetailId,
                     ProjectId = ProjectDetailId,
                     F_CertId = item,
-                    F_PersonId = certEntity.F_PersonId
+                    F_PersonId = certEntity.F_PersonId,
+                    F_RelationStatus = 1 //未确认状态
                 };
-                RelationIBLL.SaveEntity("",tc);
+                RelationIBLL.SaveEntity("", tc);
             }
             return Success("分配成功");
         }
 
 
 
-        public ActionResult GetRelationDetail(string ProjectDetailId) 
+        public ActionResult GetRelationDetail(string ProjectDetailId)
         {
             var data = RelationIBLL.GetRelationDetail(ProjectDetailId);
             return Success(data);

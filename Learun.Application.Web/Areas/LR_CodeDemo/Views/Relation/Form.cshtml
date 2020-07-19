@@ -1,59 +1,22 @@
 ﻿@{
-    ViewBag.Title = "1231";
+    ViewBag.Title = "";
     Layout = "~/Views/Shared/_Form.cshtml";
 }
-<div class="lr-form-wrap" id="form">
-    <div class="col-xs-6 lr-form-item">
-        <div class="lr-form-item-title">F_RelationId<font face="宋体">*</font></div>
-        <input id="F_RelationId" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+    <div class="lr-form-wrap" id="form">
+        <div class="col-xs-12 lr-form-item" data-table="tc_Relation" style="display: none; ">
+            <div class="lr-form-item-title">F_RelationId<font face="宋体">*</font></div>
+            <input id="F_RelationId" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+        </div>
+
+        <div class="col-xs-12 lr-form-item" data-table="tc_Relation">
+            <div class="lr-form-item-title">审查状态<font face="宋体">*</font></div>
+            <div id="F_RelationStatus" isvalid="yes" checkexpession="NotNull"></div>
+        </div>
+
+        <div class="col-xs-12 lr-form-item" data-table="tc_Relation">
+            <div class="lr-form-item-title">备注</div>
+            <textarea id="F_Description" class="form-control" style="height:100px;" isvalid="yes"></textarea>
+        </div>
+
     </div>
-    <div class="col-xs-6 lr-form-item">
-        <div class="lr-form-item-title">ProjectId<font face="宋体">*</font></div>
-        <input id="ProjectId" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
-    </div>
-    <div class="col-xs-6 lr-form-item">
-        <div class="lr-form-item-title">ProjectDetailId<font face="宋体">*</font></div>
-        <input id="ProjectDetailId" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
-    </div>
-    <div class="col-xs-6 lr-form-item">
-        <div class="lr-form-item-title">F_CertId<font face="宋体">*</font></div>
-        <input id="F_CertId" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
-    </div>
-    <div class="col-xs-6 lr-form-item">
-        <div class="lr-form-item-title">F_PersonId<font face="宋体">*</font></div>
-        <input id="F_PersonId" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
-    </div>
-    <div class="col-xs-6 lr-form-item">
-        <div class="lr-form-item-title">F_Description<font face="宋体">*</font></div>
-        <input id="F_Description" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
-    </div>
-    <div class="col-xs-6 lr-form-item">
-        <div class="lr-form-item-title">F_CreateDate<font face="宋体">*</font></div>
-        <input id="F_CreateDate" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
-    </div>
-    <div class="col-xs-6 lr-form-item">
-        <div class="lr-form-item-title">F_CreateUserName<font face="宋体">*</font></div>
-        <input id="F_CreateUserName" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
-    </div>
-    <div class="col-xs-6 lr-form-item">
-        <div class="lr-form-item-title">F_CreateUserId<font face="宋体">*</font></div>
-        <input id="F_CreateUserId" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
-    </div>
-    <div class="col-xs-6 lr-form-item">
-        <div class="lr-form-item-title">F_ModifyDate<font face="宋体">*</font></div>
-        <input id="F_ModifyDate" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
-    </div>
-    <div class="col-xs-6 lr-form-item">
-        <div class="lr-form-item-title">F_ModifyUserName<font face="宋体">*</font></div>
-        <input id="F_ModifyUserName" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
-    </div>
-    <div class="col-xs-6 lr-form-item">
-        <div class="lr-form-item-title">F_ModifyUserId<font face="宋体">*</font></div>
-        <input id="F_ModifyUserId" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
-    </div>
-    <div class="col-xs-6 lr-form-item">
-        <div class="lr-form-item-title">F_DeleteMark<font face="宋体">*</font></div>
-        <input id="F_DeleteMark" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
-    </div>
-</div>
 @Html.AppendJsFile("/Areas/LR_CodeDemo/Views/Relation/Form.js")

@@ -83,6 +83,11 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
                     dp.Add("F_PayStatus", queryParam["F_PayStatus"].ToString(), DbType.String);
                     strSql.Append(" AND t.F_PayStatus = @F_PayStatus ");
                 }
+                if (!queryParam["F_SettlementsId"].IsEmpty())
+                {
+                    dp.Add("F_SettlementsId", queryParam["F_SettlementsId"].ToString(), DbType.String);
+                    strSql.Append(" AND t.F_SettlementsId = @F_SettlementsId ");
+                }
                 return this.BaseRepository().FindList<SettlementsDetailsInfo>(strSql.ToString(), dp, pagination);
             }
             catch (Exception ex)

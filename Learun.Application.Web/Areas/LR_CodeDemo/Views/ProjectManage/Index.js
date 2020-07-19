@@ -78,7 +78,7 @@ var bootstrap = function ($, learun) {
             $('#lr_print').on('click', function () {
                 $('#gridtable').jqprintTable();
             });
-            //   需求
+            //新增需求
             $('#lr_adddetail').on('click', function () {
                 var ProjectId = $('#gridtable').jfGridValue('ProjectId');
                 if (learun.checkrow(ProjectId)) {
@@ -95,7 +95,26 @@ var bootstrap = function ($, learun) {
                 }
             });
             
-            
+            //项目详情
+            $('#lr_details').on('click', function () {
+                var ProjectId = $('#gridtable').jfGridValue('ProjectId');
+
+                if (learun.checkrow(ProjectId)) {
+
+                    learun.layerForm({
+                        id: 'Index',
+                        title: '项目详情',
+                        url: top.$.rootUrl + '/LR_CodeDemo/ProjectDetail/Index?ProjectId=' + ProjectId,
+                        width: 1200,
+                        height: 800,
+                        maxmin: true,
+                        btn: null,
+                        end: function () {
+                            //location.reload();  //刷新页面
+                        }
+                    });
+                }
+            });
         },
         // 初始化列表
         initGird: function () {

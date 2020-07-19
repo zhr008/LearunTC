@@ -9,13 +9,24 @@ var bootstrap = function ($, learun) {
     var selectedRow = learun.frameTab.currentIframe().selectedRow;
     var page = {
         init: function () {
+            page.bind();
             page.initData();
         },
         bind: function () {
+            $('#F_RelationStatus').lrDataItemSelect({ code: 'RelationStatus' });
         },
         initData: function () {
-            if (!!selectedRow) {
-                $('#form').lrSetFormData(selectedRow);
+            if (!!keyValue) {
+                $.lrSetForm(top.$.rootUrl + '/LR_CodeDemo/Relation/GetFormData?keyValue=' + keyValue, function (data) {
+                    for (var id in data) {
+                        if (!!data[id].length && data[id].length > 0) {
+                            $('#' + id).jfGridSet('refreshdata', data[id]);
+                        }
+                        else {
+                            $('[data-table="' + id + '"]').lrSetFormData(data[id]);
+                        }
+                    }
+                });
             }
         }
     };

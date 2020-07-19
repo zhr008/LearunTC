@@ -10,6 +10,9 @@ var F_UserName = request('F_UserName');
 var F_ApplicantId = request('F_ApplicantId');
 var ParentDisable = request('ParentDisable');
 
+
+var F_SettlementsId = request('F_SettlementsId');
+
 var bootstrap = function ($, learun) {
     "use strict";
     var page = {
@@ -18,29 +21,7 @@ var bootstrap = function ($, learun) {
             page.bind();
         },
         bind: function () {
-            // 初始化左侧树形数据
-            $('#dataTree').lrtree({
-                url: top.$.rootUrl + '/LR_CodeDemo/IDCard/GetTree?PersonId=' + F_PersonId + "&ApplicantId=" + F_ApplicantId,
-                nodeClick: function (item) {
-                    if (!!item.parentId) {
-                        F_PersonId = item.id;
-                        F_UserName = item.text;
-                        F_IDCardNo = item.value;
-                        F_ApplicantId = item.parentid
-                        page.search();
-                    }
-                    else {
-
-                        F_PersonId = "";
-                        F_UserName = "";
-                        F_IDCardNo = "";
-                        F_ApplicantId = item.id
-                        if (ParentDisable != "true") {
-                            page.search();
-                        }
-                    }
-                }
-            });
+          
             $('#multiple_condition_query').lrMultipleQuery(function (queryJson) {
                 page.search(queryJson);
             }, 220, 400);
@@ -133,6 +114,7 @@ var bootstrap = function ($, learun) {
             param = param || {};
             param.F_PersonId = F_PersonId;
             param.F_ApplicantId = F_ApplicantId;
+            param.F_SettlementsId = F_SettlementsId
             $('#gridtable').jfGridSet('reload', { queryJson: JSON.stringify(param) });
         }
     };

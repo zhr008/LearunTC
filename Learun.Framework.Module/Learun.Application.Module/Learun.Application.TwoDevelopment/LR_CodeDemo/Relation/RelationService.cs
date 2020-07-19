@@ -114,6 +114,7 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
             {
                 var strSql = new StringBuilder();
                 strSql.Append(@"select  
+t.F_RelationId,
 
 n.F_UserName,
       n.F_IDCardNo,
@@ -129,7 +130,10 @@ n.F_UserName,
       c.F_PracticeStyle,
       c.F_PracticeSealStyle,
       c.F_CheckInTime,
-      c.F_Description from dbo.tc_Relation t
+      t.F_Description,
+      t.F_RelationStatus
+
+from dbo.tc_Relation t
 left
                       join dbo.tc_Credentials c on t.F_CertId = c.F_CredentialsId
                  left
