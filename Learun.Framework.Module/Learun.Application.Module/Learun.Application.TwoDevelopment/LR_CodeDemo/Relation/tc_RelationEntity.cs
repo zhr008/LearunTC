@@ -124,6 +124,7 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
             this.F_ModifyDate = DateTime.Now;
             UserInfo userInfo = LoginUserInfo.Get();
             this.F_ModifyUserId = userInfo.userId;
+            this.F_ModifyDate = DateTime.Now;
             this.F_ModifyUserName = userInfo.realName;
         }
         #endregion
@@ -177,6 +178,10 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
         public string F_Description { get; set; }
 
         public int? F_RelationStatus { get; set; }
+
+        public string F_ModifyUserName { get; set; }
+
+        public DateTime? F_ModifyDate { get; set; }
 
     }
 }

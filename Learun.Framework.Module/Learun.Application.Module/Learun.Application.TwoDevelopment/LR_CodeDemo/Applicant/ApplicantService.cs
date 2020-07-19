@@ -49,7 +49,10 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
                 t.F_Description,
                 t.F_ApplicantType,
                 t.F_CertDateBegin,
-                t.F_CertDateEnd
+                t.F_CertDateEnd,
+                t.F_AccountName,
+                t.F_SupplyType
+
                 ");
                 strSql.Append("  FROM tc_Applicant t ");
                 strSql.Append("  WHERE 1=1 ");

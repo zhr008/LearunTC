@@ -131,7 +131,9 @@ n.F_UserName,
       c.F_PracticeSealStyle,
       c.F_CheckInTime,
       t.F_Description,
-      t.F_RelationStatus
+      t.F_RelationStatus,
+      t.F_ModifyUserName,
+      t.F_ModifyDate
 
 from dbo.tc_Relation t
 left

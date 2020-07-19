@@ -6,6 +6,7 @@ var refreshGirdData;
 
 var ProjectId = request('ProjectId');
 var UpdateRelation;
+var DeleteRelation;
 var bootstrap = function ($, learun) {
     "use strict";
     var page = {
@@ -203,18 +204,18 @@ var bootstrap = function ($, learun) {
                                     });
                                 }
                             },
-                            {
-                                label: "专业序列", name: "F_MajorType", width: 100, align: "center",
-                                formatterAsync: function (callback, value, row, op, $cell) {
-                                    learun.clientdata.getAsync('dataItem', {
-                                        key: value,
-                                        code: 'MajorType',
-                                        callback: function (_data) {
-                                            callback(_data.text);
-                                        }
-                                    });
-                                }
-                            },
+                            //{
+                            //    label: "专业序列", name: "F_MajorType", width: 100, align: "center",
+                            //    formatterAsync: function (callback, value, row, op, $cell) {
+                            //        learun.clientdata.getAsync('dataItem', {
+                            //            key: value,
+                            //            code: 'MajorType',
+                            //            callback: function (_data) {
+                            //                callback(_data.text);
+                            //            }
+                            //        });
+                            //    }
+                            //},
                             { label: "证书专业", name: "F_Major", width: 100, align: "center" },
                             //{ label: "发证机构", name: "F_CertOrganization", width: 100, align: "center" },
                             //{
@@ -241,18 +242,18 @@ var bootstrap = function ($, learun) {
                             //        });
                             //    }
                             //},
-                            {
-                                label: "库存状态", name: "F_CertStatus", width: 100, align: "center",
-                                formatterAsync: function (callback, value, row, op, $cell) {
-                                    learun.clientdata.getAsync('dataItem', {
-                                        key: value,
-                                        code: 'CertStatus',
-                                        callback: function (_data) {
-                                            callback(_data.text);
-                                        }
-                                    });
-                                }
-                            },
+                            //{
+                            //    label: "库存状态", name: "F_CertStatus", width: 100, align: "center",
+                            //    formatterAsync: function (callback, value, row, op, $cell) {
+                            //        learun.clientdata.getAsync('dataItem', {
+                            //            key: value,
+                            //            code: 'CertStatus',
+                            //            callback: function (_data) {
+                            //                callback(_data.text);
+                            //            }
+                            //        });
+                            //    }
+                            //},
                             //{
                             //    label: "执业证", name: "F_PracticeStyle", width: 100, align: "center",
                             //    formatterAsync: function (callback, value, row, op, $cell) {
@@ -278,10 +279,14 @@ var bootstrap = function ($, learun) {
                             //    }
                             //},
                             {
-                                label: "登记日期", name: "F_CheckInTime", width: 100, align: "center",
+                                label: "更新日期", name: "F_ModifyDate", width: 100, align: "center",
                                 formatter: function (cellvalue, row) {
                                     return learun.formatDate(cellvalue, 'yyyy-MM-dd');
                                 }
+                            },
+
+                            {
+                                label: "操作人", name: "F_ModifyUserName", width: 100, align: "center",
                             },
                             {
                                 label: "审查状态", name: "F_RelationStatus", width: 100, align: "center",
@@ -303,6 +308,7 @@ var bootstrap = function ($, learun) {
                                 formatter: function (cellvalue, rowObject) {
                                     var _html = "";
                                     _html += "<a class='btn  btn-success newButton' href=\"#\"  onclick=\"UpdateRelation('" + rowObject.F_RelationId + "')\">&nbsp;&nbsp;修改</a>"
+                                    _html += "<a class='btn  btn-success newButton' href=\"#\"  onclick=\"DeleteRelation('" + rowObject.F_RelationId + "')\">&nbsp;&nbsp;删除</a>"
                                     return _html;
                                 }
                             }
@@ -335,6 +341,18 @@ var bootstrap = function ($, learun) {
                 return top[id].acceptClick(refreshGirdData);
             }
         });
+    }
+
+    DeleteRelation = function (F_RelationId) {
+        if (learun.checkrow(F_RelationId)) {
+            learun.layerConfirm('是否确认删除该项！', function (res) {
+                if (res) {
+                    learun.deleteForm(top.$.rootUrl + '/LR_CodeDemo/Relation/DeleteForm', { keyValue: F_RelationId }, function () {
+                        refreshGirdData();
+                    });
+                }
+            });
+        }
     }
     page.init();
 }

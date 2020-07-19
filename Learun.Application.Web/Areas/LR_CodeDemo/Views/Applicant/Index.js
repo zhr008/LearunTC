@@ -70,6 +70,18 @@ var bootstrap = function ($, learun) {
                 url: top.$.rootUrl + '/LR_CodeDemo/Applicant/GetPageList',
                 headData: [
                     { label: "公司名称", name: "F_CompanyName", width: 260, align: "left" },
+                    {
+                        label: "供应商类型", name: "F_SupplyType", width: 100, align: "center",
+                        formatterAsync: function (callback, value, row, op, $cell) {
+                            learun.clientdata.getAsync('dataItem', {
+                                key: value,
+                                code: 'SupplyType',
+                                callback: function (_data) {
+                                    callback(_data.text);
+                                }
+                            });
+                        }
+                    },
                     { label: "工商注册号码", name: "F_RegistrationNo", width: 150, align: "center" },
                     //{ label: "省", name: "F_ProvinceCode", width: 100, align: "left"},
                     //{ label: "市", name: "F_CityCode", width: 100, align: "left"},
@@ -124,7 +136,7 @@ var bootstrap = function ($, learun) {
                     //{ label: "办事人职务", name: "F_ClerkJob", width: 100, align: "left"},
                     //{ label: "单位开户行", name: "F_BankName", width: 100, align: "left"},
                     //{ label: "单位银行账户", name: "F_BankAccount", width: 100, align: "left"},
-                   
+
                     { label: "备注", name: "F_Description", width: 100, align: "left" },
                 ],
                 mainId: 'F_ApplicantId',

@@ -84,7 +84,7 @@ var bootstrap = function ($, learun) {
                 if (learun.checkrow(ProjectId)) {
                     learun.layerForm({
                         id: 'detail',
-                        title: '新增',
+                        title: '增加用工配置',
                         url: top.$.rootUrl + '/LR_CodeDemo/ProjectDetail/Form?ProjectId=' + ProjectId,
                         width: 750,
                         height: 450,
@@ -103,7 +103,7 @@ var bootstrap = function ($, learun) {
 
                     learun.layerForm({
                         id: 'Index',
-                        title: '项目详情',
+                        title: '配置详情',
                         url: top.$.rootUrl + '/LR_CodeDemo/ProjectDetail/Index?ProjectId=' + ProjectId,
                         width: 1200,
                         height: 800,

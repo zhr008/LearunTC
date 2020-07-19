@@ -19,6 +19,8 @@ var bootstrap = function ($, learun) {
             $('#lr_form_tabs ul li').eq(0).trigger('click');
             $('#F_ManageType').lrDataItemSelect({ code: 'ManageType' });
             $('#F_ApplicantType').lrDataItemSelect({ code: 'ApplicantType' });
+            $('#F_SupplyType').lrDataItemSelect({ code: 'SupplyType' });
+            
             // 省市区
             $('#area').lrAreaSelect();
             $("#F_ApplicantType").lrselectSet(1);

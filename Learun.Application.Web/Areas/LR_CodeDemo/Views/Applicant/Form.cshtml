@@ -19,18 +19,25 @@
 
 
         <div class="col-xs-6 lr-form-item" data-table="tc_Applicant">
-            <div class="lr-form-item-title">公司名称<font face="宋体">*</font></div>
+            <div class="lr-form-item-title">供应商名称<font face="宋体">*</font></div>
             <input id="F_CompanyName" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
         </div>
+
         <div class="col-xs-6 lr-form-item" data-table="tc_Applicant">
-            <div class="lr-form-item-title">工商注册号码<font face="宋体">*</font></div>
-            <input id="F_RegistrationNo" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+            <div class="lr-form-item-title">供应商类型<font face="宋体">*</font></div>
+            <div id="F_SupplyType" isvalid="yes" checkexpession="NotNull"></div>
+        </div>
+
+
+        <div class="col-xs-6 lr-form-item" data-table="tc_Applicant">
+            <div class="lr-form-item-title">工商注册号码</div>
+            <input id="F_RegistrationNo" type="text" class="form-control" />
         </div>
 
 
 
         <div class="col-xs-12 lr-form-item" data-table="tc_Applicant">
-            <div class="lr-form-item-title">公司地点</div>
+            <div class="lr-form-item-title">注册地址</div>
             <div id="area" class="col-xs-6 lr-form-area">
                 <div id="F_ProvinceId" placeholder="省" class="col-xs-4"></div>
                 <div id="F_CityId" placeholder="市" class="col-xs-4"></div>
@@ -59,37 +66,39 @@
             <input id="F_Address" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
         </div>*@
         <div class="col-xs-6 lr-form-item" data-table="tc_Applicant">
-            <div class="lr-form-item-title">注册资金(万元)<font face="宋体">*</font></div>
-            <input id="F_RegisteredCapital" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+            <div class="lr-form-item-title">注册资金(万元)</div>
+            <input id="F_RegisteredCapital" type="text" class="form-control" />
         </div>
         <div class="col-xs-6 lr-form-item" data-table="tc_Applicant">
-            <div class="lr-form-item-title">法定代表人<font face="宋体">*</font></div>
-            <input id="F_Representative" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+            <div class="lr-form-item-title">法定代表人</div>
+            <input id="F_Representative" type="text" class="form-control" />
         </div>
         <div class="col-xs-6 lr-form-item" data-table="tc_Applicant">
-            <div class="lr-form-item-title">成立日期<font face="宋体">*</font></div>
-            <input id="F_EstablishDate" type="text" class="form-control lr-input-wdatepicker" onfocus="WdatePicker({ dateFmt:'yyyy-MM-dd',onpicked: function () { $('#F_EstablishDate').trigger('change'); } })" isvalid="yes" checkexpession="NotNull" />
+            <div class="lr-form-item-title">成立日期</div>
+            <input id="F_EstablishDate" type="text" class="form-control lr-input-wdatepicker" onfocus="WdatePicker({ dateFmt:'yyyy-MM-dd',onpicked: function () { $('#F_EstablishDate').trigger('change'); } })" />
         </div>
         <div class="col-xs-6 lr-form-item" data-table="tc_Applicant">
-            <div class="lr-form-item-title">工商更新日期<font face="宋体">*</font></div>
-            <input id="F_BusinessUpdateDate" type="text" class="form-control lr-input-wdatepicker" onfocus="WdatePicker({ dateFmt:'yyyy-MM-dd',onpicked: function () { $('#F_BusinessUpdateDate').trigger('change'); } })" isvalid="yes" checkexpession="NotNull" />
+            <div class="lr-form-item-title">工商更新日期</div>
+            <input id="F_BusinessUpdateDate" type="text" class="form-control lr-input-wdatepicker" onfocus="WdatePicker({ dateFmt:'yyyy-MM-dd',onpicked: function () { $('#F_BusinessUpdateDate').trigger('change'); } })" />
         </div>
         <div class="col-xs-6 lr-form-item" data-table="tc_Applicant">
             <div class="lr-form-item-title">现有资质证书<font face="宋体">*</font></div>
             <input id="F_QualificationCert" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
         </div>
         <div class="col-xs-6 lr-form-item" data-table="tc_Applicant">
-            <div class="lr-form-item-title">资质取得日期<font face="宋体">*</font></div>
-            <input id="F_CertDateBegin" type="text" class="form-control lr-input-wdatepicker" onfocus="WdatePicker({ dateFmt:'yyyy-MM-dd',onpicked: function () { $('#F_CertDateBegin').trigger('change'); } })" isvalid="yes" checkexpession="NotNull" />
+            <div class="lr-form-item-title">资质取得日期</div>
+            <input id="F_CertDateBegin" type="text" class="form-control lr-input-wdatepicker" onfocus="WdatePicker({ dateFmt:'yyyy-MM-dd',onpicked: function () { $('#F_CertDateBegin').trigger('change'); } })" />
         </div>
         <div class="col-xs-6 lr-form-item" data-table="tc_Applicant">
-            <div class="lr-form-item-title">资质到期日期<font face="宋体">*</font></div>
-            <input id="F_CertDateEnd" type="text" class="form-control lr-input-wdatepicker" onfocus="WdatePicker({ dateFmt:'yyyy-MM-dd',onpicked: function () { $('#F_CertDateEnd').trigger('change'); } })" isvalid="yes" checkexpession="NotNull" />
+            <div class="lr-form-item-title">资质到期日期</div>
+            <input id="F_CertDateEnd" type="text" class="form-control lr-input-wdatepicker" onfocus="WdatePicker({ dateFmt:'yyyy-MM-dd',onpicked: function () { $('#F_CertDateEnd').trigger('change'); } })" />
         </div>
         <div class="col-xs-6 lr-form-item" data-table="tc_Applicant">
             <div class="lr-form-item-title">经营状态<font face="宋体">*</font></div>
             <div id="F_ManageType" isvalid="yes" checkexpession="NotNull"></div>
         </div>
+
+
     </div>
     <div class="lr-form-wrap tab-pane" id="tab2">
         <div class="col-xs-6 lr-form-item" data-table="tc_Applicant">
@@ -121,19 +130,23 @@
             <input id="F_ClerkOtherContact" type="text" class="form-control" />
         </div>
     </div>
-<div class="lr-form-wrap tab-pane" id="tab3">
-    <div class="col-xs-6 lr-form-item"  data-table="tc_Applicant" >
-        <div class="lr-form-item-title">单位开户行<font face="宋体">*</font></div>
-        <input id="F_BankName" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+    <div class="lr-form-wrap tab-pane" id="tab3">
+        <div class="col-xs-6 lr-form-item" data-table="tc_Applicant">
+            <div class="lr-form-item-title">开户名<font face="宋体">*</font></div>
+            <input id="F_AccountName" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+        </div>
+        <div class="col-xs-6 lr-form-item" data-table="tc_Applicant">
+            <div class="lr-form-item-title">开户行<font face="宋体">*</font></div>
+            <input id="F_BankName" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+        </div>
+        <div class="col-xs-6 lr-form-item" data-table="tc_Applicant">
+            <div class="lr-form-item-title">银行账户<font face="宋体">*</font></div>
+            <input id="F_BankAccount" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+        </div>
+        <div class="col-xs-12 lr-form-item" data-table="tc_Applicant">
+            <div class="lr-form-item-title">备注</div>
+            <textarea id="F_Description" class="form-control" style="height:100px;"></textarea>
+        </div>
     </div>
-    <div class="col-xs-6 lr-form-item"  data-table="tc_Applicant" >
-        <div class="lr-form-item-title">单位银行账户<font face="宋体">*</font></div>
-        <input id="F_BankAccount" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
-    </div>
-    <div class="col-xs-12 lr-form-item"  data-table="tc_Applicant" >
-        <div class="lr-form-item-title">备注</div>
-        <textarea id="F_Description" class="form-control" style="height:100px;"  ></textarea>
-    </div>
-</div>
 </div>
 @Html.AppendJsFile("/Areas/LR_CodeDemo/Views/Applicant/Form.js")

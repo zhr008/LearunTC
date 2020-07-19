@@ -187,6 +187,19 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
         /// </summary>
         [Column("F_DELETEMARK")]
         public int? F_DeleteMark { get; set; }
+
+        /// <summary>
+        /// F_SupplyType
+        /// </summary>
+        [Column("F_SUPPLYTYPE")]
+        public int? F_SupplyType { get; set; }
+        /// <summary>
+        /// F_AccountName
+        /// </summary>
+        [Column("F_ACCOUNTNAME")]
+        public string F_AccountName { get; set; }
+
+        
         #endregion
 
         #region 扩展操作
