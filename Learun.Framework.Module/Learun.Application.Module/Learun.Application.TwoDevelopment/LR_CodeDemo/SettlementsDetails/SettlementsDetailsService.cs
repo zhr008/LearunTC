@@ -37,6 +37,7 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
                 t.F_PayCondition,
                 p.F_UserName,
                 p.F_IDCardNo,
+                t.F_PayDate,
                 p.F_ApplicantId,
                 t.F_PersonId
                 ");
@@ -120,7 +121,8 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
                 p.F_UserName,
                 p.F_IDCardNo,
                 p.F_ApplicantId,
-                t.F_PersonId
+                t.F_PersonId,
+                t.F_PayDate
                 ");
                 strSql.Append("  FROM tc_SettlementsDetails t ");
                 strSql.Append("  LEFT JOIN tc_Personnels p ON t.F_PersonId =p.F_PersonId ");

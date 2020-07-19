@@ -13,7 +13,7 @@
             top.learun.language.get(_msg, function (msg) {
                 top.layer.confirm(msg, {
                     btn: ['确认', '取消'],
-                    title: "力软提示",
+                    title: "提示",
                     icon: 0,
                     skin: 'lr-layer',
                     success: function (layero, index) {

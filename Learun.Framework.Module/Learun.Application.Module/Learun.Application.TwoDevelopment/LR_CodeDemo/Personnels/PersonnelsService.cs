@@ -35,8 +35,11 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
                 t.F_IDCardNo,
 
  
-        DATEDIFF(year, CONVERT(smalldatetime, SUBSTRING(ISNULL(t.F_IDCardNo, 0), 7, 8)), GETDATE()) AS F_Age, 
-        CASE LEFT(RIGHT(t.F_IDCardNo, 2), 1) % 2 WHEN 1 THEN '2' ELSE '1' END AS F_Gender,
+        FLOOR(DATEDIFF(DY, substring(t.F_IDCardNo,7,4), GETDATE()) / 365.25) AS F_Age, 
+        case
+ when len(t.F_IDCardNo) = 18 and cast(substring(t.F_IDCardNo,17,1) as int) % 2 = 0 then '1'
+when len(t.F_IDCardNo) = 18 and cast(substring(t.F_IDCardNo,17,1) as int) % 2 = 1 then '2'
+else null end  AS F_Gender,
 
 
         

@@ -39,6 +39,13 @@
             <div class="lr-form-item-title">支付金额</div>
             <input id="F_PayAmount" type="text" class="form-control" />
         </div>
+
+        <div class="col-xs-12 lr-form-item" data-table="tc_SettlementsDetails">
+            <div class="lr-form-item-title">支付时间</div>
+            <input id="F_PayDate" type="text" class="form-control lr-input-wdatepicker" onfocus="WdatePicker({ realDateFmt:'yyyy-MM-dd HH:mm',onpicked: function () { $('#F_PayDate').trigger('change'); } })" isvalid="yes" checkexpession="NotNull" />
+        </div>
+        
+
         @*<div class="col-xs-12 lr-form-item" data-table="tc_SettlementsDetails">
             <div class="lr-form-item-title">支付状态</div>
             <div id="F_PayStatus"></div>
