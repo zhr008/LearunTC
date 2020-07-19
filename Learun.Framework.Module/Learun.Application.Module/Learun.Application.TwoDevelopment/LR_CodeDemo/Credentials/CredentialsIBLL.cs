@@ -46,6 +46,13 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
         /// <param name="keyValue">主键</param>
         /// <param name="entity">实体</param>
         void SaveEntity(string keyValue, tc_CredentialsEntity entity);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="PersonId"></param>
+        /// <param name="ApplicantId"></param>
+        /// <returns></returns>
+        List<TreeModel> GetTree(string PersonId, string ApplicantId);
         #endregion
 
     }

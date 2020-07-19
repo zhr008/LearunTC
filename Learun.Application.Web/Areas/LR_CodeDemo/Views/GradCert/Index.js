@@ -22,6 +22,7 @@ var bootstrap = function ($, learun) {
             if (ParentDisable == "true") {
                 $(".lr-layout-left").remove();
                 $("#lr_layout").removeClass("lr-layout-left-center");
+                $("#multiple_condition_query").remove();
 
             } else {
                 // 初始化左侧树形数据
@@ -56,6 +57,7 @@ var bootstrap = function ($, learun) {
             $('#F_EducationType').lrDataItemSelect({ code: 'EducationType' });
             $('#F_Term').lrDataItemSelect({ code: 'Term' });
             $('#F_OriginalType').lrDataItemSelect({ code: 'OriginalType' });
+            $('#F_MajorType').lrDataItemSelect({ code: 'MajorType' });
             // 刷新
             $('#lr_refresh').on('click', function () {
                 location.reload();

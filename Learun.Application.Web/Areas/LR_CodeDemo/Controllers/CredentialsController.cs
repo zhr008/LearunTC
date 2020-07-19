@@ -121,6 +121,16 @@ namespace Learun.Application.Web.Areas.LR_CodeDemo.Controllers
             return Success("保存成功！");
         }
         #endregion
+        /// <summary>
+        /// 获取左侧树形数据
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
 
+        public ActionResult GetTree(string PersonId, string ApplicantId)
+        {
+            var data = credentialsIBLL.GetTree(PersonId, ApplicantId);
+            return Success(data);
+        }
     }
 }

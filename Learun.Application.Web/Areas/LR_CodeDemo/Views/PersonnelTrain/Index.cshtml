@@ -2,10 +2,22 @@
     ViewBag.Title = "培训记录";
     Layout = "~/Views/Shared/_Index.cshtml";
 }
+<style type="text/css">
+    .lr-form-item-title {
+        width: 95px;
+    }
+
+    .lr-form-item {
+        padding: 6px 0 5px 95px;
+    }
+</style>
+
+
+
 <div class="lr-layout lr-layout-left-center" id="lr_layout">
     <div class="lr-layout-left">
         <div class="lr-layout-wrap">
-            <div class="lr-layout-title lrlg ">树形列表</div>
+            <div class="lr-layout-title lrlg ">人员信息</div>
             <div id="dataTree" class="lr-layout-body"></div>
         </div>
     </div>
@@ -20,6 +32,14 @@
                         <div id="multiple_condition_query">
                             <div class="lr-query-formcontent">
                                 <div class="col-xs-12 lr-form-item">
+                                    <div class="lr-form-item-title">姓名</div>
+                                    <input id="F_UserName" type="text" class="form-control" />
+                                </div>
+                                <div class="col-xs-12 lr-form-item">
+                                    <div class="lr-form-item-title">身份证号码</div>
+                                    <input id="F_IDCardNo" type="text" class="form-control" />
+                                </div>
+                                <div class="col-xs-12 lr-form-item">
                                     <div class="lr-form-item-title">证书类型</div>
                                     <div id="F_CertType"></div>
                                 </div>
@@ -29,7 +49,6 @@
                                 </div>
                                 <div class="col-xs-12 lr-form-item">
                                     <div class="lr-form-item-title">证书专业 </div>
-
                                     <input id="F_Major" type="text" class="form-control" />
                                 </div>
                                 <div class="col-xs-12 lr-form-item">
@@ -37,14 +56,12 @@
                                     <input id="F_CertOrganization" type="text" class="form-control" />
                                 </div>
                                 <div class="col-xs-12 lr-form-item">
-                                    <div class="lr-form-item-title">发证日期</div>
+                                    <div class="lr-form-item-title">培训状态 </div>
+                                    <div id="F_TrainStatus"></div>
                                 </div>
                                 <div class="col-xs-12 lr-form-item">
-                                    <div class="lr-form-item-title">失效日期</div>
-                                </div>
-                                <div class="col-xs-12 lr-form-item">
-                                    <div class="lr-form-item-title">库存状态</div>
-                                    <div id="F_CertStatus"></div>
+                                    <div class="lr-form-item-title">报考收费状态 </div>
+                                    <div id="F_TrainCollectStatus"></div>
                                 </div>
                                 <div class="col-xs-12 lr-form-item">
                                     <div class="lr-form-item-title">付费状态</div>

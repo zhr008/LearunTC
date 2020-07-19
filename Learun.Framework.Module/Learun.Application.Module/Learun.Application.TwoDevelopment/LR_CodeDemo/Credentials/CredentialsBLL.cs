@@ -113,6 +113,50 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
             }
         }
 
+
+
+
+
+        /// <summary>
+        /// 获取左侧树形数据
+        /// </summary>
+        /// <returns></returns>
+        public List<TreeModel> GetTree(string PersonId, string ApplicantId)
+        {
+            try
+            {
+                DataTable list = credentialsService.GetSqlTree(PersonId, ApplicantId);
+
+                List<TreeModel> treeList = new List<TreeModel>();
+                foreach (DataRow item in list.Rows)
+                {
+                    TreeModel node = new TreeModel
+                    {
+                        id = item["id"].ToString(),
+                        text = item["text"].ToString(),
+                        value = item["value"].ToString(),
+                        showcheck = false,
+                        checkstate = 0,
+                        isexpand = false,
+                        parentId = item["parentid"].ToString()
+                    };
+                    treeList.Add(node);
+                }
+                return treeList.ToTree("12");
+            }
+            catch (Exception ex)
+            {
+                if (ex is ExceptionEx)
+                {
+                    throw;
+                }
+                else
+                {
+                    throw ExceptionEx.ThrowBusinessException(ex);
+                }
+            }
+        }
+
         /// <summary>
         /// 保存实体数据（新增、修改）
         /// </summary>

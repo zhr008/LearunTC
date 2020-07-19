@@ -24,12 +24,13 @@ var bootstrap = function ($, learun) {
             if (ParentDisable == "true") {
                 $(".lr-layout-left").remove();
                 $("#lr_layout").removeClass("lr-layout-left-center");
+                $("#multiple_condition_query").remove();
 
             } else {
 
                 // 初始化左侧树形数据
                 $('#dataTree').lrtree({
-                    url: top.$.rootUrl + '/LR_CodeDemo/IDCard/GetTree?PersonId=' + F_PersonId + "&ApplicantId=" + F_ApplicantId,
+                    url: top.$.rootUrl + '/LR_CodeDemo/Credentials/GetTree?PersonId=' + F_PersonId + "&ApplicantId=" + F_ApplicantId,
                     nodeClick: function (item) {
                         if (!!item.parentId) {
                             F_PersonId = item.id;

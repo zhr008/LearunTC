@@ -263,6 +263,46 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
             }
         }
 
+
+
+        /// <summary>
+        /// 获取树形数据
+        /// </summary>
+        /// <returns></returns>
+        public DataTable GetSqlTree(string PersonId, string ApplicantId)
+        {
+            try
+            {
+
+                StringBuilder str = new StringBuilder();
+                str.Append(@"      select   a.F_PersonId id ,b.F_UserName text ,a.F_CertType value ,a.F_CertType  parentid   from dbo.tc_Credentials  a  
+      left join dbo.tc_Personnels b  on a.F_PersonId= b.F_PersonId where b.F_UserName='张奇芳'     group by  a.F_PersonId,b.F_UserName,a.F_CertType   ");
+                if (!string.IsNullOrEmpty(PersonId))
+                {
+                    str.AppendFormat(@" and a.F_PersonId='{0}' ", PersonId);
+                }
+                str.Append(" union all ");
+                str.Append(@"  select   F_ItemValue id, F_ItemName  text, F_ItemValue value,'' parentid    from lr_base_dataitemdetail where F_ItemId= 'a9ce0b84-101c-4e0f-9828-0ec921dfe7bb'   ");
+                if (!string.IsNullOrEmpty(ApplicantId))
+                {
+                    str.AppendFormat(@" and b.id='{0}' ", ApplicantId);
+                }
+                return this.BaseRepository().FindTable(str.ToString());
+            }
+            catch (Exception ex)
+            {
+                if (ex is ExceptionEx)
+                {
+                    throw;
+                }
+                else
+                {
+                    throw ExceptionEx.ThrowServiceException(ex);
+                }
+            }
+        }
+
+     
         #endregion
 
     }

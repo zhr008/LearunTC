@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Learun.Util
 {
@@ -19,61 +20,77 @@ namespace Learun.Util
         /// <returns></returns>
         public static List<TreeModel> ToTree(this List<TreeModel> list,string parentId = "")
         {
-            Dictionary<string, List<TreeModel>> childrenMap = new Dictionary<string, List<TreeModel>>();
-            Dictionary<string, TreeModel> parentMap = new Dictionary<string, TreeModel>();
-            List<TreeModel> res = new List<TreeModel>();
-
-            //首先按照
-            foreach (var node in list)
+            try
             {
-                node.hasChildren = false;
-                node.complete = true;
-                // 注册子节点映射表
-                if (!childrenMap.ContainsKey(node.parentId))
-                {
-                    childrenMap.Add(node.parentId, new List<TreeModel>());
-                }
-                else if (parentMap.ContainsKey(node.parentId))
-                {
-                    parentMap[node.parentId].hasChildren = true;
-                }
-                childrenMap[node.parentId].Add(node);
-                // 注册父节点映射节点表
-                parentMap.Add(node.id, node);
+                Dictionary<string, List<TreeModel>> childrenMap = new Dictionary<string, List<TreeModel>>();
+                Dictionary<string, TreeModel> parentMap = new Dictionary<string, TreeModel>();
+                List<TreeModel> res = new List<TreeModel>();
 
-                // 查找自己的子节点
-                if (!childrenMap.ContainsKey(node.id))
+                //首先按照
+                foreach (var node in list)
                 {
-                    childrenMap.Add(node.id, new List<TreeModel>());
+                    node.hasChildren = false;
+                    node.complete = true;
+                    // 注册子节点映射表
+                    if (!childrenMap.ContainsKey(node.parentId))
+                    {
+                        childrenMap.Add(node.parentId, new List<TreeModel>());
+                    }
+                    else if (parentMap.ContainsKey(node.parentId))
+                    {
+                        parentMap[node.parentId].hasChildren = true;
+                    }
+                    childrenMap[node.parentId].Add(node);
+                    // 注册父节点映射节点表
+                    parentMap.Add(node.id, node);
+
+                    // 查找自己的子节点
+                    if (!childrenMap.ContainsKey(node.id))
+                    {
+                        childrenMap.Add(node.id, new List<TreeModel>());
+                    }
+                    else
+                    {
+                        node.hasChildren = true;
+                    }
+                    node.ChildNodes = childrenMap[node.id];
+                }
+
+                if (string.IsNullOrEmpty(parentId))
+                {
+                    // 获取祖先数据列表
+                    foreach (var item in childrenMap)
+                    {
+                        if (!parentMap.ContainsKey(item.Key))
+                        {
+                            res.AddRange(item.Value);
+                        }
+                    }
                 }
                 else
                 {
-                    node.hasChildren = true;
-                }
-                node.ChildNodes = childrenMap[node.id];
-            }
-
-            if (string.IsNullOrEmpty(parentId))
-            {
-                // 获取祖先数据列表
-                foreach (var item in childrenMap)
-                {
-                    if (!parentMap.ContainsKey(item.Key))
+                    if (childrenMap.ContainsKey(parentId))
                     {
-                        res.AddRange(item.Value);
+                        return childrenMap[parentId];
+                    }
+                    else
+                    {
+                        return new List<TreeModel>();
                     }
                 }
+                return res;
             }
-            else {
-                if (childrenMap.ContainsKey(parentId))
+            catch (Exception ex)
+            {
+                if (ex is ExceptionEx)
                 {
-                    return childrenMap[parentId];
+                    throw;
                 }
-                else {
-                    return new List<TreeModel>();
+                else
+                {
+                    throw ExceptionEx.ThrowBusinessException(ex);
                 }
             }
-            return res;
         }
 
         /// <summary>

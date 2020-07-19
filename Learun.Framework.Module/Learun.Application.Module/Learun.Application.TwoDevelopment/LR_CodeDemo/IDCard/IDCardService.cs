@@ -157,19 +157,36 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
             {
 
                 StringBuilder str = new StringBuilder();
-                str.Append(@"select a.F_PersonId id ,a.F_UserName text ,a.F_IDCardNo value ,a.F_ApplicantId  parentid   from  tc_Personnels a  where 1=1   ");
+                str.Append(@"select a.F_PersonId id ,a.F_UserName text ,a.F_IDCardNo value ,'48741BEB-FA5E-B647-2ADA-1473A71FD524'  parentid   from  tc_Personnels a  where 1=1   ");
                 if (!string.IsNullOrEmpty(PersonId))
                 {
                     str.AppendFormat(@" and a.F_PersonId='{0}' ", PersonId);
                 }
                 str.Append(" union ");
-                str.Append(@"   select b.F_ApplicantId ,b.F_CompanyName text ,'' value ,''  parentid   from  tc_Applicant b  where   b.F_ApplicantType=1 ");
-                if (!string.IsNullOrEmpty(ApplicantId))
-                {
-                    str.AppendFormat(@" and b.F_ApplicantId='{0}' ", ApplicantId);
-                }
+                str.Append(@"     select '48741BEB-FA5E-B647-2ADA-1473A71FD524' id,'全部人员' text ,'' value,''  parentid ");
+                //if (!string.IsNullOrEmpty(ApplicantId))
+                //{
+                //    str.AppendFormat(@" and b.id='{0}' ", ApplicantId);
+                //}
 
                 return this.BaseRepository().FindTable(str.ToString());
+
+
+
+                //StringBuilder str = new StringBuilder();
+                //str.Append(@"select a.F_PersonId id ,a.F_UserName text ,a.F_IDCardNo value ,a.F_ApplicantId  parentid   from  tc_Personnels a  where 1=1   ");
+                //if (!string.IsNullOrEmpty(PersonId))
+                //{
+                //    str.AppendFormat(@" and a.F_PersonId='{0}' ", PersonId);
+                //}
+                //str.Append(" union ");
+                //str.Append(@"   select b.F_ApplicantId ,b.F_CompanyName text ,'' value ,''  parentid   from  tc_Applicant b  where   b.F_ApplicantType=1 ");
+                //if (!string.IsNullOrEmpty(ApplicantId))
+                //{
+                //    str.AppendFormat(@" and b.F_ApplicantId='{0}' ", ApplicantId);
+                //}
+
+                //return this.BaseRepository().FindTable(str.ToString());
             }
             catch (Exception ex)
             {

@@ -23,6 +23,7 @@ var bootstrap = function ($, learun) {
             if (ParentDisable == "true") {
                 $(".lr-layout-left").remove();
                 $("#lr_layout").removeClass("lr-layout-left-center");
+                $("#multiple_condition_query").remove();
 
             } else {
 
@@ -53,7 +54,7 @@ var bootstrap = function ($, learun) {
             }
             $('#multiple_condition_query').lrMultipleQuery(function (queryJson) {
                 page.search(queryJson);
-            }, 220, 400);
+            }, 250, 400);
             $('#F_SafeguardType').lrDataItemSelect({ code: 'SafeguardType' });
             // 刷新
             $('#lr_refresh').on('click', function () {

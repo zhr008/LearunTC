@@ -25,6 +25,7 @@ var bootstrap = function ($, learun) {
             if (ParentDisable == "true") {
                 $(".lr-layout-left").remove();
                 $("#lr_layout").removeClass("lr-layout-left-center");
+                $("#multiple_condition_query").remove();
 
             } else {
                 // 初始化左侧树形数据
@@ -86,7 +87,7 @@ var bootstrap = function ($, learun) {
             $('#lr_add').on('click', function () {
                 learun.layerForm({
                     id: 'form',
-                    title: '新增',
+                    title: '新增人员',
                     url: top.$.rootUrl + '/LR_CodeDemo/Personnels/Form',
                     width: 750,
                     height: 400,

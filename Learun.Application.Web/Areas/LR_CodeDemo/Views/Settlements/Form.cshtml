@@ -23,14 +23,22 @@
             <div class="lr-form-item-title">身份证号码</div>
             <input id="F_IDCardNo" type="text" class="form-control" readonly style="background: rgb(238, 238, 238);" />
         </div>
+
+
         <div class="col-xs-6 lr-form-item" data-table="tc_Settlements">
-            <div class="lr-form-item-title">合同起日<font face="宋体">*</font></div>
-            <input id="F_ContractStartDate" type="text" class="form-control lr-input-wdatepicker" onfocus="WdatePicker({ dateFmt:'yyyy-MM-dd',onpicked: function () { $('#F_ContractStartDate').trigger('change'); } })" isvalid="yes" checkexpession="NotNull" />
+            <div class="lr-form-item-title">手机<font face="宋体">*</font></div>
+            <input id="F_Mobile" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
         </div>
+
         <div class="col-xs-6 lr-form-item" data-table="tc_Settlements">
-            <div class="lr-form-item-title">合同止日<font face="宋体">*</font></div>
-            <input id="F_ContractEndDate" type="text" class="form-control lr-input-wdatepicker" onfocus="WdatePicker({ dateFmt:'yyyy-MM-dd',onpicked: function () { $('#F_ContractEndDate').trigger('change'); } })" isvalid="yes" checkexpession="NotNull" />
+            <div class="lr-form-item-title">其它方式</div>
+            <input id="F_OtherContact" type="text" class="form-control" />
         </div>
+        <div class="col-xs-12 lr-form-item" data-table="tc_Settlements">
+            <div class="lr-form-item-title">联系地址</div>
+            <input id="F_Address" type="text" class="form-control" />
+        </div>
+
         <div class="col-xs-6 lr-form-item" data-table="tc_Settlements">
             <div class="lr-form-item-title">维护代表<font face="宋体">*</font></div>
             <input id="F_Maintain" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
@@ -39,19 +47,17 @@
             <div class="lr-form-item-title">合同状态<font face="宋体">*</font></div>
             <div id="F_ContractStatus" isvalid="yes" checkexpession="NotNull"></div>
         </div>
+
         <div class="col-xs-6 lr-form-item" data-table="tc_Settlements">
-            <div class="lr-form-item-title">手机<font face="宋体">*</font></div>
-            <input id="F_Mobile" type="text" class="form-control" isvalid="yes" checkexpession="NotNull" />
+            <div class="lr-form-item-title">合同起日<font face="宋体">*</font></div>
+            <input id="F_ContractStartDate" type="text" class="form-control lr-input-wdatepicker" onfocus="WdatePicker({ dateFmt:'yyyy-MM-dd',onpicked: function () { $('#F_ContractStartDate').trigger('change'); } })" isvalid="yes" checkexpession="NotNull" />
+        </div>
+        <div class="col-xs-6 lr-form-item" data-table="tc_Settlements">
+            <div class="lr-form-item-title">合同止日<font face="宋体">*</font></div>
+            <input id="F_ContractEndDate" type="text" class="form-control lr-input-wdatepicker" onfocus="WdatePicker({ dateFmt:'yyyy-MM-dd',onpicked: function () { $('#F_ContractEndDate').trigger('change'); } })" isvalid="yes" checkexpession="NotNull" />
         </div>
 
-        <div class="col-xs-12 lr-form-item" data-table="tc_Settlements">
-            <div class="lr-form-item-title">其它方式</div>
-            <input id="F_OtherContact" type="text" class="form-control" />
-        </div>
-        <div class="col-xs-12 lr-form-item" data-table="tc_Settlements">
-            <div class="lr-form-item-title">联系地址</div>
-            <input id="F_Address" type="text" class="form-control" />
-        </div>
+
         <div class="col-xs-6 lr-form-item" data-table="tc_Settlements">
             <div class="lr-form-item-title">人才签约代表<font face="宋体">*</font></div>
             <div id="F_ApplicantId" isvalid="yes" checkexpession="NotNull"></div>

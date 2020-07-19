@@ -22,6 +22,7 @@ var bootstrap = function ($, learun) {
             if (ParentDisable == "true") {
                 $(".lr-layout-left").remove();
                 $("#lr_layout").removeClass("lr-layout-left-center");
+                $("#multiple_condition_query").remove();
 
             } else {
                 // 初始化左侧树形数据
@@ -51,13 +52,18 @@ var bootstrap = function ($, learun) {
             }
             $('#multiple_condition_query').lrMultipleQuery(function (queryJson) {
                 page.search(queryJson);
-            }, 360, 400);
+            }, 400, 400);
             $('#F_CertStatus').lrDataItemSelect({ code: 'CertStatus' });
             $('#F_TrainPayStatus').lrDataItemSelect({ code: 'TrainPayStatus' }); 
 
             $('#F_CertType').lrDataItemSelect({ code: 'CertType' });
             $('#F_MajorType').lrDataItemSelect({ code: 'MajorType' });
 
+            $('#F_TrainCollectStatus').lrDataItemSelect({ code: 'TrainCollectStatus' });
+            $('#F_FeeStandard').lrDataItemSelect({ code: 'FeeStandard' });
+
+            $('#F_TrainStatus').lrDataItemSelect({ code: 'TrainStatus' });
+            
             // 刷新
             $('#lr_refresh').on('click', function () {
                 location.reload();
