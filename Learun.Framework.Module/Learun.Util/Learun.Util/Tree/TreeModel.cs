@@ -59,6 +59,10 @@ namespace Learun.Util
         /// 父级节点ID
         /// </summary>
         public string parentId { get; set; }
+
+
+
+        public string code { get; set; }
     }
     
 }

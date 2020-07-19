@@ -9,7 +9,7 @@ var F_IDCardNo = request('F_IDCardNo');
 var F_UserName = request('F_UserName');
 var F_ApplicantId = request('F_ApplicantId');
 var ParentDisable = request('ParentDisable');
-
+var F_CertType = request('F_CertType');
 
 
 var bootstrap = function ($, learun) {
@@ -32,11 +32,11 @@ var bootstrap = function ($, learun) {
                 $('#dataTree').lrtree({
                     url: top.$.rootUrl + '/LR_CodeDemo/Credentials/GetTree?PersonId=' + F_PersonId + "&ApplicantId=" + F_ApplicantId,
                     nodeClick: function (item) {
-                        if (!!item.parentId) {
-                            F_PersonId = item.id;
+                        if (!!item.parentid) {
+                            F_PersonId = item.value;
                             F_UserName = item.text;
-                            F_IDCardNo = item.value;
-                            F_ApplicantId = item.parentid
+                            F_IDCardNo = item.code;
+                            F_CertType = ""
                             page.search();
                         }
                         else {
@@ -44,7 +44,7 @@ var bootstrap = function ($, learun) {
                             F_PersonId = "";
                             F_UserName = "";
                             F_IDCardNo = "";
-                            F_ApplicantId = item.id
+                            F_CertType = item.value;
                             if (ParentDisable != "true") {
                                 page.search();
                             }
@@ -219,7 +219,7 @@ var bootstrap = function ($, learun) {
         search: function (param) {
             param = param || {};
             param.F_PersonId = F_PersonId;
-            param.F_ApplicantId = F_ApplicantId;
+            param.F_CertType = F_CertType;
             $('#gridtable').jfGridSet('reload',{ queryJson: JSON.stringify(param) });
         }
     };

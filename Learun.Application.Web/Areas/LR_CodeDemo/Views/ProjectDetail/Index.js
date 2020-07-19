@@ -325,7 +325,6 @@ var bootstrap = function ($, learun) {
 
 
     UpdateRelation = function (F_RelationId) {
-        debugger
         learun.layerForm({
             id: 'form',
             title: '审查状态',
