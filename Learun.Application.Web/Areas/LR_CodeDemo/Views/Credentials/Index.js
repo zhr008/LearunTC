@@ -56,7 +56,7 @@ var bootstrap = function ($, learun) {
             }
             $('#multiple_condition_query').lrMultipleQuery(function (queryJson) {
                 page.search(queryJson);
-            }, 440, 400);
+            }, 360, 400);
             $('#F_CertType').lrDataItemSelect({ code: 'CertType' });
             $('#F_MajorType').lrDataItemSelect({ code: 'MajorType' });
             $('#F_CertStyle').lrDataItemSelect({ code: 'CertStyle' });
