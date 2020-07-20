@@ -53,7 +53,8 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
                 t.F_TrainPayAmount,
                 t.F_TrainPayVoucher,
                 t.F_TrainPayStatus,
-                t.F_Description
+                t.F_Description,
+                t.F_TrainOrgAccountName
                 ");
                 strSql.Append("  FROM tc_PersonnelTrain t ");
                 strSql.Append("  LEFT JOIN tc_Personnels p ON t.F_PersonId =p.F_PersonId ");

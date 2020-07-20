@@ -93,11 +93,11 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
         /// 获取左侧树形数据
         /// </summary>
         /// <returns></returns>
-        public List<TreeModel> GetTree(string PersonId, string ApplicantId)
+        public List<TreeModel> GetTree(string PersonId, string ApplicantId, string UserName)
         {
             try
             {
-                DataTable list = iDCardService.GetSqlTree(PersonId, ApplicantId);
+                DataTable list = iDCardService.GetSqlTree(PersonId, ApplicantId, UserName);
                 List<TreeModel> treeList = new List<TreeModel>();
                 foreach (DataRow item in list.Rows)
                 {
@@ -108,7 +108,7 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
                         value = item["value"].ToString(),
                         showcheck = false,
                         checkstate = 0,
-                        isexpand = false,
+                        isexpand = true,
                         parentId = item["parentid"].ToString()
                     };
                     treeList.Add(node);

@@ -35,7 +35,7 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
         /// 获取左侧树形数据
         /// </summary>
         /// <returns></returns>
-        List<TreeModel> GetTree(string PersonId, string ApplicantId);
+        List<TreeModel> GetTree(string PersonId, string ApplicantId, string UserName);
         #endregion
 
         #region 提交数据

@@ -15,41 +15,15 @@ var bootstrap = function ($, learun) {
     "use strict";
     var page = {
         init: function () {
+            page.buildTree();
             page.bind();
             page.initGird();
         },
         bind: function () {
-            if (ParentDisable == "true") {
-                $(".lr-layout-left").remove();
-                $("#lr_layout").removeClass("lr-layout-left-center");
-                $("#multiple_condition_query").remove();
-
-            } else {
-                // 初始化左侧树形数据
-                $('#dataTree').lrtree({
-                    url: top.$.rootUrl + '/LR_CodeDemo/IDCard/GetTree?PersonId=' + F_PersonId + "&ApplicantId=" + F_ApplicantId,
-                    nodeClick: function (item) {
-                        if (!!item.parentId) {
-                            F_PersonId = item.id;
-                            F_UserName = item.text;
-                            F_IDCardNo = item.value;
-                            F_ApplicantId = item.parentid
-                            page.search();
-                        }
-                        else {
-
-                            F_PersonId = "";
-                            F_UserName = "";
-                            F_IDCardNo = "";
-                            //F_ApplicantId = item.id
-                            if (ParentDisable != "true") {
-                                page.search();
-                            }
-                        }
-
-                    }
-                });
-            }
+            $('#btn_BuildSearch').on('click', function () {
+                F_UserName = $("#txt_BuildKeyword").val();
+                page.buildTree();
+            });
             $('#multiple_condition_query').lrMultipleQuery(function (queryJson) {
                 page.search(queryJson);
             }, 400, 400);
@@ -144,6 +118,42 @@ var bootstrap = function ($, learun) {
             $('#lr_print').on('click', function () {
                 $('#gridtable').jqprintTable();
             });
+        },
+        buildTree: function () {
+            if (ParentDisable == "true") {
+                $(".lr-layout-left").remove();
+                $("#lr_layout").removeClass("lr-layout-left-center");
+                $("#multiple_condition_query").remove();
+
+            } else {
+
+                // 初始化左侧树形数据
+                $('#dataTree').lrtree({
+                    url: top.$.rootUrl + '/LR_CodeDemo/IDCard/GetTree?PersonId=' + F_PersonId + "&ApplicantId=" + F_ApplicantId + "&UserName=" + F_UserName,
+                    nodeClick: function (item) {
+                        if (!!item.parentId) {
+                            F_PersonId = item.id;
+                            F_UserName = item.text;
+                            F_IDCardNo = item.value;
+                            F_ApplicantId = item.parentid
+                            page.search();
+                        }
+                        else {
+
+                            F_PersonId = "";
+                            F_UserName = "";
+                            F_IDCardNo = "";
+                            //F_ApplicantId = item.id
+
+                            if (ParentDisable != "true") {
+                                page.search();
+                            }
+                        }
+                    }
+                });
+            }
+
+
         },
         // 初始化列表
         initGird: function () {
@@ -256,6 +266,7 @@ var bootstrap = function ($, learun) {
                         }
                     },
                     { label: "付费代理机构", name: "F_TrainOrgName", width: 100, align: "center" },
+                    { label: "代理机构开户名", name: "F_TrainOrgAccountName", width: 100, align: "center" },
                     { label: "代理机构开户行", name: "F_TrainOrgBankName", width: 100, align: "center" },
                     { label: "代理机构银行账号", name: "F_TrainOrgBankAccount", width: 100, align: "center" },
                     { label: "付费金额", name: "F_TrainPayAmount", width: 100, align: "center" },

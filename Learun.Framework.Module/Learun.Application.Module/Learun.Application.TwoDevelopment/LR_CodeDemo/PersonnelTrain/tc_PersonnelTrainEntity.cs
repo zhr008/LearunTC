@@ -108,6 +108,11 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
         [Column("F_TRAINORGNAME")]
         public string F_TrainOrgName { get; set; }
         /// <summary>
+        /// 代理机构开户名
+        /// </summary>
+        [Column("F_TRAINORGACCOUNTNAME")]
+        public string F_TrainOrgAccountName { get; set; }
+        /// <summary>
         /// 代理机构开户行
         /// </summary>
         [Column("F_TRAINORGBANKNAME")]

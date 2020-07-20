@@ -151,7 +151,7 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
         /// 获取树形数据
         /// </summary>
         /// <returns></returns>
-        public DataTable GetSqlTree(string PersonId, string ApplicantId)
+        public DataTable GetSqlTree(string PersonId, string ApplicantId,string UserName)
         {
             try
             {
@@ -162,6 +162,11 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
                 {
                     str.AppendFormat(@" and a.F_PersonId='{0}' ", PersonId);
                 }
+                if (!string.IsNullOrEmpty(UserName))
+                {
+                    str.AppendFormat(@" and a.F_UserName like '%{0}%' ", UserName);
+                }
+
                 str.Append(" union ");
                 str.Append(@"     select '48741BEB-FA5E-B647-2ADA-1473A71FD524' id,'全部人员' text ,'' value,''  parentid ");
                 //if (!string.IsNullOrEmpty(ApplicantId))

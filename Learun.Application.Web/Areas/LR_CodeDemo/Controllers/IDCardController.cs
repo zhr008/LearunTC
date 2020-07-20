@@ -82,9 +82,9 @@ namespace Learun.Application.Web.Areas.LR_CodeDemo.Controllers
         /// <returns></returns>
         [HttpGet]
         
-        public ActionResult GetTree(string PersonId, string ApplicantId)
+        public ActionResult GetTree(string PersonId, string ApplicantId,string UserName)
         {
-            var data = iDCardIBLL.GetTree(PersonId, ApplicantId);
+            var data = iDCardIBLL.GetTree(PersonId, ApplicantId, UserName);
             return Success(data);
         }
         #endregion
