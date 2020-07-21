@@ -147,6 +147,33 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
             }
         }
 
+
+
+        public IEnumerable<TreeModel> GetSqlTree()
+        {
+            try
+            {
+
+                StringBuilder str = new StringBuilder();
+                str.Append(@"select a.F_PersonId id ,a.F_UserName text ,a.F_IDCardNo value ,'48741BEB-FA5E-B647-2ADA-1473A71FD524'  parentid   from  tc_Personnels a  where 1=1   ");
+
+                //str.Append(" union ");
+                //str.Append(@"     select '48741BEB-FA5E-B647-2ADA-1473A71FD524' id,'全部人员' text ,'' value,''  parentid ");
+                return this.BaseRepository().FindList<TreeModel>(str.ToString());
+            }
+            catch (Exception ex)
+            {
+                if (ex is ExceptionEx)
+                {
+                    throw;
+                }
+                else
+                {
+                    throw ExceptionEx.ThrowServiceException(ex);
+                }
+            }
+        }
+
         /// <summary>
         /// 获取树形数据
         /// </summary>

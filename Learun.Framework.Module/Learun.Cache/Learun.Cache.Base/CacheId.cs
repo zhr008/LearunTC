@@ -137,7 +137,10 @@
         public static int language { get { return 7; } }
         #endregion
 
-        #region 8号库
+        #region 8号库  新加的
+
+        public static int personnels { get { return 8; } }
+
         #endregion
 
         #region 9号库

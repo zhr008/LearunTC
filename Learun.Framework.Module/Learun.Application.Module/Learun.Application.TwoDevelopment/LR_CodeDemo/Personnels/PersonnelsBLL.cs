@@ -2,6 +2,8 @@
 using System;
 using System.Data;
 using System.Collections.Generic;
+using Learun.Cache.Factory;
+using Learun.Cache.Base;
 
 namespace Learun.Application.TwoDevelopment.LR_CodeDemo
 {
@@ -15,6 +17,12 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
     public class PersonnelsBLL : PersonnelsIBLL
     {
         private PersonnelsService personnelsService = new PersonnelsService();
+
+
+        #region 缓存定义
+        private ICache cache = CacheFactory.CaChe();
+        private string cacheKey = "learun_adms_personnels";
+        #endregion
 
         #region 获取数据
 
@@ -136,6 +144,7 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
         {
             try
             {
+                cache.Remove(cacheKey, CacheId.personnels);
                 personnelsService.DeleteEntity(keyValue);
             }
             catch (Exception ex)
@@ -161,6 +170,7 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
         {
             try
             {
+                cache.Remove(cacheKey, CacheId.personnels);
                 personnelsService.SaveEntity(keyValue, entity);
             }
             catch (Exception ex)

@@ -120,7 +120,7 @@ var bootstrap = function ($, learun) {
         search: function (param) {
             param = param || {};
             param.F_PersonId = F_PersonId;
-            param.F_ApplicantId = F_ApplicantId;
+            //param.F_ApplicantId = F_ApplicantId;
             param.F_SettlementsId = F_SettlementsId
             $('#gridtable').jfGridSet('reload', { queryJson: JSON.stringify(param) });
         }

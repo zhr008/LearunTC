@@ -2,6 +2,8 @@
 using System;
 using System.Data;
 using System.Collections.Generic;
+using Learun.Cache.Base;
+using Learun.Cache.Factory;
 
 namespace Learun.Application.TwoDevelopment.LR_CodeDemo
 {
@@ -13,6 +15,12 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
     public class IDCardBLL : IDCardIBLL
     {
         private IDCardService iDCardService = new IDCardService();
+
+
+        #region 缓存定义
+        private ICache cache = CacheFactory.CaChe();
+        private string cacheKey = "learun_adms_personnels";
+        #endregion
 
         #region 获取数据
 
@@ -89,6 +97,34 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
             }
         }
 
+
+
+        public List<TreeModel> GetList()
+        {
+            try
+            {
+                List<TreeModel> list = cache.Read<List<TreeModel>>(cacheKey, CacheId.personnels);
+                if (list == null)
+                {
+                    list = (List<TreeModel>)iDCardService.GetSqlTree();
+                    cache.Write<List<TreeModel>>(cacheKey, list, CacheId.personnels);
+                }
+                return list;
+            }
+            catch (Exception ex)
+            {
+                if (ex is ExceptionEx)
+                {
+                    throw;
+                }
+                else
+                {
+                    throw ExceptionEx.ThrowBusinessException(ex);
+                }
+            }
+        }
+
+
         /// <summary>
         /// 获取左侧树形数据
         /// </summary>
@@ -97,19 +133,46 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
         {
             try
             {
-                DataTable list = iDCardService.GetSqlTree(PersonId, ApplicantId, UserName);
+                //DataTable list = iDCardService.GetSqlTree(PersonId, ApplicantId, UserName);
+
+
+                var data = GetList();
+                //if (!string.IsNullOrEmpty(ApplicantId))
+                //{
+                //    data= data.FindAll(c => c.id == PersonId);
+                //}
+                if (!string.IsNullOrEmpty(PersonId))
+                {
+                    data = data.FindAll(c => c.id == PersonId);
+                }
+                if (!string.IsNullOrEmpty(UserName))
+                {
+                    data = data.FindAll(c => c.text.Contains(UserName));
+                }
+
+                TreeModel tree = new TreeModel
+                {
+
+                    id = "48741BEB-FA5E-B647-2ADA-1473A71FD524",
+                    text = "全部人员",
+                    value = "",
+                    parentId = "",
+                    icon= "fa fa-folder"
+                };
+                data.Add(tree);
+
                 List<TreeModel> treeList = new List<TreeModel>();
-                foreach (DataRow item in list.Rows)
+                foreach (var item in data)
                 {
                     TreeModel node = new TreeModel
                     {
-                        id = item["id"].ToString(),
-                        text = item["text"].ToString(),
-                        value = item["value"].ToString(),
+                        id = item.id,
+                        text = item.text,
+                        value = item.value,
                         showcheck = false,
                         checkstate = 0,
                         isexpand = true,
-                        parentId = item["parentid"].ToString()
+                        parentId = item.parentId,
                     };
                     treeList.Add(node);
                 }

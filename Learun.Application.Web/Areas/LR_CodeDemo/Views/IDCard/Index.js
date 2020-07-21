@@ -111,7 +111,7 @@ var bootstrap = function ($, learun) {
                             F_PersonId = "";
                             F_UserName = "";
                             F_IDCardNo = "";
-                            //F_ApplicantId = item.id
+                            //F_ApplicantId = ""
 
                             if (ParentDisable != "true") {
                                 page.search();
@@ -170,7 +170,6 @@ var bootstrap = function ($, learun) {
         search: function (param) {
             param = param || {};
             param.F_PersonId = F_PersonId;
-            param.F_ApplicantId = F_ApplicantId;
             $('#gridtable').jfGridSet('reload', { queryJson: JSON.stringify(param) });
         }
     };
