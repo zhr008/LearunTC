@@ -141,10 +141,10 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
                 //{
                 //    data= data.FindAll(c => c.id == PersonId);
                 //}
-                if (!string.IsNullOrEmpty(PersonId))
-                {
-                    data = data.FindAll(c => c.id == PersonId);
-                }
+                //if (!string.IsNullOrEmpty(PersonId))
+                //{
+                //    data = data.FindAll(c => c.id == PersonId);
+                //}
                 if (!string.IsNullOrEmpty(UserName))
                 {
                     data = data.FindAll(c => c.text.Contains(UserName));

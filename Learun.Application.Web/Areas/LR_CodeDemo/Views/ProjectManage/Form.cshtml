@@ -40,8 +40,8 @@
         <input id="CompleteDate" type="text" class="form-control lr-input-wdatepicker" onfocus="WdatePicker({ dateFmt:'yyyy-MM-dd',onpicked: function () { $('#CompleteDate').trigger('change'); } })"   />
     </div>
     <div class="col-xs-6 lr-form-item"  data-table="tc_Project" >
-        <div class="lr-form-item-title">项目状态</div>
-        <div id="Status"  ></div>
+        <div class="lr-form-item-title">项目状态<font face="宋体">*</font></div>
+        <div id="Status" isvalid="yes" checkexpession="NotNull"  ></div>
     </div>
     <div class="col-xs-12 lr-form-item"  data-table="tc_Project" >
         <div class="lr-form-item-title">备注</div>

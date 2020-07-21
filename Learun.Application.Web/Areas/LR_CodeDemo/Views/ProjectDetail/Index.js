@@ -307,7 +307,7 @@ var bootstrap = function ($, learun) {
 
                                 formatter: function (cellvalue, rowObject) {
                                     var _html = "";
-                                    _html += "<a class='btn  btn-success newButton' href=\"#\"  onclick=\"UpdateRelation('" + rowObject.F_RelationId + "')\">&nbsp;&nbsp;修改</a>"
+                                    _html += "<a class='btn  btn-success newButton' href=\"#\"  onclick=\"UpdateRelation('" + rowObject.F_RelationId + "')\">&nbsp;&nbsp;修改</a>&nbsp;" 
                                     _html += "<a class='btn  btn-success newButton' href=\"#\"  onclick=\"DeleteRelation('" + rowObject.F_RelationId + "')\">&nbsp;&nbsp;删除</a>"
                                     return _html;
                                 }

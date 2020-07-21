@@ -2,6 +2,8 @@
 using System;
 using System.Data;
 using System.Collections.Generic;
+using Learun.Cache.Factory;
+using Learun.Cache.Base;
 
 namespace Learun.Application.TwoDevelopment.LR_CodeDemo
 {
@@ -13,6 +15,11 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
     public class ApplicantBLL : ApplicantIBLL
     {
         private ApplicantService applicantService = new ApplicantService();
+
+        #region 缓存定义
+        private ICache cache = CacheFactory.CaChe();
+        private string cacheKey = "learun_adms_datasource_";// +编号
+        #endregion
 
         #region 获取数据
 
@@ -96,6 +103,8 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
         {
             try
             {
+                cache.Remove(cacheKey+ "recruitdata", CacheId.dataSource);
+                cache.Remove(cacheKey + "applicantdata", CacheId.dataSource);
                 applicantService.DeleteEntity(keyValue);
             }
             catch (Exception ex)
@@ -121,6 +130,8 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
         {
             try
             {
+                cache.Remove(cacheKey + "recruitdata", CacheId.dataSource);
+                cache.Remove(cacheKey + "applicantdata", CacheId.dataSource);
                 applicantService.SaveEntity(keyValue, entity);
             }
             catch (Exception ex)
