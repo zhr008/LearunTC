@@ -99,16 +99,16 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
 
 
 
-        public List<TreeModel> GetList()
+        public List<TreeModel> GetList(string userName)
         {
             try
             {
-                List<TreeModel> list = cache.Read<List<TreeModel>>(cacheKey, CacheId.personnels);
-                if (list == null)
-                {
-                    list = (List<TreeModel>)iDCardService.GetSqlTree();
-                    cache.Write<List<TreeModel>>(cacheKey, list, CacheId.personnels);
-                }
+                //List<TreeModel> list = cache.Read<List<TreeModel>>(cacheKey, CacheId.personnels);
+                //if (list == null)
+                //{
+                List<TreeModel> list = (List<TreeModel>)iDCardService.GetSqlTree(userName);
+                //cache.Write<List<TreeModel>>(cacheKey, list, CacheId.personnels);
+                // }
                 return list;
             }
             catch (Exception ex)
@@ -136,7 +136,7 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
                 //DataTable list = iDCardService.GetSqlTree(PersonId, ApplicantId, UserName);
 
 
-                var data = GetList();
+                var data = GetList(UserName);
                 //if (!string.IsNullOrEmpty(ApplicantId))
                 //{
                 //    data= data.FindAll(c => c.id == PersonId);
@@ -157,7 +157,7 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
                     text = "全部人员",
                     value = "",
                     parentId = "",
-                    icon= "fa fa-folder"
+                    icon = "fa fa-folder"
                 };
                 data.Add(tree);
 

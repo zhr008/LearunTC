@@ -149,14 +149,18 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
 
 
 
-        public IEnumerable<TreeModel> GetSqlTree()
+        public IEnumerable<TreeModel> GetSqlTree(string username)
         {
             try
             {
 
                 StringBuilder str = new StringBuilder();
-                str.Append(@"select a.F_PersonId id ,a.F_UserName text ,a.F_IDCardNo value ,'48741BEB-FA5E-B647-2ADA-1473A71FD524'  parentid   from  tc_Personnels a  where 1=1   ");
-
+                str.Append(@"select top 30 a.F_PersonId id ,a.F_UserName text ,a.F_IDCardNo value ,'48741BEB-FA5E-B647-2ADA-1473A71FD524'  parentid   from  tc_Personnels a  where 1=1   ");
+                if (!string.IsNullOrEmpty(username))
+                {
+                    str.AppendFormat(@" and a.F_UserName like '%{0}%' ", username);
+                }
+                str.Append(" ORDER BY a.F_CreateDate DESC  ");
                 //str.Append(" union ");
                 //str.Append(@"     select '48741BEB-FA5E-B647-2ADA-1473A71FD524' id,'全部人员' text ,'' value,''  parentid ");
                 return this.BaseRepository().FindList<TreeModel>(str.ToString());
