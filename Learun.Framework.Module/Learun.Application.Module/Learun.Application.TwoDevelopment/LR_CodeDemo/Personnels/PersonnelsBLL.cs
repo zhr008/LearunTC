@@ -144,7 +144,7 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
         {
             try
             {
-                cache.Remove(cacheKey, CacheId.personnels);
+                //cache.Remove(cacheKey, CacheId.personnels);
                 personnelsService.DeleteEntity(keyValue);
             }
             catch (Exception ex)
@@ -170,7 +170,7 @@ namespace Learun.Application.TwoDevelopment.LR_CodeDemo
         {
             try
             {
-                cache.Remove(cacheKey, CacheId.personnels);
+                //cache.Remove(cacheKey, CacheId.personnels);
                 personnelsService.SaveEntity(keyValue, entity);
             }
             catch (Exception ex)
