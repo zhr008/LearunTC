@@ -9,6 +9,11 @@ var keyValue = request('keyValue');
 var F_PersonId = request('F_PersonId');
 var F_UserName = request('F_UserName');
 var F_IDCardNo = request('F_IDCardNo');
+var ParentDisable = request('ParentDisable');
+if (ParentDisable == "true") {
+    F_UserName = decodeURIComponent(escape(F_UserName));
+}
+
 var bootstrap = function ($, learun) {
     "use strict";
     var page = {
@@ -38,12 +43,12 @@ var bootstrap = function ($, learun) {
                     }
                 });
 
-            } 
-                $("#F_PersonId").val(F_PersonId);
-                $("#F_UserName").val(decodeURIComponent(escape(F_UserName)));
-                $("#F_IDCardNo").val(F_IDCardNo);
-            
-           
+            }
+            $("#F_PersonId").val(F_PersonId);
+            $("#F_UserName").val(F_UserName);
+            $("#F_IDCardNo").val(F_IDCardNo);
+
+
         }
     };
     // 保存数据

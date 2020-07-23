@@ -40,7 +40,7 @@ var bootstrap = function ($, learun) {
                     learun.layerForm({
                         id: 'form',
                         title: '新增',
-                        url: top.$.rootUrl + '/LR_CodeDemo/Settlements/Form?F_PersonId=' + F_PersonId + "&F_UserName=" + F_UserName + "&F_IDCardNo=" + F_IDCardNo,
+                        url: top.$.rootUrl + '/LR_CodeDemo/Settlements/Form?F_PersonId=' + F_PersonId + "&F_UserName=" + escape(F_UserName) + "&F_IDCardNo=" + F_IDCardNo + "&ParentDisable=" + ParentDisable,
                         width: 750,
                         height: 520,
                         callBack: function (id) {
